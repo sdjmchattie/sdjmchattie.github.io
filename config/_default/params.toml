@@ -1,0 +1,28 @@
+show_reading_time = true
+
+[ananke]
+show_recent_posts = true # show recent posts on the homepage
+
+[ananke.social]
+icon_path = "ananke/socials/%s.svg"
+
+[ananke.social.follow]
+new_window_icon = false # show a little "opens in new window" icon next to the link
+networks = [
+  "github",
+  "linkedin",
+  "mastodon",
+  "stackoverflow"
+]
+
+[ananke.social.github]
+username = "sdjmchattie"
+
+[ananke.social.linkedin]
+username = "stuart-m-53269467"
+
+[ananke.social.mastodon]
+profilelink = "https://hachyderm.io/@sdjmchattie"
+
+[ananke.social.stackoverflow]
+username = "772095/sdjmchattie"
