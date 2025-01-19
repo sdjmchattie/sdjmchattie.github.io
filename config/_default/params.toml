@@ -1,3 +1,4 @@
+custom_css = ["image-layout.css"]
 show_reading_time = true
 
 [ananke]
