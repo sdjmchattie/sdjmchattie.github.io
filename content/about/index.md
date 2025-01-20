@@ -5,7 +5,7 @@ title = 'About'
 menus = 'main'
 +++
 
-![An AI generated avatar of me](/images/avatar.jpg#floatright)
+![An AI generated avatar of me](avatar.jpg#floatright)
 
 Hi!
 I'm Stuart McHattie and I've been writing code since I was 6 years old.
@@ -40,4 +40,4 @@ However, a team is not a team without a leader and I have enjoyed taking on the 
 Most recently, I have been working on becoming a software solution architect and I have taken and passed certification by Amazon Web Services for this role.
 Leading others and making decisions on the direction of the work is the natural step beyond software writing expertise and it allows others to grow into the role you have already forged a path for.
 
-I love helping others, and if I can help you, please do reach out to give me the opportunity!
+I love helping others; if I can help you please do [reach out]({{< ref "/contact" >}} "Contact Me") to give me the opportunity!
