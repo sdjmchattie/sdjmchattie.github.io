@@ -1,5 +1,14 @@
 img[src$="#floatright"] {
     float: right;
+    width: 250px;
     margin-left: 8px;
     margin-bottom: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+    img[src$="#floatright"] {
+        float: none;
+        width: auto;
+        margin: auto;
+    }
 }
