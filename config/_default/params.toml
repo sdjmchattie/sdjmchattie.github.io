@@ -1,6 +1,7 @@
 custom_css = ["image-layout.css"]
 show_reading_time = true
 cover_dimming_class = "bg-black-80"
+mainSections = "post"
 
 [ananke]
 show_recent_posts = true # show recent posts on the homepage
