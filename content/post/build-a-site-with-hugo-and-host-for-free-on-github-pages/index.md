@@ -1,5 +1,5 @@
 +++
-date = '2025-01-21T21:20:13Z'
+date = '2025-01-21T20:00:00Z'
 draft = false
 title = 'How I built my website and host it for free on GitHub Pages'
 toc = true
