@@ -1,9 +1,10 @@
-+++
-date = '2025-01-17T20:20:25Z'
-draft = false
-title = 'About'
-menus = 'main'
-+++
+---
+date: 2025-01-17T20:20:25Z
+draft: false
+title: About
+menus:
+    - main
+---
 
 ![An AI generated avatar of me](avatar.jpg#floatright)
 
