@@ -5,8 +5,6 @@ title = 'How I built my website and host it for free on GitHub Pages'
 toc = true
 +++
 
-## Introduction
-
 There's that now old adage that if you're not online, you're no-one.
 Perhaps that's a bit harsh when it comes to a personal presence on the world wide web, but it certainly applies to businesses.
 In any case, I decided I wanted to get my own site up as it's about time I shared my experiences in the hope that they're useful to at least someone.
@@ -14,7 +12,7 @@ What better way to start my new blog than to tell you how I set it up.
 Which tools did I use and why?
 How do I get to host it for free?
 
-### Which tools to use
+## Which tools to use
 
 You can use anything you want to create a website, but for most people, simplicity is key.
 It's also important to choose something that can be hosted with static contents if you aim is to host it for free.
@@ -27,7 +25,7 @@ Here are just a few of the reasons I choose this over other options:
 - The content is all written as Markdown and Hugo does the rest.
 - You can export all your content as a static site.
 
-### Where to host for free
+## Where to host for free
 
 Free hosting of a whole site is kind of rare these days, but thankfully options still exist.
 The one this blog post is going to focus on is GitHub Pages.
