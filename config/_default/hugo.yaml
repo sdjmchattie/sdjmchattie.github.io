@@ -3,3 +3,7 @@ languageCode: en-gb
 title: IsCoding
 theme: ananke
 sectionPagesMenu: main
+markup:
+    tableOfContents:
+        startLevel: 2
+        endLevel: 3

@@ -1,0 +1,9 @@
+#TableOfContents ul li,
+#TableOfContents li ul {
+    margin-bottom: 0;
+    margin-top: 0.5em;
+}
+
+#TableOfContents ul li {
+    margin-left: 0.5em;
+}

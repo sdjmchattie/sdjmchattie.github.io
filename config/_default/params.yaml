@@ -1,6 +1,7 @@
 custom_css:
     - code.css
     - image-layout.css
+    - toc.css
 show_reading_time: true
 cover_dimming_class: bg-black-80
 mainSections: post
