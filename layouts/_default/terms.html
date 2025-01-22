@@ -1,0 +1,28 @@
+{{ define "header" }}{{ partial "page-header.html" . }}{{ end }}
+{{ define "main" }}
+  {{ $data := .Data }}
+  <article class="cf pa3 pa4-m pa4-l">
+    <header>
+      <h1 class="f1 mb2">
+        {{ .Title }}
+      </h1>
+    </header>
+    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links {{ $.Param "text_color" | default "mid-gray" }}">
+      {{ .Content }}
+    </div>
+  </article>
+  <div class="mw8 center">
+    <section class="ph4">
+      {{ range $term := .Data.Pages }}
+        <h2 class="f2 mt4 mb3">
+          <a href="{{ $term.RelPermalink }}" class="link blue hover-black">
+            {{ $term.LinkTitle }}
+          </a>
+        </h2>
+        {{ range $term.Pages }}
+          {{ .Render "summary" }}
+        {{ end }}
+      {{ end }}
+    </section>
+  </div>
+{{ end }}

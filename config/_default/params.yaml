@@ -1,26 +1,23 @@
 custom_css:
-    - code.css
-    - image-layout.css
-    - toc.css
+  - code.css
+  - image-layout.css
+  - toc.css
 show_reading_time: true
 cover_dimming_class: bg-black-80
 mainSections: post
 ananke:
-    show_recent_posts: true # show recent posts on the homepage
-    social:
-        icon_path: ananke/socials/%s.svg
-        follow:
-            new_window_icon: false # show a little "opens in new window" icon next to the link
-            networks:
-                - github
-                - linkedin
-                - mastodon
-                - stackoverflow
-        github:
-            username: sdjmchattie
-        linkedin:
-            username: stuart-m-53269467
-        mastodon:
-            profilelink: https://hachyderm.io/@sdjmchattie
-        stackoverflow:
-            username: 772095/sdjmchattie
+  social:
+    follow:
+      networks:
+        - github
+        - linkedin
+        - mastodon
+        - stackoverflow
+    github:
+      username: sdjmchattie
+    linkedin:
+      username: stuart-m-53269467
+    mastodon:
+      profilelink: https://hachyderm.io/@sdjmchattie
+    stackoverflow:
+      username: 772095/sdjmchattie
