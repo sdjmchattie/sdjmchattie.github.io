@@ -2,6 +2,8 @@
 date = '2025-01-21T20:00:00Z'
 draft = false
 title = 'How I built my website and host it for free on GitHub Pages'
+description = "In this tutorial, I will show you how I've used a tool called Hugo to build a static website from markdown contents and how the built site can be automatically deployed to GitHub Pages. In about half an hour, you too can have a website up and running without paying a penny."
+featured_image = '/images/featured-hugo-github-pages.jpg'
 toc = true
 +++
 
@@ -266,3 +268,6 @@ Things you might want to look into at this point:
 - Which theme would you like and does it provide extra functionality you might find useful?
 - How to add and organise your pages using Hugo.
 - How to make a part of your Hugo site be your blog (usually by using a predefined section name like post).
+
+If you want a reference for how you might want to lay out the files for your own site, be sure to check out the [repository for this site](https://github.com/sdjmchattie/sdjmchattie.github.io).
+There you can see how I've chosen a theme and how I've configured the look of the site where I didn't want it to be quite the way the theme has as a default.
