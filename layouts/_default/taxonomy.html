@@ -1,13 +1,14 @@
+{{ define "title" }}{{ .Title }} {{ $.Data.Singular | humanize }} | {{ .Site.Title }}{{ end }}
 {{ define "header" }}{{ partial "page-header.html" . }}{{ end }}
 {{ define "main" }}
   <article class="cf pa3 pa4-m pa4-l">
     <header>
       <h1 class="f1">
-        {{ .Title }}
+        {{ .Title }} {{ $.Data.Singular | humanize }}
       </h1>
     </header>
-    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links {{ $.Param "text_color" | default "mid-gray" }}">
-      <p>{{ i18n "taxonomyPageList" . }}</p>
+    <div class="measure-wide-l f4 lh-copy nested-copy-line-height nested-links {{ $.Param "text_color" | default "mid-gray" }}">
+      <p>The following pages use the “{{ .Title }}” {{$.Data.Singular }}.</p>
     </div>
   </article>
   <div class="mw8 center">
