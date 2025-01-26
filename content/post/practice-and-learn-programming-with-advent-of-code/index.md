@@ -5,7 +5,7 @@ title: I play Advent of Code, and you should too!
 description: |-
   For the past 5 years, I've been playing Advent of Code.
   Every year Eric Wastl creates 25 puzzles with an associated story about Santa.
-  Each puzzle has two parts and can be solved in any programming language your prefer.
+  Each puzzle has two parts and can be solved in any programming language you prefer.
   If you get all the answers right, collecting all 50 stars, you can consider yourself one of a very select group of people!
 featured_image: /images/featured-advent-of-code.jpg
 cover_dimming_class: bg-black-60
