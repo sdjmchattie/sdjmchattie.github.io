@@ -120,12 +120,12 @@ It's worth noting that I have a tendency to go for scripting languages over more
 
 | Year | Stars | Languages |
 | ---- | ----: | --------- |
-| [2019](https://github.com/sdjmchattie/AdventOfCode2019) | 27 | Python |
-| [2020](https://github.com/sdjmchattie/AdventOfCode2020) | 48 | Ruby |
-| [2021](https://github.com/sdjmchattie/AdventOfCode2021) | 38 | JavaScript |
-| [2022](https://github.com/sdjmchattie/AdventOfCode2022) | 50 | Python |
-| [2023](https://github.com/sdjmchattie/AdventOfCode2023) | 50 | C# and [Rust](https://github.com/sdjmchattie/AdventOfCode2023Rust) |
-| [2024](https://github.com/sdjmchattie/AdventOfCode2024) | 50 | Ruby |
+| 2019 |    27 | [Python](https://github.com/sdjmchattie/AdventOfCode2019) |
+| 2020 |    48 | [Ruby](https://github.com/sdjmchattie/AdventOfCode2020) |
+| 2021 |    38 | [JavaScript](https://github.com/sdjmchattie/AdventOfCode2021) |
+| 2022 |    50 | [Python](https://github.com/sdjmchattie/AdventOfCode2022) |
+| 2023 |    50 | [C#](https://github.com/sdjmchattie/AdventOfCode2023) and [Rust](https://github.com/sdjmchattie/AdventOfCode2023Rust) |
+| 2024 |    50 | [Ruby](https://github.com/sdjmchattie/AdventOfCode2024) |
 
 In 2020, there was just one puzzle that got the better of me.
 Because the second star on day 25 expects you to have all 49 other stars, it leaves me two stars short of completion!
