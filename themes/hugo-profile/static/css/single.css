@@ -234,6 +234,12 @@
   opacity: 0.9;
 }
 
+#single aside.toc .toc-content ol li,
+#single aside.toc .toc-content ul li {
+  padding-top: 0.5em;
+  line-height: 1.2em;
+}
+
 #single aside.toc .toc-content ol li a,
 #single aside.toc .toc-content ul li a {
   font-size: 16px;
