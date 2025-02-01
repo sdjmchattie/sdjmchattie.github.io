@@ -1,7 +1,7 @@
 baseURL: https://sdjmchattie.github.io/
 languageCode: en-gb
 title: IsCoding
-theme: ananke
+theme: hugo-profile
 markup:
   tableOfContents:
     startLevel: 2
@@ -9,3 +9,11 @@ markup:
 taxonomies:
   tag: tags
 preserveTaxonomyNames: true
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
