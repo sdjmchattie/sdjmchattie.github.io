@@ -91,7 +91,7 @@ It's a big topic so I can't really cover it in this post.
 To get a GitHub Pages entry for your user on GitHub, you need to create a new repository with a specific name.
 To do this, go to the plus menu at the top of the GitHub site and choose "New repository" as shown.
 
-{{< figure src="github-add-repository.jpg" alt="Screen snip showing the add menu on GitHub, highlighting the New repository entry" >}}
+![GitHub add repository](github-add-repository.jpg "Screen snip showing the add menu on GitHub, highlighting the New repository entry")
 
 The repository must be given a name matching the format `your-username.github.io`.
 All other values can be left at their defaults.
@@ -103,7 +103,7 @@ Now that you have a repository for your user's GitHub Pages, we can prepare it t
 Go to the Settings tab for your new repository and choose the Pages page from the left menu.
 It should look something like this.
 
-{{< figure src="github-repo-settings.jpg" alt="Screen snip showing the settings tab for a repository, open at the Pages screen" >}}
+![GitHub repository settings](github-repo-settings.jpg "Screen snip showing the settings tab for a repository, open at the Pages screen")
 
 Change the Source dropdown to GitHub Actions as shown.
 
