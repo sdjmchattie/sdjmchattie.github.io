@@ -53,7 +53,7 @@ navbar:
   menus:
     disableAbout: false
     disableExperience: false
-    disableEducation: false
+    disableEducation: true
     disableProjects: false
     disableAchievements: false
     disableContact: false
