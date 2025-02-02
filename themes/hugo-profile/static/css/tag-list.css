@@ -6,11 +6,11 @@
     border: none;
 }
 
-#list-page .card a {
+#list-page a {
     text-decoration: none;
 }
 
-#list-page .card a h5 {
+#list-page a .card h5 {
     color: var(--text-color) !important;
 }
 

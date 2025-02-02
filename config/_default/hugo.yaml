@@ -9,6 +9,8 @@ markup:
 taxonomies:
   tag: tags
 preserveTaxonomyNames: true
+pagination:
+  pagerSize: 9
 outputs:
   home:
     - "HTML"

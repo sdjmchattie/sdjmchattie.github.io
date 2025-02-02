@@ -1,0 +1,33 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Title }} of {{ .Site.Title }}" />
+<link
+  rel="stylesheet"
+  href="{{ .Site.Params.staticPath }}/css/tag-list.css"
+  media="all"
+/>
+{{ end }} {{ define "title" }} {{.Title }} | {{ .Site.Title }} {{ end }} {{
+define "main" }}
+<div class="container pt-5" id="list-page">
+  <h2 class="text-center pb-2">{{.Title}}</h2>
+  <div class="row">
+    {{ range .Pages.ByTitle }}
+    <div class="col-lg-4 col-md-6 my-3">
+      <div class="card-columns">
+        <a href="{{ .RelPermalink }}" class="primary-font card-title">
+          <div class="card h-100" title="{{ .Title }}">
+            <div class="card-body bg-transparent p-4 shadow-sm">
+              <h5 class="card-title bg-transparent d-inline">
+                {{ .Title }}
+              </h5>
+              <h5 class="float-end">
+                {{ len .RegularPages }}
+              </h5>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
