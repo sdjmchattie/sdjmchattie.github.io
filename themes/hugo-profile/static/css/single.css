@@ -121,16 +121,16 @@
   margin: 5px;
   margin-bottom: 2em;
   padding: 2em;
-  background-color: var(--secondary-color) !important;
-  color: var(--text-secondary-color) !important;
+  background-color: var(--secondary-color-dark) !important;
+  color: var(--text-secondary-color-dark) !important;
   max-height: 450px;
 }
 
 #single .page-content pre > code {
-  color: var(--text-secondary-color) !important;
+  color: var(--text-secondary-color-dark) !important;
 }
 
-#single .page-content code {
+#single .page-content p > code {
   color: var(--primary-color) !important;
   border: 1px solid rgb(220, 220, 220);
   padding-right: 0.2em;
