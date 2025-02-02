@@ -1,5 +1,5 @@
 #single {
-  padding: 60px 0;
+  padding: 60px 0 30px;
   line-height: 1.7em;
   font-size: 17px;
 }
@@ -187,7 +187,7 @@
 
 /* Tags */
 #single aside.tags {
-  max-height: 22vh;
+  max-height: 40vh;
   overflow: scroll;
 }
 
@@ -216,7 +216,7 @@
 /*TOC*/
 #single aside.toc {
   padding: 0.7rem 1rem;
-  max-height: 45vh;
+  max-height: 50vh;
   overflow: scroll;
 }
 
@@ -261,27 +261,27 @@
 
 /* Social */
 
-#single aside.social {
-  padding: 0.7rem 1rem;
+#single div.social {
+  padding: 1rem 1rem 0rem;
+  text-align: right;
 }
 
-#single aside.social h5 {
-  margin: 0.7em 0;
-  margin-bottom: 1em;
+#single div.social p {
+  display: inline-block;
+  margin: 0.7em 0.7em 0.7em;
   color: var(--text-color);
 }
 
-#single aside.social .social-content {
-  margin-bottom: 1em;
+#single div.social .social-content {
+  display: inline-block;
   opacity: 0.9;
 }
 
-#single aside.social .social-content ul {
-  margin-bottom: 1em;
+#single div.social .social-content ul {
   opacity: 0.9;
 }
 
-#single aside.social .social-content ul li a {
+#single div.social .social-content ul li a {
   border: 1px solid var(--text-link-color);
   padding: 0.7rem;
   color: var(--text-link-color) !important;
@@ -289,12 +289,12 @@
   overflow: hidden;
 }
 
-#single aside.social .social-content ul li {
+#single div.social .social-content ul li {
   margin: 0.7rem 0.5rem;
   margin-left: 0;
 }
 
-#single aside.social .social-content ul li:hover a {
+#single div.social .social-content ul li:hover a {
   opacity: 0.8;
   color: var(--text-link-color) !important;
 }
