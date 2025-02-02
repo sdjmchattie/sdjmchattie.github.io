@@ -173,6 +173,9 @@
   background-color: var(--secondary-color);
   border-radius: 0.7rem;
   padding: 0.7rem 1rem;
+}
+
+#single aside:not(:last-child) {
   margin-bottom: 1em;
 }
 
