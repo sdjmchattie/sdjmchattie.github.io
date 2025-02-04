@@ -64,7 +64,7 @@ header .navbar.animate {
 .tooltip-inner {
     line-height: 1rem;
 }
-.tooltip .tooltip-arrow { 
+.tooltip .tooltip-arrow {
     visibility: hidden !important;
 }
 
@@ -132,12 +132,11 @@ header .navbar.animate {
 
 #hero a.btn.social-icon {
     color: var(--primary-color) !important;
-    line-height: 0%;
     border-radius: 50%;
     margin-top: 50px;
-    padding: 0.7rem;
     border: 1px solid var(--primary-color);
     transition: none;
+    aspect-ratio: 1/1;
 }
 
 #hero a.btn.social-icon img {
@@ -150,7 +149,6 @@ header .navbar.animate {
 
 #hero a.btn {
     margin-top: 50px;
-    padding: 0.7rem 1.75rem;
     border: 1px solid var(--primary-color);
     color: var(--text-color) !important;
     border-radius: .75rem;
@@ -297,7 +295,7 @@ header .navbar.animate {
 
 #experience .nav-item .nav-link {
     color: var(--text-color) !important;
-    border-bottom: 2px solid transparent; 
+    border-bottom: 2px solid transparent;
     border-radius: 0%;
     transition: none;
     cursor: pointer;
@@ -305,11 +303,11 @@ header .navbar.animate {
 
 #experience .nav-item .nav-link.active {
     color: var(--text-color) !important;
-    border-bottom: 2px solid var(--primary-color); 
+    border-bottom: 2px solid var(--primary-color);
     opacity: 0.8;
 }
 
-#experience .nav-item .nav-link.active:hover { 
+#experience .nav-item .nav-link.active:hover {
     transition: none !important;
 }
 
