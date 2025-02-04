@@ -1,16 +1,9 @@
 baseURL: https://sdjmchattie.github.io/
 languageCode: en-gb
-title: IsCoding
-theme: hugo-profile
 markup:
   tableOfContents:
     startLevel: 2
     endLevel: 3
-taxonomies:
-  tag: tags
-preserveTaxonomyNames: true
-pagination:
-  pagerSize: 9
 outputs:
   home:
     - "HTML"
@@ -19,3 +12,13 @@ outputs:
   page:
     - "HTML"
     - "RSS"
+pagination:
+  pagerSize: 9
+preserveTaxonomyNames: true
+services:
+  googleAnalytics:
+    id: G-34WM07R68F
+taxonomies:
+  tag: tags
+theme: hugo-profile
+title: IsCoding

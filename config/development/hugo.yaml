@@ -1,2 +1,5 @@
 buildDrafts: true
 buildFuture: true
+services:
+  googleAnalytics:
+    id: G-DEVELOPMENT
