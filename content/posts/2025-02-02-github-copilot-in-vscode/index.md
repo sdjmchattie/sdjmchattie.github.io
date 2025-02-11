@@ -1,6 +1,6 @@
 ---
 aliases:
-  - using-github-copilot-in-visual-studio-code
+  - /posts/using-github-copilot-in-visual-studio-code
 date: 2025-02-02
 title: How to use GitHub Copilot Free in Visual Studio Code
 description: |-

@@ -1,6 +1,6 @@
 ---
 aliases:
-  - practice-and-learn-programming-with-advent-of-code
+  - /posts/practice-and-learn-programming-with-advent-of-code
 date: 2025-01-26
 title: I play Advent of Code, and you should too!
 description: |-

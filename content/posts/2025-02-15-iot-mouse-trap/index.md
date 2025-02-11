@@ -1,6 +1,6 @@
 ---
 aliases:
-  - making-my-humane-mouse-trap-notify-me-when-it-has-caught-a-mouse
+  - /posts/making-my-humane-mouse-trap-notify-me-when-it-has-caught-a-mouse
 date: 2025-02-15
 title: Making a smart "Internet of Things" mouse trap
 description: |-

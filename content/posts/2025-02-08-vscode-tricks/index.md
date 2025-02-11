@@ -1,6 +1,6 @@
 ---
 aliases:
-  - tips-and-tricks-when-working-in-visual-studio-code
+  - /posts/tips-and-tricks-when-working-in-visual-studio-code
 date: 2025-02-08
 title: Tricks I use in Visual Studio Code to work more efficiently
 description: |-
