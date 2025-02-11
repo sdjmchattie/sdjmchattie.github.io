@@ -1,10 +1,12 @@
 ---
-date: 2025-02-08T18:50:00Z
-draft: false
+aliases:
+  - tips-and-tricks-when-working-in-visual-studio-code
+date: 2025-02-08
 title: Tricks I use in Visual Studio Code to work more efficiently
 description: |-
   Visual Studio Code is an incredibly competent development tool, but it can be hard to know how to use it efficiently.
   This post looks at some of the extensions I use; how to work with files in a workspace and how to manipulate file contents with some advanced shortcuts.
+slug: tips-and-tricks-in-visual-studio-code
 image: /images/posts/visual-studio-code.jpg
 tags:
   - VSCode
@@ -37,7 +39,7 @@ Here are a few of the extensions I use and why I think they make Visual Studio C
 
 ### GitHub Copilot
 
-I have a whole article on this blog about [GitHub Copilot in Visual Studio Code]({{< relref "using-github-copilot-in-visual-studio-code" >}}).
+I have a whole article on this blog about [GitHub Copilot in Visual Studio Code]({{< relref "2025-02-02-github-copilot-in-vscode" >}}).
 What this allows you to do is get help from AI when you aren't sure how to do what you want to do in a programming language.
 You can discuss with GitHub Copilot in a chat window, and it will also make suggestions while you are writing code, which can dramatically reduce the time to write the more mundane boilerplate code.
 
