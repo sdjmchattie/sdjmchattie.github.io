@@ -7,7 +7,7 @@ description: |-
   Microsoft announced on 18th December 2024 that they were introducing a free tier for GitHub Copilot.
   This post shows you how to make use of this offer in Visual Studio Code.
 slug: using-github-copilot-in-visual-studio-code
-image: /images/posts/github-copilot.jpg
+image: /images/posts/2025-02-02-github-copilot-in-vscode.jpg
 tags:
   - GitHub
   - Copilot

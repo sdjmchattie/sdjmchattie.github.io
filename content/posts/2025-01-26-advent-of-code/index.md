@@ -9,7 +9,7 @@ description: |-
   Each puzzle has two parts and can be solved in any programming language you prefer.
   If you get all the answers right, collecting all 50 stars, you can consider yourself one of a very select group of people!
 slug: practice-programming-with-advent-of-code
-image: /images/posts/advent-of-code.jpg
+image: /images/posts/2025-01-26-advent-of-code.jpg
 tags:
   - Algorithms
   - Learning

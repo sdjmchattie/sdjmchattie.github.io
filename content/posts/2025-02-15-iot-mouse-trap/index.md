@@ -7,7 +7,7 @@ description: |-
   Humane mouse traps are great, but they do have the problem that if you don't notice they've caught something, they're not so humane any more.
   In this article, I explored a personal project to make the mouse trap smarter so it can notify me when a mouse has been caught.
 slug: making-my-humane-mouse-trap-smart
-image: /images/posts/smart-mouse-trap.jpg
+image: /images/posts/2025-02-15-iot-mouse-trap.jpg
 tags:
   - Electronics
   - Microcontrollers
