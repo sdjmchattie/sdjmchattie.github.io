@@ -1,5 +1,6 @@
 baseURL: https://sdjmchattie.github.io/
 languageCode: en-gb
+enableGitInfo: true
 markup:
   tableOfContents:
     startLevel: 2
