@@ -4,3 +4,8 @@ main:
     title: Blog posts
     url: /posts
     weight: 10
+  - identifier: rss
+    name: RSS
+    title: RSS feed
+    url: /index.xml
+    weight: 20
