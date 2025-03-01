@@ -99,3 +99,5 @@ I love to discuss these sorts of things and I am still learning electronics so I
 
 One thing I think I could have done better is to put the reed switch between the batteries and the voltage regulator instead of after it.
 I don't think it's going to cause any troubles the way I have it, but there's a chance the voltage regulator could fail by being powered all the time without any load.
+
+**Note:** This article contains information that was correct at the time of publishing, but I have since published [an update article]({{< ref "2025-03-08-iot-mouse-trap-update" >}}) on this topic which you might also find interesting.
