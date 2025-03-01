@@ -53,6 +53,10 @@
   width: 100%;
 }
 
+#single .page-content a:has(img)::after {
+  display: none;
+}
+
 #single .page-content h1,
 #single .page-content h2,
 #single .page-content h3,
