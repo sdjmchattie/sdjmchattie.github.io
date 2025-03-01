@@ -1,13 +1,19 @@
 name: Merge Scheduled Pull Requests
 
 on:
+  # Runs when a pull request is opened, edited, or synchronized
   pull_request:
     types:
       - opened
       - edited
       - synchronize
+
+  # Runs every day at 08:30
   schedule:
     - cron: 20 8 * * *
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
   merge_schedule:
