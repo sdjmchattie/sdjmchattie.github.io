@@ -10,7 +10,7 @@ on:
 
   # Runs every day at 08:30
   schedule:
-    - cron: 20 8 * * *
+    - cron: 30 8 * * *
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
