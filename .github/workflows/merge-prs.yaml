@@ -18,6 +18,8 @@ on:
 jobs:
   merge_schedule:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - uses: gr2m/merge-schedule-action@v1.x
         env:
