@@ -21,6 +21,6 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - uses: gr2m/merge-schedule-action@v1.x
+      - uses: gr2m/merge-schedule-action@v2.x
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
