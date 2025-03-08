@@ -7,10 +7,12 @@ slug: go-series-simple-data-types
 image: /images/posts/2025-03-01-go-simple-data-types.jpg
 tags:
   - Go
+  - Go Series
   - Learning
 ---
 
 This is the second post in the Go series.
+You can see a list of all of the posts in this series by visiting the [Go Series]({{< ref "/tags/go-series" >}}) tag.
 This week we look at simple data types and how Go handles variable assignments.
 
 Go is a strongly typed language.
