@@ -9,10 +9,12 @@ slug: go-series-what-is-go-lang
 image: /images/posts/2025-02-22-introduction-to-go.jpg
 tags:
   - Go
+  - Go Series
   - Learning
 ---
 
 This post is the first in a series of posts I will be making about the programming language Go.
+You can see a list of all of the posts in this series by visiting the [Go Series]({{< ref "/tags/go-series" >}}) tag.
 I've been meaning to learn a new language for a while and I wanted to share what I'm learning with others.
 The posts may not be back to back, but I needed a common thread to write about and I think this one will be interesting.
 
