@@ -14,7 +14,7 @@ outputs:
     - "HTML"
     - "RSS"
 pagination:
-  pagerSize: 9
+  pagerSize: 12
 permalinks:
   page:
     posts: /posts/:year/:month/:day/:slug/
