@@ -34,7 +34,7 @@ jobs:
     needs: merge_schedule
     steps:
       - name: Display outputs
-        run: echo "${{ toJson(steps.merge_schedule.outputs) }}"
+        run: echo "${{ toJson(needs.merge_schedule.outputs) }}"
       - name: Dump GitHub Actions context
         run: |
           echo "Dumping context for debugging"
