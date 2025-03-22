@@ -32,7 +32,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Output merged pull requests
-        run: echo "mergedPrs=${{ steps.merge-schedule.outputs.merged_pull_requests }}"
+        run: echo "mergedPrs=${{ steps.merge-schedule.outputs.merged_pull_requests }}" >> $GITHUB_OUTPUT
   deploy_website:
     needs: merge_schedule
     if: ${{ fromJson(needs.merge_schedule.outputs.mergedPrs)[0] != null }}
