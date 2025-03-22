@@ -2,13 +2,6 @@
 name: Deploy Hugo site to Pages
 
 on:
-  # Runs on pull requests being closed (i.e. closed or merged) that target the main branch
-  pull_request:
-    branches:
-      - main
-    types:
-      - closed
-
   # Runs on pushes targeting the default branch
   push:
     branches:
@@ -16,6 +9,9 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
+  # Allows other workflows to call this one
+  workflow_call:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:

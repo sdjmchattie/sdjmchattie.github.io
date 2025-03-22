@@ -16,10 +16,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  merge_schedule:
+  merge-schedule:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: gr2m/merge-schedule-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  deploy-website:
+    if: ${{ fromJson(steps.merge-schedule.outputs.merged_pull_requests)[0] != null }}
+    uses: ./.github/workflows/hugo.yaml
