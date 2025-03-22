@@ -26,7 +26,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Output merged pull requests
-        run: echo "mergedPrs=${{ steps.merge-schedule.outputs.merged_pull_requests }}" >> $GITHUB_OUTPUT
+        if: ${{ fromJson(steps.merge-schedule.outputs.merged_pull_requests)[0] != null }}
+        run: echo "prsWereMerged=true" >> $GITHUB_OUTPUT
   deploy_website:
     needs: merge_schedule
 
@@ -41,4 +42,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check value
-        run: echo "mergedPrs=${{ needs.merge_schedule.outputs.mergedPrs }}"
+        run: echo "mergedPrs=${{ needs.merge_schedule.outputs.prsWereMerged }}"
