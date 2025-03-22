@@ -36,7 +36,7 @@ jobs:
       - name: Display outputs
         run: echo "${{ toJson(needs.merge_schedule.outputs) }}"
       - name: Display hello array
-        run: echo "${{ toJson(needs.merge_schedule.outputs.hello_array) }}"
+        run: echo "${{ toJson(needs.merge_schedule.outputs.hello_array)[0] }}"
       - name: Dump GitHub Actions context
         run: |
           echo "Dumping context for debugging"
