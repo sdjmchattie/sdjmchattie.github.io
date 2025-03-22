@@ -52,5 +52,5 @@ jobs:
       pages: write
       id-token: write
 
-    if: ${{ needs.merge_schedule.outputs.hello_array[0] != null }}
+    if: ${{ fromJSON(needs.merge_schedule.outputs.merged_pull_requests)[0] != null }}
     uses: ./.github/workflows/hugo.yaml
