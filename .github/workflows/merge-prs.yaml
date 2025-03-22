@@ -47,5 +47,5 @@ jobs:
       pages: write
       id-token: write
 
-    if: ${{ needs.merge_schedule.outputs.prsWereMerged != null }}
+    if: ${{ needs.merge_schedule.outputs.prsWereMerged == 'true' }}
     uses: ./.github/workflows/hugo.yaml
