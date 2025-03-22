@@ -27,7 +27,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     outputs:
       merged_pull_requests: ${{ steps.merge-schedule.outputs.merged_pull_requests }}
-      hello_array: '["hello"]'
+      hello_array: '[{"foo": "bar"}]'
       always_true: true
   display_outputs:
     runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
       - name: Display outputs
         run: echo "${{ toJSON(needs.merge_schedule.outputs) }}"
       - name: Display hello array
-        run: echo "${{ toJSON(needs.merge_schedule.outputs.hello_array[0]) }}"
+        run: echo "${{ toJSON(needs.merge_schedule.outputs.hello_array) }}"
       - name: Check for value
         run: echo "${{ toJSON(needs.merge_schedule.outputs.hello_array[0]) == 'hello' }}"
       - name: Dump GitHub Actions context
