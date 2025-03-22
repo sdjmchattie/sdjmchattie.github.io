@@ -35,5 +35,5 @@ jobs:
         run: echo "mergedPrs=${{ steps.merge-schedule.outputs.merged_pull_requests }}" >> $GITHUB_OUTPUT
   deploy_website:
     needs: merge_schedule
-    if: ${{ needs.merge_schedule.outputs.mergedPrs != "[]" }}
+    if: ${{ needs.merge_schedule.outputs.mergedPrs != '[]' }}
     uses: ./.github/workflows/hugo.yaml
