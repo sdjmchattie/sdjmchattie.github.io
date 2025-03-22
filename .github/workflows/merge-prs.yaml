@@ -37,9 +37,9 @@ jobs:
       pages: write
       id-token: write
 
-    # if: ${{ needs.merge_schedule.outputs.mergedPrs != '[]' }}
-    # uses: ./.github/workflows/hugo.yaml
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check value
-        run: echo "mergedPrs=${{ needs.merge_schedule.outputs.prsWereMerged }}"
+    if: ${{ needs.merge_schedule.outputs.prsWereMerged != null }}
+    uses: ./.github/workflows/hugo.yaml
+    # runs-on: ubuntu-latest
+    # steps:
+    #   - name: Check value
+    #     run: echo "mergedPrs=${{ needs.merge_schedule.outputs.prsWereMerged }}"
