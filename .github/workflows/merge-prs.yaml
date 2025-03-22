@@ -32,8 +32,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: merge_schedule
     steps:
-      - name: Check value
-        run: echo "mergedPrs=${{ needs.merge_schedule.outputs.prsWereMerged }}"
+      - name: Value was true
+        if: ${{ needs.merge_schedule.outputs.prsWereMerged == 'true' }}
+        run: echo "prsWereMerged is true"
+      - name: Value was null
+        if: ${{ needs.merge_schedule.outputs.prsWereMerged == null }}
+        run: echo "prsWereMerged is null"
   deploy_website:
     needs: merge_schedule
 
