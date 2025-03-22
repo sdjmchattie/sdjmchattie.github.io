@@ -38,7 +38,7 @@ jobs:
       - name: Display hello array
         run: echo "${{ needs.merge_schedule.outputs.hello_array }}"
       - name: Check for value
-        run: echo "${{ needs.merge_schedule.outputs.hello_array == '[hello]' }}"
+        run: echo "${{ needs.merge_schedule.outputs.hello_array == '[\"hello\""]' }}"
       - name: Dump GitHub Actions context
         run: |
           echo "Dumping context for debugging"
