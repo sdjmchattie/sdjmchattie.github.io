@@ -15,12 +15,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to be able to call the deployment workflow
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   merge_schedule:
     permissions: write-all
@@ -35,8 +29,16 @@ jobs:
         run: echo "mergedPrs=${{ steps.merge-schedule.outputs.merged_pull_requests }}" >> $GITHUB_OUTPUT
   deploy_website:
     needs: merge_schedule
+
+    # Sets permissions of the GITHUB_TOKEN to be able to call the deployment workflow
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
     # if: ${{ needs.merge_schedule.outputs.mergedPrs != '[]' }}
     # uses: ./.github/workflows/hugo.yaml
+    runs-on: ubuntu-latest
     steps:
       - name: Check value
         run: echo "mergedPrs=${{ needs.merge_schedule.outputs.mergedPrs }}"
