@@ -36,9 +36,9 @@ jobs:
       - name: Display outputs
         run: echo "${{ toJSON(needs.merge_schedule.outputs) }}"
       - name: Display hello array
-        run: echo "${{ toJSON(needs.merge_schedule.outputs.hello_array) }}"
-      - name: Check for value
-        run: echo "${{ toJSON(needs.merge_schedule.outputs.hello_array[0]) == 'hello' }}"
+        run: echo "${{ needs.merge_schedule.outputs.hello_array }}"
+      - name: Display hello array 0
+        run: echo "${{ needs.merge_schedule.outputs.hello_array[0] }}"
       - name: Dump GitHub Actions context
         run: |
           echo "Dumping context for debugging"
