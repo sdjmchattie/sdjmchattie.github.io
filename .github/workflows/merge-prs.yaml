@@ -34,11 +34,11 @@ jobs:
     needs: merge_schedule
     steps:
       - name: Display outputs
-        run: echo "${{ toJson(needs.merge_schedule.outputs) }}"
+        run: echo "${{ toJSON(needs.merge_schedule.outputs) }}"
       - name: Display hello array
         run: echo "${{ toJSON(needs.merge_schedule.outputs.hello_array) }}"
       - name: Check for value
-        run: echo "${{ toJSON(needs.merge_schedule.outputs.hello_array)[0] == 'hello' }}"
+        run: echo "${{ needs.merge_schedule.outputs.hello_array[0] == 'hello' }}"
       - name: Dump GitHub Actions context
         run: |
           echo "Dumping context for debugging"
@@ -52,5 +52,5 @@ jobs:
       pages: write
       id-token: write
 
-    if: ${{ toJSON(needs.merge_schedule.outputs.hello_array)[0] != null }}
+    if: ${{ needs.merge_schedule.outputs.hello_array[0] != null }}
     uses: ./.github/workflows/hugo.yaml
