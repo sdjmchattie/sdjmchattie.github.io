@@ -27,8 +27,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     outputs:
       merged_pull_requests: ${{ steps.merge-schedule.outputs.merged_pull_requests }}
-      hello_array: '[{"foo": "bar"}]'
-      always_true: true
   deploy_website:
     needs: merge_schedule
 
