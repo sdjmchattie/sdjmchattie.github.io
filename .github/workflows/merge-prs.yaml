@@ -20,6 +20,11 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
-      - uses: gr2m/merge-schedule-action@v2
+      - name: Do merge checks
+        id: merge-schedule
+        uses: gr2m/merge-schedule-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy website
+        if: ${{ fromJson(steps.merge-schedule.outputs.merged_pull_requests)[0] != null }}
+        uses: ./.github/workflows/hugo.yaml
