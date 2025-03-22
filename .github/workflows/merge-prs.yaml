@@ -25,6 +25,16 @@ jobs:
         uses: gr2m/merge-schedule-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploy website
-        if: ${{ fromJson(steps.merge-schedule.outputs.merged_pull_requests)[0] != null }}
-        uses: ./.github/workflows/hugo.yaml
+    outputs:
+      merged_pull_requests: ${{ steps.merge-schedule.outputs.merged_pull_requests }}
+  deploy_website:
+    needs: merge_schedule
+
+    # Sets permissions of the GITHUB_TOKEN to be able to call the deployment workflow
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    if: ${{ fromJSON(needs.merge_schedule.outputs.merged_pull_requests)[0] != null }}
+    uses: ./.github/workflows/hugo.yaml

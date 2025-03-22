@@ -9,6 +9,7 @@
 define "main" }}
 <div class="container pt-5" id="list-page">
   <h2 class="text-center pb-2">{{.Title}}</h2>
+  <h6 class="text-center">{{ .Params.description | emojify }}</h6>
   <div class="row">
     {{ range .Paginator.Pages }}
     <div class="col-lg-4 col-md-6 my-3">
