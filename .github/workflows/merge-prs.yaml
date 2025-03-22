@@ -27,6 +27,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     outputs:
       merged_pull_requests: ${{ steps.merge-schedule.outputs.merged_pull_requests }}
+      empty_braces: '[]'
+      always_true: true
+  display_outputs:
+    runs-on: ubuntu-latest
+    needs: merge_schedule
+    steps:
+      - name: Display outputs
+        run: echo "${{ toJson(steps.merge_schedule.outputs) }}"
+      - name: Dump GitHub Actions context
+        run: |
+          echo "Dumping context for debugging"
+          env
   deploy_website:
     needs: merge_schedule
 
