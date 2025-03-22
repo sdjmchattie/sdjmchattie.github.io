@@ -27,14 +27,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     outputs:
       merged_pull_requests: ${{ steps.merge-schedule.outputs.merged_pull_requests }}
-      empty_braces: '[]'
+      hello_array: '["hello"]'
       always_true: true
   display_outputs:
     runs-on: ubuntu-latest
     needs: merge_schedule
     steps:
       - name: Display outputs
-        run: echo "${{ toJson(needs.merge_schedule.outputs.merged_pull_requests) }}"
+        run: echo "${{ toJson(needs.merge_schedule.outputs) }}"
+      - name: Display hello array
+        run: echo "${{ toJson(needs.merge_schedule.outputs.hello_array) }}"
       - name: Dump GitHub Actions context
         run: |
           echo "Dumping context for debugging"
