@@ -8,9 +8,9 @@ on:
       - edited
       - synchronize
 
-  # Runs every day at 08:30
+  # Runs every day at 02:30
   schedule:
-    - cron: 30 8 * * *
+    - cron: 30 2 * * *
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -25,16 +25,3 @@ jobs:
         uses: gr2m/merge-schedule-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    outputs:
-      merged_pull_requests: ${{ steps.merge-schedule.outputs.merged_pull_requests }}
-  deploy_website:
-    needs: merge_schedule
-
-    # Sets permissions of the GITHUB_TOKEN to be able to call the deployment workflow
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-
-    if: ${{ fromJSON(needs.merge_schedule.outputs.merged_pull_requests)[0] != null }}
-    uses: ./.github/workflows/hugo.yaml
