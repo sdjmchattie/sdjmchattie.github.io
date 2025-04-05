@@ -22,8 +22,13 @@
                 </a>
             </div>
         </div>
-        <div class="col-md-12 text-center">
-            Note that any views expressed on this site are my own personal opinion and should not be taken to be the opinion of any other entity.
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <p>Note that any views expressed on this site are my own personal opinion and should not be taken to be the opinion of any other entity.</p>
+            {{ with .Site.GetPage "/ai-policy"}}
+                <p>For information about use of AI on this site, please see my <a href="{{ .RelPermalink }}">{{ .Title }}</a>.</p>
+            {{ end }}
         </div>
     </div>
 </div>
