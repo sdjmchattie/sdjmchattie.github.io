@@ -35,15 +35,22 @@ func greet(name string) {
 
 func main() {
     greet("Alice")
+    greet("Bob")
 }
 ```
 
-In this example:
-
-`greet` is a function that takes a single parameter `name` of type `string`.
+Here `greet` is a function that takes a single parameter `name` of type `string`.
 Inside `greet`, we use `fmt.Printf` to print a greeting message.
-In the `main` function, we call `greet` with the argument `"Alice"`.
+
+In the `main` function, we call `greet` with the argument `"Alice"` and we call it again with the argument `"Bob"`.
 The `main` function is the entry point of the Go application and is what is called first.
+
+So the application outputs two greetings and the code has been reused.
+
+```text
+Hello, Alice!
+Hello, Bob!
+```
 
 ## Function Parameters
 
@@ -79,7 +86,7 @@ func sum(numbers ...int) int {
 
 In this `sum` function:
 
-- `numbers ...int` indicates that `sum` can accept any number of `int` arguments.
+- `numbers ...int` indicates that `sum` can accept any number of `int` arguments and they well be available inside the function as slice `[]int` called `numbers`.
 - Inside the function, we iterate over `numbers` using a `for` loop and accumulate the total.
 
 Examples of calling `sum` with any number of integer arguments are like so:
@@ -90,6 +97,33 @@ func main() {
     fmt.Println(sum(10, 20, 30, 40)) // Outputs: 100
 }
 ```
+
+### Rule of variadic parameters
+
+- You can only have one variadic parameter in a function.
+- It must be the final parameter in the list.
+
+This is because Go needs to know where the fixed parameters end and where the variable-length list begins. For example:
+
+```go
+func log(level string, messages ...string) {
+    for _, msg := range messages {
+        fmt.Printf("[%s] %s\n", level, msg)
+    }
+}
+```
+
+This is valid — a fixed level parameter followed by a variadic messages parameter.
+But the reverse wouldn't compile:
+
+```go
+// Invalid: variadic parameter not last
+func invalid(messages ...string, level string) {
+    // ...
+}
+```
+
+Go will raise a compile-time error if you try to do this.
 
 ## Return Values
 
@@ -167,9 +201,9 @@ func rectangleDimensions(length, width float64) (area, perimeter float64) {
 
 In this `rectangleDimensions` function:
 
-We define two named return values: `area` and `perimeter`, both of type float64.
-Inside the function, we assign values to area and perimeter.
-The return statement without arguments returns the named values.
+We define two named return values: `area` and `perimeter`, both of type `float64`.
+Inside the function, we assign values to `area` and `perimeter`.
+The `return` statement without arguments returns the named values.
 You can call this function and use the returned values:
 
 ```go
