@@ -172,18 +172,21 @@ For this project, we'll use unit testing to validate the behavior of our `Cell`,
 
 We’ll write tests for the following:
 
-- **Cell Class**:
-  - Ensure that a cell’s value can be set and retrieved correctly.
-  - Validate that the list of valid candidates updates properly when a value is assigned to the cell.
+#### `Cell` class
 
-- **Grid Class**:
-  - Test that the grid initializes correctly with all cells empty.
-  - Verify that retrieving rows, columns, and blocks works as expected.
-  - Check that the grid can detect if the puzzle is solved.
+- Ensure that a cell’s value can be set and retrieved correctly.
+- Validate that the list of valid candidates updates properly when a value is assigned to the cell.
 
-- **Solver Class**:
-  - Test the basic solving logic (e.g., filling cells with only one valid candidate).
-  - Ensure that the solver stops when no further deductions can be made and that it doesn’t modify already filled cells.
+#### `Grid` class
+
+- Test that the grid initializes correctly with all cells empty.
+- Verify that retrieving rows, columns, and blocks works as expected.
+- Check that the grid can detect if the puzzle is solved.
+
+#### `Solver` class
+
+- Test the basic solving logic (e.g., filling cells with only one valid candidate).
+- Ensure that the solver stops when no further deductions can be made and that it doesn’t modify already filled cells.
 
 ### Testing Strategy
 
