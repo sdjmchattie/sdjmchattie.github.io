@@ -260,7 +260,7 @@ Here’s a list of the steps we need to take to build the Sudoku solver based on
    - Once the basic solver is working, implement more advanced solving techniques to handle harder puzzles.
    - Continuously test and refine the solver as we add more rules.
 
-### Wrap-Up
+## Wrap-Up
 
 In this post, we've outlined the process of planning and building a Sudoku solver in Python.
 We’ve discussed the structure of the application, the classes we'll need, and the initial logic to get us started.
