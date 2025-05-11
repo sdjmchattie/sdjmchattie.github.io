@@ -1,6 +1,6 @@
 ---
 date: 2025-05-10
-title: "Planning and building a Sudoku solver in Python"
+title: "Planning a Sudoku solver in Python"
 description: |-
   This is the first post in a new series, building an efficient Sudoku solver using Python.
   In this post, we'll explore the problem space and plan the first parts of the software.
