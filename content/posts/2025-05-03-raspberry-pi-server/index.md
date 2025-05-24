@@ -12,6 +12,7 @@ tags:
   - Pi-Hole
   - Docker
   - Portainer
+  - Self Hosting
 ---
 
 A Raspberry Pi home server offers a low-cost, high-flexibility solution for everything from ad-blocking to home automation.
