@@ -98,6 +98,9 @@ This opens the interactive terminal UI, divided into several key panels:
 1. **Stash Panel** — Manage your stash: save changes or apply stashed content. Press `5` to toggle.
 1. **Preview / Diff Panel** — Allows you to preview changes, diffs, or logs, helping you understand exactly what’s being committed or changed.
 
+You can also use the mouse to choose items in the panels.
+When you're inside a panel, use `[` and `]` to move between the tabs inside that panel.
+
 ---
 
 ## Core Operations Made Easy
@@ -105,29 +108,34 @@ This opens the interactive terminal UI, divided into several key panels:
 ### Staging and Unstaging Files
 
 Highlight files in the Files panel.
-Press `Space` to toggle staging.
-You can also select specific hunks or lines with `V` and stage individually — perfect for precise commits.
+Press `Space` to toggle staging for the file or directory.
+Alternatively, with a file selected, press `Enter` which moves into precision commit mode.
+From here, you select which lines you want to stage with the cursor keys, using `Shift` to highlight multiple lines.
+Then you press `Space` to include those lines in the staging area.
+
+Move between the Staged changes and Unstaged changes panels using the `Tab` key.
+Once you're happy with your choices, press `Esc` to exit the precision commit mode.
 
 ### Committing Changes
 
-In the commits panel, select the current branch, then press `c` to open the commit message editor.
-Confirm with Enter, and your commit is recorded.
+Once you have all your desired changes in a staged state, press the `c` key while the Files panel is still focussed.
+A dialog appears asking you to provide your commit message and description.
 
 ### Branching and Merging
 
 Navigate to the Branches panel (`3`).
-Use shortcuts to create (`a`), delete (`d`), or switch branches (`Enter`).
+Use shortcuts to create (`n`), delete (`d`), or switch/checkout branches (`Space`).
 To rebase onto another branch, select your branch, press `r`, and choose the upstream branch.
 
 ### Rebasing and Amends
 
-Press `Shift+A` on a commit to amend it with staged changes.
 Rebase interactively with `r`, selecting commits to reapply as needed.
+When the Files panel is in focus, `A` amends the most recent commit.
+If the Commits panel is in focus, `A` amends the highlighted commit.
 
 ### Pushing and Pulling
 
-Push your current branch: press `P`.
-Pull latest changes: press `f` to fetch, then `r` to rebase.
+Push your current branch with `P`, or else use lowercase `p` to pull in latest changes.
 
 ### Conflict Resolution
 
