@@ -8,8 +8,12 @@ sslug: managing-git-repositories-with-lazygit
 image: /images/posts/2025-05-31-lazygit-repository-management.jpg
 tags:
   - Git
+  - Lazygit Series
   - Developer Tools
 ---
+
+This is the first post in a new series about the Git GUI tool that works directly in your terminal: Lazygit.
+You can see a list of all of the posts in this series by visiting the [Lazygit Series]({{< ref "/tags/lazygit-series" >}}) tag.
 
 Let’s face it: managing Git repositories via command-line commands can sometimes feel cumbersome and repetitive.
 You might be familiar with the basic commands, but as your projects grow, so do your Git management tasks — staging, branching, rebasing, merging, resolving conflicts, and more.
