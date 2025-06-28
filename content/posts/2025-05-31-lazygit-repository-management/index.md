@@ -4,7 +4,7 @@ title: "Managing Git Repositories with Lazygit: The Terminal UI Powerhouse"
 description: |-
   Git is hard, but LazyGit makes it easy.
   It is freely available and provides a user interface in the terminal that behaves like a full GUI.
-sslug: managing-git-repositories-with-lazygit
+slug: managing-git-repositories-with-lazygit
 image: /images/posts/2025-05-31-lazygit-repository-management.jpg
 tags:
   - Git

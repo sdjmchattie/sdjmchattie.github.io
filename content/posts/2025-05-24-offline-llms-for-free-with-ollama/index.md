@@ -4,7 +4,7 @@ title: "Unlocking the Power of Local Offline Language Models: Set Up Ollama for 
 description: |-
   Having access to large language models (LLMs) is becoming essential for both enthusiasts and professionals.
   Whether you’re working on Mac, Windows, or Linux, you can use Ollama to run LLMs on your local machine, ensuring security, privacy and subscription-free access to your LLM of choice.
-sslug: access-offline-llms-for-free-with-ollama
+slug: access-offline-llms-for-free-with-ollama
 image: /images/posts/2025-05-24-offline-llms-for-free-with-ollama.jpg
 tags:
   - Large Language Models
