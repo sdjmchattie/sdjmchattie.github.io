@@ -101,8 +101,6 @@ def test_values():
     assert x - y < 0
 ```
 
-### Keep Tests Focused
-
 While you can have multiple asserts in one test, make sure the test covers a single piece of functionality.
 Avoid combining unrelated checks that test different behaviours in the same test function.
 
