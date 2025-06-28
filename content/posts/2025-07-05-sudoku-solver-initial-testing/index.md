@@ -30,17 +30,17 @@ The current code at the time of writing can be found [on GitHub](https://github.
 
 ---
 
-## A quick primer
+## A Quick Primer
 
 The aim of this post is not to teach you every last detail about unit testing, but if you're new to this area, you'll probably need some information about how unit testing is used.
 Let's cover some basics of pytest that will help to explain the rest of this post.
 
-### Test function naming
+### Test Function Naming
 
 Test functions should be named starting with `test_` to be automatically discovered by pytest.
 Naming them by what they test makes the output from testing much more meaningful and easier to scope out the failures if they happen.
 
-### Asserting truthiness
+### Asserting Truthiness
 
 Use a plain `assert` statement to check if a condition is true.
 
@@ -50,7 +50,7 @@ def test_value_is_positive():
     assert value > 0
 ```
 
-### Asserting falseness
+### Asserting Falseness
 
 Similar to truth checks, you can assert that something is not true.
 
@@ -60,7 +60,7 @@ def test_value_is_not_zero():
     assert value != 0
 ```
 
-### Checking expected return values
+### Checking Expected Return Values
 
 Verify that your functions return the expected output.
 
@@ -72,7 +72,7 @@ def test_add_sums_its_arguments():
     assert add(2, 3) == 5
 ```
 
-### Asserting exceptions for bad input
+### Asserting Exceptions for Bad Input
 
 Use `pytest.raises()` as a context manager to assert that a particular exception is raised when invalid input is given.
 This gives you the opportunity to check your error handling is correct
@@ -90,7 +90,7 @@ def test_divide_raises():
         divide(10, 0)
 ```
 
-### Combining multiple asserts
+### Combining Multiple Asserts
 
 You can have multiple assertions in one test function as long as they check the same logical behaviour.
 
@@ -101,7 +101,7 @@ def test_values():
     assert x - y < 0
 ```
 
-### Keep tests focused
+### Keep Tests Focused
 
 While you can have multiple asserts in one test, make sure the test covers a single piece of functionality.
 Avoid combining unrelated checks that test different behaviours in the same test function.
