@@ -26,7 +26,7 @@ Remember that we built a simple set of classes that can load a Sudoku input file
 It is then able to print the state of the grid to the screen.
 While simple, let's see how we can put our code through its paces and find some ways to make it more robust.
 
-The current code at the time of writing can be found [on GitHub](https://github.com/sdjmchattie/sudoku-solver/tree/blog/2025-07-05) where you can also see the [differences](https://github.com/sdjmchattie/sudoku-solver/tree/blog/2025-05-17) since the last blog post.
+The current code at the time of writing can be found [on GitHub](https://github.com/sdjmchattie/sudoku-solver/tree/blog/2025-07-05) where you can also see the [differences](https://github.com/sdjmchattie/sudoku-solver/compare/blog/2025-05-17...blog/2025-07-05) since the last blog post.
 
 ---
 
@@ -139,6 +139,8 @@ So let's focus on writing tests around that.
 The following are test names and a description of what the test does.
 Refer to the repository linked at the start of this post to see the final file.
 
+These tests are written to `tests/model/test_cell.py` and get picked up by `pytest` automatically.
+
 - `test_new_cell_has_no_value` — Call the constructor without arguments and assert the new cell to have no `value` set.
 - `test_new_cell_has_candidates_set` — Also assert that the new cell has the standard 1–9 `candidates` set.
 - `test_new_cell_value_can_be_set_through_init` — Assert that we can set the `value` via the constructor argument.
@@ -157,6 +159,52 @@ Refer to the repository linked at the start of this post to see the final file.
 These tests form the core set of tests I would want to apply to this class.
 While writing them, I was able to identify a couple of errors in my logic from last time.
 This is where the value of tests come in, because those did not show up when I was running the code without tests before.
+
+The main bug I'm talking about is where the setter for `value` gets called with `None` and the `candidates` were being cleared when they shouldn't be.
+
+### The Grid Class
+
+We'll test the `Grid` class similarly to how we tested the `Cell` class, but it's worth noting that we don't test the private methods.
+We want to test the public behaviour of the class, not every inner working.
+
+The following is a list of functionality we're writing tests for.
+
+- When constructing a new one with empty values, the grid has empty cells.
+- When constructing a new one with numbers throughout, the grid stores those numbers.
+- When using the class method for creating a grid from notation, the grid is generated with the correct values.
+- When the notation contains unexpected characters, they are treated as empty cells.
+- A well defined grid is able to be displayed like a proper Sudoku puzzle.
+- A grid that isn't 9x9 should not be accepted.
+
+One bug that was identified here was that a `0` in the input for the `Grid` class tries to create a cell with a zero value, which raises a `ValueError` from the `Cell` class.
+
+A second bug is that the grid allowed any size of numbers, when the `display()` method expects exactly 9x9.
+
+Both these bugs have been fixed now.
+
+### The Main Method
+
+Ideally we'd also write tests for the `main` method, but it mostly just calls the things we've already tested.
+The only extra thing it does is reads the contents from a file, and it's not usually a good idea to test file I/O unless you really need to.
+In the interests of keeping things simple, we'll assume this bit of the application gets enough of a workout when we're using it.
+
+---
+
+## Test Results
+
+When we run the tests now, we get something that looks similar to the following:
+
+```shell
+configfile: pyproject.toml
+collected 21 items
+
+tests/model/test_cell.py ..............                   [ 66%]
+tests/model/test_grid.py .......                          [100%]
+
+====================== 21 passed in 0.01s ======================
+```
+
+As long as we continue to get this result in the future, we know we haven't broken our existing functionality.
 
 ---
 
