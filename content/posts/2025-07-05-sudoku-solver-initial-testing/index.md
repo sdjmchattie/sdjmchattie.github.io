@@ -106,6 +106,60 @@ Avoid combining unrelated checks that test different behaviours in the same test
 
 ---
 
+## Setup Pytest
+
+Before we can run any tests, we need to set `pytest` up.
+Thankfully this is really simple with our Poetry environment.
+The following command prepares the installation of `pytest` in our project as a dev dependency.
+It should be run from the root of the repository.
+
+```shell
+poetry add --dev pytest
+```
+
+Now all we need to do to run our tests is execute the following command.
+
+```shell
+poetry run pytest
+```
+
+`pytest` will search for any test files in our repository and will execute them.
+
+---
+
+## Writing Tests
+
+So in order to write some tests, we need to review our functionality and test accordingly.
+We'll start with the classes that have the least dependencies and work our way up.
+
+### The Cell Class
+
+The `Cell` class has an initialiser as well as a getter and setter for the value in the cell and the candidates for the cell.
+So let's focus on writing tests around that.
+The following are test names and a description of what the test does.
+Refer to the repository linked at the start of this post to see the final file.
+
+- `test_new_cell_has_no_value` — Call the constructor without arguments and assert the new cell to have no `value` set.
+- `test_new_cell_has_candidates_set` — Also assert that the new cell has the standard 1–9 `candidates` set.
+- `test_new_cell_value_can_be_set_through_init` — Assert that we can set the `value` via the constructor argument.
+- `test_new_cell_value_can_be_set_through_property` — Assert that we can set the `value` on an existing cell.
+- `test_cell_with_value_has_no_candidates` — Assert that if the cell is constructed with a `value`, the `candidates` are removed.
+- `test_setting_cell_value_removes_candidates` — Assert that if the `value` is set on a cell after construction, the `candidates` are removed.
+- `test_cell_value_cannot_be_set_twice` — Assert that setting a `value` on a cell that already has one raises the correct `ValueError`.
+- `test_cell_value_cannot_be_set_to_zero` — Assert that setting `0` as the `value` on a cell raises the correct `ValueError`.
+- `test_cell_value_cannot_be_set_to_ten` — Assert that setting `10` as the `value` on a cell raises the correct `ValueError`.
+- `test_cell_candidates_can_be_set` — Assert that the `candidates` set can be updated.
+- `test_cell_candidates_returns_a_copy` — Assert that the `candidates` retrieved from the getter are a copy, not the original set.
+- `test_cell_candidates_cannot_be_set_if_value_is_set` — Assert that `candidates` cannot be set when the cell has a `value` and that the correct `ValueError` is raised.
+- `test_cell_candidates_cannot_be_set_with_invalid_value_zero` — Assert that the correct `ValueError` is raised when the `candidates` are set with a `0` in the set.
+- `test_cell_candidates_cannot_be_set_with_invalid_value_ten` — Assert that the correct `ValueError` is raised when the `candidates` are set with a `10` in the set.
+
+These tests form the core set of tests I would want to apply to this class.
+While writing them, I was able to identify a couple of errors in my logic from last time.
+This is where the value of tests come in, because those did not show up when I was running the code without tests before.
+
+---
+
 ## Wrapping up
 
 Now that we have completed testing of our existing functionality, we can continue developing our solution in the knowledge that what we've already created will not drift into a broken state.
