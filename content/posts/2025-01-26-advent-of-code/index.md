@@ -11,8 +11,8 @@ description: |-
 slug: practice-programming-with-advent-of-code
 image: /images/posts/2025-01-26-advent-of-code.jpg
 tags:
-  - Algorithms
-  - Learning
+  - Advent of Code
+  - Puzzles
   - Python
   - C#
   - Ruby
