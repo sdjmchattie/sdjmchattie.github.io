@@ -132,7 +132,7 @@ Installation is as simple as:
     curl -sSL https://install.pi-hole.net | bash
 
 Follow the instructions carefully and choose your ad-blocking needs.
-Once installed you can use the admin interface to change settings by going to [http://192.168.1.250:8123](http://192.168.1.250:8123) or whatever IP you set earlier.
+Once installed you can use the admin interface to change settings by going to [http://192.168.1.250/admin](http://192.168.1.250/admin) or whatever IP you set earlier.
 
 Once pi-hole is running, you need to go to your regular network router and tell it to use a custom DNS server, pointing it at `192.168.1.250`.
 When devices next disconnect and reconnect to the network, they should start routing their DNS through pi-hole and receive ad-blocking by default.
