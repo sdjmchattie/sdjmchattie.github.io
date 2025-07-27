@@ -81,7 +81,7 @@ On the first boot, you may want to:
 
 - Update the system with the latest patches:
 
-      sudo apt update && sudo apt upgrade -y
+      sudo apt update && sudo apt full-upgrade -y
 
 - Change the default password for added security:
 
@@ -129,7 +129,7 @@ When it stops working the whole network stops with it so I like to remove all co
 
 Installation is as simple as:
 
-    sudo curl -sSL https://install.pi-hole.net | bash
+    curl -sSL https://install.pi-hole.net | sudo bash
 
 Follow the instructions carefully and choose your ad-blocking needs.
 Once installed you can use the admin interface to change settings by going to [http://192.168.1.250/admin](http://192.168.1.250/admin) or whatever IP you set earlier.
