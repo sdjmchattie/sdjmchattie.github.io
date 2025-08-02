@@ -10,6 +10,7 @@ tags:
   - Python
   - Software Architecture
   - Sudoku Series
+  - Puzzles
 ---
 
 This week, we hit a major milestone: our solver can now complete very easy Sudoku puzzles, thanks to the simplest rule of all — the single candidate rule.
