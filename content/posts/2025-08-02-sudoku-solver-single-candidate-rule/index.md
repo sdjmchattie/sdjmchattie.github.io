@@ -16,7 +16,7 @@ tags:
 This week, we hit a major milestone: our solver can now complete very easy Sudoku puzzles, thanks to the simplest rule of all — the single candidate rule.
 By writing code that parses the grid repeatedly and looks for opportunities to apply this rule, we're able to solve some of the simplest Sudoku puzzles and our app is finally achieving its goal for those puzzles.
 
-The current code at the time of writing can be found [on GitHub](https://github.com/sdjmchattie/sudoku-solver/tree/blog/2025-08-02) where you can also see the [pull request](https://github.com/sdjmchattie/sudoku-solver/pull/1) for the changes in this post.
+The current code at the time of writing can be found [on GitHub](https://github.com/sdjmchattie/sudoku-solver/tree/blog/2025-08-02) where you can also see the [pull request](https://github.com/sdjmchattie/sudoku-solver/pull/1/files) for the changes in this post.
 
 If you like this post and you'd like to know more about how to plan and write Python software, check out the [Python]({{< ref "/tags/python" >}}) tag.
 You can also find other posts in the [Sudoku Series]({{< ref "/tags/sudoku-series" >}}).
