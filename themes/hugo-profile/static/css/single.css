@@ -174,6 +174,45 @@
   font-size: 0.9em;
 }
 
+/* code clipboard button */
+#single .page-content .highlight {
+  position: relative;
+}
+
+#single .page-content .clipboard-button {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    opacity: 0.3;
+    background-color: #444;
+    border: 0.1rem solid #888;
+    border-radius: 5px;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    user-select: none;
+}
+
+#single .page-content .clipboard-button:hover {
+    opacity: 1;
+    border-color: var(--primary-color);
+    transition: 0.3s;
+}
+
+#single .page-content .clipboard-button.checked {
+    opacity: 1;
+    border-color: var(--primary-color);
+}
+
+#single .page-content .clipboard-button > svg {
+    fill: #888;
+    width: 1rem;
+    height: 1rem;
+}
+
 /* kbd and mark */
 
 #single .page-content kbd {
