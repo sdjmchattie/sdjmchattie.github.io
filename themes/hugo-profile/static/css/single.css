@@ -121,17 +121,48 @@
 /* code */
 
 #single .page-content pre {
+  position: relative;
   border-radius: 0.7em !important;
   margin: 5px;
   margin-bottom: 2em;
-  padding: 2em;
   background-color: var(--secondary-color-dark) !important;
   color: var(--text-secondary-color-dark) !important;
   max-height: 450px;
+  overflow: auto;
 }
 
 #single .page-content pre > code {
+  display: grid;
+  counter-reset: line;
+  counter-increment: line 0;
+  padding: 1em 0 1em 4.4rem;
   color: var(--text-secondary-color-dark) !important;
+
+  /* gutter strip */
+  background-image: linear-gradient(
+    to right,
+    rgba(115, 138, 148, 0.15) 3.5rem,
+    rgba(115, 138, 148, 0.4) 3.5rem,
+    transparent 3.6rem
+  );
+  background-attachment: local;
+}
+
+#single .page-content pre > code > span {
+  padding: 0 1rem 0 0;
+  box-sizing: border-box;
+  display: block;
+}
+
+#single .page-content pre > code > span::before {
+  content: counter(line);
+  counter-increment: line;
+  position: absolute;
+  left: 0;
+  width: 3.1rem;
+  text-align: right;
+  padding-right: 0.1rem;
+  color: rgba(115, 138, 148, 0.6);
 }
 
 #single .page-content p > code,
