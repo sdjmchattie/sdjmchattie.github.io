@@ -15,10 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
         copyBtn.addEventListener("click", () => {
             navigator.clipboard.writeText(code.innerText)
               .then(() => {
-                  copyBtn.blur(),
                   copyBtn.innerHTML = checkMarkSvg,
                   copyBtn.classList.add("checked");
                   setTimeout(() => {
+                      copyBtn.blur(),
                       copyBtn.innerHTML = clipboardSvg;
                       copyBtn.classList.remove("checked");
                   }, 2000);
