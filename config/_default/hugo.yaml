@@ -2,6 +2,8 @@ baseURL: https://stuart.mchattie.net/
 languageCode: en-gb
 enableGitInfo: true
 markup:
+  highlight:
+    guessSyntax: true
   tableOfContents:
     startLevel: 2
     endLevel: 3
