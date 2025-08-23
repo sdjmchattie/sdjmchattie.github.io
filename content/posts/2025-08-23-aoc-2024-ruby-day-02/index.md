@@ -26,7 +26,7 @@ You can also browse the full repository of my solutions [on GitHub](https://gith
 The problem presents us with a list of reports from a nuclear fusion/fission plant referred to as the Red-Nosed reactor.
 Each report is a list of integer "levels", such as:
 
-```
+```text
 7 6 4 2 1
 1 2 7 8 9
 9 7 6 2 1
