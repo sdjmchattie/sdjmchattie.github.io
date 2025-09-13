@@ -12,7 +12,7 @@ tags:
   - Puzzles
 ---
 
-The next rule to implement for the Sudoku solver are called the fish rules.
+The next rules to implement for the Sudoku solver are called the fish rules.
 There are three versions of these rules but they all share the same principles:
 
 - X-Wing works with a 2x2 fish pattern.
