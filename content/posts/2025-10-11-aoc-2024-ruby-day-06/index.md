@@ -12,6 +12,10 @@ tags:
   - Puzzles
 ---
 
+First I'd like to apologise that this is the second week in a row that I've covering Advent of Code.
+I've not had as much time to write this week as I'd like to.
+I will try to get something more substantial out in the following weeks.
+
 Day 6 of Advent of Code 2024 turned out to be trickier than it first looked, but it becomes easier when you can lean on a Grid implementation I built previously.
 I'm also able to use a jump-based simulator to keep part two fast and tidy.
 You can read the puzzle on [Advent of Code — Day 6](https://adventofcode.com/2024/day/6).
