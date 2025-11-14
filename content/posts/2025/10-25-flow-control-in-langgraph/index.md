@@ -13,7 +13,7 @@ tags:
 ---
 
 Conditional edges let your LangGraph apps make decisions mid-flow, so today we will branch our simple joke generator to pick a pun or a one-liner while keeping `wrap_presentation` exactly as it was.
-In the [previous post]({{< relref "2025-10-18-a-primer-in-langgraph" >}}) we built a two-node graph with `joke_writer` and `wrap_presentation`, and now we will insert a `choose_style` decision point and split into two specialised writers without changing the final presentation step.
+In the [previous post]({{< relref "10-18-a-primer-in-langgraph" >}}) we built a two-node graph with `joke_writer` and `wrap_presentation`, and now we will insert a `choose_style` decision point and split into two specialised writers without changing the final presentation step.
 
 ---
 

@@ -39,7 +39,7 @@ Here are a few of the extensions I use and why I think they make Visual Studio C
 
 ### GitHub Copilot
 
-I have a whole article on this blog about [GitHub Copilot in Visual Studio Code]({{< relref "2025-02-02-github-copilot-in-vscode" >}}).
+I have a whole article on this blog about [GitHub Copilot in Visual Studio Code]({{< relref "02-02-github-copilot-in-vscode" >}}).
 What this allows you to do is get help from AI when you aren't sure how to do what you want to do in a programming language.
 You can discuss with GitHub Copilot in a chat window, and it will also make suggestions while you are writing code, which can dramatically reduce the time to write the more mundane boilerplate code.
 

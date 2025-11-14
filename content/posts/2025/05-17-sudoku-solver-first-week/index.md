@@ -34,7 +34,7 @@ The current code at the time of writing can be found [on GitHub](https://github.
 ## Setting up a new project
 
 For this project, I used Poetry as it creates an environment for Python, separating the packages from the rest of your system.
-I wrote an article about [Python package management]({{< ref "2025-04-26-package-managers-for-python" >}}) last month which shows how to choose which package management you wish to use.
+I wrote an article about [Python package management]({{< ref "04-26-package-managers-for-python" >}}) last month which shows how to choose which package management you wish to use.
 
 After installing Poetry, I created a new project using
 

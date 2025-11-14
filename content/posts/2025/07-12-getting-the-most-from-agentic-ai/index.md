@@ -15,7 +15,7 @@ tags:
 
 Agentic AI represents a generational leap forward in how artificial intelligence systems operate, moving beyond single, monolithic models to autonomous, goal-oriented agents.
 
-If you missed it, my previous article on [how LLMs work under the hood]({{< ref "2025-04-05-how-llms-work" >}}) lays the foundation for how large language models (LLMs) produce the content they do.
+If you missed it, my previous article on [how LLMs work under the hood]({{< ref "04-05-how-llms-work" >}}) lays the foundation for how large language models (LLMs) produce the content they do.
 
 In this post, we will look at some of the downsides of LLMs and how they can be mitigated by using an agentic approach.
 We'll explore what agentic AI is, why you might choose to build an agentic system rather than rely on a single LLM, and introduce some of the popular frameworks that can help you get started with agentic AI.
@@ -148,4 +148,4 @@ By decomposing tasks, validating outputs, leveraging human input, and orchestrat
 
 If you want to explore how to use agentic AI in practice, stay tuned for our upcoming article on building first drafts of blog articles using LangGraph.
 
-Meanwhile, if you haven’t already, I recommend reviewing our foundational post on [how LLMs work under the hood]({{< ref "2025-04-05-how-llms-work" >}}) to get up to speed with the basics before diving deeper into agentic AI.
+Meanwhile, if you haven’t already, I recommend reviewing our foundational post on [how LLMs work under the hood]({{< ref "04-05-how-llms-work" >}}) to get up to speed with the basics before diving deeper into agentic AI.
