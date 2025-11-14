@@ -14,7 +14,7 @@ tags:
   - Follow-Up
 ---
 
-This is a follow-up for my [personal project on the humane mouse trap]({{< ref "2025-02-15-iot-mouse-trap" >}}) that notifies my phone via Home Assistant when the trap door is triggered.
+This is a follow-up for my [personal project on the humane mouse trap]({{< ref "02-15-iot-mouse-trap" >}}) that notifies my phone via Home Assistant when the trap door is triggered.
 
 I had feedback from fellow IoT enthusiasts that I could improve my design and I wanted to tidy up the circuitry a little.
 It looking a bit temporary with so many wires sticking everywhere and the components are all just push fitted in my first iteration.

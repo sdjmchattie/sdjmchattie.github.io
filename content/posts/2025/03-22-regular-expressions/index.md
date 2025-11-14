@@ -161,7 +161,7 @@ You simply turn them on as a mode when searching by enabling the button with a `
 
 So give them a try and find out the power you've been missing!
 
-Don't forget to check out my post about [tips and tricks in Visual Studio Code]({{< ref "2025-02-08-vscode-tricks" >}}) for more power user tricks you can do with searching.
+Don't forget to check out my post about [tips and tricks in Visual Studio Code]({{< ref "02-08-vscode-tricks" >}}) for more power user tricks you can do with searching.
 This includes using your regular expression to find a pattern, then highlight them all at once so they can be copied.
 Once on the clipboard, open a new document and paste, then you have only the sections from the original file that match your pattern.
 

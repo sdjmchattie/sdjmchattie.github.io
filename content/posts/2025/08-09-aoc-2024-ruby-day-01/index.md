@@ -13,7 +13,7 @@ tags:
 ---
 
 Advent of Code is an annual programming event that offers daily puzzles throughout December, delighting enthusiasts with clever challenges and a festive spirit.
-If you’d like to know more about what Advent of Code entails, take a look at my previous blog post: [Advent of Code Introduction]({{< ref "2025-01-26-advent-of-code" >}}).
+If you’d like to know more about what Advent of Code entails, take a look at my previous blog post: [Advent of Code Introduction]({{< ref "01-26-advent-of-code" >}}).
 
 I’m excited to share a new series detailing my solutions for Advent of Code 2024, written in Ruby.
 I chose Ruby because of its clear and logical approach to managing complex data, along with its functional syntax that makes parsing and analysing puzzle inputs straightforward.

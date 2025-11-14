@@ -138,7 +138,7 @@ To test a placement, I do not rerun the stepwise simulation.
 Instead, I walk the jump map from the starting direction up to the first obstruction, then repeatedly follow jump edges while tracking visited turn points in a `Set`.
 If I see a turn point again, a loop exists, and that candidate counts as valid.
 
-Here is the complete structure of part two, excluding the grid helper which was covered briefly in [Day 4]({{< relref "2025-09-20-aoc-2024-ruby-day-04" >}}).
+Here is the complete structure of part two, excluding the grid helper which was covered briefly in [Day 4]({{< relref "09-20-aoc-2024-ruby-day-04" >}}).
 
 ```ruby
 # ruby
