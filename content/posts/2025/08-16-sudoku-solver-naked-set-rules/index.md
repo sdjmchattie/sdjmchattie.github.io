@@ -12,7 +12,7 @@ tags:
   - Puzzles
 ---
 
-In the last [Sudoku Series blog post]({{< relref "2025-08-02-sudoku-solver-single-candidate-rule" >}}) we implemented the single candidate rule.
+In the last [Sudoku Series blog post]({{< relref "08-02-sudoku-solver-single-candidate-rule" >}}) we implemented the single candidate rule.
 In this post, we will look at implementing both the naked pair rule and the naked triple rule.
 These are documented alongside more advanced rules on a [Mastering Sudoku website](https://masteringsudoku.com/sudoku-solving-techniques/).
 

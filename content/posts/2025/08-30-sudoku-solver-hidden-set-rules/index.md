@@ -12,7 +12,7 @@ tags:
   - Puzzles
 ---
 
-In the last [Sudoku Series blog post]({{< relref "2025-08-16-sudoku-solver-naked-set-rules" >}}) we implemented the naked pair and the naked triple rules.
+In the last [Sudoku Series blog post]({{< relref "08-16-sudoku-solver-naked-set-rules" >}}) we implemented the naked pair and the naked triple rules.
 In this post, we will look at implementing the hidden single, hidden pair and hidden triple rules.
 Applying these rules is documented on many websites, but the two I've liked during my research are [Mastering Sudoku](https://masteringsudoku.com/hidden-pairs/) and [Sudoku.com](https://sudoku.com/sudoku-rules/hidden-pairs/).
 
@@ -124,7 +124,7 @@ The first thing we do while iterating over all 27 regions of the grid is to coun
 We then reject any candidates that appear more times than the size of the set we're looking for, since they cannot be part of a hidden set if they exist more times than the size of the set in the region.
 
 Next, we create possible combinations of candidates that might form a hidden set.
-If you've followed the [last post on this topic]({{< relref "2025-08-16-sudoku-solver-naked-set-rules" >}}), you'll know that the `combinations` function finds all the ways to combine the items of an iterable into groups of a given size.
+If you've followed the [last post on this topic]({{< relref "08-16-sudoku-solver-naked-set-rules" >}}), you'll know that the `combinations` function finds all the ways to combine the items of an iterable into groups of a given size.
 Once we form these combinations, we need to check each one to see if it is a valid hidden set.
 
 ```python

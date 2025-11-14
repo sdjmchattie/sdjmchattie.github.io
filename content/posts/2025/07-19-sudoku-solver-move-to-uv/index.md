@@ -16,7 +16,7 @@ tags:
 This is a very short post about our move from Poetry to UV in the Sudoku Solver we're building in Python.
 I don’t have a definitive reason for switching, but I’ve been experimenting with UV recently and I’m starting to prefer it over Poetry.
 In this post, we’ll outline the goals of the migration, the steps we took, and the outcome.
-If you find this informative, you may also benefit from my previous post about [Python package managers in 2025]({{< ref "2025-04-26-package-managers-for-python" >}}).
+If you find this informative, you may also benefit from my previous post about [Python package managers in 2025]({{< ref "04-26-package-managers-for-python" >}}).
 
 The current code at the time of writing can be found [on GitHub](https://github.com/sdjmchattie/sudoku-solver/tree/blog/2025-07-19) where you can also see the [differences](https://github.com/sdjmchattie/sudoku-solver/compare/blog/2025-07-05...blog/2025-07-19) since the last blog post.
 
