@@ -341,4 +341,4 @@ To summarise:
 - Loop control statements (`break`, `continue`, `goto`) help manage execution flow.
 - Nesting loops allows handling complex logic.
 
-If you've enjoyed what you've learned today, perhaps it would be a good opportunity to go back to the previous article about [aggregate data types]({{< ref "2025-03-15-go-aggregate-data-types" >}}) and see if you can use loops to go over the books in the shop, instead of writing separate lines of code to output each one.
+If you've enjoyed what you've learned today, perhaps it would be a good opportunity to go back to the previous article about [aggregate data types]({{< ref "03-15-go-aggregate-data-types" >}}) and see if you can use loops to go over the books in the shop, instead of writing separate lines of code to output each one.
