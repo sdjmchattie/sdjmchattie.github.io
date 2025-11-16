@@ -5,6 +5,15 @@
     }
   ],
   "settings": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "quickCommandButtons.buttons": [
+      {
+        "name": "$(run) Hugo Server",
+        "command": "hugo server -DM",
+        "color": "#4CAF50",
+        "shortcut": "h",
+        "terminalName": "Hugo Server"
+      }
+    ]
   }
 }
