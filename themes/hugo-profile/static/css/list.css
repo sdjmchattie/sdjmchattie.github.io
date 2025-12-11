@@ -6,13 +6,13 @@
     border: none;
 }
 
-#list-page .card a {
+#list-page a {
     display: inline-block;
     text-decoration: none;
     color: var(--text-link-color) !important;
 }
 
-#list-page .card a::after {
+#list-page a::after {
     content: "";
     display: block;
     width: 0;
@@ -23,13 +23,13 @@
     opacity: 0.5;
 }
 
-#list-page .card a:hover::after,
-#list-page .card a:focus::after,
-#list-page .card a:active::after {
+#list-page a:hover::after,
+#list-page a:focus::after,
+#list-page a:active::after {
     width: 100%;
 }
 
-#list-page .card a:has(img)::after {
+#list-page a:has(img)::after {
     display: none;
 }
 
