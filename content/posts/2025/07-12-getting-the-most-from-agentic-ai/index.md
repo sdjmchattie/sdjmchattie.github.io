@@ -6,7 +6,7 @@ description: |-
   Combining multiple specialised models as agents can significantly increase the power and flexibility of LLM-based systems.
   Here we explore the benefits and the kinds of systems you can build with agentic AI.
 slug: getting-the-most-from-agentic-ai
-image: /images/posts/2025-07-12-getting-the-most-from-agentic-ai.jpg
+image: /images/posts/2025/07-12-getting-the-most-from-agentic-ai.jpg
 tags:
   - Large Language Models
   - Generative AI

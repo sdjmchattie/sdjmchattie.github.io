@@ -4,7 +4,7 @@ title: "Go Series: Functions and their Parameters / Return Values"
 description: |-
   In this fifth post in the Go series, let's take a look at functions, what they are, how we can call them and what to expect them to return.
 slug: go-series-functions
-image: /images/posts/2025-04-12-go-functions.jpg
+image: /images/posts/2025/04-12-go-functions.jpg
 tags:
   - Go
   - Go Series

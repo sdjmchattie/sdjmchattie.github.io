@@ -5,7 +5,7 @@ description: |-
   In this post we implement the hidden single, pair and triple rules.
   These will allow solving more complicated Sudoku puzzles.
 slug: sudoku-solver-hidden-set-rules
-image: /images/posts/2025-08-30-sudoku-solver-hidden-set-rules.jpg
+image: /images/posts/2025/08-30-sudoku-solver-hidden-set-rules.jpg
 tags:
   - Python
   - Sudoku Series

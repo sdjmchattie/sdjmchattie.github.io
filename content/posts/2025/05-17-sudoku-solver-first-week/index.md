@@ -5,7 +5,7 @@ description: |-
   This is the second post in the Sudoku series, building an efficient Sudoku solver using Python.
   In this post, we'll review the steps I've taken in the first week in implementing our Sudoku solver.
 slug: sudoku-solver-first-week
-image: /images/posts/2025-05-17-sudoku-solver-first-week.jpg
+image: /images/posts/2025/05-17-sudoku-solver-first-week.jpg
 tags:
   - Python
   - Software Architecture
