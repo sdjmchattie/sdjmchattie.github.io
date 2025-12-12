@@ -4,7 +4,7 @@ title: "Go Series: Aggregate Data Types"
 description: |-
   In this third post in the Go series, let's take a look at aggregate data types which can be used to create collections of simple data types.
 slug: go-series-aggregate-data-types
-image: /images/posts/2025-03-15-go-aggregate-data-types.jpg
+image: /images/posts/2025/03-15-go-aggregate-data-types.jpg
 tags:
   - Go
   - Go Series

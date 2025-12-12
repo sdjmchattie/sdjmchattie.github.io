@@ -6,7 +6,7 @@ description: |-
   each other's solution. Here we look at all the different ways we might want to select cells
   to find a solution.
 slug: sudoku-solver-locating-your-neighbours
-image: /images/posts/2025-07-26-sudoku-solver-locating-your-neighbours.jpg
+image: /images/posts/2025/07-26-sudoku-solver-locating-your-neighbours.jpg
 tags:
   - Python
   - Sudoku Series

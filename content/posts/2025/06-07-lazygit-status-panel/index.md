@@ -5,7 +5,7 @@ description: |-
   The second post in this Lazygit series takes a look at the first panel in the application.
   The status panel may not be the most exciting, but it offers some useful functionality.
 slug: lazygit-status-panel
-image: /images/posts/2025-06-07-lazygit-status-panel.jpg
+image: /images/posts/2025/06-07-lazygit-status-panel.jpg
 tags:
   - Git
   - Lazygit Series

@@ -5,7 +5,7 @@ description: |-
   In this third post of the Sudoku series, we look at how to apply unit testing to our initial implementation.
   By testing our code, we are able to find the places it doesn't behave the way we want and we can therefore fix the logic.
 slug: sudoku-solver-initial-testing
-image: /images/posts/2025-07-05-sudoku-solver-initial-testing.jpg
+image: /images/posts/2025/07-05-sudoku-solver-initial-testing.jpg
 tags:
   - Python
   - Software Architecture

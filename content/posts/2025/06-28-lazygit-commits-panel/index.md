@@ -5,7 +5,7 @@ description: |-
   The fifth post in this Lazygit series takes a look at the fourth panel in the application.
   The commits panel is where you track your commits across all branches and take action on individual commits in your history.
 slug: lazygit-commits-panel
-image: /images/posts/2025-06-28-lazygit-commits-panel.jpg
+image: /images/posts/2025/06-28-lazygit-commits-panel.jpg
 tags:
   - Git
   - Lazygit Series

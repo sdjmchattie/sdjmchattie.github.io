@@ -5,7 +5,7 @@ description: |-
   In this post we implement the naked pair and naked triple rules.
   These will allow solving more complicated Sudoku puzzles.
 slug: sudoku-solver-naked-set-rules
-image: /images/posts/2025-08-16-sudoku-solver-naked-set-rules.jpg
+image: /images/posts/2025/08-16-sudoku-solver-naked-set-rules.jpg
 tags:
   - Python
   - Sudoku Series

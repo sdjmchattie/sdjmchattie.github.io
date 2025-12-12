@@ -4,7 +4,7 @@ title: "Go Series: Simple Data Types"
 description: |-
   For the second post in the Go series, let's take a look at some of the simple data types and how Go handles variable declarations.
 slug: go-series-simple-data-types
-image: /images/posts/2025-03-01-go-simple-data-types.jpg
+image: /images/posts/2025/03-01-go-simple-data-types.jpg
 tags:
   - Go
   - Go Series

@@ -6,7 +6,7 @@ description: |-
   It's simple, it's open source, it's powerful and it's flexible.
   Let's take a look at building a simple graph here and build up to more complex use cases.
 slug: a-primer-in-langgraph
-image: /images/posts/2025-10-18-a-primer-in-langgraph.jpg
+image: /images/posts/2025/10-18-a-primer-in-langgraph.jpg
 tags:
   - Python
   - LangGraph

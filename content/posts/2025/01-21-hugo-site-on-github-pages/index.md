@@ -5,7 +5,7 @@ date: 2025-01-21
 title: How I built my website and host it for free on GitHub Pages
 description: In this tutorial, I will show you how I've used a tool called Hugo to build a static website from markdown contents and how the built site can be automatically deployed to GitHub Pages. In about half an hour, you too can have a website up and running without paying a penny.
 slug: host-hugo-sites-for-free-in-github-pages
-image: /images/posts/2025-01-21-hugo-site-on-github-pages.jpg
+image: /images/posts/2025/01-21-hugo-site-on-github-pages.jpg
 tags:
   - Hugo
   - GitHub

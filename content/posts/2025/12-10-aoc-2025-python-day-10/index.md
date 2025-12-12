@@ -4,7 +4,7 @@ title: "Advent of Code 2025: Day 10"
 description: |-
   A look at my Python solution for Day 10 of Advent of Code 2025.
 slug: aoc-2025-python-day-10
-image: /images/posts/2025-12-10-aoc-2025-python-day-10.jpg
+image: /images/posts/2025/12-10-aoc-2025-python-day-10.jpg
 tags:
   - Python
   - Advent of Code

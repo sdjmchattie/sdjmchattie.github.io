@@ -4,7 +4,7 @@ title: "Do Not Goto Fail"
 description: |-
   Let's discuss code-styles, why they exist and what happens if you choose not to use them.
 slug: do-not-goto-fail
-image: /images/posts/2025-11-08-do-not-goto-fail.jpg
+image: /images/posts/2025/11-08-do-not-goto-fail.jpg
 tags:
   - Code Style
   - Discussions

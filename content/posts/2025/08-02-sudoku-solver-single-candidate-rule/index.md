@@ -5,7 +5,7 @@ description: |-
   In this post we explore the simplest rule for Sudoku solving — the single candidate rule.
   By implementing this rule in code, we can solve the easiest Sudoku puzzles with the solver we've been working on.
 slug: sudoku-solver-single-candidate-rule
-image: /images/posts/2025-08-02-sudoku-solver-single-candidate-rule.jpg
+image: /images/posts/2025/08-02-sudoku-solver-single-candidate-rule.jpg
 tags:
   - Python
   - Software Architecture

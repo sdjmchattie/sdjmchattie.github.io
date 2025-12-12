@@ -7,7 +7,7 @@ description: |-
   Visual Studio Code is an incredibly competent development tool, but it can be hard to know how to use it efficiently.
   This post looks at some of the extensions I use; how to work with files in a workspace and how to manipulate file contents with some advanced shortcuts.
 slug: tips-and-tricks-in-visual-studio-code
-image: /images/posts/2025-02-08-vscode-tricks.jpg
+image: /images/posts/2025/02-08-vscode-tricks.jpg
 tags:
   - VSCode
   - Tips and Tricks

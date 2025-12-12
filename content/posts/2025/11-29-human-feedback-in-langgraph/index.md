@@ -6,7 +6,7 @@ description: |-
   You want the quality of results that human's provide with the much higher speed of AI.
   In this post we will look at awaiting human feedback in the middle of a LangGraph execution.
 slug: human-in-the-loop-in-langgraph
-image: /images/posts/2025-11-29-human-feedback-in-langgraph.jpg
+image: /images/posts/2025/11-29-human-feedback-in-langgraph.jpg
 tags:
   - Python
   - LangGraph

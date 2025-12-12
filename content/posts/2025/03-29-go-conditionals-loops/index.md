@@ -4,7 +4,7 @@ title: "Go Series: Conditional Statements and Loops"
 description: |-
   In this fourth post in the Go series, let's take a look at how we can control the flow of the application by using conditional statements and loops; responding to the data we encounter at run time.
 slug: go-series-conditionals-and-loops
-image: /images/posts/2025-03-29-go-conditionals-loops.jpg
+image: /images/posts/2025/03-29-go-conditionals-loops.jpg
 tags:
   - Go
   - Go Series

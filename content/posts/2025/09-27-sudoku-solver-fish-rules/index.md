@@ -5,7 +5,7 @@ description: |-
   In this post we implement the fish rules.
   This will allow solving more complicated Sudoku puzzles.
 slug: sudoku-solver-fish-rules
-image: /images/posts/2025-09-27-sudoku-solver-fish-rules.jpg
+image: /images/posts/2025/09-27-sudoku-solver-fish-rules.jpg
 tags:
   - Python
   - Sudoku Series

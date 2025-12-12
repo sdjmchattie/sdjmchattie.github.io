@@ -5,7 +5,7 @@ description: |-
   Power is nothing without control which is why LangGraph offers control of the flow using conditional edges.
   In this post we will look at implementing a conditional edge to change the behaviour of the graph in real time.
 slug: flow-control-in-langgraph
-image: /images/posts/2025-10-25-flow-control-in-langgraph.jpg
+image: /images/posts/2025/10-25-flow-control-in-langgraph.jpg
 tags:
   - Python
   - LangGraph
