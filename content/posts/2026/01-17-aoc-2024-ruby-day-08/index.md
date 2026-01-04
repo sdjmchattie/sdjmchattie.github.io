@@ -1,11 +1,11 @@
 ---
-date: 2026-01-10
+date: 2026-01-17
 title: "Advent of Code 2024 Ruby Solutions: Day 8"
 description: |-
   Let's look at how to solve both parts of the Advent of Code 2024 puzzle on day 8.
   This solution is in Ruby, but the principles can be applied to any language.
 slug: aoc-2024-ruby-day-08
-image: /images/posts/2026/01-10-aoc-2024-ruby-day-08.jpg
+image: /images/posts/2026/01-17-aoc-2024-ruby-day-08.jpg
 tags:
   - Ruby
   - Advent of Code
