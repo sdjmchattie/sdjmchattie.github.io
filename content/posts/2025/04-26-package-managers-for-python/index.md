@@ -5,7 +5,7 @@ description: |-
   Package management is a critial part of software engineering and Python is one of the most used langauges in 2025.
   Here we review some of the most used package manager for Python and compare their functionality.
 slug: python-package-managers-in-2025
-image: /images/posts/2025-04-26-python-package-managers-in-2025.jpg
+image: /images/posts/2025/04-26-python-package-managers-in-2025.jpg
 tags:
   - Python
   - Package Management

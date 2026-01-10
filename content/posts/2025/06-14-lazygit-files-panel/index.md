@@ -5,7 +5,7 @@ description: |-
   The third post in this Lazygit series takes a look at the second panel in the application.
   The files panel is where you'll spend a lot of time choosing what to include in commits.
 slug: lazygit-files-panel
-image: /images/posts/2025-06-14-lazygit-files-panel.jpg
+image: /images/posts/2025/06-14-lazygit-files-panel.jpg
 tags:
   - Git
   - Lazygit Series

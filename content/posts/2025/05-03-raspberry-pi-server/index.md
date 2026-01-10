@@ -5,7 +5,7 @@ description: |-
   Having a home server may seem like an unnecessary maintenance burden for many, but it opens up so many possibilities.
   Mine is used to provide ad-blocking to my whole house using Pi-Hole, to run home automation tasks with Home Assistant, and to run software that should always be available using Docker.
 slug: setup-a-raspberry-pi-home-server
-image: /images/posts/2025-05-03-raspberry-pi-server.jpg
+image: /images/posts/2025/05-03-raspberry-pi-server.jpg
 tags:
   - Raspberry Pi
   - Home Assistant

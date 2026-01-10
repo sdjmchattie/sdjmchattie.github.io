@@ -5,7 +5,7 @@ description: |-
   The fourth post in this Lazygit series takes a look at the third panel in the application.
   The branches panel is where you manage your branching strategy and get an overview of your sync status with the remote.
 slug: lazygit-branches-panel
-image: /images/posts/2025-06-21-lazygit-branches-panel.jpg
+image: /images/posts/2025/06-21-lazygit-branches-panel.jpg
 tags:
   - Git
   - Lazygit Series

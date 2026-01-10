@@ -5,7 +5,7 @@ description: |-
   Regular expressions should be top of your list of things to learn next if you don't already use them.
   When you learn to master this tool, you become the only person in your team who can do complex text manipulation without writing custom software scripts.
 slug: introduction-to-regular-expressions
-image: /images/posts/2025-03-22-regular-expressions.jpg
+image: /images/posts/2025/03-22-regular-expressions.jpg
 tags:
   - Regular Expressions
   - Learning

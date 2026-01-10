@@ -5,7 +5,7 @@ description: |-
   In this post we implement the locked candidates rule.
   This will allow solving more complicated Sudoku puzzles.
 slug: sudoku-solver-locked-candidates-rule
-image: /images/posts/2025-09-13-sudoku-solver-locked-candidates-rule.jpg
+image: /images/posts/2025/09-13-sudoku-solver-locked-candidates-rule.jpg
 tags:
   - Python
   - Sudoku Series

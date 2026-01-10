@@ -6,7 +6,7 @@ description: |-
   Sometimes the risk is worth the reward.
   In this article we'll move from Poetry to UV in our Python Sudoku Solver.
 slug: sudoku-solver-move-to-uv
-image: /images/posts/2025-07-19-sudoku-solver-move-to-uv.jpg
+image: /images/posts/2025/07-19-sudoku-solver-move-to-uv.jpg
 tags:
   - Python
   - Package Management

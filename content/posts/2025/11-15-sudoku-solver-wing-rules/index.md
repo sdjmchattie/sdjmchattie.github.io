@@ -5,7 +5,7 @@ description: |-
   In this post we implement the XY-Wing and the XYZ-Wing rules.
   This will allow solving more complicated Sudoku puzzles.
 slug: sudoku-solver-wing-rules
-image: /images/posts/2025-11-15-sudoku-solver-wing-rules.jpg
+image: /images/posts/2025/11-15-sudoku-solver-wing-rules.jpg
 tags:
   - Python
   - Sudoku Series

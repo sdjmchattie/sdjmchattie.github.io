@@ -5,7 +5,7 @@ description: |-
   Following up on my previous post about turning my humane mouse trap into a smart IoT trap, I got some advice about how I could improve my design.
   This post looks at the changes I've made and also looks more closely at the Home Assistant automation side of things.
 slug: iot-mouse-trap-update
-image: /images/posts/2025-03-08-iot-mouse-trap-update.jpg
+image: /images/posts/2025/03-08-iot-mouse-trap-update.jpg
 tags:
   - Electronics
   - Home Assistant

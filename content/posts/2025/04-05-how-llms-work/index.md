@@ -6,7 +6,7 @@ description: |-
   as a whole. OpenAI's ChatGPT is probably the best known of these AI chat bots, but what lies under the
   hood on this technology and does that change how you should think about the results you get from it?
 slug: how-large-language-models-work
-image: /images/posts/2025-04-05-how-llms-work.jpg
+image: /images/posts/2025/04-05-how-llms-work.jpg
 tags:
   - Large Language Models
   - Generative AI

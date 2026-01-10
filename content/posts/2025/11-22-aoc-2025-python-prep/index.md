@@ -5,7 +5,7 @@ description: |-
   It's almost December 2025 and that means Advent of Code is just around the corner.
   They've slimmed the number of puzzles down to 12, but I'm still fully committed and have prepared a repository to solve these puzzles.
 slug: aoc-2025-python-prep
-image: /images/posts/2025-11-22-aoc-2025-python-prep.jpg
+image: /images/posts/2025/11-22-aoc-2025-python-prep.jpg
 tags:
   - Python
   - Advent of Code

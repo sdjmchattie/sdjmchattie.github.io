@@ -5,7 +5,7 @@ description: |-
   Let's look at how to solve both parts of the Advent of Code 2024 puzzle on day 4.
   This solution is in Ruby, but the principles can be applied to any language.
 slug: aoc-2024-ruby-day-04
-image: /images/posts/2025-09-20-aoc-2024-ruby-day-04.jpg
+image: /images/posts/2025/09-20-aoc-2024-ruby-day-04.jpg
 tags:
   - Ruby
   - Advent of Code

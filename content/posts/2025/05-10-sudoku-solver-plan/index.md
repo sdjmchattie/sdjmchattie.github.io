@@ -6,7 +6,7 @@ description: |-
   In this post, we'll explore the problem space and plan the first parts of the software.
   That includes deciding on object-oriented design, a user interface, and formats for input and output.
 slug: planning-a-sudoku-solver
-image: /images/posts/2025-05-10-sudoku-solver-plan.jpg
+image: /images/posts/2025/05-10-sudoku-solver-plan.jpg
 tags:
   - Python
   - Software Architecture
