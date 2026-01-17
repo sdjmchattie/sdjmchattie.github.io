@@ -69,8 +69,18 @@ In April 2025, a jump in tariff headlines from the US triggered a sharp market d
 I panicked and withdrew rather than leaving my investments alone.
 Not long after, tariff developments shifted and markets recovered quickly, with relief buying lifting major indices back toward highs.
 Because I had already pulled out, I missed a significant part of that rebound.
-This episode cemented a core mindset for me: volatility is normal, my plan needs to assume it, and knee-jerk reactions are usually costly.
 
+![My investment lesson in 2025](2025-mistake.jpg)
+
+I started my investments in 2024, marked A.
+By early 2025, at point B, I'd had returns of around £250 which was better than my cash ISA with a 5% gain.
+After the US announced tarrifs for foreign imports, the market lost value quickly.
+I did hold out for a while, but then did what you're not supposed to do and panicked.
+I asked the bank to sell all of my investments and it took them a few days to do so, meaning I sold at point C, the very worst time to sell it can now be seen.
+After the US softened their tarrif rules, the market started recovering quickly but I was not realising any of those gains.
+If I hadn't panicked and left my investments in place, I would have seen gains reaching £500 by the end of 2025 at point D.
+
+This episode cemented a core mindset for me: volatility is normal, my plan needs to assume it, and knee-jerk reactions are usually costly.
 I've heard it said that the worst enemy for your investment portfolio is you.
 I try not to fiddle with it more than necessary.
 90% or more of my portfolio is invested and then left alone to gain value on average over time.
