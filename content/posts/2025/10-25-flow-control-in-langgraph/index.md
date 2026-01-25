@@ -64,7 +64,7 @@ def choose_style(state: "JokeState") -> dict:
     return {"style": style}
 ```
 
-This isn't foolproof, as it would only choose the pun style for a joke about a cathedral or a dodge viper.
+This isn't foolproof, as it would only choose the pun style for a joke about a cat or a dog.
 However, for our demonstration purposes here, it will be fine.
 
 ---
