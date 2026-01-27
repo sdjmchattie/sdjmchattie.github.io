@@ -105,8 +105,11 @@ The `OutputFixingParser` wraps your base parser and uses an LLM to correct malfo
 Under the hood it takes the base parser’s formatting instructions and the bad text, asks an LLM to fix the text to satisfy the schema, and tries to parse again.
 You can use a different model and temperature for fixing than for generation, which is a handy way to mix a creative generator with a deterministic fixer.
 
+Note that `OutputFixingParser` is not available in the latest version of LangChain and may be fully deprecated in the future.
+For now, you can still import it by adding the `langchain-classic` package to your solution and using the import shown below.
+
 ```python
-from langchain.output_parsers import OutputFixingParser
+from langchain_classic.output_parsers import OutputFixingParser
 
 # A separate LLM to act as the "fixer"
 # Perhaps a weaker model which will run fast and doesn't need to be as creative
