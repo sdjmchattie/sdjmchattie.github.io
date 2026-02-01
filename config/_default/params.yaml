@@ -122,7 +122,7 @@ about:
       - Python
       - Ruby
       - Azure
-      - Ansible
+      - LangGraph
       - Docker
       - Generative AI
 
@@ -191,7 +191,7 @@ achievements:
   enable: true
   # title: "Custom Name"
   items:
-    - title: "AWS Certified Solutions Architect: Associate"
+    - title: "Previously Certified AWS Solutions Architect: Associate"
       content: |-
         I took the exam for this certification in December 2022 and scored 846 out of 1000.
         A score of 720 or more constitutes a pass.
