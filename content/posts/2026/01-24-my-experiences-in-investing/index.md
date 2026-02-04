@@ -128,5 +128,5 @@ I've started small, and built confidence with a plan I can live with through the
 I would be upset, but not destroyed by the loss of my portfolio.
 I wouldn't be investing if I couldn't face that reality.
 
-Just an FYI: I've chsnged my mind about writing about investing going forward.
+Just an FYI: I've changed my mind about writing about investing going forward.
 This will be my only post on the topic unless I have a change of heart.
