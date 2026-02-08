@@ -13,7 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
         copyBtn.innerHTML = clipboardSvg;
 
         copyBtn.addEventListener("click", () => {
-            navigator.clipboard.writeText(code.innerText)
+            // Extract text from each line-span to avoid browser-specific innerText differences
+            const lines = Array.from(code.querySelectorAll(":scope > span"))
+                .map(line => line.textContent);
+            navigator.clipboard.writeText(lines.join(""))
               .then(() => {
                   copyBtn.innerHTML = checkMarkSvg,
                   copyBtn.classList.add("checked");
