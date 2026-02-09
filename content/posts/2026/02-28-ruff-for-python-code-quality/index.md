@@ -197,6 +197,7 @@ select = ["E", "F", "I"]
 ```
 
 This configuration:
+
 - Sets the maximum line length to 88 characters (matching Black's default)
 - Targets Python 3.12
 - Enables pycodestyle errors (E), Pyflakes (F), and isort (I) rules
