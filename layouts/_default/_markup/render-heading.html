@@ -1,0 +1,5 @@
+{{- $isPost := or (eq .Page.Section "posts") (eq .Page.Type "posts") -}}
+{{- if and (eq .Level 2) $isPost -}}
+<hr>
+{{- end -}}
+<h{{ .Level }}{{ if .Anchor }} id="{{ .Anchor }}"{{ end }}>{{ .Text | safeHTML }}</h{{ .Level }}>
