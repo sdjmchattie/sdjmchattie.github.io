@@ -2,7 +2,8 @@
 date: 2026-02-14
 title: "Board Game Reviews: Fungi"
 description: |-
-
+  A cosy two-player card game about foraging mushrooms, cooking dishes, and managing a shifting forest market.
+  This review covers how it plays, why the decay pile makes decisions tense, and whether it delivers value in a small box.
 slug: fungi-game-review
 image: /images/posts/2026/02-14-fungi-game-review.jpg
 tags:
