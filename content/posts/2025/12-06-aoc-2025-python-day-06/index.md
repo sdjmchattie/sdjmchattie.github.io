@@ -15,15 +15,11 @@ Day 6 presents a neat parsing twist where the same worksheet must be interpreted
 We will outline what each part asks for, then walk through a compact Python implementation that builds column-wise maths problems and evaluates them.
 If you want to follow the whole series, check out the tag page at [Advent of Code]({{< ref "/tags/advent-of-code" >}}), and you can browse the full code for 2025 in [my repository](https://github.com/sdjmchattie/AdventOfCode2025).
 
----
-
 ## Understanding Day 6: Trash Compactor
 
 The full problem is on the [Advent of Code Day 6](https://adventofcode.com/2025/day/6) page.
 At a high level, you are given a very wide worksheet where each problem is a vertical stack of numbers with an operator at the bottom, and problems are separated by a blank column.
 Part 1 treats each vertical stack as a single problem using ordinary number formatting, while part 2 reinterprets the worksheet so that each column encodes a whole number read from top to bottom.
-
----
 
 ## Parsing and Evaluation Helpers
 
@@ -71,8 +67,6 @@ def prepare_input(file_content: list[str]) -> PuzzleInput:
     return file_content
 ```
 
----
-
 ## Part 1: Numbers are arranged in rows
 
 ### What part 1 requires
@@ -108,8 +102,6 @@ def part1(input: PuzzleInput) -> None:
 - We build `MathsProblem` instances and feed them to `_solve` for reduction and final summation.
 
 This leans on the puzzle guarantee that spacing columns separate problems and that alignment within a problem can be ignored once tokens are extracted.
-
----
 
 ## Part 2: Numbers are arranged in columns
 
@@ -156,8 +148,6 @@ def part2(input: PuzzleInput) -> None:
 
 The same `_solve` function then evaluates each reconstructed problem and sums the results.
 
----
-
 ## But how does it perform?
 
 - Part 1 relies on token transposition, which is safe because fully blank separator columns never produce tokens and thus naturally segment problems.
@@ -165,16 +155,12 @@ The same `_solve` function then evaluates each reconstructed problem and sums th
 - Part 2’s character-level transpose preserves exact column structure so that blank separators and bottom-row operators can be detected.
   It completes in 2.112 ms, so is actually slightly faster than part 1.
 
----
-
 ## Try it yourself
 
 - Fetch your personal input and run the program for both parts to verify your totals match the site for your dataset.
 - Read the complete problem statement on the [Advent of Code Day 6](https://adventofcode.com/2025/day/6) page.
 - Explore all 2025 solutions in [my repository](https://github.com/sdjmchattie/AdventOfCode2025).
 - Browse more posts in this series via the tag page: [Advent of Code]({{< ref "/tags/advent-of-code" >}}).
-
----
 
 ## Wrapping Up
 

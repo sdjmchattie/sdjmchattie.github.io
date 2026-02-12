@@ -19,8 +19,6 @@ This week we look at how to best use the status panel.
 Lazygit’s status panel offers a concise snapshot of your repository’s current state, showing essential details about your active branch and its relationship with the remote counterpart.
 While it doesn’t include many interactive features, understanding this panel is key to navigating your repository efficiently.
 
----
-
 ## Accessing and Navigating the Status Panel
 
 Press `1` to open the status panel, located at the top-left corner of Lazygit’s interface by default.
@@ -28,8 +26,6 @@ You can switch between different panels using the left and right arrow keys or t
 
 Within the status panel, use the up and down arrow keys to navigate through any selectable items.
 Pressing `?` at any time reveals context-sensitive help, including available keyboard shortcuts for the active panel.
-
----
 
 ## What the Status Panel Shows
 
@@ -43,8 +39,6 @@ At a glance, the status panel displays:
 
 These commit counts help you quickly understand whether you can push local changes, need to pull updates, or if your branch is fully synchronised.
 
----
-
 ## Useful Interactions in the Status Panel
 
 Although primarily informational, the status panel supports a few helpful commands:
@@ -54,8 +48,6 @@ Although primarily informational, the status panel supports a few helpful comman
 - Press `a` to cycle through different commit log views if multiple log commands are configured.
 - Press `o` to open the Lazygit configuration file for quick viewing or editing.
 - Press `e` to directly edit the configuration file within your editor.
-
----
 
 ## Wrapping Up
 

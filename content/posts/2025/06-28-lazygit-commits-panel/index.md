@@ -24,8 +24,6 @@ You can also rewrite history with actions like rewording, dropping and amending 
 The other tab on the commits panel allows you to review the reflog, which is a git term for a log of all the actions that have taken place on the repository.
 This can be useful if you have made unintended changes to your repository and you need to get back to the state of the repository at some time in the recent past.
 
----
-
 ## Navigating the Commits Panel
 
 The commits panel is accessed by pressing `4` in Lazygit.
@@ -37,8 +35,6 @@ Press `esc` to leave search mode.
 
 Pressing `enter` on a commit shows all the files that were modified by that commit.
 Simultaneously, the details panel, currently labelled "Patch", shows the lines within the selected file that were changed using standard git diff syntax.
-
----
 
 ## Actions You Can Take on Commits
 
@@ -79,16 +75,12 @@ Here are some of the key actions you can take on commits:
 
 These actions make it easy to manage your commit history without leaving the terminal.
 
----
-
 ## Using the Reflog Tab
 
 The commits panel has a second tab dedicated to the Git reflog.
 This shows a log of all recent actions in the repository, including branch switches and resets.
 It’s invaluable when you need to recover from unintended changes, as you can navigate to an earlier state recorded in the reflog and check it out.
 In Lazygit, you toggle between the commits and reflog tabs within the commits panel using the `[` and `]` keys.
-
----
 
 ## Tips for Efficient Workflow in the Commits Panel
 
@@ -104,8 +96,6 @@ In Lazygit, you toggle between the commits and reflog tabs within the commits pa
 
 - **Amend Before Pushing**
   Use the amend action to fix mistakes or add changes to recent commits before pushing your branch to remote.
-
----
 
 ## Wrapping Up
 

@@ -18,16 +18,12 @@ Part 1 is a straightforward exhaustive search over corner pairs with an inclusiv
 On my MacBook Air M1, Part 1 completed in 20.908 ms and Part 2 in 249.882 ms.
 If you want to follow the whole series, check out the tag page at [Advent of Code]({{< ref "/tags/advent-of-code" >}}), and you can browse the full code for 2025 in [my repository](https://github.com/sdjmchattie/AdventOfCode2025).
 
----
-
 ## Understanding Day 9: Movie Theater
 
 The input is a list of integer grid coordinates representing special tiles on a large floor.
 Part 1 asks for the total number of tiles (area) of the largest axis-aligned rectangle you can make by choosing any two of the coordinates as opposite corners.
 Part 2 keeps the same corner rule but restricts candidates to rectangles that are wholly inside the rectilinear polygon formed by joining the input points with axis-aligned edges in sequence and taking the loop interior.
 You can read the full puzzle on the [Advent of Code Day 9](https://adventofcode.com/2025/day/9) page.
-
----
 
 ## Parsing the Input
 
@@ -43,8 +39,6 @@ def prepare_input(file_content: list[str]) -> PuzzleInput:
 ```
 
 - The resulting immutable tuple of `(x, y)` points is used by both parts.
-
----
 
 ## Part 1: Largest rectangle from any two corners
 
@@ -83,8 +77,6 @@ def part1(input: PuzzleInput) -> None:
 ```
 
 This covers every candidate rectangle induced by two corners and finishes quickly for the problem size here.
-
----
 
 ## Part 2: Rectangles wholly inside the loop
 
@@ -192,14 +184,10 @@ def part2(input: PuzzleInput) -> None:
     Part2(input).solve()
 ```
 
----
-
 ## Performance
 
 The pairwise enumeration is the dominant loop in both parts and is fast enough for typical inputs.
 On my machine, Part 1 took 20.908 ms and Part 2 took 249.882 ms.
-
----
 
 ## Try it yourself
 
@@ -207,8 +195,6 @@ On my machine, Part 1 took 20.908 ms and Part 2 took 249.882 ms.
 - You can read the full puzzle on the [Advent of Code Day 9](https://adventofcode.com/2025/day/9) page.
 - The full repository for my 2025 solutions is available in [my repository](https://github.com/sdjmchattie/AdventOfCode2025).
 - Explore more write-ups in the series via the tag page: [Advent of Code]({{< ref "/tags/advent-of-code" >}}).
-
----
 
 ## Wrapping Up
 

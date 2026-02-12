@@ -22,8 +22,6 @@ Branches can be checked out, merged and rebased right inside Lazygit.
 
 Other tabs on the branches panel allow you to review which remotes are current configured for your repository and which tags are defined.
 
----
-
 ## Navigating the Branches Panel
 
 The branches panel is the third panel from the top in Lazygit, accessible by pressing `3` in the interface.
@@ -33,8 +31,6 @@ For each branch, Lazygit displays its status relative to its remote-tracking bra
 Arrows pointing up or down indicate commits ahead or behind the remote, respectively, giving you a quick visual clue about what needs syncing.
 
 You can navigate this list using the arrow keys on your keyboard.
-
----
 
 ## Creating, Renaming, and Deleting Branches
 
@@ -51,8 +47,6 @@ Managing branches in Lazygit is simple and efficient.
 
 Remember, you must have the branches panel active when performing these actions for the shortcuts to work.
 
----
-
 ## Checking Out Branches
 
 Switching between branches is one of the most common operations during development, and Lazygit makes it straightforward.
@@ -64,8 +58,6 @@ Switching between branches is one of the most common operations during developme
 
 An alternative way to explore a branch without switching to it is to press `Enter`.
 This opens the list of commits in the selected branch, allowing you to review branch history without changing your working directory.
-
----
 
 ## Syncing Branches with Your Remote
 
@@ -89,8 +81,6 @@ git config --global fetch.prune true
 
 This ensures that deleted remote branches don’t clutter your view in Lazygit.
 
----
-
 ## Merging Branches in Lazygit
 
 Merging is a key part of integrating changes from one branch into another.
@@ -108,8 +98,6 @@ If conflicts arise during the merge:
 - Once resolved, return to the branches panel to continue.
 
 After a successful merge, you can commit the merge changes and push them to your remote if needed.
-
----
 
 ## Rebasing with Lazygit
 
@@ -137,8 +125,6 @@ If you are working on branches shared with others, a rebase may be ill advised.
 Rewriting history, which is what rebasing does, can cause hard-to-resolve complications.
 Generally you should only rebase a branch you are the sole developer on.
 
----
-
 ## Exploring Branch Commits and Other Tabs
 
 While in the branches panel, you can press `Enter` on a branch to explore its commit history without switching branches.
@@ -153,16 +139,12 @@ This tab switching can be done by pressing `[` and `]` to move left or right thr
 
 For example, inside the remotes tab, you can select a remote branch and press spacebar to check it out locally.
 
----
-
 ## Opening Pull Requests and Other Actions
 
 Lazygit also offers the possibility to open pull requests from branches with a simple keypress (`o`), which will open the selected branch’s PR page in your browser.
 This saves you from choosing the pull request creation options manually on your repository host's website.
 
 While this post focused on branch creation, switching, merging, rebasing, and syncing with remotes, Lazygit supports much more, including stash management, conflict resolution, and interactive commit editing.
-
----
 
 ## Wrapping Up
 

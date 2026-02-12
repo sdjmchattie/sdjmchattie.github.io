@@ -21,8 +21,6 @@ There are three versions of these rules but they all share the same principles:
 
 If you like this post and you'd like to know more about how to plan and write Python software, check out the [Python]({{< ref "/tags/python" >}}) tag.
 
----
-
 ## What are the Fish Rules?
 
 The fish rules are complicated to explain, and you might want to refer to Sudopedia's [X-Wing](https://www.sudopedia.org/wiki/X-Wing), [Swordfish](https://www.sudopedia.org/wiki/Swordfish), and [Jellyfish](https://www.sudopedia.org/wiki/Jellyfish) explanations.
@@ -139,8 +137,6 @@ The principles are the same so I won't try to explain, I'll just show an example
 There are now 4 rows with candidates in the same 4 columns, or vice versa.
 The cells in the secondary direction can have the candidate removed.
 
----
-
 ## Implementing the Rules
 
 The current code at the time of writing can be found [on GitHub](https://github.com/sdjmchattie/sudoku-solver/tree/blog/2025-09-27) where you can also see the [pull request](https://github.com/sdjmchattie/sudoku-solver/pull/5/files) for the changes in this post.
@@ -236,15 +232,11 @@ for candidate in range(1, 10):
 
 The logic is the same as above, so I won't break it down line by line.
 
----
-
 ## Testing Our Code
 
 The tests are very similar to other rules we've created.
 I chose to break them down into the three types of fish, despite being the same function for all three.
 In each case, I check that we can find a fish in rows, that we can find a fish in columns, that we get a `True` result when the fish was found, that we get a `False` result when there is no fish, and that we get a `False` result when the grid is complete.
-
----
 
 ## Solving Puzzles
 
@@ -253,8 +245,6 @@ In all these cases, our solver now works!
 In fact, disabling the fish of the needed size demonstrates that we couldn't solve these before.
 
 We still cannot solve the expert puzzles generated weeks ago.
-
----
 
 ## Wrapping Up
 

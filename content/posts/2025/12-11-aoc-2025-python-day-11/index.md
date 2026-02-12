@@ -18,8 +18,6 @@ A tiny bit of state is added in to enforce constraints in Part 2.
 The whole thing runs in well under a millisecond per part on my MacBook Air M1, with Part 1 in 0.068 ms and Part 2 in 0.956 ms.
 If you want to follow the whole series, check out the tag page at [Advent of Code]({{< ref "/tags/advent-of-code" >}}), and you can browse the full code for 2025 in [my 2025 solutions repository](https://github.com/sdjmchattie/AdventOfCode2025).
 
----
-
 ## Understanding Day 11: Reactor
 
 Each line of input describes a directed connection from one device to multiple downstream devices, forming a graph where data flows forward through outputs.
@@ -83,8 +81,6 @@ class PathFinder:
 - The `specials` tuple lists nodes that must appear on the path, and `seen_specials` tracks which of those have been visited so far.
 - Because we decorate with `@cache`, overlapping subtrees are computed once per distinct `(src, specials, seen_specials)` triple, which keeps the traversal fast.
 
----
-
 ## Part 1: Count all paths from `you` to `out`
 
 Part 1 requires counting every distinct path starting at `you` and ending at `out` with no extra constraints.
@@ -97,8 +93,6 @@ def part1(input: PuzzleInput) -> None:
 
 - The base case hits as soon as a route arrives at `out`, and each such route contributes exactly 1 to the total.
 - Memoisation means any node reachable from multiple parents is solved once per relevant state, which is all we need for this unconstrained count.
-
----
 
 ## Part 2: Constrained paths that include dac and fft
 
@@ -121,15 +115,11 @@ def part2(input: PuzzleInput) -> None:
 - It works even if multiple parts of the graph merge and diverge because the cache key includes both the current node and the set-like tuple of visited specials.
 - It keeps the code small and composable, letting you add more constraints by extending the `specials` tuple.
 
----
-
 ## Complexity and performance
 
 - The traversal does a single depth-first walk of the reachable graph with memoisation, so each state `(node, seen_specials)` is computed once.
 - Because arguments to cached functions must be hashable, the code represents the required and visited sets as tuples, which the `@cache` decorator can key on efficiently.
 - On my MacBook Air M1, Part 1 completes in 0.068 ms and Part 2 completes in 0.956 ms, which reflects the small constant overhead added by the extra state in Part 2.
-
----
 
 ## Try it yourself
 
@@ -137,8 +127,6 @@ def part2(input: PuzzleInput) -> None:
 - Run the code for your input and compare the timings on your machine.
 - Browse the complete solution and the shared puzzle harness in [my 2025 solutions repository](https://github.com/sdjmchattie/AdventOfCode2025).
 - Explore more write-ups in the series via the tag page: [Advent of Code]({{< ref "/tags/advent-of-code" >}}).
-
----
 
 ## Wrapping Up
 

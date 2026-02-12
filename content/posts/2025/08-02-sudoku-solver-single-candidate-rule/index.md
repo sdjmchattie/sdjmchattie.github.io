@@ -21,8 +21,6 @@ The current code at the time of writing can be found [on GitHub](https://github.
 If you like this post and you'd like to know more about how to plan and write Python software, check out the [Python]({{< ref "/tags/python" >}}) tag.
 You can also find other posts in the [Sudoku Series]({{< ref "/tags/sudoku-series" >}}).
 
----
-
 ## What is the Single Candidate Rule?
 
 While the single candidate rule is often used in tandem with more advanced techniques, some puzzles (especially very easy ones) can be solved using this rule alone.
@@ -31,8 +29,6 @@ Under the single candidate rule, the cells of the grid that are currently unsolv
 This means they consider all the digits from 1 through 9 as candidates and look at their neighbouring cells for solved values, removing those from the candidates.
 After this step, if a cell only has one candidate left, that means this cell must contain that value.
 You can add the value to the cell to make it solved, and must also remove that value from the candidates of all its neighbouring cells.
-
----
 
 ## Identifying Candidates
 
@@ -56,8 +52,6 @@ This iterates over the cells of the grid, skipping any that already have a value
 For those without a value, the candidates list is initialised to a set of the values 1 through 9.
 The neighbours of the cell are discovered and their values, if they have any, are combined in a second set.
 This second set is subtracted from the initialised set of 1 through 9, to give the complete list of candidates for the cell.
-
----
 
 ## Solving the Grid
 
@@ -164,8 +158,6 @@ If none of the cells meet this criteria, the grid is valid and we return `True`.
 Note that this doesn't check that the grid is solvable.
 That is only determinable after we try to apply all our rules to completion and relies on our rules being able to handle every possible solving scenario.
 
----
-
 ## Seeing the Results
 
 In order to see the state of the Sudoku grid while we work on rules, it felt sensible to allow rendering to graphic files.
@@ -207,8 +199,6 @@ However, after solving those cells and some of their neighbours, the grid soon h
 
 The two cells with a 2 enable some neighbouring cells to become solvable and that chain reaction allows us to completely solve the top-left and bottom-right blocks.
 After that, the puzzle is stuck and needs more rules to be implemented.
-
----
 
 ## Wrapping up
 

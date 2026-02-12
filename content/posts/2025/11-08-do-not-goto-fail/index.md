@@ -14,8 +14,6 @@ Style guides are not bikeshedding; they are seatbelts that stop simple edits tur
 The infamous `#gotofail` incident shows how a tiny deviation from a basic rule like "always use braces" can undermine critical security checks, and how automated style enforcement and static analysis could have caught it before release.
 In this short piece, we will revisit `#gotofail` briefly and then focus on practical, language-specific options in Python, JavaScript, and Ruby to keep such mistakes out of your codebase.
 
----
-
 ## A cautionary tale: `#gotofail` in Apple’s SSL/TLS
 
 On 21st February 2014, Apple shipped a security update for iOS with a stark note that Secure Transport failed to validate authenticity.
@@ -37,8 +35,6 @@ fail:
 
 This vulnerability is formally tracked as `CVE-2014-1266`, and the episode is well-documented at the [National Vulnerability Database](https://nvd.nist.gov/vuln/detail/CVE-2014-1266).
 It's been 11 years now since the fix was given, but you can check if your browser is vulnerable to the problem by going to this [gotofail](https://gotofail.com) website.
-
----
 
 ## Why enforce code style, not just recommend it
 
@@ -65,8 +61,6 @@ if (is_valid) {
 }
 ```
 
----
-
 ## Enforcing style in Python
 
 Python teams commonly combine formatters and linters to make "correct-by-construction" the default.
@@ -81,8 +75,6 @@ pre-commit run -a
 ```
 
 For large Python codebases, keep configuration in version control so that opening the project in an editor starts all related linter and checker extensions automatically.
-
----
 
 ## Enforcing style in JavaScript and TypeScript
 
@@ -111,8 +103,6 @@ The following snippet shows a `package.json` configuration that runs `prettier` 
 
 This setup gives you consistent formatting and actionable lint feedback at the moment changes are made.
 
----
-
 ## Enforcing style in Ruby
 
 Ruby teams typically adopt `rubocop` for linting and formatting rules and often integrate `prettier` for front-end assets in Rails applications.
@@ -124,8 +114,6 @@ npm install --save-dev lint-staged husky prettier
 
 There are pre-commit hooks that lint with `rubocop`, `eslint`, and `prettier`, giving full-stack projects a unified gate for code quality.
 This approach keeps style consistent across Ruby, JavaScript, and stylesheets while avoiding manual steps.
-
----
 
 ## Wrapping Up
 

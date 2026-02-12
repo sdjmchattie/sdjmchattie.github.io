@@ -18,8 +18,6 @@ But as is tradition, complexity soon crept in, especially with part two's toggli
 In this walkthrough, I’ll describe the core requirements of both parts, show what corrupted input looks like, and explain step-by-step how my Ruby solution cracks the puzzle.
 For further reading, browse [the rest of the Advent of Code series]({{< ref "/tags/advent-of-code" >}}), or see all my 2024 solutions on [GitHub](https://github.com/sdjmchattie/AdventOfCode2024).
 
----
-
 ## Day 3: “Mull It Over” In Brief
 
 This puzzle delivers a memory dump riddled with a mixture of valid and nonsensical code.
@@ -31,8 +29,6 @@ bla!mul(2,4)%mul[3,7]?not_real_mul(10,2)mul(8,3)xyzmul(1,5)
 
 Most of it is junk or malformed instructions, but hidden throughout are perfect matches like `mul(8,3)` or `mul(1,5)` which follow the strict format of `mul(X,Y)`.
 Your job is to find exactly those valid pieces and work out the result as described below.
-
----
 
 ## Part One: Extracting and Summing Real Multiplications
 
@@ -74,8 +70,6 @@ end
 - The outer `reduce` finishes its job by adding this new product to the running total.
 
 This matches the puzzle’s requirement to only process the legitimate instructions and skip over the noise.
-
----
 
 ## Part Two: Decoding `do` and `don’t` Toggles
 
@@ -121,8 +115,6 @@ Here’s what this does:
 - The correct answer for part two is then the total sum minus the disabled sum.
 
 This technique is both succinct and effective, sidestepping the need for manual input processing by letting regular expressions exclude everything that shouldn’t count.
-
----
 
 ## Wrapping Up
 

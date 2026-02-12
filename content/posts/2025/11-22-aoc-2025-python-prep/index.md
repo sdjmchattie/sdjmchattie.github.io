@@ -16,15 +16,11 @@ Advent of Code 2025 is almost here, and this year I am aiming squarely at speed 
 I will publish a short post every day covering the approach and performance choices, and you are very welcome to join in using whichever language you want to practice.
 You can follow along in my GitHub repository and jump onto a friendly private leaderboard with the join code below.
 
----
-
 ## Get In The Spirit
 
 Advent of Code is a brilliant way to sharpen problem-solving skills in a fun, collaborative setting.
 If you want to browse my intro post and my first few solutions for 2024 in Ruby, check out the [Advent of Code]({{< ref "/tags/advent-of-code" >}}) tag.
 This year I will solve all 12 puzzles in Python with my usual tendency towards optimisations and speed, not a focus on production-worthy code.
-
----
 
 ## Repository, Tooling, And How To Run
 
@@ -73,8 +69,6 @@ If you forget the day argument, the script prints a usage hint.
 ```text
 Usage: uv run solve [day]
 ```
-
----
 
 ## Project Layout And Runner Behaviour
 
@@ -126,8 +120,6 @@ Functions `part1()` and `part2()` do their own output of the answer content.
 This is because sometimes puzzles require more than just a simple string of output.
 I also reload the input for part 2 after completing part 1 because sometimes the solution modifies the input and you can avoid part 2 bugs by reloading the input from the original text file.
 
----
-
 ## Creating A New Day
 
 ### Start from the template
@@ -158,16 +150,12 @@ def part2(input: PuzzleInput) -> None:
 1. Run the solver with `uv run solve 1`.
 1. Use the timings to guide small, targeted optimisations.
 
----
-
 ## Tips For Following Along
 
 - Use any language you want to practice and compare ideas with the Python versions in the repository.
 - Keep `prepare_input` focused on parsing so both parts share the same in-memory representation.
 - Treat the printed timings as feedback for optimisations.
   Part 2 usually involves finding optimisations that make clean code much harder, but we're going for speed, not clean code.
-
----
 
 ## Join The Private Leaderboard
 
@@ -176,14 +164,10 @@ It is more fun together, so come compare daily results in a friendly leaderboard
 - Go to the Advent of Code [private leaderboard page](https://adventofcode.com/2025/leaderboard/private).
 - Use code `1097851-faf6948a` to join.
 
----
-
 ## Daily Posts Plan
 
 I will publish a short blog post each day for the 12 puzzles that will be released, covering my approach and how the code implements it.
 If you fancy some warm-up reading, the [Advent of Code]({{< ref "/tags/advent-of-code" >}}) tag will help you find other posts I've made in the past.
-
----
 
 ## Wrapping Up
 

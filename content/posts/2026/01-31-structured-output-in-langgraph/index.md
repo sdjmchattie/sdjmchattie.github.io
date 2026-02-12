@@ -14,16 +14,12 @@ tags:
 
 Large language models are incredibly versatile, but when your code depends on predictable data structures, free‑form text can be a headache. The same information can be expressed in countless ways, making downstream processing error-prone. Structured output bridges this gap: by defining a schema, injecting format instructions into your prompt, and validating (or even repairing) the model’s response, you can turn LLM text into reliable, typed data your code can safely consume. In this post, we’ll explore how to implement this workflow in LangGraph using Pydantic models, parsers, and automatic repair mechanisms.
 
----
-
 ## What We Are Building
 
 We will extract book metadata into a strongly‑typed Pydantic model with a normal LLM call.
 We will inject format instructions into the prompt so the model knows exactly what JSON to return.
 We will wrap the parser with an `OutputFixingParser` so malformed responses are automatically sent back to an LLM for correction, with optional retries for extra robustness.
 Finally, we will show how to ask a prebuilt LangGraph agent to return structured results too.
-
----
 
 ## Define a Pydantic Model for Your Output
 
@@ -42,8 +38,6 @@ class Book(BaseModel):
 
 Each field carries a type and a description, which the tooling will turn into formatting instructions for the model.
 Descriptions help steer the model while types make validation strict.
-
----
 
 ## Prompt With Format Instructions From the Parser
 
@@ -97,8 +91,6 @@ Here is the output schema:
 The parser at the end of the chain does the conversion of the LLM's response into the `Book` type we're trying to get.
 Parsing errors are normal when models wander off the required structure, which is where the `OutputFixingParser` comes in.
 
----
-
 ## Add OutputFixingParser For Automatic Repairs
 
 The `OutputFixingParser` wraps your base parser and uses an LLM to correct malformed outputs when parsing fails.
@@ -129,8 +121,6 @@ If the first parse attempt fails, the fixing parser prompts the fixer LLM with t
 Note that this isn't a new attempt to find the book data, only to convert the original response for the book into a valid format for an instance of the Pydantic object.
 This keeps your downstream code simple by centralising recovery logic in the parser.
 
----
-
 ## Optional: Add Retries Around Fixing
 
 In production you almost certainly want to try multiple fix attempts before giving up.
@@ -153,8 +143,6 @@ book = chain.invoke({"book_name": "Wings of Fire"})
 Obviously each attempt to fix the output requires another round trip to an LLM, so be wary of the time cost this might have on your application.
 Additionally, if the original response never contained the required data, no amount of fixing will create a valid Pydantic model instance.
 
----
-
 ## How OutputFixingParser Works Under The Hood
 
 - It wraps another output parser such as `PydanticOutputParser`.
@@ -165,16 +153,12 @@ Additionally, if the original response never contained the required data, no amo
 You can use a different LLM and temperature for fixing than for generation, depending on what gives you the best results.
 Often, fixing is easier than the original generation, so you might find using a weaker model is faster and just as effective as a more powerful model.
 
----
-
 ## Alternatives And Notes
 
 - If you prefer `TypedDict` schemas, you can ask an LLM to produce that structure directly with `with_structured_output`, for example a `PlayerDict` that returns `{'name': ..., 'age': ..., 'position': ...}` using `ChatOpenAI`.
 - You can also build response schemas using `ResponseSchema` and `StructuredOutputParser`, which generate format instructions for arbitrary field lists rather than full Pydantic models.
 - Structured outputs remain valuable even when providers offer native JSON modes, because parsers add validation, shape conversions, and repair logic that native modes may not guarantee across providers.
 - For a broader tour of structured outputs in LangGraph’s ecosystem and prebuilt nodes, the LangGraph Advanced code examples in the LangGraph Advanced GitHub repository are a helpful reference.
-
----
 
 ## Wrapping Up
 

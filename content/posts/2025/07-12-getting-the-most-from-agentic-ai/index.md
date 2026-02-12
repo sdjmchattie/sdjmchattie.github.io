@@ -20,8 +20,6 @@ If you missed it, my previous article on [how LLMs work under the hood]({{< ref 
 In this post, we will look at some of the downsides of LLMs and how they can be mitigated by using an agentic approach.
 We'll explore what agentic AI is, why you might choose to build an agentic system rather than rely on a single LLM, and introduce some of the popular frameworks that can help you get started with agentic AI.
 
----
-
 ## What Is Agentic AI?
 
 Agentic AI refers to AI systems designed to act autonomously — that is, they can make decisions, plan, execute tasks, and adapt without requiring constant human intervention.
@@ -29,8 +27,6 @@ Agentic AI refers to AI systems designed to act autonomously — that is, they c
 Unlike a single LLM instance that generates responses based on an input prompt in isolation, agentic AI combines multiple specialised components (or "agents") each handling a portion of the workflow.
 
 These agents can interact with data, call external tools or APIs, validate results, reflect on their outputs, and plan subsequent steps towards achieving a given goal.
-
----
 
 ## Why Use Agentic AI Instead of a Single LLM?
 
@@ -47,8 +43,6 @@ While single LLMs are powerful, they have some downsides that agentic AI helps t
 - **Limited error handling**: If a model’s output is incorrect, single-step LLMs rarely have built-in ways to validate and correct themselves.
 
 Agentic AI introduces key patterns to overcome these challenges — splitting workflows into sub-tasks, validating and reflecting on outputs, involving humans in the loop where necessary, and orchestrating the sequence of actions dynamically.
-
----
 
 ## Common Patterns in Agentic AI
 
@@ -70,8 +64,6 @@ Agentic AI often employs design patterns that help build effective and flexible 
   Instead of hard-coding workflows, the system uses a supervisor agent which plans and controls the order of operations dynamically, calling upon other agents to do tasks until the work is complete.
   The supervisor assesses whether the specified task is complete, eventually choosing when to provide the final output from the process.
 
----
-
 ## Example Applications of Agentic AI
 
 Agentic AI is well-suited to tasks involving complex workflows or continual decision-making:
@@ -87,8 +79,6 @@ Agentic AI is well-suited to tasks involving complex workflows or continual deci
 
 - **Financial Trading Agents**
   Agents analyse market data, manage trades, ensure regulatory compliance, and learn from results to improve over time.
-
----
 
 ## Popular Frameworks to Build Agentic AI Systems
 
@@ -118,8 +108,6 @@ Several frameworks are helping developers build agentic AI solutions more easily
 Choosing the right framework depends on your specific needs, the complexity of your workflows, and how much control you want over the AI agents' behaviour.
 You can also use these frameworks alongside each other in the same system for particularly complicated goals, or where different frameworks offer strengths in multiple desirable areas.
 
----
-
 ## An Example Agentic Workflow
 
 This article has talked in general terms until now, but I'm a big believer that examples are a great way to explain a concept.
@@ -137,8 +125,6 @@ In the example, we define a system of agents that generate a recipe from a simpl
   - Of course, if the recipe is valid, it will move to the end of the graph and would be released to the user.
 
 Hopefully this example gives you a clearer picture of how an agentic AI system can be designed in practice.
-
----
 
 ## Wrapping Up
 

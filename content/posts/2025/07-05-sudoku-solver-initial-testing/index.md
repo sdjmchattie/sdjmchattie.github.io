@@ -28,8 +28,6 @@ While simple, let's see how we can put our code through its paces and find some 
 
 The current code at the time of writing can be found [on GitHub](https://github.com/sdjmchattie/sudoku-solver/tree/blog/2025-07-05) where you can also see the [differences](https://github.com/sdjmchattie/sudoku-solver/compare/blog/2025-05-17...blog/2025-07-05) since the last blog post.
 
----
-
 ## A Quick Primer
 
 The aim of this post is not to teach you every last detail about unit testing, but if you're new to this area, you'll probably need some information about how unit testing is used.
@@ -104,8 +102,6 @@ def test_values():
 While you can have multiple asserts in one test, make sure the test covers a single piece of functionality.
 Avoid combining unrelated checks that test different behaviours in the same test function.
 
----
-
 ## Setup Pytest
 
 Before we can run any tests, we need to set `pytest` up.
@@ -124,8 +120,6 @@ poetry run pytest
 ```
 
 `pytest` will search for any test files in our repository and will execute them.
-
----
 
 ## Writing Tests
 
@@ -188,8 +182,6 @@ Ideally we'd also write tests for the `main` method, but it mostly just calls th
 The only extra thing it does is reads the contents from a file, and it's not usually a good idea to test file I/O unless you really need to.
 In the interests of keeping things simple, we'll assume this bit of the application gets enough of a workout when we're using it.
 
----
-
 ## Test Results
 
 When we run the tests now, we get something that looks similar to the following:
@@ -205,8 +197,6 @@ tests/model/test_grid.py .......                          [100%]
 ```
 
 As long as we continue to get this result in the future, we know we haven't broken our existing functionality.
-
----
 
 ## Wrapping up
 

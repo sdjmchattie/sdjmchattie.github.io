@@ -17,8 +17,6 @@ We will go over the rule for a roll being accessed, show how to parse the grid a
 Then we'll walk through the direct count for part 1 and the repeat-until-stable removal for part 2.
 If you want to follow the whole series, check out the tag page at [Advent of Code]({{< ref "/tags/advent-of-code" >}}), and you can browse the full code for 2025 in [my repository](https://github.com/sdjmchattie/AdventOfCode2025).
 
----
-
 ## Understanding Day 4: Printing Department
 
 The input is a rectangular grid of characters where `@` marks a roll of paper and `.` marks empty space.
@@ -26,8 +24,6 @@ A roll is considered accessible if strictly fewer than four of its eight surroun
 Part 1 asks you to count all rolls that are accessible under that rule.
 Part 2 asks you to repeatedly remove all accessible rolls and then re-evaluate, counting the total number of rolls removed until no more removals are possible.
 You can read the full puzzle on the [Advent of Code Day 4](https://adventofcode.com/2025/day/4) page.
-
----
 
 ## Parsing the Input
 
@@ -63,8 +59,6 @@ class Grid2D(Generic[T]):
 
 This keeps the main solution code focused on the puzzle logic rather than on bounds checks.
 
----
-
 ## Part 1: Count accessible rolls
 
 ### What part 1 needs
@@ -97,8 +91,6 @@ def part1(input: PuzzleInput) -> None:
 - `_is_movable_roll` enforces the core rule directly by filtering neighbours to those that are rolls and comparing the count against four.
 - The generator expression visits every `(x, y)` and increments the count whenever the predicate is satisfied.
 - The result is the total number of accessible rolls for the initial configuration.
-
----
 
 ## Part 2: Remove rolls until stable
 
@@ -133,8 +125,6 @@ def part2(input: PuzzleInput) -> None:
 - If a pass removes at least one roll, it recurses to evaluate the now-changed neighbourhoods in a fresh pass.
 - When a pass removes none, the process has stabilised and the accumulated count is returned.
 
----
-
 ## Implementation notes and complexity
 
 - Neighbour inspection is constant time per cell thanks to the eight fixed offsets.
@@ -142,15 +132,11 @@ def part2(input: PuzzleInput) -> None:
 - Part 2 runs multiple full passes, each pass scanning the whole grid and potentially shrinking the set of rolls, and it stops once no more cells meet the accessibility rule.
 - The part 2 helper mutates the grid in place which is not always best practice, but the input for part 1 and part 2 are fresh instances in our solving application.
 
----
-
 ## Try it yourself
 
 - Fetch your personalised input from the [Advent of Code Day 4](https://adventofcode.com/2025/day/4) page and run the code against it.
 - Explore more write-ups in the series via the tag page: [Advent of Code]({{< ref "/tags/advent-of-code" >}}).
 - See the complete implementation and supporting utilities in [my repository](https://github.com/sdjmchattie/AdventOfCode2025).
-
----
 
 ## Wrapping Up
 

@@ -17,8 +17,6 @@ This will make all outstanding puzzles solvable because it effectively brute for
 
 If you like this post and you'd like to know more about how to plan and write Python software, check out the [Python]({{< ref "/tags/python" >}}) tag.
 
----
-
 ## What Is The Nishio Rule?
 
 Nishio is described as a last-resort approach [on Sudopedia](https://www.sudopedia.org/wiki/Nishio), and we will treat it as such.
@@ -30,8 +28,6 @@ If the puzzle reaches an invalid state, you know that candidate was not correct 
 
 Clearly this is easier for a computer to do than when doing a puzzle by hand.
 But for most puzzles, you shouldn't have many unsolved cells by the time you reach this state.
-
----
 
 ## Implementing The Rule
 
@@ -122,23 +118,17 @@ We also only import `apply_nishio_rule` if these conditions are satisfied.
 If we don't, we can't import this rule applying method from inside the `Solver` or we'd get a circular import.
 `Solver` imports this method, which would import `apply_nishio_rule` which imports the `Solver` to apply the rule.
 
----
-
 ## Testing Our Code
 
 The tests are fairly similar to the ones created for previous rules.
 The only big changes here are about separating the `Solver` from the `apply` method which also simplifies those rules.
 Claude did most of these test refactors for me.
 
----
-
 ## Solving Puzzles
 
 Running the new code against our puzzles shows that we can now solve all of them.
 The ones that wouldn't solve before do take a short time longer than other solves, but this is the nature of brute-forcing a solution.
 This is why I wanted the solver to use human-like approaches instead of brute-forcing the whole puzzle.
-
----
 
 ## Wrapping Up
 

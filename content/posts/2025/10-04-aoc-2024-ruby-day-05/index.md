@@ -15,15 +15,11 @@ tags:
 Day 5 of Advent of Code 2024 is all about enforcing page ordering rules and pulling the "middle" value out at the right time, and my Ruby solution keeps it tidy with a small helper, a simple validator, and a lightweight reordering trick for the second half.
 If you want to browse everything I have done for this event, the series is collected under [Advent of Code]({{< ref "/tags/advent-of-code" >}}), and the full source code for this day and the rest can be found on [GitHub](https://github.com/sdjmchattie/AdventOfCode2024).
 
----
-
 ## Day 5: Print Queue Overview
 
 The [original puzzle](https://adventofcode.com/2024/day/5) provides a set of pairwise ordering constraints between page numbers and a list of "updates," each being a sequence of pages to be printed.
 Part 1 asks you to determine which updates already respect all applicable constraints and then sum the middle page number from those valid updates.
 Part 2 asks you to take only the invalid updates, reorder each one so that it respects the constraints, and then sum the middle page number of the corrected sequences.
-
----
 
 ## Input Parsing and Data Structures
 
@@ -67,8 +63,6 @@ class SparseArray
 end
 ```
 
----
-
 ## Validating an Update Against the Rules
 
 For Part 1 we need a reliable way to tell whether a single update respects all the relevant rules.
@@ -87,8 +81,6 @@ end
 
 This checks, for each pair in positional order, that there is no rule of the form "later must come before earlier," which would violate the constraints for the current update.
 
----
-
 ## Part 1: Sum of Middles from Valid Updates
 
 Part 1 requires filtering to only the valid updates and summing their middle values.
@@ -105,8 +97,6 @@ end
 ```
 
 This produces the correct total for my input, which the program prints alongside a runtime measured with Ruby’s Benchmark.
-
----
 
 ## Part 2: Fixing the Invalid Updates
 
@@ -138,15 +128,11 @@ end
 
 A neat property here is that reversing a sequence does not change its middle element, which means that even if multiple valid orderings exist, the chosen approach still yields the correct middle page for summation.
 
----
-
 ## Notes on Approach
 
 - The validation checks only rules involving pages present in a given update, which matches the problem’s requirement that missing pages imply irrelevant rules.
 - The reordering strategy acts like a lightweight topological reordering guided by the number of "after" relations in the current update.
 - Because the puzzle asks only for the middle page, this approach is sufficient while remaining straightforward to implement.
-
----
 
 ## Wrapping Up
 

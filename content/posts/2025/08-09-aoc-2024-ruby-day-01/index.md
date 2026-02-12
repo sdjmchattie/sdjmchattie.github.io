@@ -22,8 +22,6 @@ Ruby’s expressive enumerable methods allow for concise and readable code, idea
 All of my code for Advent of Code 2024 is available on GitHub at:
 [https://github.com/sdjmchattie/AdventOfCode2024](https://github.com/sdjmchattie/AdventOfCode2024).
 
----
-
 ## Day 1 Puzzle
 
 The first day’s puzzle, [Historian Hysteria](https://adventofcode.com/2024/day/1), introduces two lists of location IDs from senior historians.
@@ -85,8 +83,6 @@ end
 
 By grouping the right list elements by their own value and counting occurrences, this technique quickly produces a lookup table.
 The `map` iterates over the left list and performs a weighted sum using that frequency information, resulting in the final similarity score.
-
----
 
 ## Wrapping Up
 

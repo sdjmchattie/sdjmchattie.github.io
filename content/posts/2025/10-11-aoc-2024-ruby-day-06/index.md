@@ -24,8 +24,6 @@ This post explains what each part needs from a solution, then walks through how 
 If you want to see the whole series, check out the tag [Advent of Code]({{< ref "/tags/advent-of-code" >}}).
 The full source for my solutions is [on GitHub](https://github.com/sdjmchattie/AdventOfCode2024).
 
----
-
 ## Part One: Predict the Patrol
 
 The puzzle provides a rectangular map made of characters, with obstacles marked by `#` and a guard’s starting position indicated with `^` facing up.
@@ -85,8 +83,6 @@ end
 
 As usual, Part One is relatively simple.
 It's the trepidation of opening Part Two that can be a thrill or a pain!
-
----
 
 ## Part Two: Force a Loop with One New Obstruction
 
@@ -187,8 +183,6 @@ end
 ```
 
 I found this jump‑based model easier to reason about than stepwise simulation across thousands of candidate placements.
-
----
 
 ## Wrapping Up
 

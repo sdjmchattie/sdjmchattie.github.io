@@ -15,8 +15,6 @@ tags:
 Conditional edges let your LangGraph apps make decisions mid-flow, so today we will branch our simple joke generator to pick a pun or a one-liner while keeping `wrap_presentation` exactly as it was.
 In the [previous post]({{< relref "10-18-a-primer-in-langgraph" >}}) we built a two-node graph with `joke_writer` and `wrap_presentation`, and now we will insert a `choose_style` decision point and split into two specialised writers without changing the final presentation step.
 
----
-
 ## What Needs To Change
 
 We will:
@@ -25,8 +23,6 @@ We will:
 - Add a new deterministic node `choose_style` to decide which style of joke to tell.
 - Introduce two specialised LLM nodes `write_pun_joke` and `write_oneliner_joke` for clearer prompts and outputs.
 - Replace the direct `START` → `joke_writer` edge with conditional routing from `choose_style` via `add_conditional_edges`.
-
----
 
 ## Updated JokeState
 
@@ -43,8 +39,6 @@ class JokeState(TypedDict, total=False):
 ```
 
 The `style` field will guide which branch we take and, declared as a `Literal`, it can only be set to one of two string values.
-
----
 
 ## Creating the `choose_style` Node
 
@@ -66,8 +60,6 @@ def choose_style(state: "JokeState") -> dict:
 
 This isn't foolproof, as it would only choose the pun style for a joke about a cat or a dog.
 However, for our demonstration purposes here, it will be fine.
-
----
 
 ## Style-Specific LLM Nodes
 
@@ -102,8 +94,6 @@ oneliner_prompt = ChatPromptTemplate.from_template(
     "Tell me a short one-liner joke about {topic}."
 )
 ```
-
----
 
 ## Wiring the Conditional Graph
 
@@ -181,8 +171,6 @@ choose_style
   └─→ one-liner → write_oneliner_joke → wrap_presentation → END
 ```
 
----
-
 ## Project Setup
 
 - Start from the previous project where you already had a two-node graph with `joke_writer` and `wrap_presentation`.
@@ -190,8 +178,6 @@ choose_style
 - Keep your existing LLM chain as `joke_chain` and ensure it accepts `topic` and `style` inputs, or swap to separate style prompts if you prefer.
 - Add the new nodes `choose_style`, `write_pun_joke`, and `write_oneliner_joke`.
 - Replace the direct `START` → `joke_writer` edge with `START` → `choose_style` plus `add_conditional_edges` for branching.
-
----
 
 ## Run It
 
@@ -216,23 +202,17 @@ Hey, have you heard this one?
 Ha ha ha!
 ```
 
----
-
 ## Recapping Conditional Edges
 
 - `add_conditional_edges` lets you express `if` or `else` routing without mutating state inside the router.
 - Your routing function reads the current state and returns the name of the next node to execute.
 - The mapping you pass to `add_conditional_edges` must include every possible return value from the routing function and those keys should match actual node names.
 
----
-
 ## Common Pitfalls
 
 - Do not mix a normal edge and conditional edges from the same source node, or both paths may attempt to run.
 - If you need to terminate early from a node, put the conditional edges on the previous node rather than combining them with a direct edge from the same node.
 - Ensure the router returns valid node keys that exist in the mapping, otherwise the graph cannot resolve where to go next.
-
----
 
 ## Wrapping Up
 

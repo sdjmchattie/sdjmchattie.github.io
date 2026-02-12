@@ -19,8 +19,6 @@ Applying these rules is documented on many websites, but the two I've liked duri
 If you like this post and you'd like to know more about how to plan and write Python software, check out the [Python]({{< ref "/tags/python" >}}) tag.
 You can also find other posts in the [Sudoku Series]({{< ref "/tags/sudoku-series" >}}).
 
----
-
 ## What are the Hidden Set Rules?
 
 The hidden set rules use logical deduction to identify groups of cells with unique candidate numbers that are hidden among other candidates:
@@ -80,8 +78,6 @@ Cells can still be part of a hidden pair or triple even if some candidates are m
 For example, in a hidden triple involving candidates `3`, `5`, and `8`, the three cells might contain candidates as follows: `3` and `5` in the first cell, `5` and `8` in the second, and `3` and `8` in the third.
 As long as no other cells in the region contain candidates `3`, `5`, or `8`, this situation still forms a hidden triple.
 We know that these candidates must exist among those three cells, allowing us to remove all other candidates from those cells.
-
----
 
 ## Implementing These Rules
 
@@ -160,8 +156,6 @@ We create a set of candidates that are everything except the candidates in our h
 For each affected cell, we check that the cell has more candidates than the size of the set before changing `applied` to `True`.
 We remove the cell candidates that are not part of the set, and we're done.
 
----
-
 ## Applying All Our Rules
 
 We can add our new rules to those already being applied to the `Solver`, given us the following.
@@ -181,8 +175,6 @@ applied = (
 When that happens, either the grid is solved or we haven't yet implemented complex enough rules to solve the puzzle.
 This is a pattern which is proving to work for the Sudoku Solver so we will continue this way until something no longer works.
 
----
-
 ## Testing Our Code
 
 Like for the naked sets, we have added new tests for these new rules.
@@ -190,8 +182,6 @@ It starts to become hard to create full grids for these rules that provide exact
 So I opted, this time, to start with a grid that has all candidates available on all cells, and just manually modify the candidates to fit the pattern we're looking for.
 
 This appears to have worked well and so I will probably use this technique going forward as well.
-
----
 
 ## Wrapping up
 

@@ -22,8 +22,6 @@ The current code at the time of writing can be found [on GitHub](https://github.
 If you like this post and you'd like to know more about how to plan and write Python software, check out the [Python]({{< ref "/tags/python" >}}) tag.
 You can also find other posts in the [Sudoku Series]({{< ref "/tags/sudoku-series" >}}).
 
----
-
 ## Available Groupings for Cells
 
 Before diving into any design and coding, let's take a look at the sorts of cell groupings that might be useful in Sudoku solving.
@@ -46,8 +44,6 @@ We can also use `difference()` to remove items from a set using another set.
 So if we want all the cells in a block that are alongside a cell of interest, but not from the same column, we can get the block for the cell and the column in block for the cell.
 Find the difference between these sets to get the grouping we want.
 
----
-
 ## Storing Location Information in the Cell
 
 Rather than storing the cells as a 2D list in the grid, I decided to store them in a set instead, embedding their location information in each cell.
@@ -59,8 +55,6 @@ To support this, I created a `Point` class which stores an `x` and `y` coordinat
   These range from 0 to 2 for `x` and `y` to capture all nine blocks.
 - `block_coord` is a property containing the relative location of the cell within its block.
   This hasn't been needed yet and may be removed later if it's still not being used.
-
----
 
 ## Retrieving Groupings
 
@@ -91,8 +85,6 @@ The grid has had some new methods added to it to help with finding cells in the 
   Before returning the set of neighbours, we can subtract (`.difference()`) a set containing just the original cell.
   That way the yellow cell from the diagram is not included in the set.
 
----
-
 ## Updating Unit Tests
 
 With all that implementation, it's time to update and add to our unit tests.
@@ -106,8 +98,6 @@ Initially, this wasn't the case, and once again, unit tests helped catch bugs, u
 In hindsight, it might be appropriate to add extra properties called `column` and `row` to the `Point` dataclass which simply return the values for `x` and `y` respectively.
 If it continues to be a source of bugs, we can make that change.
 It might even be a great opportunity to look at some of the more Pythonic options available for making this change.
-
----
 
 ## Wrapping up
 

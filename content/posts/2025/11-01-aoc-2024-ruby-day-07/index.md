@@ -16,16 +16,12 @@ Day 7 of Advent of Code 2024 boils down to testing all `left-to-right` operator 
 You can browse the rest of this series under [Advent of Code]({{< ref "/tags/advent-of-code" >}}).
 The full source for all of my 2024 solutions lives in [my GitHub repository](https://github.com/sdjmchattie/AdventOfCode2024).
 
----
-
 ## Understanding the Challenge
 
 The task is to determine which calibration equations become true by inserting operators between a fixed sequence of numbers and then sum the targets for all solvable equations.
 You can read the full problem description for Day 7 [on the Advent of Code website](https://adventofcode.com/2024/day/7).
 Part 1 allows `+` and `*` only and mandates strict `left-to-right` evaluation with no precedence.
 Part 2 adds `||` (digit concatenation) while keeping everything else the same.
-
----
 
 ## Parsing the Input
 
@@ -41,8 +37,6 @@ end
 ```
 
 This structure keeps the `target` and component list together in a convenient format for evaluation.
-
----
 
 ## Core Evaluator: `base-k` Operator Enumeration
 
@@ -81,8 +75,6 @@ The loop converts each integer `perm` to `perm.to_s(op_count)`, `rjust`s it to `
 The digit to operator mapping is explicit and fixed, with `'0'` meaning `+`, `'1'` meaning `*`, and `'2'` meaning `||`.
 The function returns early as soon as a matching evaluation is found, which prunes the search work in many cases.
 
----
-
 ## Part 1: Addition and Multiplication Only
 
 Part 1 asks which equations are solvable when only `+` and `*` are available.
@@ -105,8 +97,6 @@ puts("Part 1 in #{p1_time.round(3)} ms\n  #{p1_result}\n\n")
 ```
 
 Because evaluation is strictly `left-to-right` and the number order is fixed, a single `reduce` neatly mirrors the problem’s semantics.
-
----
 
 ## Part 2: Adding Concatenation
 
@@ -132,8 +122,6 @@ puts("Part 2 in #{p2_time.round(3)} ms\n  #{p2_result}\n\n")
 
 The enumeration now spans `3**(m-1)` operator assignments per equation, and `left-to-right` evaluation still applies uniformly, so no precedence handling is required.
 
----
-
 ## Implementation Notes
 
 - The `base-k` enumeration compresses the entire search into a simple counter loop without recursion.
@@ -141,8 +129,6 @@ The enumeration now spans `3**(m-1)` operator assignments per equation, and `lef
 - Concatenation is modelled directly via `acc.to_s + next_val.to_s` and `to_i`, which keeps the intent clear.
 - Early return on the first success can cut down work significantly on larger lines.
 - Measuring runtime with `Benchmark.realtime` provides quick feedback on overall performance.
-
----
 
 ## Wrapping Up
 

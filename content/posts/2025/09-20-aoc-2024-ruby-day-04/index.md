@@ -17,8 +17,6 @@ This post explains the requirements for both parts, then walks through how the c
 If you want to browse the rest of my Advent of Code write‑ups, head over to the tag page at [Advent of Code]({{< ref "/tags/advent-of-code" >}}).
 You can also dive straight into the full source for every day at https://github.com/sdjmchattie/AdventOfCode2024.
 
----
-
 ## Part 1 — Counting every “XMAS” in the grid
 
 The first half asks you to count every straight‑line occurrence of the string XMAS in a rectangular grid, covering all eight directions and both orientations, and you can read the full brief here for flavour and examples: https://adventofcode.com/2024/day/4.
@@ -46,8 +44,6 @@ end
 - For each direction in `Grid::DIRECTIONS`, we call `input.adjacent_values_in_direction(point, direction)` to pull the straight‑line run of characters after the starting point.
 - Joining the run and testing `start_with?('MAS')` is equivalent to asking whether `X` plus those three characters spells `XMAS`.
 - Edge cells are naturally safe because truncated runs cannot start with `MAS`, so they simply do not count.
-
----
 
 ## Part 2 — Detecting “X‑MAS” crosses
 
@@ -83,8 +79,6 @@ end
 - Boundaries remain safe because diagonals that do not have three characters cannot start with `MAS` or `SAM`, so they simply evaluate to false.
 - Because both diagonals are coupled around the same centre, we do not need any extra bookkeeping for overlaps.
 
----
-
 ## Grid helpers and structure
 
 The code relies on a small utility module for clarity and reuse, and `input` is an instance of `Grid::Grid2D`, which is a class created specifically for handling 2D grids of information.
@@ -98,8 +92,6 @@ word  = chars.join
 ```
 
 This small abstraction keeps the puzzle logic tidy while centralising boundary handling and directional movement.
-
----
 
 ## Wrapping Up
 

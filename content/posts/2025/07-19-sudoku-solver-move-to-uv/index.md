@@ -23,8 +23,6 @@ The current code at the time of writing can be found [on GitHub](https://github.
 If you like this post and you'd like to know more about how to plan and write Python software, check out the [Python]({{< ref "/tags/python" >}}) tag.
 You can also find other posts in the [Sudoku Series]({{< ref "/tags/sudoku-series" >}}).
 
----
-
 ## Aims of the Migration
 
 Before embarking on a complex process such as switching package managers, it's a good idea to set out your aims.
@@ -34,8 +32,6 @@ These are mostly around not losing functionality and identifying where enhanceme
 - Ensure the system can still be run after the transition.
 - Ensure our tests still pass.
 - See if there are any `uv` specific techniques that we can apply.
-
----
 
 ## Steps to Migrate
 
@@ -56,8 +52,6 @@ So here's what I did to get everything moved over to UV.
 
 Let’s go into more detail on the last few steps.
 
----
-
 ## Adding Dependencies
 
 Although we have no core project dependencies yet, if we did we could add them to the `uv` managed environment using the following:
@@ -74,8 +68,6 @@ uv add --dev mypy pytest ruff
 
 This in turn updates the `pyproject.toml` file with these dependencies, creates the `uv.lock` file and generates a new `.venv` directory with the packages included.
 
----
-
 ## Define a Build Environment with setuptools
 
 It would be nice if we could continue to run the solver with a custom script name instead of having to call python on `main.py` or something similar.
@@ -90,8 +82,6 @@ build-backend = "setuptools.build_meta"
 
 To get the most from this arrangement, we need to move our source code and tests into a standard package structure.
 So we ensure our application files are under a `src` sub-directory, which they already are, and we move our tests from last time into a `test` directory.
-
----
 
 ## Creating a Script Command
 
@@ -111,8 +101,6 @@ uv run sudoku-solver
 ```
 
 This automatically ensures the environment is up-to-date, then it runs our Python code.
-
----
 
 ## Update Linting to Use UV and UVX
 
@@ -135,8 +123,6 @@ These run `ruff` in an isolated tool environment, which avoids unexpected side e
 You cannot use the `uvx` command for `mypy` because, without the project environment, you cannot parse the imports and other Python specific features.
 A separate environment for `mypy` causes the analysis to fail.
 
----
-
 ## Verify Everything Works with Tests
 
 As discussed last time, the litmus test is to ensure your tests still work.
@@ -157,8 +143,6 @@ tests/model/test_grid.py .......                          [100%]
 
 ====================== 21 passed in 0.01s ======================
 ```
-
----
 
 ## Wrapping up
 

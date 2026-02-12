@@ -18,8 +18,6 @@ With Advent of Code 2025 now complete, this post is a retrospective on how it we
 
 If you want to follow the whole series, check out the tag page at [Advent of Code]({{< ref "/tags/advent-of-code" >}}), and you can browse the full code for 2025 in [my 2025 solutions repository](https://github.com/sdjmchattie/AdventOfCode2025).
 
----
-
 ## What Went Well?
 
 I took the time to prepare for Advent of Code this year and so I had a good Python project set up that was ready to write an input parser and a method each for part 1 and part 2.
@@ -37,8 +35,6 @@ Instead I focussed on making clean solutions that I could write about on my blog
 I really enjoyed the Star Wars references in day 6.
 
 I managed to complete all 12 days and get all the available stars, which was a nice way to end the first 12 days of December.
-
----
 
 ## What Could Have Gone Better?
 
@@ -65,8 +61,6 @@ I did spend a lot of time optimising a `Grid` class and creating types for `Poin
 I did this because, in past years, having a competent collection of grid storage and manipulation code meant having a big head start on some of the puzzles.
 I did learn some things about generics in modern Python, which made it worthwhile, but I did over-engineer it and then not need it.
 
----
-
 ## What Would I Change In The Future?
 
 When I was working on the `Grid` class I wish I'd used more composition patterns for storing the data.
@@ -91,8 +85,6 @@ If I do decide that using AI to help write the code is acceptable (and I do feel
 For example, OpenAI's Codex tool lets you describe what you need a whole application to do and it will write the code for you.
 As I become more senior in my role at work, I realise that I'm more the decision maker while someone else does the code and I just verify it.
 Perhaps this is the future we can expect as senior engineers, and Codex fits into that role quite well.
-
----
 
 ## Wrapping Up
 

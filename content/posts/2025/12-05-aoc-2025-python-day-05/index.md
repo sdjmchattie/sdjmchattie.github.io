@@ -16,16 +16,12 @@ Then a hearty main where we reduce overlapping ranges of the fresh items and ide
 We manipulate the input into integers for analysis, then work out way through the two tasks at hand until we've got a dish to be proud of.
 If you fancy seconds, browse more posts via the tag page at [Advent of Code]({{< ref "/tags/advent-of-code" >}}), and you can inspect all of the 2025 recipes in [my repository](https://github.com/sdjmchattie/AdventOfCode2025).
 
----
-
 ## Understanding Day 5: Cafeteria
 
 The input contains inclusive ranges marking fresh ingredients by ID, followed by a blank line, and then a list of available IDs to check.
 Part 1 asks how many of the available IDs land inside any of the fresh ranges.
 Part 2 ignores the available IDs and instead asks how many integers are covered by the union of all fresh ranges, ensuring overlaps are not double counted.
 You can read the full puzzle on the [Advent of Code Day 5](https://adventofcode.com/2025/day/5) page.
-
----
 
 ## Parsing the Input
 
@@ -56,8 +52,6 @@ def prepare_input(file_content: list[str]) -> InputData:
 - `fresh_stock` holds inclusive ranges as `(start, end)`.
 - `stock` holds the available IDs that part 1 will check.
 
----
-
 ## Part 1: Count fresh available IDs
 
 ### What part 1 needs
@@ -80,8 +74,6 @@ def part1(input: InputData) -> None:
 
 - `item_is_fresh` takes advantage of the `any` method Python provides, returning True if any fresh range contains the ingredient item.
 - The final `sum` adds one for each available ID that tested fresh.
-
----
 
 ## Part 2: Count all IDs covered by the fresh ranges
 
@@ -138,15 +130,11 @@ def part2(input: InputData) -> None:
 - We remove the discovered intervals, widen `start` and `end` to extend through the `upper` and `lower` ranges when present, and append the merged range.
 - Finally we compute coverage with `end - start + 1` on each inclusive interval, which avoids enumerating any IDs.
 
----
-
 ## Complexity and practical notes
 
 - Part 1 runs a membership check for each available ID against each range, which scales with the product of their counts.
 - Part 2 avoids materialising covered IDs by merging intervals and then summing their lengths directly, which is what keeps the run time and memory in check for large inputs.
 - Python integers comfortably handle very large totals, so summing inclusive lengths will not overflow.
-
----
 
 ## Try it yourself
 
@@ -154,8 +142,6 @@ def part2(input: InputData) -> None:
 - You can read the full puzzle on the [Advent of Code Day 5](https://adventofcode.com/2025/day/5) page.
 - The full repository for my 2025 solutions is available in [my repository](https://github.com/sdjmchattie/AdventOfCode2025).
 - Explore more write ups in the series via the tag page: [Advent of Code]({{< ref "/tags/advent-of-code" >}}).
-
----
 
 ## Wrapping Up
 

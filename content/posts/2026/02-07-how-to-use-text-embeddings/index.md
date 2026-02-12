@@ -14,8 +14,6 @@ tags:
 Embeddings let software work with meaning rather than just matching words, so you can search by intent, find related content, and give LLMs the right context to answer questions.
 In this post we will start from first principles, show what these vectors actually are, explain their useful properties, and then generate and search them locally in Python using small open models, with a worked cosine similarity example you can turn into a graphic.
 
----
-
 ## What Are Text Embeddings?
 
 A text embedding is a piece of text projected into a high-dimensional latent space and represented as a vector of numbers.
@@ -31,8 +29,6 @@ Models like GPT use this Transformer attention system when processing user reque
 - **Structure:** related texts form clusters in the space, which you can visualise to spot themes and topics.
 - **Trainability:** many models are trained with a contrastive objective on large sentence-pair datasets so semantically similar pairs are pulled together.
 
----
-
 ## How Vectors Turn Into Better Answers
 
 Once you have an embedding for each item in your data, you can embed a user’s query and compare it to everything you have.
@@ -40,15 +36,11 @@ The closest vectors are the most semantically related items, which means you can
 This same pattern powers semantic search, recommendations, and retrieval-augmented generation by quickly finding relevant passages to feed into an LLM.
 Specialised vector stores and engines such as FAISS use Approximate Nearest Neighbour techniques like HNSW and IVF-PQ to make similarity search fast at scale.
 
----
-
 ## A Few Embedding Models To Explore
 
 - `sentence-transformers/all-MiniLM-L6-v2`: a compact and efficient model that maps sentences and paragraphs to 384-dimensional vectors for tasks like semantic search and clustering.
 - `sentence-transformers/all-mpnet-base-v2`: a larger model prioritising higher accuracy, often ranking well on semantic similarity and retrieval tasks.
 - `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`: a multilingual model that produces comparable vectors across 50+ languages so similar meaning aligns even when the language differs.
-
----
 
 ## Hands-On: Generate Embeddings Locally In Python
 
@@ -119,8 +111,6 @@ for rank, (idx, score) in enumerate(top_results, start=1):
 
 You should see plant biology sentences rise to the top because the query and those passages land close together in the embedding space.
 
----
-
 ## How Cosine Similarity Compares Vectors
 
 If we think of vectors as high-dimensional arrows, each one starts at a common origin and points in a particular direction.
@@ -138,16 +128,12 @@ A useful mental model is people walking.
 Two people heading the same way are aligned, one walking north while another walks east has little in common, and one walking north while the other walks south is directly opposed.
 That’s why cosine similarity works so well for text and embeddings: it compares meaningful direction, not raw size.
 
----
-
 ## Practical Tips
 
 - **Start simple:** a compact model like `all-MiniLM` is fast and good enough for many prototypes.
 - **Go multilingual only if you need it:** multilingual models align meaning across languages but are larger and may be slower.
 - **Use cosine similarity consistently:** embed your data and your queries with the same model and compare with cosine similarity.
 - **Track model versions:** if you change models your vectors change too, so keep a note and re-embed when you upgrade.
-
----
 
 ## Wrapping Up
 

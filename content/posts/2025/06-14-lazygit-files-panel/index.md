@@ -20,8 +20,6 @@ Lazygit’s files panel offers a useful view of the state of the files in your r
 From here you can select which changes you want to put into a commit and then push that commit.
 We cover this and more in this post.
 
----
-
 ## The Three Tabs in the Files Panel
 
 The Files panel in Lazygit is actually divided into three tabs, accessible by pressing the number `2` key to enter the panel and then switching between the tabs with the `[` and `]` keys:
@@ -42,8 +40,6 @@ This feature is useful when you want to work on several branches without constan
 The Submodules tab displays the Git submodules configured in your repository.
 Submodules are entire repositories checked out inside your main project’s folder, useful for managing dependencies or related projects.
 From this tab, you can initialise, update, or enter submodules as needed.
-
----
 
 ## Staging Changed Files
 
@@ -68,8 +64,6 @@ This toggles the staged status of the selected file.
 When you press space on a directory name, it will stage or unstage all the files inside that directory.
 If you want to stage all files at once, press `a` to toggle the staged status of all files in the list.
 
----
-
 ### Staging Individual Lines
 
 Sometimes, you only need to stage specific changes within a file rather than the entire file.
@@ -85,8 +79,6 @@ To do this:
 
 This granular control is particularly handy when you want to split your commits or stage just part of your work.
 
----
-
 ## Completing A Commit
 
 Once you have staged the files or individual lines you want to include, you can proceed to commit your changes.
@@ -97,8 +89,6 @@ When you’re finished, press `Enter` to complete the commit.
 
 Your new commit will then appear in the Commits panel (press `4` to switch to it and view history).
 
----
-
 ## Pushing Your Changes
 
 After committing, you may want to push your changes to the remote repository.
@@ -108,14 +98,10 @@ Be sure to use the uppercase character to push — lowercase `p` is used for pul
 
 Lazygit will show you the progress and any errors in the interface, saving you from typing out the git push command manually.
 
----
-
 ## Other Keyboard Shortcuts
 
 For a full list of other shortcuts relevant to the current panel, press `?` while in Lazygit to display the help menu.
 This context-sensitive help is an invaluable resource when you’re getting started or exploring new features.
-
----
 
 ## Wrapping Up
 

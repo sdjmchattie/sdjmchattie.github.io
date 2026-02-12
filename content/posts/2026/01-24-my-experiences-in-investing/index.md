@@ -13,13 +13,9 @@ tags:
 Investing in the stock market has helped me aim for better long-term growth than I could get from a typical savings account, while keeping risk in check with some simple rules and tax-efficient wrappers.
 I will share the specific choices that worked for me, the mistakes I will not repeat, and the practical guardrails I now use to stay disciplined.
 
----
-
 ## Disclaimer
 
 ***I am not a licensed financial advisor or planner. What I share here comes from my own personal experiences and choices. You should talk to a qualified financial advisor before making any big money decisions. When investing in the stock market, your capital is at risk.***
-
----
 
 ## Why I Chose Stocks Over Just Saving
 
@@ -34,8 +30,6 @@ I hold roughly three months of expenses in a regular cash ISA to cover emergenci
 I wouldn't want to be forced to sell shares at a loss because I didn't have a good buffer.
 I started small, learned how the mechanics worked, and only increased contributions once I felt comfortable with the process and the volatility.
 
----
-
 ## Using a UK ISA To Keep Returns Tax-Efficient
 
 Because I am in the UK, I use a stocks and shares ISA so that capital gains and dividends are tax-free inside the wrapper.
@@ -44,8 +38,6 @@ Outside an ISA, the dividend allowance is £500 for the 2025/26 tax year, and ca
 These rules make the ISA a very effective first port of call for long-term investing.
 
 The figures above are correct at the time of writing, but might have changed since.
-
----
 
 ## What I Stopped Doing And Why
 
@@ -60,8 +52,6 @@ Fees still matter, even on low-cost platforms.
 For Trading 212 Invest and ISAs, the platform’s own fee is the FX fee on currency conversions, while some other charges come from exchanges and tax authorities.
 For example, Stamp Duty Reserve Tax of 0.5% applies on purchases of most London Stock Exchange shares, and US market sell orders include small SEC and FINRA charges.
 In practice, I find the app straightforward, and withdrawals have been quick, which makes rebalancing and managing contributions easier.
-
----
 
 ## A Hard Lesson From 2025
 
@@ -85,8 +75,6 @@ I've heard it said that the worst enemy for your investment portfolio is you.
 I try not to fiddle with it more than necessary.
 90% or more of my portfolio is invested and then left alone to gain value on average over time.
 
----
-
 ## The Simple Strategy I Use Today
 
 My top rule is not to put more than around 10% of my portfolio into individual stocks.
@@ -99,8 +87,6 @@ Low-cost index ETFs are widely available and provide broad exposure at a fractio
 Some large providers have even reduced fees on popular equity ETFs in recent years, making it easier to keep ongoing costs down.
 For my use case, combining broad market coverage with low fees and an ISA wrapper helps me keep more of what the market delivers.
 
----
-
 ## Guardrails And Habits That Keep Me On Track
 
 - I contribute regularly, but I am comfortable pausing contributions during personal cashflow crunches rather than selling investments.
@@ -108,14 +94,10 @@ For my use case, combining broad market coverage with low fees and an ISA wrappe
 - I prioritise time in the market over trying to time the market, which keeps me focused on process rather than predictions.
 - I revisit my 10% cap on individual stocks whenever a holding appreciates quickly, trimming back if it drifts beyond my risk limit.
 
----
-
 ## What Is My Biggest Mistake?
 
 Honestly, I think my biggest mistake was waiting until now to start.
 I could have been putting small monthly amounts into investments for the past 20 years and I would likely have a few tens of thousands of pounds by now.
-
----
 
 ## Wrapping Up
 

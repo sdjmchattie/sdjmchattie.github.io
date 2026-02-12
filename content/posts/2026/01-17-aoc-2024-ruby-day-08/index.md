@@ -17,8 +17,6 @@ We will walk through a vector-stepping approach in Ruby that keeps the implement
 If you want the full problem statement can be read on the [Advent of Code puzzle page](https://adventofcode.com/2024/day/8).
 You can browse all entries in this series under [Advent of Code]({{< ref "/tags/advent-of-code" >}}), and my complete source for 2024's solutions can be found [on GitHub](https://github.com/sdjmchattie/AdventOfCode2024).
 
----
-
 ## Day 8 Overview
 
 You are given a rectangular grid where each non-dot character represents an antenna keyed by a frequency character.
@@ -26,8 +24,6 @@ Part 1 asks you to consider pairs of antennas with the same frequency and mark a
 
 Part 2 changes the rule so that every position collinear with at least two antennas of the same frequency becomes an antinode, which includes the antennas themselves.
 The official puzzle text and examples are on the [day 8 puzzle page](https://adventofcode.com/2024/day/8) on Advent of Code.
-
----
 
 ## Parsing the Map and Grouping by Frequency
 
@@ -48,8 +44,6 @@ end
 
 A separate `antinodes` grid holds only the detected antinode positions so that we can count unique locations cleanly at the end.
 Because we only ever count from the `antinodes` grid, writes that land out of bounds do not affect the result.
-
----
 
 ## Part 1: What Needs To Be Computed
 
@@ -79,8 +73,6 @@ antinodes.count('#')
 Subtracting the vector from `loc1` yields the antinode one step before `loc1` along the line, and adding the vector to `loc2` yields the antinode one step after `loc2`.
 The `antinodes` grid acts like a set, so repeated writes to the same coordinate are harmless.
 Finally, the answer is simply `antinodes.count('#')`.
-
----
 
 ## Part 2: What Changes
 
@@ -115,8 +107,6 @@ antinodes.count('#')
 Because the very first backward step from `loc2` and the very first forward step from `loc1` land on the paired antennas, those antennas are correctly included as antinodes.
 As in Part 1, uniqueness falls out from writing into a dedicated `antinodes` grid and counting the `'#'` cells at the end.
 
----
-
 ## Notes on Utilities and Structure
 
 - `Grid::Grid2D` abstracts reading, indexing, bounds checks via `in_bounds?`, and counting cells with `count`.
@@ -124,8 +114,6 @@ As in Part 1, uniqueness falls out from writing into a dedicated `antinodes` gri
 - `map.empty_dup` provides a clean writable grid for antinodes so we never risk mutating the original map.
 - Processing by `map.all_chars` combined with `map.find(freq)` guarantees only like-for-like characters are paired.
 - The pairwise loop uses `each_with_index` and a trailing slice to enumerate each unordered pair exactly once.
-
----
 
 ## Running The Script
 
@@ -145,8 +133,6 @@ p2_time = Benchmark.realtime { p2_result = part2(map) } * 1000
 puts("Part 1 in #{p1_time.round(3)} ms\n  #{p1_result}\n\n")
 puts("Part 2 in #{p2_time.round(3)} ms\n  #{p2_result}\n\n")
 ```
-
----
 
 ## Wrapping Up
 

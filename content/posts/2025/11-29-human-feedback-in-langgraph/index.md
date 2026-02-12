@@ -16,14 +16,10 @@ tags:
 Adding a human-in-the-loop step to a LangGraph flow is an easy way to improve quality and control without adding branching or complexity.
 In this post we will build a tiny three-node graph that drafts copy with an LLM, pauses for human feedback, and then revises the draft, using LangGraph's `interrupt` to pause execution safely.
 
----
-
 ## What We Are Building
 
 We will create a linear graph that turns a short brief into a draft, collects human feedback, and produces a revised final text.
 The nodes are `draft_with_llm`, `human_feedback`, and `revise_with_llm`, wired from `START` to `END`.
-
----
 
 ## Define the Graph State
 
@@ -43,8 +39,6 @@ class ReviewState(TypedDict, total=False):
 
 A minimal state keeps the flow simple to reason about and straightforward to debug.
 A well designed state lets you look at the process followed at the end of invoking the graph.
-
----
 
 ## Implement the Nodes
 
@@ -116,8 +110,6 @@ def revise_with_llm(state: ReviewState) -> dict:
 
 This keeps the LLM use focused on one job, which makes outputs easier to evaluate.
 
----
-
 ## Wire Up The Graph
 
 We connect the nodes in a straight line to keep the flow clear.
@@ -145,8 +137,6 @@ graph.add_edge("revise_with_llm", END)
 ```
 
 The special `START` and `END` markers make entry and exit explicit.
-
----
 
 ## Running The Flow
 
@@ -190,15 +180,11 @@ print(final["final_text"])
 The first call pauses and returns an interrupt payload that you can surface in a UI, store, or log.
 The second call resumes the exact run by passing a `Command(resume=...)` with the user's input.
 
----
-
 ## Why Add a Human Node
 
 - You keep humans in control of tone, accuracy, and compliance for sensitive content.
 - You gain a natural place to capture rationale, suggestions, and approvals that can be stored in state.
 - You improve trust in outputs without introducing branching logic.
-
----
 
 ## Wrapping Up
 

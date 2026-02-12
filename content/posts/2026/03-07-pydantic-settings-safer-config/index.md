@@ -20,15 +20,11 @@ Pydantic used to solve this with `BaseSettings` in v1.
 In v2 the approach moved to a dedicated package, `pydantic-settings`, which is what we will use here.
 If you want more Python posts, check the [Python]({{< ref "/tags/python" >}}) tag.
 
----
-
 ## Why Env Vars Alone Fall Short
 
 Env vars are all strings, which means type errors are easy to miss until runtime.
 Defaults often live in multiple places, and missing values can fail late in your startup path.
 You also end up with scattered config in `os.environ` lookups across the codebase, which makes change tracking and testing harder.
-
----
 
 ## What Pydantic Settings Gives You
 
@@ -43,8 +39,6 @@ If you want the short version, it gives you:
 - A predictable order for where values come from and how they override each other.
 - Easier testing because you can override settings explicitly.
 
----
-
 ## What Belongs In Settings
 
 Settings work best for configuration that varies by environment but does not change at runtime.
@@ -56,8 +50,6 @@ That usually includes things like:
 - Third-party API keys and credentials (loaded from secret stores, not committed).
 
 Keeping these values in one settings class makes it obvious what your app needs to run and how to configure it for each environment.
-
----
 
 ## Quick Start With Pydantic Settings
 
@@ -111,8 +103,6 @@ For example, if you only define `APP_DATABASE_URL`, you will still get:
 - `environment="local"`
 - `log_level="INFO"`
 - `max_workers=4`
-
----
 
 ## Layering Local Dev With .env Files
 
@@ -171,8 +161,6 @@ class Settings(BaseSettings):
 In this setup, `.env.local` overrides `.env`, and environment variables override both.
 That lets you keep team defaults in `.env`, personal overrides in `.env.local`, and production values in the host environment.
 
----
-
 ## Secret Stores in Cloud Environments
 
 In production you should not store secrets in plain env files.
@@ -224,16 +212,12 @@ To use other providers, swap in their source classes:
 These sources can be combined with env vars and `.env` files, and the order in `settings_customise_sources` controls the precedence.
 If your platform already injects secrets as environment variables, you can skip the custom source and let Pydantic Settings read them directly.
 
----
-
 ## Practical Tips
 
 - Fail fast by keeping required values required.
 - Keep settings grouped and small rather than passing raw env vars through your app.
 - Avoid loading secrets at import time so your modules stay testable.
 - Document your settings in a single place so new contributors know what is required.
-
----
 
 ## Wrapping Up
 

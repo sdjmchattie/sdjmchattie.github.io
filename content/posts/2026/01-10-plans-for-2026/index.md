@@ -18,8 +18,6 @@ This includes my experiences with investing money, my love of board games and re
 But fear not, I will be continuing regular technical content as well.
 I already have plans for a few things I want to write about in these areas.
 
----
-
 ## Personal Focus Areas
 
 ### Making better use of savings
@@ -35,8 +33,6 @@ They can also be very expensive for what they are, while the parts are often fra
 I asked for and received decks of cards for Christmas as I feel there are lots of incredible games that can be enjoyed with them.
 I will be investigating these as an option to playing larger board games because they are small enough to pocket, can be obtained for a very low price, and also have lots of good looking options available.
 I have been particularly enamoured by Bicycle branded cards, who make lots of design options and sell worldwide.
-
----
 
 ## New Non-Technical Content
 
@@ -68,8 +64,6 @@ I will also cover classic card games that only need a standard card deck and a s
 Some games require jokers and others do not, so ideally you'll have a deck with them in and can remove them if you don't need them for a particular game.
 
 I will be covering one, two and multi-player games as I learn and try them out.
-
----
 
 ## Technical Roadmap
 
@@ -115,14 +109,10 @@ I will publish another one or two articles on the Python Sudoku Solver to captur
 I would like to write about my experience creating a clone of Super Mario Land in Godot over the Christmas break.
 The series will focus on the approach, what worked, and the lessons that carry over to other small game projects.
 
----
-
 ## Publishing Cadence And What To Expect
 
 The core rhythm will remain a weekly post as I've found that works for my available time.
 When I have more content available and it doesn't take long to produce, there may be more posts than this.
-
----
 
 ## Wrapping Up
 

@@ -19,8 +19,6 @@ Join me as we explore the problem, understand the requirements, and walk through
 If you'd like to see the rest of my Advent of Code journey, check out related posts by following the [Advent of Code]({{< ref "/tags/advent-of-code" >}}) tag.
 You can also browse the full repository of my solutions [on GitHub](https://github.com/sdjmchattie/AdventOfCode2024).
 
----
-
 ## Understanding the Puzzle: Red-Nosed Reports
 
 The problem presents us with a list of reports from a nuclear fusion/fission plant referred to as the Red-Nosed reactor.
@@ -52,8 +50,6 @@ However, `1 2 7 8 9` is unsafe because it jumps from 2 to 7, a difference of 5.
 
 Your challenge is to analyse all the reports and count how many satisfy this safety condition.
 
----
-
 ## Solving Part 1 with Ruby
 
 My Ruby solution reads input reports into arrays of integers.
@@ -81,8 +77,6 @@ end
 - All safe reports pass the check, and the `count` method tallies how many do.
 
 This approach efficiently processes the input and counts the safe reports using Ruby's enumerable methods and concise symbol-based checks.
-
----
 
 ## Extending to Part 2: The Problem Dampener
 
@@ -119,8 +113,6 @@ end
 - The safe reports are counted in the same way as they were for part 1.
 
 This effectively tolerates a single "bad" level, greatly increasing the number of safe reports.
-
----
 
 ## Wrapping Up
 

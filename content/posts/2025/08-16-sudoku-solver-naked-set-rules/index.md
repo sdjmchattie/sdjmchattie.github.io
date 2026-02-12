@@ -19,8 +19,6 @@ These are documented alongside more advanced rules on a [Mastering Sudoku websit
 If you like this post and you'd like to know more about how to plan and write Python software, check out the [Python]({{< ref "/tags/python" >}}) tag.
 You can also find other posts in the [Sudoku Series]({{< ref "/tags/sudoku-series" >}}).
 
----
-
 ## What are the Naked Set Rules?
 
 These rules use logical deduction to try to identify cells that meet a number of criteria:
@@ -72,8 +70,6 @@ Let's recall what we were doing the other week.
 In the single candidate rule, we were finding a cell with a single candidate, setting its value to the candidate and removing the candidate from all neighbouring cells.
 That last part is effectively what we're doing with the naked pair and naked triple rules above, just with one cell instead of a set of two or three.
 The only difference is that with a naked pair or a naked triple, we still don't know which of the two or three candidates go in which specific cell yet.
-
----
 
 ## Implementing These Rules
 
@@ -165,8 +161,6 @@ While iterating over the cells in the region, we want to skip over any cells tha
 For those that are left, we remove the candidates from them and update our flag to indicate that the rule was applied to something in the grid.
 Returning a `True` value from the function will indicate to the caller that this rule changed something in our puzzle, just like we did for the single candidate rule.
 
----
-
 ## Applying All Our Rules
 
 Now that we have two new methods to use as part of solving, it was time to update how we call the solver methods.
@@ -188,8 +182,6 @@ If the single candidate rule is applied once to the grid, and that opens up more
 
 This is partly because later rules might assume simpler solving has already been applied, but also because simpler rules, if applicable, use fewer resources, so our solver can remain quick.
 
----
-
 ## Testing Our Code
 
 Unit tests have been added to confirm that our new rules behave the way we expect.
@@ -203,8 +195,6 @@ In the unit tests I check:
 
 I also update and add tests to the `Grid` and the `Solver` where I've updated the code, including checking that later rules do not get applied until earlier rules have already been applied as much as possible.
 
----
-
 ## Solving Puzzles
 
 The moment of truth has come.
@@ -215,8 +205,6 @@ I had assumed they would require more advanced techniques, but apparently not.
 The puzzles labelled expert still do not solve though.
 They get a lot further along, but are still hitting a dead end before being solved.
 We will need more advanced rules for those!
-
----
 
 ## Wrapping up
 

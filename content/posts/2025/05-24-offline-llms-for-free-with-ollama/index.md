@@ -17,8 +17,6 @@ Whether you’re working on Mac, Windows, or Linux, this straightforward guide w
 Discover the most popular models, their capabilities, and how to seamlessly integrate them with AI tools via Ollama’s API.
 Let’s unlock the potential of your own local AI hub!
 
----
-
 ## What Is Ollama and Why Run LLMs Locally?
 
 ### What Is Ollama?
@@ -33,8 +31,6 @@ But most importantly, it is completely free to use.
 - **Privacy & Data Security**: Keep your sensitive data on your device; no third-party servers involved.
 - **Offline Accessibility**: Work anywhere—even in remote locations or low-bandwidth environments.
 - **Cost Efficiency**: No subscription fees—just the cost of running your computer.
-
----
 
 ## Popular Ollama Models and Hardware Considerations
 
@@ -57,8 +53,6 @@ Generally, the smaller the number of parameters, the lower the resources require
 Ollama will inform you if the model you've chosen will not run on your machine.
 The models are very RAM heavy, so the more RAM you have, the better.
 If Ollama detects that you have GPU resources available, it will use them automatically as these are the most efficient way to run an LLM.
-
----
 
 ## Installing Ollama on Your System
 
@@ -92,8 +86,6 @@ If Ollama detects that you have GPU resources available, it will use them automa
     ollama --help
     ```
 
----
-
 ## Getting a Model Up and Running
 
 ### Post-Installation: Browsing & Downloading Models
@@ -122,8 +114,6 @@ Paris
 ```
 
 Responses will be displayed inline to allow you to try different models before committing to one for a development project.
-
----
 
 ## Using Ollama’s API for Seamless AI Integration
 
@@ -179,8 +169,6 @@ print(response.json()['response'])
 ```
 
 This opens automation possibilities, enabling complex workflows and AI-powered applications locally.
-
----
 
 ## Wrapping Up
 

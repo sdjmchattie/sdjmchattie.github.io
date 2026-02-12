@@ -15,8 +15,6 @@ Here's a game my wife and I enjoy, imagining we're a real life Radagast the Brow
 Fungi offers this in a cosy two‑player card game that mixes simple rules with hand management and careful strategy to keep things interesting.
 If you mostly play with two players, this one comes in a small box and deserves a spot on your games shelf.
 
----
-
 ## What Is Fungi
 
 Fungi is a two‑player set collection and hand management card game about collecting and cooking mushrooms.
@@ -25,15 +23,11 @@ Despite its simplicity, the continuous change in what's available and the decay 
 The art is beautiful, with lovely illustrations and Latin names shown for the mushrooms.
 It plays in around 30 minutes, is suitable for ages 10 and up, and can be enjoyed as a friendly stroll or a more cutthroat tussle.
 
----
-
 ## Why Two‑Player Games Like This Shine
 
 When you only have two players, games designed specifically for two tend to feel tighter, faster, and more interactive.
 Fungi leans into that with open information, tempo pressure from the decay pile, and meaningful hand management that is directly influenced by what your opponent is doing.
 It is quick to teach, rewards paying attention, and provides plenty of replayability without rules bloat.
-
----
 
 ## What Comes In The Box
 
@@ -46,8 +40,6 @@ All the components of the game are standard sized playing cards, but there are a
 - A pile of stick cards which allow you to grab mushrooms a bit further away from you.
 - A pair of shoes as a reminder of your current position in the forest.
 - Three rule reminder cards per player.
-
----
 
 ## Setup In A Few Minutes
 
@@ -73,8 +65,6 @@ Each player then needs to check their 3 cards and ensure they deal with these ca
 At **no point** are you ever allowed to take an action that would result in you having more cards in your hand than the hand size.
 The default size is 8 cards, but this increases by 2 permanently for every basket you've collected.
 Additionally, fly agaric cards reduce your hand size by 4 each for the turn you collect them and your following turn before being sent to the discard pile and the effect wearing off.
-
----
 
 ## How A Turn Flows
 
@@ -104,8 +94,6 @@ After your selected action from above, you must do all of the following:
   Five mushrooms allows you to add cider if you have it in your hand.
   You can put two additional ingredients in the pan, but only if you have enough mushrooms to allow them both separately.
 - When you pick up cards from the forest, they can be from deeper into the forest than the shoes are currently, but that requires the use of sticks.
-
----
 
 ## Special Card Effects
 
@@ -151,8 +139,6 @@ If you want, you can pick up the eighth card in the forest, next to the day deck
 
 Used sticks go back in the pool of available sticks as they were after the setup of the game.
 
----
-
 ## End Of The Game And Scoring
 
 The game only has one end-point.
@@ -165,23 +151,17 @@ Butter and cider also add extra flavour points to the dish if they are present.
 
 Add up all the dishes each player has cooked and the one with the highest flavour points is declared the winner!
 
----
-
 ## Price Check And Value
 
 You should not need to pay over £10 for Fungi.
 Recent prices range from £9 at the low end but some are as high as £13.49, so select your retailer carefully.
 At under £10 for a beautiful, quick, and replayable two‑player game, the value proposition is excellent.
 
----
-
 ## Verdict And Rating
 
 Fungi is a lovely two‑player experience that is quick to set up, easy to teach, and surprisingly strategic thanks to its decay system and hand management.
 It looks great on the table, plays in half an hour, and works whether you want a gentle ramble or a cheeky duel for the choicest chanterelles.
 If you specifically want a two‑player game, I rate it 7.5 out of 10.
-
----
 
 ## Wrapping Up
 

@@ -24,8 +24,6 @@ Enter **Lazygit**, a terminal-based Git UI that simplifies and streamlines Git m
 
 In this guide, we'll explore what Lazygit is, how to install it, and how to leverage its features to supercharge your Git process — whether you're a beginner or a seasoned developer.
 
----
-
 ## What is Lazygit?
 
 Lazygit is a lightweight, open-source terminal UI for Git.
@@ -36,8 +34,6 @@ It displays commit history, branch trees, status updates, and diffs visually, so
 
 One of its standout features is that it lets you see your commands executing in real-time, helping you learn Git commands as you use the tool.
 This makes Lazygit an excellent choice for developers looking to deepen their understanding of Git workflows while keeping things straightforward.
-
----
 
 ## Why Use Lazygit?
 
@@ -52,8 +48,6 @@ Lazygit offers several benefits:
 - **Customization:** Supports setting shortcuts and creating custom commands.
 
 Many developers find that Lazygit reduces mistakes, speeds up workflow, and minimises frustration with Git’s CLI syntax.
-
----
 
 ## How to Install Lazygit
 
@@ -83,8 +77,6 @@ winget install --id=JesseDuffield.lazygit
 
 Alternatively, download prebuilt binaries from the [Releases page](https://github.com/jesseduffield/lazygit/releases).
 
----
-
 ## Using Lazygit: An Overview of Key Panels
 
 Once installed, navigate to your repository folder and run:
@@ -104,8 +96,6 @@ This opens the interactive terminal UI, divided into several key panels:
 
 You can also use the mouse to choose items in the panels.
 When you're inside a panel, use `[` and `]` to move between the tabs inside that panel.
-
----
 
 ## Core Operations Made Easy
 
@@ -146,8 +136,6 @@ Push your current branch with `P`, or else use lowercase `p` to pull in latest c
 Lazygit detects conflicts during merges.
 It guides you through resolving conflicts by showing markers and offering commands — all within the UI.
 
----
-
 ## Customizing Lazygit
 
 Lazygit can be tailored to your workflow:
@@ -158,16 +146,12 @@ Lazygit can be tailored to your workflow:
 
 Check the [Official Documentation](https://github.com/jesseduffield/lazygit/wiki) for comprehensive customization.
 
----
-
 ## Practical Tips for Maximising Lazygit Efficiency
 
 - **Use the search feature (`/`)** to filter commits, branches, or files.
 - **Preview diffs before acting** to avoid mistakes.
 - **Stage individual lines or hunks** for clean commits.
 - **Integrate with editors:** Use plugins like [neovim's lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) for seamless workflows.
-
----
 
 ## Wrapping Up
 

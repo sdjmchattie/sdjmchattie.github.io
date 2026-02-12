@@ -16,8 +16,6 @@ Part 1 counts only the zeros landed on at the end of rotations, and Part 2 upgra
 In this post I will explain both parts, then walk through a compact Python solution that avoids simulating individual clicks and runs in linear time relative to the number of instructions.
 If you want to follow the whole series, check out the tag page at [Advent of Code]({{< ref "/tags/advent-of-code" >}}), and you can browse the full code for 2025 in [my repository](https://github.com/sdjmchattie/AdventOfCode2025).
 
----
-
 ## Understanding Day 1: Secret Entrance
 
 The puzzle describes a safe dial labelled 0 through 99 arranged in a circle and starting at 50.
@@ -26,15 +24,11 @@ For Part 1 you must count the number of times the dial is exactly at 0 after fin
 For Part 2 you must instead count the number of times any single click during a rotation lands on 0, including clicks that are not at the end of a rotation.
 You can read the full puzzle on the [Advent of Code website](https://adventofcode.com/2025/day/1).
 
----
-
 ## Parsing the Input
 
 The input is a list of lines containing the rotations.
 These are in the form of L12 or R32 where L rotates the dial counter-clockwise by that many clicks and R rotates the dial clockwise.
 The specific instructions are parsed in the logic of each part in my code, so I don't do anything with the values when preparing the input data.
-
----
 
 ## Part 1: Count zeros only at the end of each rotation
 
@@ -70,8 +64,6 @@ def part1(input: PuzzleInput) -> None:
 - The code starts from 50 and adjusts the dial by subtracting for L and adding for R.
 - It then checks `dial % 100 == 0` to see if the dial ended exactly on zero for that rotation.
 - `zeroes` is incremented by 1 if the dial ended on zero after a rotation.
-
----
 
 ## Part 2: Count every click that lands on zero during each rotation
 
@@ -110,15 +102,11 @@ def part2(input: PuzzleInput) -> None:
 - These formulas count every click that lands on zero, including when the rotation ends exactly on zero.
 - Because each line is processed once with O(1) arithmetic, the solution remains linear in the number of rotations and does not count individual clicks.
 
----
-
 ## Try it yourself
 
 - You can fetch your personalised input from the Advent of Code site and run this code locally.
 - The full repository for my 2025 solutions is [on GitHub](https://github.com/sdjmchattie/AdventOfCode2025).
 - Explore more write-ups in the series via the tag page: [Advent of Code]({{< ref "/tags/advent-of-code" >}}).
-
----
 
 ## Wrapping Up
 

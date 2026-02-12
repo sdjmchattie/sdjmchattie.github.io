@@ -20,8 +20,6 @@ In this post, we'll explore how to install Ruff, configure it for your projects,
 
 If you're interested in Python tooling, you may also enjoy reading about [Python package managers]({{< ref "04-26-package-managers-for-python" >}}).
 
----
-
 ## What is Ruff and Why Should You Use It?
 
 Ruff is a modern Python linter and formatter that stands out for its exceptional speed and comprehensive feature set.
@@ -47,8 +45,6 @@ You can enable exactly the checks that matter for your project.
 Ruff is valuable for any Python project where code quality matters.
 This includes web applications, data science projects, CLI tools, libraries, and microservices.
 If you're working on a team or building software that others will use or maintain, Ruff helps ensure consistency and catch common mistakes before they become problems.
-
----
 
 ## Installing Ruff
 
@@ -126,8 +122,6 @@ If you have Rust's Cargo package manager installed:
 cargo install ruff
 ```
 
----
-
 ## Basic Usage
 
 Ruff provides two main commands: `check` for linting and `format` for code formatting.
@@ -175,8 +169,6 @@ To format a specific file:
 ```bash
 ruff format src/main.py
 ```
-
----
 
 ## Configuring Ruff
 
@@ -304,8 +296,6 @@ ignore = [
 known-first-party = ["myapp"]
 ```
 
----
-
 ## Integrating Ruff into CI/CD Pipelines
 
 Running Ruff as part of your CI/CD pipeline ensures that code quality checks happen automatically before code is merged or deployed.
@@ -416,8 +406,6 @@ RUN ruff check .
 RUN ruff format --check .
 ```
 
----
-
 ## Common Workflows
 
 ### Local Development
@@ -470,8 +458,6 @@ Most editors support Ruff through extensions:
 
 With editor integration, you get real-time feedback as you type and can format on save.
 
----
-
 ## Migration from Other Tools
 
 If you're currently using Flake8, Black, and isort, migrating to Ruff is straightforward:
@@ -484,8 +470,6 @@ If you're currently using Flake8, Black, and isort, migrating to Ruff is straigh
 
 For most projects, Ruff's default configuration works well out of the box.
 You can start with minimal config and add rules as needed.
-
----
 
 ## Wrapping Up
 

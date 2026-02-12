@@ -21,8 +21,6 @@ The two needed to solve most Sudoku puzzles are called XY-Wing and XYZ-Wing:
 
 If you like this post and you'd like to know more about how to plan and write Python software, check out the [Python]({{< ref "/tags/python" >}}) tag.
 
----
-
 ## What are the Wing Rules?
 
 The wing rules all involve a pivot cell.
@@ -101,8 +99,6 @@ Let's look at an example.
 
 It looks very similar to the XY-Wing pattern above in a box-line arrangement.
 However, the affected cells in the middle box are no longer valid to remove the `Z` candidate from.
-
----
 
 ## Implementing the Rules
 
@@ -209,22 +205,16 @@ This logic is almost identical to the logic for an XY-Wing with the following di
 - Line 11 identifies wing cells as those who have 2 candidates, both of which have to be shared with the pivot.
 - Line 22 to 27 find the cells that can have the `Z` candidate removed by finding those which share a house with the pivot and both wing cells.
 
----
-
 ## Testing Our Code
 
 The tests are very similar to other rules we've created.
 In each case, I check that we can find the wings we expect to find, that we get a `True` result when a wing was found, that we get a `False` result when there is no wing, and that we get a `False` result when the grid is complete.
-
----
 
 ## Solving Puzzles
 
 Running the new code against our existing "expert" puzzles shows that we can now solve the one labelled `expert_02` so we've made progress!
 The other two expert puzzles still do not fully solve, but they are more solved than they were before these rules.
 We still need to implement more rules.
-
----
 
 ## Wrapping Up
 

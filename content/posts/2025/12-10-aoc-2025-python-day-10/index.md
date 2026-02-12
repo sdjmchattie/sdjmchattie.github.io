@@ -15,16 +15,12 @@ Day 10 is by far the hardest puzzle so far in 2025.
 First a classic bit-flipping puzzle that reduces to XOR over bitmasks, then a minimal-presses counter puzzle modelled as an integer optimisation.
 If you want to follow the whole series, check out the tag page at [Advent of Code]({{< ref "/tags/advent-of-code" >}}), and you can browse the full code for 2025 in [my repository](https://github.com/sdjmchattie/AdventOfCode2025).
 
----
-
 ## Understanding Day 10: Factory
 
 Each input line describes a machine with three parts.
 There is a target indicator pattern in square brackets, a list of buttons in parentheses where each button toggles or increments a subset of positions, and a list of target counter values in curly braces.
 Part 1 asks for the minimum number of button presses to match the indicator pattern while ignoring the counters, and Part 2 switches mode so that buttons increment counters to match a target with the fewest total presses.
 You can read the full puzzle on the [Advent of Code Day 10](https://adventofcode.com/2025/day/10) page.
-
----
 
 ## Parsing and Representation
 
@@ -69,8 +65,6 @@ def prepare_input(file_content: list[str]) -> PuzzleInput:
     return machines
 ```
 
----
-
 ## Part 1: Minimum presses to match the indicator pattern
 
 Part 1 ignores counters and treats each press as toggling a set of lights, so the combined effect of pressing a subset of buttons is the XOR of their bitmasks.
@@ -102,8 +96,6 @@ def part1(input: PuzzleInput) -> None:
 
 Using integer masks keeps combination and XOR very fast, and `bin(combo).count("1")` gives the press count per subset without extra bookkeeping.
 Part 1 completed in 205.823 ms on my MacBook Air M1.
-
----
 
 ## Part 2: Minimum presses to reach the target counters
 
@@ -151,16 +143,12 @@ I first tried greedy strategies that fulfil one counter at a time by selecting b
 I then tried a Dijkstra style search with `heapq` over counter vectors using total presses as the distance metric, but the state space was still too large for my input and it did not finish quickly.
 Z3 gave me a concise and reliable way to state the constraints and objective directly, and it found the optimal totals fast enough without hand-rolled pruning or heuristics.
 
----
-
 ## Try it yourself
 
 - Fetch your personalised input from the Advent of Code site and run both parts locally.
 - Read the full puzzle on the [Advent of Code Day 10](https://adventofcode.com/2025/day/10) page.
 - Explore more write-ups via the tag page: [Advent of Code]({{< ref "/tags/advent-of-code" >}}).
 - Browse the full 2025 solutions in [my repository](https://github.com/sdjmchattie/AdventOfCode2025).
-
----
 
 ## Wrapping Up
 

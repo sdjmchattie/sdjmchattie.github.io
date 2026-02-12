@@ -16,8 +16,6 @@ Part 1 counts where a straight descent is blocked by a splitter and turns into a
 On my input the implementation is fast, with Part 1 completing in 3.555 ms and Part 2 completing in 0.049 ms.
 If you want to follow the whole series, check out the tag page at [Advent of Code]({{< ref "/tags/advent-of-code" >}}), and you can browse the full code for 2025 in [my repository](https://github.com/sdjmchattie/AdventOfCode2025).
 
----
-
 ## Understanding Day 7: Laboratories
 
 The input is a rectangular map with a single start `S`, empty cells represented by `.` and splitter cells marked with `^`.
@@ -38,8 +36,6 @@ You can read the full problem on the [Advent of Code Day 7](https://adventofcode
 We treat the grid as a dynamic program that accumulates how many tachyons reach each coordinate, progressing strictly from top to bottom.
 Seed the starting position with a count of 1, then push counts into the next row by either continuing straight down through `.` or splitting left and right when the next row contains `^`.
 This single downward tabulation gives us all the information needed for both parts.
-
----
 
 ## Parsing and Precomputation
 
@@ -79,8 +75,6 @@ def prepare_input(file_content: list[str]) -> PuzzleInput:
 
 By the end of this, we have a grid of integers where the value stored is how many different ways you can reach that point by following paths from the splitters above.
 
----
-
 ## Part 1: Count the splits
 
 Part 1 asks for how many times a potential downward step is blocked and turned into a split.
@@ -105,8 +99,6 @@ def part1(input: PuzzleInput) -> None:
 - If there were tachyons present above (`adjacent > 0`) but none arrived in this position (`input[x, y] == 0`), that vertical move was blocked by a `^` and therefore contributed a split.
 - The simple scan over the prepared grid yields the total count of split events in 3.555 ms on my input.
 
----
-
 ## Part 2: Count the timelines
 
 Part 2 interprets each split as branching into separate timelines, so we need the total number of outcomes that reach the bottom row.
@@ -122,15 +114,11 @@ def part2(input: PuzzleInput) -> None:
 - Python integers are arbitrary‑precision, so large totals are handled safely without extra work.
 - This runs in 0.049 ms on my input.
 
----
-
 ## Complexity and Practical Notes
 
 The precomputation performs a single pass over all cells, giving linear time in the size of the grid.
 Both parts then perform simple scans of the prepared counts with negligible additional cost.
 Conceptually this mirrors standard grid path counting via dynamic programming, adapted so that a downward move conditionally splits into two horizontal placements in the next row when encountering `^`.
-
----
 
 ## Try it yourself
 
@@ -138,8 +126,6 @@ Conceptually this mirrors standard grid path counting via dynamic programming, a
 - Run the solution against your personalised input from the site.
 - Explore more write‑ups via the tag page: [Advent of Code]({{< ref "/tags/advent-of-code" >}}).
 - Browse the full code for 2025 in [my repository](https://github.com/sdjmchattie/AdventOfCode2025).
-
----
 
 ## Wrapping Up
 

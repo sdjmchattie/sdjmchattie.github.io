@@ -15,15 +15,11 @@ Day 2 of Advent of Code 2025 is a satisfying dive into pattern detection over nu
 The Python solution below uses straightforward string slicing and chunking to get the job done with clear, readable logic.
 If you want to follow the whole series, check out the tag page at [Advent of Code]({{< ref "/tags/advent-of-code" >}}), and you can browse the full code for 2025 in [my repository](https://github.com/sdjmchattie/AdventOfCode2025).
 
----
-
 ## Understanding Day 2: Gift Shop
 
 The puzzle provides one long line of comma-separated numeric ranges, each written as start-end, and asks you to find certain IDs inside those ranges that follow specific repetition rules.
 Part 1 considers an ID invalid if its digits are exactly two copies of the same sequence, while Part 2 expands that rule so any whole-number repetition of a smaller sequence counts as invalid.
 You can read the full puzzle on the [Advent of Code website](https://adventofcode.com/2025/day/2).
-
----
 
 ## Parsing the Input
 
@@ -41,8 +37,6 @@ def prepare_input(file_content: list[str]) -> PuzzleInput:
 ```
 
 This produces a list of [start, end] pairs that downstream logic can iterate over inclusively.
-
----
 
 ## Part 1: Find IDs that are exactly two copies of the same digit sequence
 
@@ -76,8 +70,6 @@ def part1(input: PuzzleInput) -> None:
 
 - Each candidate is checked in O(d) where d is the number of digits because slicing and comparison traverse the string once.
 - The code accumulates invalid IDs in a list and prints the sum of all such IDs at the end.
-
----
 
 ## Part 2: Generalise to any number of repeated chunks
 
@@ -117,15 +109,11 @@ def part2(input: PuzzleInput) -> None:
 - The `len(str_x) % chunk_size != 0` guard ensures we only test chunk sizes that tile the string exactly.
 - The `break` ensures each number contributes at most once even if multiple chunk sizes could explain it.
 
----
-
 ## Try it yourself
 
 - Fetch your personalised input from the [Advent of Code website](https://adventofcode.com/2025/day/2) and run the code locally with your ranges.
 - The full repository for my 2025 solutions is [on GitHub](https://github.com/sdjmchattie/AdventOfCode2025).
 - Explore more write-ups in the series via the tag page: [Advent of Code]({{< ref "/tags/advent-of-code" >}}).
-
----
 
 ## Wrapping Up
 

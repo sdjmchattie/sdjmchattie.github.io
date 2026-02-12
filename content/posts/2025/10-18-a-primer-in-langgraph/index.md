@@ -16,8 +16,6 @@ tags:
 LangGraph makes it easy to wire simple, reliable LLM workflows as graphs, and in this post we will build a tiny two‑node graph that turns a `topic` into a `joke` and then formats it as a mini conversation ready to display or send.
 By the end, you will have a minimal Python project with a typed `JokeState`, one LLM node (`write_joke`), one pure‑Python node (`wrap_presentation`), and a clear sense of where to go next in future articles.
 
----
-
 ## What Needs Research Now
 
 - Confirm the exact installation commands and package names for LangGraph, LangChain, and your model provider SDK.
@@ -26,22 +24,16 @@ By the end, you will have a minimal Python project with a typed `JokeState`, one
 - Confirm the expected environment variable names for your chosen provider, for example `OPENAI_API_KEY` for OpenAI or `ANTHROPIC_API_KEY` for Anthropic.
 - Decide whether to start from the `new-langgraph-project-python` template or a plain Python project.
 
----
-
 ## What We Are Building
 
 We will create a minimal LangGraph app with two nodes and a small, explicit state.
 The flow will be simple: `topic` in, the LLM generates a `joke`, deterministic Python wraps it as a conversational `presentation`, and the graph ends.
-
----
 
 ## Where LangGraph Fits
 
 - LangGraph represents workflows as cyclical graphs with nodes and edges, and it manages `state` across steps.
 - Nodes are Python functions that read and write pieces of the graph `state`.
 - This makes it straightforward to mix deterministic logic with LLM calls while keeping the flow controllable and observable.
-
----
 
 ## Project Setup
 
@@ -64,8 +56,6 @@ export OPENAI_API_KEY="your_api_key"
 
 1. Create a new Python file, for example `app.py`, where we will put the code below.
 
----
-
 ## Define the Graph State
 
 We will pass a small, typed `JokeState` between nodes, containing the `topic`, the generated `joke`, and the final `presentation`.
@@ -82,8 +72,6 @@ class JokeState(TypedDict):
 
 The state forms the basis of the graph's progress.
 As nodes return, the state is updated with new values and the whole state is the input to the next node.
-
----
 
 ## Implement the Nodes
 
@@ -127,8 +115,6 @@ def wrap_presentation(state: JokeState) -> dict:
 All this node does is take the `joke` from the state, wrap it with a predetermined opener and some laughter.
 This content is added to the state when the node returns replacing `presentation` with the newly wrapped joke.
 
----
-
 ## Wire Up The Graph
 
 We will connect the two nodes in a straight line and end the graph after formatting the `presentation`.
@@ -156,8 +142,6 @@ app = graph.compile()
 
 - The special `START` symbol sets the entry point for the graph, and `END` marks termination.
 
----
-
 ## Run It
 
 Invoke the compiled `app` with an initial `state` that provides only the `topic`, and let the nodes fill in the rest.
@@ -173,8 +157,6 @@ if __name__ == "__main__":
 
 - The `state` is the backbone of the workflow, with each node returning updates that LangGraph merges as the graph runs.
 - You can expand `JokeState` over time to carry extra context or intermediate artefacts.
-
----
 
 ## Wrapping Up
 

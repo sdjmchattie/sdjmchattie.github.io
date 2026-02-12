@@ -29,8 +29,6 @@ The focus of this post is to implement a new rule for [Locked Candidates](https:
 
 If you like this post and you'd like to know more about how to plan and write Python software, check out the [Python]({{< ref "/tags/python" >}}) tag.
 
----
-
 ## What is the Locked Candidates Rule?
 
 Locked candidates are present where a block and a row or column intersect.
@@ -110,8 +108,6 @@ This can also be applied to a column instead of a row, as shown below.
 |  *  X  *  |
 '-----------'
 ```
-
----
 
 ## Implementing the Rule
 
@@ -198,8 +194,6 @@ Let's walk through this code:
 - Line 16 changes `applied` to `True` if the cell being assessed contains locked candidates.
 - Line 17 removes the locked candidates from the cell.
 
----
-
 ## Testing Our Code
 
 Tests confirm that our implementation finds locked candidates correctly and help prevent bugs in later iterations.
@@ -218,8 +212,6 @@ The tests implemented are as follows:
   - `test_apply_locked_candidates_rule_returns_false_when_unable_to_update_candidates` checks that the return value is `False` when the grid has no locked candidates to discover.
   - `test_apply_locked_candidates_rule_returns_false_when_grid_is_complete` checks that the return value is `False` when the grid is a fully solved puzzle.
 
----
-
 ## Solving Puzzles
 
 As an integration test of the new rule, we can take the example from the Sudopedia site for locked candidates and test it as a puzzle for our solver:
@@ -231,8 +223,6 @@ When the `src/solver.py` file does not include the locked candidates rule as par
 However, when we add the locked candidates rule, the puzzle is immediately solvable.
 
 ![Solved Puzzle](solved_puzzle.png "The fully solved grid of the above puzzle when the locked candidates rule has been implemented.")
-
----
 
 ## Wrapping Up
 

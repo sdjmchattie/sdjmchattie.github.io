@@ -20,8 +20,6 @@ Part 2 is a meta star that unlocks when you have finished all the other days, so
 
 If you want to follow the whole series, visit the tag page at [Advent of Code]({{< ref "/tags/advent-of-code" >}}), and you can browse every 2025 solution in [my repository](https://github.com/sdjmchattie/AdventOfCode2025).
 
----
-
 ## Understanding Day 12: Christmas Tree Farm
 
 The input is in two sections, first a catalogue of present shapes drawn on a unit grid and second a list of rectangular regions with a required quantity of each shape.
@@ -38,8 +36,6 @@ If it does not exceed the region area then this solution treats the region as a 
 This is based on an assumption because the 6 shapes in this input almost entirely fill the square area that contains them when you have them in pair.
 
 That means we can solve Part 1 by counting the number of filled cells per shape once, and then checking each region’s requested quantities against its area.
-
----
 
 ## Parsing the Input
 
@@ -74,8 +70,6 @@ def prepare_input(file_content: list[str]) -> PuzzleInput:
 
 - Shapes are recorded verbatim so we can count their occupied cells.
 - Regions are stored as `((width, height), [count_per_shape...])` for straightforward arithmetic later.
-
----
 
 ## Part 1: Count regions that can fit the requested presents
 
@@ -112,14 +106,10 @@ def part1(input: PuzzleInput) -> None:
 - A strict less than test treats any region with spare cells as a success and adds it to the answer.
 - On my MacBook Air M1 this completes in 0.643 ms for my input.
 
----
-
 ## Part 2: There is no new code today
 
 Part 2 for Day 12 does not add a new constraint or twist and is not a coding challenge today.
 You simply need to have completed all of the other days to earn the second star, which I have.
-
----
 
 ## Notes on tiling and exact cover
 
@@ -128,15 +118,11 @@ Packing polyominoes into regions is a classic exact cover problem in the general
 Many polyomino tiling solvers represent placements as rows in an incidence matrix and then use Algorithm X or a DLX implementation to search for valid coverings.
 Those approaches are valuable when arrangement constraints matter, but they are unnecessary for this Day 12 input where an area capacity check suffices.
 
----
-
 ## Try it yourself
 
 - Fetch your personalised input and read the full description on the [Advent of Code Day 12](https://adventofcode.com/2025/day/12) page.
 - Run the solution from [my repository](https://github.com/sdjmchattie/AdventOfCode2025) and compare your timings.
 - Explore more write-ups in this series via the tag page: [Advent of Code]({{< ref "/tags/advent-of-code" >}}).
-
----
 
 ## Wrapping Up
 
