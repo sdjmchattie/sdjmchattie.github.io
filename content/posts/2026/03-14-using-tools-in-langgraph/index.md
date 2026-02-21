@@ -16,8 +16,6 @@ LLMs are impressive, but they are limited to the knowledge baked in at training 
 
 This is part of a series of posts on LangGraph. If you are new to the series, start with [A Primer in LangGraph]({{< relref "10-18-a-primer-in-langgraph" >}}) which covers the basics, before working through the later posts.
 
----
-
 ## What Is a Tool?
 
 In LangGraph, a tool is a Python function that the LLM can choose to call. You define the function, and LangGraph passes its name, description, and input schema to the LLM so it knows when and how to use it.
@@ -41,8 +39,6 @@ def multiply(a: int, b: int) -> int:
 
 The docstring becomes the tool's description, which the LLM reads to understand what the tool does and when to use it. The type hints become the input schema. Both matter: a vague docstring leads to poor tool selection, and missing type hints break schema inference.
 
----
-
 ## MessagesState
 
 Previous posts in this series used a custom `TypedDict` to hold graph state. Tool use requires a different approach because the LLM and tools need to exchange a sequence of messages: the user's question, the LLM's tool call request, the tool's result, and the LLM's final answer. LangGraph provides `MessagesState` for exactly this purpose.
@@ -56,8 +52,6 @@ from langgraph.graph import MessagesState
 ```
 
 You don't need to define this yourself. Import it and use it as the state type for any tool-calling graph. The append behaviour is essential: without it, each node would overwrite the conversation history instead of building on it.
-
----
 
 ## Binding Tools to the LLM
 
@@ -73,8 +67,6 @@ llm_with_tools = llm.bind_tools(tools)
 
 When you invoke `llm_with_tools`, the response may include a `tool_calls` attribute listing the tools the LLM wants to call, along with the arguments it has chosen. If the LLM decides it doesn't need a tool, `tool_calls` will be empty and the response is already the final answer.
 
----
-
 ## The Agent Node
 
 The agent node is a regular Python function that calls the LLM and returns the response. LangGraph appends the new message to the state's message list via the reducer mentioned above.
@@ -86,8 +78,6 @@ def agent(state: MessagesState) -> dict:
 ```
 
 Note that the LLM receives the full message history every time this node runs. That history includes any tool results from previous iterations of the loop, which is how the LLM learns from what the tools returned before deciding its next move.
-
----
 
 ## ToolNode
 
@@ -107,8 +97,6 @@ tool_node = ToolNode(tools, handle_tool_errors=True)
 
 With error handling enabled, if a tool raises an exception, the error is returned to the LLM as a message so it can decide what to do next, rather than the whole run failing.
 
----
-
 ## Routing with tools_condition
 
 After the agent node runs we need to decide whether to execute tools or end the graph. LangGraph ships a prebuilt routing function called `tools_condition` that does exactly this. It checks whether the last message contains tool calls and routes accordingly.
@@ -118,8 +106,6 @@ from langgraph.prebuilt import tools_condition
 ```
 
 `tools_condition` returns `"tools"` when the last message has tool calls, and `END` when it does not. This is the same conditional edge pattern from the [flow control post]({{< relref "10-25-flow-control-in-langgraph" >}}), just without needing to write the routing function yourself.
-
----
 
 ## Wiring the Loop
 
@@ -173,8 +159,6 @@ agent ──── no tool calls ──→ END
 
 The loop continues until the LLM is satisfied it has enough information to respond without calling any more tools.
 
----
-
 ## Running It
 
 Invoke the graph with a `HumanMessage` to kick things off. The LLM will decide which tools to call, the results will feed back into the conversation, and the final message will be the LLM's composed answer once it no longer needs tools.
@@ -192,8 +176,6 @@ print(result["messages"][-1].content)
 ```
 
 The LLM will call `multiply` and `get_weather`, receive the results, and compose a natural language answer using both. You can inspect the full `result["messages"]` list to see every step: the initial question, the tool call requests, the tool results, and the final answer.
-
----
 
 ## Wrapping Up
 
