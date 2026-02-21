@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="360" viewBox="0 0 480 360">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555555" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="480" height="360" fill="#ffffff" />
+
+  <!-- START ellipse -->
+  <ellipse cx="240" cy="44" rx="44" ry="24" fill="#1f2937" />
+  <text x="240" y="49" text-anchor="middle" fill="white" font-size="13" font-family="Arial, sans-serif" font-weight="bold">START</text>
+
+  <!-- START -> agent -->
+  <line x1="240" y1="68" x2="240" y2="112" stroke="#555555" stroke-width="2" marker-end="url(#arr)" />
+
+  <!-- agent box -->
+  <rect x="164" y="114" width="152" height="52" rx="8" ry="8" fill="#3b82f6" />
+  <text x="240" y="145" text-anchor="middle" fill="white" font-size="15" font-family="Arial, sans-serif" font-weight="bold">agent</text>
+
+  <!-- agent -> END label + line -->
+  <line x1="316" y1="140" x2="404" y2="140" stroke="#555555" stroke-width="2" marker-end="url(#arr)" />
+  <text x="360" y="130" text-anchor="middle" fill="#555555" font-size="11" font-family="Arial, sans-serif">no tool calls</text>
+
+  <!-- END ellipse -->
+  <ellipse cx="440" cy="140" rx="36" ry="24" fill="#1f2937" />
+  <ellipse cx="440" cy="140" rx="28" ry="16" fill="none" stroke="white" stroke-width="2" />
+  <text x="440" y="145" text-anchor="middle" fill="white" font-size="13" font-family="Arial, sans-serif" font-weight="bold">END</text>
+
+  <!-- agent -> tools label + line -->
+  <line x1="270" y1="166" x2="270" y2="240" stroke="#555555" stroke-width="2" marker-end="url(#arr)" />
+  <text x="310" y="207" text-anchor="middle" fill="#555555" font-size="11" font-family="Arial, sans-serif">tool calls</text>
+
+  <!-- tools box -->
+  <rect x="164" y="242" width="152" height="52" rx="8" ry="8" fill="#f97316" />
+  <text x="240" y="273" text-anchor="middle" fill="white" font-size="15" font-family="Arial, sans-serif" font-weight="bold">tools</text>
+
+  <!-- tools -> agent (curved left side) -->
+  <path d="M 164 268 Q 80 268 80 140 Q 80 140 164 140" fill="none" stroke="#555555" stroke-width="2" marker-end="url(#arr)" />
+</svg>

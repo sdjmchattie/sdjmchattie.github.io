@@ -14,7 +14,7 @@ tags:
 
 LLMs are impressive, but they are limited to the knowledge baked in at training time and can't take actions in the world on their own.
 Tools are what change that.
-By giving an LLM access to tools, you turn it from a static knowledge store into an agent that can look up live data, run calculations, call APIs, and more.
+By giving an LLM access to tools, you turn it from a system that is frozen in time into an agent that can look up live data, run calculations, call APIs, and more.
 In this post we will build a LangGraph agent that uses tools, and explore every piece of the pattern you will need.
 
 This is part of a series of posts on LangGraph.
@@ -45,6 +45,7 @@ def multiply(a: int, b: int) -> int:
 The docstring becomes the tool's description, which the LLM reads to understand what the tool does and when to use it.
 The type hints become the input schema.
 Both matter: a vague docstring leads to poor tool selection, and missing type hints break schema inference.
+For tool docstrings, a concise description of what the function does and what each parameter means is enough; elaborate style guides like Google's are not required, but clarity is essential since the LLM relies on this text to decide whether and how to call the tool.
 
 ## MessagesState
 
@@ -63,6 +64,19 @@ from langgraph.graph import MessagesState
 You don't need to define this yourself.
 Import it and use it as the state type for any tool-calling graph.
 The append behaviour is essential: without it, each node would overwrite the conversation history instead of building on it.
+
+If you need additional custom fields in your graph state alongside the message history, you can define your own `TypedDict` that includes a `messages` key with the same reducer, plus whatever extra keys your graph needs:
+
+```python
+from langgraph.graph import MessagesState
+
+class MyState(MessagesState):
+    # Inherits the messages key with its reducer.
+    # Add any extra fields here.
+    current_city: str
+```
+
+This gives you the full flexibility of structured state while keeping the message-passing behaviour that tool use requires.
 
 ## Binding Tools to the LLM
 
@@ -170,13 +184,7 @@ app = graph.compile()
 
 The flow looks like this:
 
-```text
-START
-  ↓
-agent ──── no tool calls ──→ END
-  ↑               ↓
-  └──── tools ←── tool calls
-```
+![LangGraph tool-calling loop: START feeds into agent, which either ends or calls tools, which loop back to agent](graph.svg)
 
 The loop continues until the LLM is satisfied it has enough information to respond without calling any more tools.
 
@@ -197,8 +205,9 @@ result = app.invoke({
 print(result["messages"][-1].content)
 ```
 
+The `result["messages"]` list holds every message exchanged during the run: the initial human question, any tool call requests from the LLM, the tool results returned by `ToolNode`, and finally the LLM's composed answer.
+The final answer is always the last message in the list, so `result["messages"][-1].content` is the string you want to display or pass on.
 The LLM will call `multiply` and `get_weather`, receive the results, and compose a natural language answer using both.
-You can inspect the full `result["messages"]` list to see every step: the initial question, the tool call requests, the tool results, and the final answer.
 
 ## Wrapping Up
 
