@@ -35,15 +35,13 @@ Every post must have a complete YAML front matter block:
 
 ### Heading Format & Styling
 
-- **Level 2 headings** (`##`): Always precede with a horizontal rule (`---`). Use **Title Case** (capitalize major words). Example: `## What is Ruff and Why Should You Use It?`
-- **Level 3+ headings** (`###`): Do NOT use a horizontal rule before them. Use **Sentence case** (capitalize only the first word and proper nouns). Example: `### Key benefits of ruff`
-- The horizontal rule creates visual separation between major sections and improves scannability.
+- **Level 2 headings** (`##`): Use **Title Case** (capitalize major words). Example: `## What is Ruff and Why Should You Use It?`
+- **Level 3+ headings** (`###`): Use **Sentence case** (capitalize only the first word and proper nouns). Example: `### Key benefits of ruff`
 
 ### Post Structure & Tone
 
 - **Opening hook** (1-3 sentences): Grab reader attention by explaining why the topic matters or what problem it solves.
 - **Quick context/intro** (1-2 paragraphs): For series posts, include a cross-link to the series tag (e.g., `{{< ref "/tags/go-series" >}}`).
-- **Horizontal rule** (`---`): Separate intro from main content with a visual divider (appears before the first level 2 heading).
 - **Content sections**: Structure with level 2 headings for major topics and level 3 headings for subtopics. Keep sections focused and logically ordered.
 - **Tone**: Conversational yet professional. Explain concepts clearly and assume readers may be new to the topic. Avoid jargon without definition.
 - **Closing** (1-2 paragraphs): Summarize key takeaways and optionally suggest related posts via tag links (e.g., `[Python]({{< ref "/tags/python" >}})`). End on an encouraging or forward-looking note (e.g., "Happy coding!").
@@ -65,6 +63,7 @@ Every post must have a complete YAML front matter block:
 
 ### Paragraph Style
 
+- Each sentence goes on its own line in the markdown source. This keeps line length manageable and makes diffs easier to read.
 - Paragraphs are typically 2-5 sentences; use shorter paragraphs to break up dense information.
 - Lead with the main idea, then support with details or examples.
 - Use lists (bulleted or numbered) to organize related points, keeping list items concise.
@@ -80,7 +79,7 @@ Every post must have a complete YAML front matter block:
 - [ ] Date, slug, and directory name match (e.g., `2026-02-28` in both front matter and directory).
 - [ ] Featured image exists at the correct path.
 - [ ] All cross-references and tag links use correct syntax and resolve properly (test with `hugo server --renderToMemory`).
-- [ ] Heading formatting follows conventions (--- before ##, Title Case for ##, Sentence case for ###).
+- [ ] Heading formatting follows conventions (Title Case for ##, Sentence case for ###).
 - [ ] Code examples are syntactically correct and relevant.
 - [ ] Tone is conversational and accessible to the target audience.
 - [ ] No orphaned markdown formatting or typos.

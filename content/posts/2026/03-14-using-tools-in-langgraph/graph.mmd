@@ -1,0 +1,5 @@
+flowchart TD
+    S([START]) --> agent["agent"]
+    agent -- no tool calls --> E([END])
+    agent -- tool calls --> tools["tools"]
+    tools --> agent
