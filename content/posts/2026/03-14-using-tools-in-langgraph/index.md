@@ -184,7 +184,7 @@ app = graph.compile()
 
 The flow looks like this:
 
-![LangGraph tool-calling loop: START feeds into agent, which either ends or calls tools, which loop back to agent](graph.svg)
+![LangGraph tool-calling loop: START feeds into agent, which either ends or calls tools, which loop back to agent](graph.png)
 
 The loop continues until the LLM is satisfied it has enough information to respond without calling any more tools.
 
