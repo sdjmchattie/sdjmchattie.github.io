@@ -63,6 +63,7 @@ Every post must have a complete YAML front matter block:
 
 ### Paragraph Style
 
+- Each sentence goes on its own line in the markdown source. This keeps line length manageable and makes diffs easier to read.
 - Paragraphs are typically 2-5 sentences; use shorter paragraphs to break up dense information.
 - Lead with the main idea, then support with details or examples.
 - Use lists (bulleted or numbered) to organize related points, keeping list items concise.
