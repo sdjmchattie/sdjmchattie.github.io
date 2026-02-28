@@ -61,20 +61,7 @@ graph.add_edge("fetch_attractions", END)
 
 This produces the following graph:
 
-```mermaid
-graph TD;
-	__start__([<p>START</p>]):::first
-	fetch_weather(fetch_weather)
-	fetch_attractions(fetch_attractions)
-	__end__([<p>END</p>]):::last
-	__start__ --> fetch_weather;
-	__start__ --> fetch_attractions;
-	fetch_weather --> __end__;
-	fetch_attractions --> __end__;
-	classDef default fill:#f2f0ff,line-height:1.2
-	classDef first fill-opacity:0
-	classDef last fill:#bfb6fc
-```
+![LangGraph concurrent nodes fanning out from START and fanning back in on END](graph1.png)
 
 There is no special concurrency API.
 The graph structure itself tells LangGraph what can run in parallel.
@@ -246,22 +233,7 @@ print(result["travel_brief"])
 
 Here is what the graph looks like:
 
-```mermaid
-graph TD;
-	__start__([<p>START</p>]):::first
-	fetch_weather(fetch_weather)
-	fetch_attractions(fetch_attractions)
-	write_brief(write_brief)
-	__end__([<p>END</p>]):::last
-	__start__ --> fetch_weather;
-	__start__ --> fetch_attractions;
-	fetch_weather --> write_brief;
-	fetch_attractions --> write_brief;
-	write_brief --> __end__;
-	classDef default fill:#f2f0ff,line-height:1.2
-	classDef first fill-opacity:0
-	classDef last fill:#bfb6fc
-```
+![LangGraph concurrent nodes arranged with a reducer and brief writer](graph2.png)
 
 When you run this, the output will look something like:
 
