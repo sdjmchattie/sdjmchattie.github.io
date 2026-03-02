@@ -30,8 +30,6 @@ Each turn, you enter an angle and a velocity, and your gorilla lobs an explosive
 Wind affects the trajectory, buildings get destroyed on impact, and the first player to hit the other gorilla wins the round.
 If you have never played it, or if you just want a hit of nostalgia, you can [play the original in your browser](https://classicreload.com/play/qbasic-gorillas.html).
 
-![The original QBasic Gorillas game showing two gorillas on colourful rooftops with a smiling sun and a city skyline](original-game.png)
-
 It makes a surprisingly good benchmark for agentic coding tools.
 The scope is well defined, but the implementation touches physics, collision detection, procedural generation, turn-based game logic, and user input — enough complexity to reveal how each tool thinks without being an open-ended project.
 
