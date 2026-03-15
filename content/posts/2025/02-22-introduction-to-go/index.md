@@ -8,9 +8,7 @@ description: |-
 slug: go-series-what-is-go-lang
 image: /images/posts/2025/02-22-introduction-to-go.jpg
 tags:
-  - Go
   - Go Series
-  - Learning
 ---
 
 This post is the first in a series of posts I will be making about the programming language Go.

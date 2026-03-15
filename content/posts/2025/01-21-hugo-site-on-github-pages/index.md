@@ -7,10 +7,7 @@ description: In this tutorial, I will show you how I've used a tool called Hugo 
 slug: host-hugo-sites-for-free-in-github-pages
 image: /images/posts/2025/01-21-hugo-site-on-github-pages.jpg
 tags:
-  - Hugo
-  - GitHub
-  - Markdown
-  - Web Development
+  - Developer Tools
 ---
 
 There's that now old adage that if you're not online, you're no-one.

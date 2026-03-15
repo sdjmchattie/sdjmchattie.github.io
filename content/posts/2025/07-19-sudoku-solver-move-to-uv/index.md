@@ -9,7 +9,7 @@ slug: sudoku-solver-move-to-uv
 image: /images/posts/2025/07-19-sudoku-solver-move-to-uv.jpg
 tags:
   - Python
-  - Package Management
+  - Developer Tools
   - Sudoku Series
 ---
 

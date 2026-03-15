@@ -6,9 +6,7 @@ description: |-
 slug: go-series-simple-data-types
 image: /images/posts/2025/03-01-go-simple-data-types.jpg
 tags:
-  - Go
   - Go Series
-  - Learning
 ---
 
 This is the second post in the Go series.

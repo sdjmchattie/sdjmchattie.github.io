@@ -7,7 +7,6 @@ description: |-
 slug: managing-git-repositories-with-lazygit
 image: /images/posts/2025/05-31-lazygit-repository-management.jpg
 tags:
-  - Git
   - Lazygit Series
   - Developer Tools
 ---

@@ -7,7 +7,6 @@ description: |-
 slug: lazygit-status-panel
 image: /images/posts/2025/06-07-lazygit-status-panel.jpg
 tags:
-  - Git
   - Lazygit Series
   - Developer Tools
 ---

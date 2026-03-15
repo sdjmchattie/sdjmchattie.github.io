@@ -7,7 +7,6 @@ description: |-
 slug: lazygit-commits-panel
 image: /images/posts/2025/06-28-lazygit-commits-panel.jpg
 tags:
-  - Git
   - Lazygit Series
   - Developer Tools
 ---

@@ -6,7 +6,6 @@ description: |-
 slug: plans-for-2026
 image: /images/posts/2026/01-10-plans-for-2026.jpg
 tags:
-  - Planning
 ---
 
 First and foremost, let me wish you a Happy New Year for 2026.

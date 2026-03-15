@@ -7,7 +7,6 @@ description: |-
 slug: my-experiences-in-investing
 image: /images/posts/2026/01-24-my-experiences-in-investing.jpg
 tags:
-  - Investing
 ---
 
 Investing in the stock market has helped me aim for better long-term growth than I could get from a typical savings account, while keeping risk in check with some simple rules and tax-efficient wrappers.

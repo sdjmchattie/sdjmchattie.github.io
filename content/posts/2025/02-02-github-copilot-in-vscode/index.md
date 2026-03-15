@@ -9,8 +9,7 @@ description: |-
 slug: using-github-copilot-in-visual-studio-code
 image: /images/posts/2025/02-02-github-copilot-in-vscode.jpg
 tags:
-  - GitHub
-  - Copilot
+  - Developer Tools
   - VSCode
   - Generative AI
 ---

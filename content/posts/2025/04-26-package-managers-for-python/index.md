@@ -8,8 +8,7 @@ slug: python-package-managers-in-2025
 image: /images/posts/2025/04-26-python-package-managers-in-2025.jpg
 tags:
   - Python
-  - Package Management
-  - Comparison
+  - Developer Tools
 ---
 
 This is an overview of the current state of Python package management in 2025.

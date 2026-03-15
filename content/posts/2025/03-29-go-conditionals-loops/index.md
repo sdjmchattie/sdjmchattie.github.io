@@ -6,9 +6,7 @@ description: |-
 slug: go-series-conditionals-and-loops
 image: /images/posts/2025/03-29-go-conditionals-loops.jpg
 tags:
-  - Go
   - Go Series
-  - Learning
 ---
 
 This is the fourth post in the Go series.

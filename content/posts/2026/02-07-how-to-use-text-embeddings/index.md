@@ -8,7 +8,7 @@ slug: how-to-use-text-embeddings
 image: /images/posts/2026/02-07-how-to-use-text-embeddings.jpg
 tags:
   - Python
-  - Embeddings
+  - Generative AI
 ---
 
 Embeddings let software work with meaning rather than just matching words, so you can search by intent, find related content, and give LLMs the right context to answer questions.

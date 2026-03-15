@@ -8,8 +8,7 @@ slug: pydantic-settings-safer-config
 image: /images/posts/2026/03-07-pydantic-settings-safer-config.jpg
 tags:
   - Python
-  - Configuration
-  - Tooling
+  - Developer Tools
 ---
 
 Environment variables are the default way many Python apps handle configuration.

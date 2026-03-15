@@ -11,7 +11,6 @@ tags:
   - Agentic AI
   - Generative AI
   - Developer Tools
-  - Comparison
 ---
 
 If you grew up with a DOS machine in the early 1990s, there is a good chance you remember Gorillas.

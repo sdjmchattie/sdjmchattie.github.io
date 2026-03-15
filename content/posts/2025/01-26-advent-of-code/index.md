@@ -18,7 +18,6 @@ tags:
   - Ruby
   - JavaScript
   - Rust
-  - Go
 ---
 
 One of the hardest parts of learning a language's fundamentals is having enough meaningful problems to solve.

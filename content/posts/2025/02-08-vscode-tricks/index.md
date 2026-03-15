@@ -10,7 +10,6 @@ slug: tips-and-tricks-in-visual-studio-code
 image: /images/posts/2025/02-08-vscode-tricks.jpg
 tags:
   - VSCode
-  - Tips and Tricks
 ---
 
 Visual Studio Code is an incredibly competent development tool from Microsoft and amazingly it's free.

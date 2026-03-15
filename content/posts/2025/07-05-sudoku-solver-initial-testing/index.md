@@ -10,10 +10,9 @@ tags:
   - Python
   - Software Architecture
   - Sudoku Series
-  - Unit Testing
 ---
 
-This week we have a new topic for this blog, which is [Unit Testing]({{< ref "/tags/unit-testing" >}}).
+This week we have a new topic for this blog, which is unit testing.
 While not as exciting as actually writing the functional code for a project, it is an important skill to have.
 By writing tests for your code, you get to check that it behaves the way you intended.
 Not only does this let you fix the code where it doesn't work correctly, but you can run the unit tests after any future changes to your code and catch any regressions on the functionality.

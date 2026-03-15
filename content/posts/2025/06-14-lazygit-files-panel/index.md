@@ -7,7 +7,6 @@ description: |-
 slug: lazygit-files-panel
 image: /images/posts/2025/06-14-lazygit-files-panel.jpg
 tags:
-  - Git
   - Lazygit Series
   - Developer Tools
 ---

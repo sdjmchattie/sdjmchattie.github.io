@@ -6,8 +6,7 @@ description: |-
 slug: do-not-goto-fail
 image: /images/posts/2025/11-08-do-not-goto-fail.jpg
 tags:
-  - Code Style
-  - Discussions
+  - Code Quality
 ---
 
 Style guides are not bikeshedding; they are seatbelts that stop simple edits turning into catastrophic bugs.

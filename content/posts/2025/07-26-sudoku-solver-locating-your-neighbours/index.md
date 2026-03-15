@@ -10,7 +10,6 @@ image: /images/posts/2025/07-26-sudoku-solver-locating-your-neighbours.jpg
 tags:
   - Python
   - Sudoku Series
-  - Data Models
 ---
 
 When solving Sudoku puzzles, a lot of the logic is about spotting patterns among groups of cells.

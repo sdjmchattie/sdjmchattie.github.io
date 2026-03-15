@@ -6,9 +6,7 @@ description: |-
 slug: go-series-functions
 image: /images/posts/2025/04-12-go-functions.jpg
 tags:
-  - Go
   - Go Series
-  - Learning
 ---
 
 This is the fifth post in the Go series.

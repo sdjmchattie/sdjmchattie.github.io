@@ -7,9 +7,7 @@ description: |-
 slug: introduction-to-regular-expressions
 image: /images/posts/2025/03-22-regular-expressions.jpg
 tags:
-  - Regular Expressions
-  - Learning
-  - Tips and Tricks
+  - Python
   - VSCode
 ---
 

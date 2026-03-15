@@ -6,9 +6,7 @@ description: |-
 slug: go-series-aggregate-data-types
 image: /images/posts/2025/03-15-go-aggregate-data-types.jpg
 tags:
-  - Go
   - Go Series
-  - Learning
 ---
 
 This is the third post in the Go series.

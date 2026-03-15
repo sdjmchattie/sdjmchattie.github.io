@@ -8,7 +8,6 @@ slug: fungi-game-review
 image: /images/posts/2026/02-14-fungi-game-review.jpg
 tags:
   - Board Games
-  - "2 Players"
 ---
 
 Here's a game my wife and I enjoy, imagining we're a real life Radagast the Brown, strolling through a dusky forest, foraging for supper and cooking it over a campfire.

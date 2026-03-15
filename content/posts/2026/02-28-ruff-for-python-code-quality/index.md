@@ -9,7 +9,6 @@ image: /images/posts/2026/02-28-ruff-for-python-code-quality.jpg
 tags:
   - Python
   - Code Quality
-  - Tooling
 ---
 
 Consistency and quality are the foundations of maintainable Python code.

@@ -10,7 +10,6 @@ image: /images/posts/2025/04-05-how-llms-work.jpg
 tags:
   - Large Language Models
   - Generative AI
-  - Learning
 ---
 
 Large Language Models (LLMs) are the most talked about technology of the past 2 or so years, particularly OpenAI's ChatGPT which seems to get a new version come out every few months.

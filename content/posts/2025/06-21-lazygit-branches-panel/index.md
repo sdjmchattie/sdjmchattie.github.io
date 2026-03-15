@@ -7,7 +7,6 @@ description: |-
 slug: lazygit-branches-panel
 image: /images/posts/2025/06-21-lazygit-branches-panel.jpg
 tags:
-  - Git
   - Lazygit Series
   - Developer Tools
 ---
