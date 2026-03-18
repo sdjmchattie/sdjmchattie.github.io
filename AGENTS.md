@@ -6,7 +6,7 @@
 - `config/` stores environment-specific YAML (`_default/hugo.yaml`, `params.yaml`, `menus.yaml`); edit these files for global theme settings, navigation, and metadata.
 - `static/` delivers static assets (images, favicons, JS) that ship verbatim; drop new files under `static/images` or `static/fonts` to keep URLs stable.
 - `layouts/`, `themes/`, and `data/` contain presentation overrides, the `hugo-profile` theme, and structured data (menus, snippets); edit here only when you need a layout tweak.
-- Generated output lives in `public/` and `resources/`—do not commit these directories unless explicitly requested.
+- Generated output lives in `public/` and `resources/`; do not commit these directories unless explicitly requested.
 - `.github/workflows/` defines CI: `hugo.yaml` builds and deploys to GitHub Pages, while `merge-prs.yaml` drives scheduled PR merges; treat these workflows as the production gatekeepers for `main`.
 
 ## Build, Test, and Development Commands
@@ -67,6 +67,7 @@ Every post must have a complete YAML front matter block:
 - Paragraphs are typically 2-5 sentences; use shorter paragraphs to break up dense information.
 - Lead with the main idea, then support with details or examples.
 - Use lists (bulleted or numbered) to organize related points, keeping list items concise.
+- Avoid emdashes (—). Use colons, commas, or restructured sentences instead. Use emdashes only very sparingly when no other punctuation fits.
 
 ### Images
 
