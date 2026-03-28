@@ -2,4 +2,10 @@
 {{- if and (eq .Level 2) $isPost -}}
 <hr>
 {{- end -}}
-<h{{ .Level }}{{ if .Anchor }} id="{{ .Anchor }}"{{ end }}>{{ .Text | safeHTML }}</h{{ .Level }}>
+<h{{ .Level }}{{ if .Anchor }} id="{{ .Anchor }}"{{ end }}>
+  {{- if and $isPost .Anchor -}}
+  <a href="#{{ .Anchor }}" class="anchor-link"><span class="anchor-symbol" aria-hidden="true">¶</span>{{ .Text | safeHTML }}</a>
+  {{- else -}}
+  {{ .Text | safeHTML }}
+  {{- end -}}
+</h{{ .Level }}>

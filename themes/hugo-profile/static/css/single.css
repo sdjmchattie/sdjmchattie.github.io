@@ -413,3 +413,41 @@
 }
 
 /* Singlepage scroll progress end */
+
+/* Heading anchor links */
+
+#single .page-content h1,
+#single .page-content h2,
+#single .page-content h3,
+#single .page-content h4,
+#single .page-content h5,
+#single .page-content h6 {
+  position: relative;
+}
+
+#single .page-content .anchor-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+#single .page-content .anchor-link::after {
+  display: none;
+}
+
+.anchor-symbol {
+  position: absolute;
+  left: -0.85em;
+  top: 0.1em;
+  font-size: 0.8em;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.15s;
+  font-weight: normal;
+  color: #888;
+  user-select: none;
+}
+
+.anchor-link:hover .anchor-symbol {
+  opacity: 0.5;
+}
