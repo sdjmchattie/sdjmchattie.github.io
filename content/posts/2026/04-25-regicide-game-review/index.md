@@ -127,7 +127,7 @@ What changes is the communication dynamic and how your team coordinates the suit
 
 **Solo play** is a genuine and satisfying experience.
 You manage a single hand, make all the decisions yourself, and the tension of having nobody to fall back on is perfectly calibrated.
-Solo also gives you two lifelines: at any point you can discard your entire hand and draw back up to eight cards.
+Solo also gives you exactly two lifelines across the whole game: immediately before you play a card to attack, or immediately before you discard to absorb an enemy's retaliation, you may discard your entire hand and draw eight fresh cards from the tavern deck, then continue from that same point in the turn.
 Since Jesters are not used in solo play, the two physical joker cards from a standard deck make convenient tokens to track how many of these redraws you have remaining.
 
 **Multiplayer** shifts the challenge in a surprising direction: communication is banned.
