@@ -92,13 +92,13 @@ Turns follow a clean, repeatable structure that is easy to internalise after the
    The combined face value of your cards, doubled if Clubs and the enemy is not immune, is subtracted from the enemy's hit points.
 4. **Check for victory or retaliation.**
    If cumulative damage reaches or exceeds the enemy's hit points, you defeat them and reveal the next castle card.
-   There is a meaningful distinction here: if your damage exactly matches the enemy's remaining hit points, the defeated enemy card goes face-down to the bottom of the tavern deck, recycling it as future draws.
-   If you overkill the enemy, the card is discarded and lost permanently.
+   There is a meaningful distinction here: if your damage exactly matches the enemy's remaining hit points, the defeated enemy card goes face-down to the top of the tavern deck, making it the very next card drawn.
+   If you overkill the enemy, the card goes to the discard pile, where it may yet return to the tavern deck if someone plays Hearts later.
    If the enemy survives this turn, it retaliates immediately.
 5. **Survive the retaliation.**
-   The enemy's current attack value, after any Spades reductions, is the damage your team must absorb together.
-   Players discard cards from their hands and the total value of those discards must collectively meet or exceed the enemy's attack.
-   If the team cannot cover the full damage, the game is lost.
+   The enemy's current attack value, after any cumulative Spades reductions, is the damage the current player must absorb alone.
+   That player discards cards from their own hand until the total value meets or exceeds the attack.
+   If they cannot cover the full damage from what they are holding, all players lose immediately.
 
 Play then passes clockwise to the next player and the cycle repeats until the castle falls or your team does.
 
@@ -126,11 +126,13 @@ What changes is the communication dynamic and how your team coordinates the suit
 
 **Solo play** is a genuine and satisfying experience.
 You manage a single hand, make all the decisions yourself, and the tension of having nobody to fall back on is perfectly calibrated.
-Many players find solo Regicide one of the most concentrated examples of hand management and risk assessment available in a small card game.
+Solo also gives you two lifelines: at any point you can discard your entire hand and draw back up to eight cards.
+Since Jesters are not used in solo play, the two physical joker cards from a standard deck make convenient tokens to track how many of these redraws you have remaining.
 
-**Multiplayer** shifts the challenge towards coordination.
-Knowing what your teammates hold, choosing when to heal versus when to deal damage, and planning combo chains across multiple turns requires real communication and trust.
-The game rewards groups who talk through their options openly, and it does not punish table talk the way many competitive games do.
+**Multiplayer** shifts the challenge in a surprising direction: communication is banned.
+Players may not reveal which cards they hold or announce what they intend to play.
+The only exception is when a Jester is played, at which point the group may briefly discuss who should take the next turn before silence returns.
+This rule transforms the game from a planning exercise into a test of reading the table, trusting your teammates, and playing the cards that best serve the moment with only what you can observe.
 
 ## The Free Companion App
 
@@ -153,11 +155,12 @@ A King at full 20 attack demands a large and painful discard every time it retal
 A King ground down to 4 attack is almost manageable.
 Get those Spades in early and protect your hands for the long fight.
 
-### Coordinate suit powers across turns
+### Read the table before playing
 
-If your teammate played Hearts last turn and the tavern deck is already well stocked, do not keep pouring discards back into it at the expense of dealing damage.
-Equally, if Diamonds just dealt cards around the table and everyone is holding a full hand, prioritise attacking over drawing more.
-Talk openly about what suits you are holding so the team can sequence powers effectively.
+You cannot tell teammates what you are holding, so watch what they play and infer what they need.
+If the last player used Hearts and the tavern deck looks healthy, they probably do not need another Hearts play right now.
+If Diamonds just went around and everyone drew cards, the team likely has full hands and wants damage over more draws.
+Use what you observe to sequence suit powers without a word being spoken.
 
 ### Play combinations whenever you can
 
