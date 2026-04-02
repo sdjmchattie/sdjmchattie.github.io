@@ -180,14 +180,16 @@ When absorbing an enemy's retaliation, choose carefully which cards to discard.
 Low-value cards that do not form useful combinations meet the damage requirement without sacrificing your best plays.
 Do not discard Jesters, combo pairs, or your Clubs just to cover a few points from a battered Jack.
 
-### Aim for the Queen of Clubs
+### Exact-kill the King of Clubs if he appears early
 
 The next enemy is always face-down, so you cannot plan around a specific suit.
 What you can plan around is the Kings stage: four enemies each with 40 hit points and a 20 point attack.
-If you can exact-kill a Queen enemy, that Queen card lands on top of the tavern deck and may end up in someone's hand.
-A Queen of Clubs played against a King deals double damage in one blow, which is enough for an outright kill.
-This matters most against the King of Spades, who is immune to Spades and therefore cannot be weakened at all.
-Against that enemy a fast, decisive kill is your best protection.
+If the King of Clubs appears as an enemy before you reach the final King stage, try to exact-kill him.
+An exact kill places his card on top of the tavern deck, so it is the next card drawn.
+Follow up immediately by playing Diamonds, which deals cards from the top of the tavern deck around the table, putting the King of Clubs into someone's hand.
+From there he is devastating: as a weapon his value doubles under the Clubs power, delivering exactly 40 damage and killing any other King outright in a single play.
+The Queen of Clubs is also worth holding onto as she delivers 30 damage in one hit, which is significant but not quite lethal on its own.
+Both are most valuable against the King of Spades, who is immune to Spades and cannot be weakened at all, making a fast kill your only reliable defence.
 
 ### Protect your hand size with Diamonds
 
