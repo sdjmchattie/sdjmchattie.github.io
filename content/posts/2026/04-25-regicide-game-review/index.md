@@ -3,7 +3,7 @@ date: 2026-04-25
 title: "Regicide: A Fiendishly Fun Cooperative Card Game"
 description: |-
   Regicide is a cooperative card game for one to four players where your whole team works together to defeat a castle full of royal enemies using nothing but a deck of cards.
-  It plays with the beautifully designed official deck from Badgers from Mars or with any standard 52-card deck and a couple of jokers.
+  It plays with the beautifully designed official deck from Badgers from Mars or with any standard 52-card deck.
   This post covers the rules, what makes it so well balanced, and some tips to give your party a fighting chance.
 slug: regicide-game-review
 image: /images/posts/2026/04-25-regicide-game-review.jpg
@@ -32,7 +32,7 @@ The official Regicide deck is available to buy directly from [Badgers from Mars]
 The cards feature bespoke artwork tailored to the game's theme, with the royal enemies illustrated as formidable castle-dwelling adversaries and the adventurer cards rendered with real character.
 
 You do not need to buy the official deck, though.
-Regicide plays just as well with a standard 52-card deck and two jokers.
+Regicide plays just as well with a standard 52-card deck, using zero, one, or two jokers depending on your player count.
 The rules map cleanly onto familiar suits and face cards, so dig that old deck out of a drawer and you are ready to play tonight.
 
 ## The Enemies
@@ -62,8 +62,9 @@ This immunity forces you to adapt your strategy with every new enemy revealed, k
 The numbered cards, Ace through Ten, are your weapons, and their suits determine what happens beyond the raw damage they deal.
 Each suit has a distinct power that activates when you play cards of that suit.
 
-- **Spades** reduce the current enemy's attack value by the combined value of the Spades cards you played.
-  Facing a King with an attack of 20 becomes far more survivable when you whittle that number down before it retaliates.
+- **Spades** reduce the current enemy's attack when it retaliates.
+  The reduction is cumulative: every Spades card played against the same enemy across all turns contributes, so chipping away with Spades over multiple turns stacks up into meaningful protection.
+  Facing a King with an attack of 20 becomes far more survivable when you whittle that number down before it hits back.
 - **Hearts** shuffle the discard pile and return a number of those cards equal to the combined value back into the tavern deck.
   This is the lifeblood of a long game, replenishing the deck blind so the team has cards to draw from later.
 - **Diamonds** deal out cards from the tavern deck equal to the combined value played.
@@ -81,17 +82,19 @@ Keep track of the active enemy's suit and plan your plays accordingly.
 Turns follow a clean, repeatable structure that is easy to internalise after the first round.
 
 1. **Play a card or combination.**
-   On your turn you must play at least one numbered card or joker from your hand.
-   You may also play multiple cards of the same value together as a combo, multiplying both the suit power and the damage dealt.
+   On your turn you must play at least one numbered card or Jester from your hand.
+   You may also play multiple cards of the same value together as a combo, multiplying both the suit power and the damage dealt, provided their combined value does not exceed ten.
+   Alternatively, an Ace can be paired with exactly one other non-Ace card, triggering both cards' suit powers at once.
 2. **Apply the suit power.**
    If the enemy is not immune to the suit you played, the power activates.
    Spades reduce the enemy's attack, Hearts shuffle discards back into the tavern deck, Diamonds deal cards from the deck to the team, or Clubs double your damage.
 3. **Deal damage.**
    The combined face value of your cards, doubled if Clubs and the enemy is not immune, is subtracted from the enemy's hit points.
 4. **Check for victory or retaliation.**
-   If the enemy's hit points reach zero or below, you defeat them.
-   The next enemy in the castle is revealed, and the player who landed the killing blow takes the next turn.
-   If the enemy survives, it retaliates immediately.
+   If cumulative damage reaches or exceeds the enemy's hit points, you defeat them and reveal the next castle card.
+   There is a meaningful distinction here: if your damage exactly matches the enemy's remaining hit points, the defeated enemy card goes face-down to the bottom of the tavern deck, recycling it as future draws.
+   If you overkill the enemy, the card is discarded and lost permanently.
+   If the enemy survives this turn, it retaliates immediately.
 5. **Survive the retaliation.**
    The enemy's current attack value, after any Spades reductions, is the damage your team must absorb together.
    Players discard cards from their hands and the total value of those discards must collectively meet or exceed the enemy's attack.
@@ -99,13 +102,19 @@ Turns follow a clean, repeatable structure that is easy to internalise after the
 
 Play then passes clockwise to the next player and the cycle repeats until the castle falls or your team does.
 
-## Jokers: The Wild Cards
+## Jesters: The Wild Cards
 
-The two jokers, whether you are using the official deck or a standard one, are the most powerful cards in the game.
-Playing a joker allows you to remove the top card of the enemy castle entirely, bypassing that enemy as though they were never there.
-This is an enormous advantage when timed well.
-Jokers cannot be combined with other cards and have no suit power of their own, so they are a pure trump card to deploy at the right moment.
-Save them wisely.
+Jesters, the jokers in a standard deck, are the most powerful cards in the game, but they work quite differently from what you might expect.
+In the official Regicide deck they are called Jesters.
+The number included scales with player count: none for one or two players, one for three players, and two for four players.
+
+Playing a Jester must be done alone and has two effects.
+First, Steps 3 and 4 are skipped entirely for this turn: no damage is dealt and the enemy does not retaliate.
+This makes a Jester a lifeline when your team is in trouble, low on cards and facing a painful incoming attack.
+Second, the Jester permanently cancels the current enemy's suit immunity for the remainder of that battle, meaning all suit powers now work against that enemy regardless of its suit.
+
+The player who plays the Jester also chooses who takes the next turn, which opens up strategic sequencing opportunities.
+If you are using a standard deck in a one or two player game, set the jokers aside; they do not come into play at those counts.
 
 ## Balance And Player Count
 
@@ -166,7 +175,7 @@ Resist spending Clubs too freely on Jacks when you know the Kings are waiting.
 
 When absorbing an enemy's retaliation, choose carefully which cards to discard.
 Low-value cards that do not form useful combinations meet the damage requirement without sacrificing your best plays.
-Do not discard jokers, combo pairs, or your Clubs just to cover a few points from a battered Jack.
+Do not discard Jesters, combo pairs, or your Clubs just to cover a few points from a battered Jack.
 
 ### Think one enemy ahead
 
@@ -180,7 +189,7 @@ Yes, unreservedly.
 Regicide occupies a rare space: deep enough to reward repeated play, simple enough to teach in one round, and balanced enough to feel fair at every player count.
 The suit immunity system stops the game from becoming routine, and the escalating difficulty from Jacks to Queens to Kings gives every session a clear and satisfying narrative arc.
 
-If you already own a standard deck and two jokers, it costs nothing to try tonight.
+If you already own a standard deck, it costs nothing to try tonight.
 If you enjoy it, the official cards from Badgers from Mars are a lovely upgrade with artwork that makes the theme come alive on the table.
 
 ## Wrapping Up
