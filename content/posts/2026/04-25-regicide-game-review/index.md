@@ -5,8 +5,8 @@ description: |-
   Regicide is a cooperative card game for one to four players where your whole team works together to defeat a castle full of royal enemies using nothing but a deck of cards.
   It plays with the beautifully designed official deck from Badgers from Mars or with any standard 52-card deck and a couple of jokers.
   This post covers the rules, what makes it so well balanced, and some tips to give your party a fighting chance.
-slug: regicide
-image: /images/posts/2026/04-25-regicide.jpg
+slug: regicide-game-review
+image: /images/posts/2026/04-25-regicide-game-review.jpg
 tags:
   - Board Games
 ---
