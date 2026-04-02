@@ -54,7 +54,7 @@ Defeating all twelve is a genuine achievement, especially in your first few atte
 
 Each enemy also has a suit, and that suit makes them immune to one type of card power.
 A Jack of Spades is immune to the defensive power of Spades cards.
-A King of Hearts ignores the healing power of Hearts cards.
+A King of Hearts means Hearts cards played against it restore nothing to the tavern deck.
 This immunity forces you to adapt your strategy with every new enemy revealed, keeping the game fresh from one encounter to the next.
 
 ## The Role Of Each Suit
@@ -64,17 +64,16 @@ Each suit has a distinct power that activates when you play cards of that suit.
 
 - **Spades** reduce the current enemy's attack value by the combined value of the Spades cards you played.
   Facing a King with an attack of 20 becomes far more survivable when you whittle that number down before it retaliates.
-- **Hearts** trigger a hand refill for the whole team.
-  Every player draws back up to their maximum hand size.
-  This is the lifeblood of a long game, keeping the team stocked and able to survive future attacks.
-- **Diamonds** let the player who played them draw cards equal to the combined value.
-  This fuels your own hand and sets up future powerful combinations.
+- **Hearts** shuffle the discard pile and return a number of those cards equal to the combined value back into the tavern deck.
+  This is the lifeblood of a long game, replenishing the deck blind so the team has cards to draw from later.
+- **Diamonds** deal out cards from the tavern deck equal to the combined value played.
+  In a solo game all those cards come to you; in multiplayer they are distributed around the table one at a time, up to each player's maximum hand size.
 - **Clubs** double the damage dealt to the current enemy.
   A ten of Clubs hits for twenty.
   Played cleverly, Clubs can dispatch an enemy in a single well-timed strike.
 
 Remember that the current enemy's suit blocks that suit's power entirely.
-Playing a six of Hearts against the King of Hearts heals nobody.
+Playing a six of Hearts against the King of Hearts restores nothing to the tavern deck.
 Keep track of the active enemy's suit and plan your plays accordingly.
 
 ## How A Turn Works
@@ -86,7 +85,7 @@ Turns follow a clean, repeatable structure that is easy to internalise after the
    You may also play multiple cards of the same value together as a combo, multiplying both the suit power and the damage dealt.
 2. **Apply the suit power.**
    If the enemy is not immune to the suit you played, the power activates.
-   Spades reduce the enemy's attack, Hearts trigger team drawing, Diamonds give you extra cards, or Clubs double your damage.
+   Spades reduce the enemy's attack, Hearts shuffle discards back into the tavern deck, Diamonds deal cards from the deck to the team, or Clubs double your damage.
 3. **Deal damage.**
    The combined face value of your cards, doubled if Clubs and the enemy is not immune, is subtracted from the enemy's hit points.
 4. **Check for victory or retaliation.**
@@ -147,9 +146,8 @@ Get those Spades in early and protect your hands for the long fight.
 
 ### Coordinate suit powers across turns
 
-If your teammate played Hearts last turn and everyone drew up to full hands, do not double down on healing.
-The team is healthy.
-Switch to Clubs or Diamonds to press the attack and keep momentum going.
+If your teammate played Hearts last turn and the tavern deck is already well stocked, do not keep pouring discards back into it at the expense of dealing damage.
+Equally, if Diamonds just dealt cards around the table and everyone is holding a full hand, prioritise attacking over drawing more.
 Talk openly about what suits you are holding so the team can sequence powers effectively.
 
 ### Play combinations whenever you can
