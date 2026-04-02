@@ -65,7 +65,7 @@ Each suit has a distinct power that activates when you play cards of that suit.
 - **Spades** reduce the current enemy's attack when it retaliates.
   The reduction is cumulative: every Spades card played against the same enemy across all turns contributes, so chipping away with Spades over multiple turns stacks up into meaningful protection.
   Facing a King with an attack of 20 becomes far more survivable when you whittle that number down before it hits back.
-- **Hearts** shuffle the discard pile and return a number of those cards equal to the combined value back into the tavern deck.
+- **Hearts** shuffle the discard pile and place a number of those cards equal to the combined value face-down at the bottom of the tavern deck.
   This is the lifeblood of a long game, replenishing the deck blind so the team has cards to draw from later.
 - **Diamonds** deal out cards from the tavern deck equal to the combined value played.
   In a solo game all those cards come to you; in multiplayer they are distributed around the table one at a time, up to each player's maximum hand size.
@@ -180,11 +180,20 @@ When absorbing an enemy's retaliation, choose carefully which cards to discard.
 Low-value cards that do not form useful combinations meet the damage requirement without sacrificing your best plays.
 Do not discard Jesters, combo pairs, or your Clubs just to cover a few points from a battered Jack.
 
-### Think one enemy ahead
+### Aim for the Queen of Clubs
 
-After you defeat a Jack, a Queen is coming.
-Check which Queen is next and start cycling cards that will be useless against its immunity out of your hand now.
-Arriving at the next enemy with a well-positioned hand is often the difference between a comfortable victory and a frantic scramble.
+The next enemy is always face-down, so you cannot plan around a specific suit.
+What you can plan around is the Kings stage: four enemies each with 40 hit points and a 20 point attack.
+If you can exact-kill a Queen enemy, that Queen card lands on top of the tavern deck and may end up in someone's hand.
+A Queen of Clubs played against a King deals double damage in one blow, which is enough for an outright kill.
+This matters most against the King of Spades, who is immune to Spades and therefore cannot be weakened at all.
+Against that enemy a fast, decisive kill is your best protection.
+
+### Protect your hand size with Diamonds
+
+A healthy hand is what keeps you alive, especially once the Kings arrive.
+Every Diamonds card you play draws more cards from the tavern deck, either to yourself or around the table, up to each player's hand size limit.
+Do not waste Diamonds early or spend them recklessly; keep a steady stock of them and use them intentionally to ensure nobody is sitting on one or two cards when a King hits back for 20.
 
 ## Verdict: Is Regicide Worth Playing?
 
