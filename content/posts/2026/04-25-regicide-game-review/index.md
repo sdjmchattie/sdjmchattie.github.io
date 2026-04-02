@@ -92,8 +92,9 @@ Turns follow a clean, repeatable structure that is easy to internalise after the
    The combined face value of your cards, doubled if Clubs and the enemy is not immune, is subtracted from the enemy's hit points.
 4. **Check for victory or retaliation.**
    If cumulative damage reaches or exceeds the enemy's hit points, you defeat them and reveal the next castle card.
-   There is a meaningful distinction here: if your damage exactly matches the enemy's remaining hit points, the defeated enemy card goes face-down to the top of the tavern deck, making it the very next card drawn.
-   If you overkill the enemy, the card goes to the discard pile, where it may yet return to the tavern deck if someone plays Hearts later.
+   There is a crucial distinction here: if your damage exactly matches the enemy's remaining hit points, the defeated enemy card goes face-down to the top of the tavern deck, making it the very next card drawn.
+   Getting court cards into your hand this way is central to winning the game.
+   If you overkill the enemy, the card goes to the discard pile, where it may eventually return to the tavern deck if someone plays Hearts later, but that is far less reliable.
    If the enemy survives this turn, it retaliates immediately.
 5. **Survive the retaliation.**
    The enemy's current attack value, after any cumulative Spades reductions, is the damage the current player must absorb alone.
@@ -179,6 +180,14 @@ Resist spending Clubs too freely on Jacks when you know the Kings are waiting.
 When absorbing an enemy's retaliation, choose carefully which cards to discard.
 Low-value cards that do not form useful combinations meet the damage requirement without sacrificing your best plays.
 Do not discard Jesters, combo pairs, or your Clubs just to cover a few points from a battered Jack.
+
+### Treat exact kills as a victory condition in themselves
+
+Overkilling enemies is one of the surest paths to defeat.
+Every court card you overkill is a powerful weapon lost to the discard pile, available only by chance if Hearts happen to cycle it back.
+Every court card you exact-kill lands on top of the tavern deck, ready to be drawn immediately, and court cards in hand hit far harder than any numbered card.
+You cannot afford to overkill more than a handful of enemies and still expect to win.
+Count the remaining hit points before you play and hold back damage where you can.
 
 ### Exact-kill the King of Clubs if he appears early
 
