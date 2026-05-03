@@ -14,7 +14,7 @@ tags:
 ---
 
 In an [earlier post]({{< ref "02-07-how-to-use-text-embeddings" >}}) we generated embeddings and searched them by computing cosine similarity across a small in-memory list.
-That approach is perfect for learning and prototyping, but it does not scale.
+That approach is perfect for learning and prototyping, but it doesn't scale.
 When your corpus grows to hundreds of thousands or millions of documents, iterating over every vector for each query becomes too slow and too memory-hungry to be practical.
 Vector databases are the solution to that problem.
 
@@ -38,8 +38,8 @@ A query like "find the ten most semantically similar documents where the author 
 
 ## Commonly Used Vector Databases
 
-There is no shortage of options.
-Here are the ones you are most likely to encounter.
+There's no shortage of options.
+Here are the ones you're most likely to encounter.
 
 ### Chroma
 
@@ -63,7 +63,7 @@ Cloud hosting is available alongside self-hosted deployment.
 
 [Pinecone](https://www.pinecone.io) is fully managed and serverless.
 You create an index, upsert vectors, and query it via an API without ever managing infrastructure.
-It is popular in production RAG systems where operational simplicity is a priority.
+It's popular in production RAG systems where operational simplicity is a priority.
 
 ### Milvus
 
@@ -74,12 +74,12 @@ Zilliz Cloud provides a managed version.
 ### FAISS
 
 [FAISS](https://github.com/facebookresearch/faiss) (Facebook AI Similarity Search) is a library rather than a database.
-It has no persistence, no server, and no metadata filtering, but it is extremely fast and is often used as the underlying search engine inside other tools.
-It is worth knowing about, but most applications are better served by a full database.
+It has no persistence, no server, and no metadata filtering, but it's extremely fast and is often used as the underlying search engine inside other tools.
+It's worth knowing about, but most applications are better served by a full database.
 
 ## What the Cloud Hyperscalers Offer
 
-If you are already invested in a cloud platform, each major provider has a vector search option.
+If you're already invested in a cloud platform, each major provider has a vector search option.
 
 ### AWS
 
@@ -113,9 +113,9 @@ Most databases support this, but the performance and expressiveness vary, so tes
 
 **Hybrid search:** if your users benefit from both keyword precision and semantic recall, prioritise databases with first-class hybrid support like Weaviate or Azure AI Search.
 
-**Integration:** if you are building on a cloud platform, using that provider's vector offering may simplify authentication, networking, and billing.
+**Integration:** if you're building on a cloud platform, using that provider's vector offering may simplify authentication, networking, and billing.
 
-**Cost model:** understand whether you are paying per query, per stored vector, per compute hour, or some combination.
+**Cost model:** understand whether you're paying per query, per stored vector, per compute hour, or some combination.
 The cheapest option at prototype scale is rarely the cheapest at production scale.
 
 ## Hands-On: Semantic Search With Chroma and OpenAI

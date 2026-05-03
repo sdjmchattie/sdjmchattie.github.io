@@ -13,9 +13,9 @@ tags:
   - Software Architecture
 ---
 
-If you have been following the earlier posts in this series, you will have built graphs that gather data, call tools, and produce structured output.
+If you've been following the earlier posts in this series, you'll have built graphs that gather data, call tools, and produce structured output.
 Every one of those examples used `.invoke()`, which means the caller waits in silence until the entire graph finishes and then receives the final state.
-That is fine for batch jobs or background pipelines, but it is a terrible experience for anything interactive.
+That's fine for batch jobs or background pipelines, but it's a terrible experience for anything interactive.
 A user watching a chatbot stare blankly for fifteen seconds while it researches, reasons, and writes is a user wondering whether the application has crashed.
 
 LangGraph solves this with streaming.
@@ -23,7 +23,7 @@ Instead of waiting for the final result, you can watch the graph work as it happ
 This post walks through the streaming modes that matter most and shows how to use each one with practical code.
 
 This is part of a series of posts on LangGraph.
-If you are new to the series, start with [A Primer in LangGraph]({{< relref "10-18-a-primer-in-langgraph" >}}) which covers the basics, before working through the later posts.
+If you're new to the series, start with [A Primer in LangGraph]({{< relref "10-18-a-primer-in-langgraph" >}}) which covers the basics, before working through the later posts.
 All streaming examples use the synchronous `.stream()` method to keep things focused.
 If you need asynchronous execution, the same principles apply using `.astream()` instead, as covered in [Using Async Effectively in LangGraph]({{< relref "05-02-async-in-langgraph" >}}).
 
@@ -74,7 +74,7 @@ app = builder.compile()
 
 Notice that the LLM is initialised with `streaming=True`.
 That flag tells the model provider to send tokens incrementally rather than waiting for the full response.
-It does not change how `invoke()` behaves at the graph level, but it is essential for the `messages` streaming mode we will use later.
+It doesn't change how `invoke()` behaves at the graph level, but it's essential for the `messages` streaming mode we'll use later.
 
 If you call `app.invoke({"topic": "LangGraph streaming"})`, you get back the completed state with both `research` and `summary` filled in.
 Nothing appears until the entire graph finishes.
@@ -83,10 +83,10 @@ The rest of this post replaces that single call with `.stream()` and explores wh
 ## The Streaming Modes
 
 LangGraph supports several streaming modes that you select by passing `stream_mode` to `.stream()`.
-The three you will use most often are `updates`, `messages`, and `custom`.
+The three you'll use most often are `updates`, `messages`, and `custom`.
 There are also modes called `values`, `debug`, and others, but these three cover the vast majority of real applications.
 
-Here is a quick summary before we dive into each one.
+Here's a quick summary before we dive into each one.
 
 - **`updates`**: yields the state changes produced by each node as it finishes.
 - **`messages`**: yields LLM tokens one at a time as the model generates them.
@@ -111,7 +111,7 @@ for chunk in app.stream(
         print()
 ```
 
-Running this, you would see something like:
+Running this, you'd see something like:
 
 ```
 --- Node 'research_topic' finished ---
@@ -151,7 +151,7 @@ The `message_chunk` is an `AIMessageChunk` object whose `.content` attribute hol
 The `metadata` dictionary tells you which node produced the token via the `langgraph_node` key, plus other context like the LLM invocation ID.
 
 Second, we filter on `metadata["langgraph_node"]` to only print tokens from the `write_summary` node.
-Without this filter, you would see tokens from both the research node and the summary node interleaved in the output.
+Without this filter, you'd see tokens from both the research node and the summary node interleaved in the output.
 In a real application, you might want to show research tokens in a collapsible panel and summary tokens in the main chat area.
 
 Third, we check `message_chunk.content` because the stream occasionally emits metadata chunks with empty content.
@@ -166,7 +166,7 @@ The `custom` mode is the most flexible.
 It lets you emit whatever data you want from inside a node using `get_stream_writer()`.
 This is useful when you need progress updates that do not map neatly to state changes or LLM tokens: status messages, percentage progress, intermediate calculations, or any other signal that your frontend needs.
 
-Here is a modified version of the research node that emits status updates as it works:
+Here's a modified version of the research node that emits status updates as it works:
 
 ```python
 from langgraph.config import get_stream_writer
@@ -204,7 +204,7 @@ A simple `try`/`except` around the writer calls lets you support both standalone
 
 ## Combining Multiple Modes
 
-You are not limited to a single streaming mode.
+You're not limited to a single streaming mode.
 If you pass a list to `stream_mode`, LangGraph interleaves all of the requested event types in a single stream.
 This is powerful because a real application often needs both state updates and custom progress events, or both token streaming and node-level progress.
 
@@ -225,7 +225,7 @@ This makes it straightforward to dispatch events to different handlers in your a
 
 ## A Note on the V2 Streaming API
 
-If you explore the LangGraph documentation, you will encounter references to `astream_events()`, which is a lower-level API that emits fine-grained callback events for the entire execution lifecycle.
+If you explore the LangGraph documentation, you'll encounter references to `astream_events()`, which is a lower-level API that emits fine-grained callback events for the entire execution lifecycle.
 When using that method, always pass `version="v2"`.
 The v2 event format is the current standard and provides a much more consistent structure than the older v1 format.
 
@@ -239,13 +239,13 @@ Update the `version` argument to `"v2"`, adjust your event handlers to expect th
 
 The right streaming mode depends on what your application is doing with the output.
 
-If you are building a dashboard or progress tracker that shows which step the agent is working on, `updates` gives you exactly what you need with minimal complexity.
+If you're building a dashboard or progress tracker that shows which step the agent is working on, `updates` gives you exactly what you need with minimal complexity.
 Each node completion becomes a progress tick.
 
-If you are building a chat interface where users watch the response appear word by word, `messages` is the right choice.
+If you're building a chat interface where users watch the response appear word by word, `messages` is the right choice.
 Filter by node name to control which part of the graph streams to the user.
 
-If you need to send custom signals, such as status messages, progress percentages, or intermediate results that do not belong in the graph state, `custom` with `get_stream_writer()` gives you full control.
+If you need to send custom signals, such as status messages, progress percentages, or intermediate results that don't belong in the graph state, `custom` with `get_stream_writer()` gives you full control.
 
 And if you need more than one of these at the same time, pass them as a list.
 A chat interface might combine `messages` for token streaming with `custom` for status indicators, giving the frontend everything it needs from a single event loop.
@@ -258,8 +258,8 @@ The `messages` mode delivers the classic typing effect.
 The `custom` mode lets you emit whatever your frontend needs.
 And combining them gives you a single stream of everything.
 
-If you are building anything interactive with LangGraph, streaming is not optional.
-It is the difference between an application that feels broken while it thinks and one that feels like it is working with you.
+If you're building anything interactive with LangGraph, streaming isn't optional.
+It's the difference between an application that feels broken while it thinks and one that feels like it's working with you.
 
 If you want more from this series, browse the [LangGraph]({{< ref "/tags/langgraph" >}}) tag.
 Happy coding!

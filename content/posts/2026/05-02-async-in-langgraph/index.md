@@ -15,31 +15,31 @@ tags:
 ---
 
 In [Seven Tips for Performant Async Python]({{< relref "04-11-async-python-done-right" >}}) I focused on plain `asyncio`.
-That is the right place to start, because LangGraph does not replace Python's event loop or make blocking code magically concurrent.
+That's the right place to start, because LangGraph doesn't replace Python's event loop or make blocking code magically concurrent.
 If an async LangGraph node calls a blocking library, the graph still waits.
 If you fan out too much work without limits, you can still overload an API.
 And if you forget where concurrency is actually happening, your graph can look elegant while quietly behaving synchronously.
 
 This post is the LangGraph version of that earlier article.
-We will keep the core async lessons, then layer on the LangGraph-specific parts that matter today: async nodes, `ainvoke()`, async tools, reducers, and one important note about durable execution.
-I will mention streaming where it matters, but save the full walkthrough for a near-future post in this series.
+We'll keep the core async lessons, then layer on the LangGraph-specific parts that matter today: async nodes, `ainvoke()`, async tools, reducers, and one important note about durable execution.
+I'll mention streaming where it matters, but save the full walkthrough for a near-future post in this series.
 
 This is part of a series of posts on LangGraph.
-If you are new to the series, start with [A Primer in LangGraph]({{< relref "10-18-a-primer-in-langgraph" >}}) which covers the basics, before working through the later posts.
+If you're new to the series, start with [A Primer in LangGraph]({{< relref "10-18-a-primer-in-langgraph" >}}) which covers the basics, before working through the later posts.
 
 ## What Still Applies from Plain Async Python
 
-The core model has not changed.
+The core model hasn't changed.
 As I explained in [How Async Python Works]({{< relref "04-11-async-python-done-right#how-async-python-works" >}}), the event loop only gets a chance to do something else when your code reaches an `await`.
-LangGraph builds orchestration on top of that model, but it does not bypass it.
+LangGraph builds orchestration on top of that model, but it doesn't bypass it.
 Your graph can schedule work neatly, yet the actual concurrency still depends on the same underlying Python rules.
 
 That means the old pitfalls still matter.
-If you call a synchronous HTTP client inside an async node, you have recreated the exact problem described in [Tip 1: Use Async-Native Libraries]({{< relref "04-11-async-python-done-right#tip-1-use-async-native-libraries" >}}).
+If you call a synchronous HTTP client inside an async node, you've recreated the exact problem described in [Tip 1: Use Async-Native Libraries]({{< relref "04-11-async-python-done-right#tip-1-use-async-native-libraries" >}}).
 The node may be declared with `async def`, but the event loop is still blocked until that library returns.
 Likewise, if you need to make dozens of requests inside a node, backpressure still matters, which is why [Tip 6: Control Concurrency with asyncio.Semaphore]({{< relref "04-11-async-python-done-right#tip-6-control-concurrency-with-asynciosemaphore" >}}) carries over cleanly into LangGraph.
 
-The easiest way to think about it is this: LangGraph helps you structure concurrent workflows, but it does not excuse you from writing good async Python.
+The easiest way to think about it is this: LangGraph helps you structure concurrent workflows, but it doesn't excuse you from writing good async Python.
 You still want async-native libraries for I/O-bound work.
 You still want `asyncio.to_thread()` when a blocking SDK is unavoidable.
 And you still need to decide where concurrency should happen and where it should be capped.
@@ -51,22 +51,22 @@ Nodes can be synchronous functions or asynchronous functions.
 If a node needs to await network I/O, stream tokens, or coordinate a batch of concurrent requests, making it `async def` is perfectly natural.
 If a node is just formatting data or joining strings, a plain synchronous function is often simpler.
 
-At the graph boundary, the current Python API gives you the async entry points you would expect.
+At the graph boundary, the current Python API gives you the async entry points you'd expect.
 Use `app.ainvoke(...)` when you want the final result asynchronously.
 LangGraph also supports `app.astream(...)` when you want updates while the graph is still running, and in LangGraph v1.1 the streaming docs use `version="v2"` for that event format.
-That is an important capability to know exists, but I will leave the full streaming walkthrough for a near-future post so we can keep this one focused on the async foundations.
+That's an important capability to know exists, but I'll leave the full streaming walkthrough for a near-future post so we can keep this one focused on the async foundations.
 
 LangGraph also has an opinionated tool story.
 If the LLM is deciding which actions to take, `ToolNode` can execute multiple requested tools in parallel automatically.
-That is very convenient, but it introduces the same shared-state problem discussed in [Concurrent Nodes in LangGraph]({{< relref "03-21-concurrent-nodes-in-langgraph" >}}).
-When parallel branches or parallel tool calls write to the same key, you still need a reducer or you will lose data.
+That's very convenient, but it introduces the same shared-state problem discussed in [Concurrent Nodes in LangGraph]({{< relref "03-21-concurrent-nodes-in-langgraph" >}}).
+When parallel branches or parallel tool calls write to the same key, you still need a reducer or you'll lose data.
 
 One more piece matters in production: persistence and durable execution.
 If you compile a graph with checkpointing, LangGraph can resume or replay work.
-That is powerful, but it means your side effects need clearer boundaries.
-A node that charges a card, sends an email, or writes a record to an external system must be designed so a replay does not perform the same action twice by accident.
-Async does not change that requirement.
-It just makes it easier to hide the risky call inside a larger function if you are not careful.
+That's powerful, but it means your side effects need clearer boundaries.
+A node that charges a card, sends an email, or writes a record to an external system must be designed so a replay doesn't perform the same action twice by accident.
+Async doesn't change that requirement.
+It just makes it easier to hide the risky call inside a larger function if you're not careful.
 
 ## A Practical Async LangGraph Example
 
@@ -133,7 +133,7 @@ app = builder.compile()
 
 There are a few important details hiding in this short example.
 The `collect_documents` node is async because it spends most of its time waiting on network I/O.
-Inside that node we still use `asyncio.gather()` because LangGraph does not remove the need to structure concurrency within a node.
+Inside that node we still use `asyncio.gather()` because LangGraph doesn't remove the need to structure concurrency within a node.
 And we wrap the work in a semaphore because unbounded fan-out is still a fast route to timeouts and rate limits.
 
 To run the graph asynchronously, call `ainvoke()` instead of `invoke()`:
@@ -156,10 +156,10 @@ print(result["summary"])
 ```
 
 LangGraph also supports async streaming with `astream()`, which is especially useful when you want progress updates or token-level output.
-That deserves its own treatment though, so I will cover it properly in the near future rather than squeezing it into this post.
+That deserves its own treatment though, so I'll cover it properly in the near future rather than squeezing it into this post.
 
-Notice what we did not do here.
-We did not use `ToolNode`, because the LLM is not choosing actions in this example.
+Notice what we didn't do here.
+We didn't use `ToolNode`, because the LLM isn't choosing actions in this example.
 The graph itself already knows it should fetch every URL in `state["urls"]`.
 If the LLM needs to decide which lookups to perform, then the better fit is the tool-calling pattern from [Using Tools in LangGraph]({{< relref "03-14-using-tools-in-langgraph" >}}), ideally with async tools where the underlying work is also I/O-bound.
 
@@ -169,13 +169,13 @@ Async tools are useful when the model is making the choice, but the tool impleme
 For example, an LLM might decide whether to call `search_docs`, `check_status_page`, or `lookup_pricing`.
 If those tools talk to external services, defining them as async functions lets the runtime await them without blocking the event loop.
 
-The important thing to remember is that `ToolNode` handling parallel tool execution does not remove state design concerns.
+The important thing to remember is that `ToolNode` handling parallel tool execution doesn't remove state design concerns.
 If two tools can update the same state field, define a reducer for that field.
 Otherwise you risk the same silent overwrites that happen with any other parallel branch in LangGraph.
 
 ## Practical Mistakes to Avoid
 
-- **Declaring a node async while still using blocking I/O:** `async def` is not magic.
+- **Declaring a node async while still using blocking I/O:** `async def` isn't magic.
   If the node calls `requests`, `time.sleep()`, or another blocking SDK, the graph still stalls.
 - **Calling `invoke()` when you really want async behaviour:** `invoke()` is fine for synchronous runs, but if you want non-blocking graph execution, reach for `ainvoke()`.
 - **Forgetting reducers on parallel updates:** this applies to fan-out branches and to parallel tool calls.
@@ -183,11 +183,11 @@ Otherwise you risk the same silent overwrites that happen with any other paralle
 - **Launching too much work at once:** `asyncio.gather()` is easy to overuse.
   Add a semaphore or another limiter before you discover the API's rate limit the hard way.
 - **Hiding side effects inside replayable nodes:** with persistence enabled, retries and resumes are features, not bugs.
-  Keep external side effects idempotent or isolate them so replay does not create duplicates.
+  Keep external side effects idempotent or isolate them so replay doesn't create duplicates.
 
 One short footnote is worth calling out.
-If you are stuck on Python earlier than 3.11, LangGraph's async streaming docs currently require a bit more manual work around context propagation.
-That is another good reason to prefer Python 3.11+ for new LangGraph projects.
+If you're stuck on Python earlier than 3.11, LangGraph's async streaming docs currently require a bit more manual work around context propagation.
+That's another good reason to prefer Python 3.11+ for new LangGraph projects.
 
 ## Wrapping Up
 

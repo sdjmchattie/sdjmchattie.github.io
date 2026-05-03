@@ -14,52 +14,52 @@ tags:
 
 The first time I looked at DynamoDB, it felt like a golden unicorn.
 It promised fast access, huge scale, and very little operational effort.
-If you are already building on AWS, it also feels like the natural choice because it fits so neatly into the rest of the platform.
+If you're already building on AWS, it also feels like the natural choice because it fits so neatly into the rest of the platform.
 
 Then the catch becomes clear.
-DynamoDB is not magical because it answers every possible query quickly.
-It is magical because it can answer the queries you planned for very quickly.
+DynamoDB isn't magical because it answers every possible query quickly.
+It's magical because it can answer the queries you planned for very quickly.
 
 If you come from PostgreSQL, MySQL, or even MongoDB, DynamoDB can feel less flexible than you expected at first.
 Once you understand that trade-off, it becomes much easier to see where DynamoDB shines and where another database is the better fit.
 
 ## Why DynamoDB Looks So Good in AWS
 
-There is a lot to like.
+There's a lot to like.
 
-- It is fully managed, so there is no server patching, vacuuming, or cluster babysitting.
-- It is built for very high throughput and low-latency lookups.
+- It's fully managed, so there's no server patching, vacuuming, or cluster babysitting.
+- It's built for very high throughput and low-latency lookups.
 - It scales horizontally without you having to plan sharding yourself.
 - It integrates nicely with AWS features such as Lambda, IAM, Streams, TTL, and Global Tables.
 - It works especially well for event-driven and serverless architectures where you want the database to disappear into the background.
 
-That is a powerful set of selling points.
+That's a powerful set of selling points.
 If your application mostly does key-based lookups, time-ordered queries within a partition, and predictable access patterns, DynamoDB can feel wonderful.
 It removes a lot of the infrastructure and scaling concerns that teams otherwise spend time worrying about.
 
 This is why DynamoDB turns up so often in AWS architecture diagrams.
-Within AWS, it is one of the cleanest ways to build something that needs to stay fast as traffic grows.
+Within AWS, it's one of the cleanest ways to build something that needs to stay fast as traffic grows.
 
-## So What You Buying In To?
+## So What Are You Buying Into?
 
-The important thing to understand is that DynamoDB is not giving you arbitrary query speed.
-It is giving you excellent performance for access patterns you designed for up front.
+The important thing to understand is that DynamoDB isn't giving you arbitrary query speed.
+It's giving you excellent performance for access patterns you designed for up front.
 
 That means the real design work moves earlier in the project.
 With PostgreSQL or MySQL, you can often start with a sensible schema, add a few indexes, and answer new questions later with SQL joins, filters, and aggregations.
-With DynamoDB, your partition key, sort key, and secondary indexes have a much bigger influence on what is easy, what is awkward, and what is expensive.
+With DynamoDB, your partition key, sort key, and secondary indexes have a much bigger influence on what's easy, what's awkward, and what's expensive.
 
-That is the trade-off.
+That's the trade-off.
 You get scale and speed, but you pay for them in data modelling discipline.
-If a new query arrives later and you did not design an index or item layout that supports it, you can end up in a tight spot.
+If a new query arrives later and you didn't design an index or item layout that supports it, you can end up in a tight spot.
 Sometimes that means adding a new global secondary index (GSI).
 Sometimes it means backfilling data.
-Sometimes it means accepting a less elegant design than you would have liked.
+Sometimes it means accepting a less elegant design than you'd have liked.
 
 I think this is the best way to frame DynamoDB:
 
-DynamoDB is not hard because it is bad at queries.
-It is hard because it asks you to commit to your important queries much earlier than relational databases do.
+DynamoDB isn't hard because it's bad at queries.
+It's hard because it asks you to commit to your important queries much earlier than relational databases do.
 
 ## A Small Toy Example
 
@@ -80,8 +80,8 @@ Now imagine the application needs to answer these questions:
 
 That set of queries already hints at the difference between the database styles.
 
-In PostgreSQL or MySQL, you would probably model `accounts`, `items`, and `events` as separate tables.
-You would add foreign keys, then create indexes to support common filters such as `account_id`, `item_id`, `status`, and `created_at`.
+In PostgreSQL or MySQL, you'd probably model `accounts`, `items`, and `events` as separate tables.
+You'd add foreign keys, then create indexes to support common filters such as `account_id`, `item_id`, `status`, and `created_at`.
 If you later need a new query, you often have room to add another index or write a new join without changing how the data is fundamentally stored.
 
 In DynamoDB, you start by asking how each of those reads will work.
@@ -89,16 +89,16 @@ You might decide that the main partition key should group everything by account,
 You might use sort key prefixes so that account metadata, owned items, and recent events all sit in one item collection in a predictable order.
 If you also need to fetch an item directly by ID, you may add a secondary index for that access pattern.
 
-That is where single-table design often enters the conversation.
+That's where single-table design often enters the conversation.
 Instead of having separate tables for accounts, items, and events, you can keep multiple entity types in one table and distinguish them with key prefixes and attributes.
 For people coming from SQL, this can look odd at first.
-For DynamoDB, it is often the most natural way to serve related access patterns efficiently.
+For DynamoDB, it's often the most natural way to serve related access patterns efficiently.
 
 The upside is speed.
 The downside is that the model is built around the questions you know today.
-If someone later asks for "all items with status open across every account, sorted by last update", that query may be trivial in PostgreSQL with the right index and much more awkward in DynamoDB if you did not already design for it.
+If someone later asks for "all items with status open across every account, sorted by last update", that query may be trivial in PostgreSQL with the right index and much more awkward in DynamoDB if you didn't already design for it.
 
-That is the key mindset shift.
+That's the key mindset shift.
 Relational databases let you ask more questions later.
 DynamoDB rewards you for knowing your important questions earlier.
 
@@ -124,62 +124,62 @@ DynamoDB is usually better when:
 - the application is already built around AWS-native services
 - you want as little operational database work as possible
 
-This is why I would not frame DynamoDB as a replacement for PostgreSQL or MySQL in every AWS system.
-It is a specialist tool.
-It is extremely good at a particular style of workload.
+This is why I wouldn't frame DynamoDB as a replacement for PostgreSQL or MySQL in every AWS system.
+It's a specialist tool.
+It's extremely good at a particular style of workload.
 
 PostgreSQL and MySQL are more forgiving.
 They let you discover new questions over time.
 DynamoDB is less forgiving, but can be outstanding when your access paths are clear and the read and write patterns fit its model.
 
-It is also worth saying that needing a little schema flexibility does not automatically push you into DynamoDB.
-PostgreSQL and MySQL both support JSON data types, so "some of this data does not fit neatly into columns" is not, on its own, a strong reason to leave the relational world behind.
+It's also worth saying that needing a little schema flexibility doesn't automatically push you into DynamoDB.
+PostgreSQL and MySQL both support JSON data types, so "some of this data doesn't fit neatly into columns" is not, on its own, a strong reason to leave the relational world behind.
 
-One subtle trade-off is that secondary indexes are not free.
+One subtle trade-off is that secondary indexes aren't free.
 They make more queries possible, but they also add more design complexity and more write overhead.
 Even read consistency has caveats.
 Strongly consistent reads are available on tables and local secondary indexes, but not on global secondary indexes.
-That is the kind of detail that rarely matters in a relational database comparison until you are well into implementation.
+That's the kind of detail that rarely matters in a relational database comparison until you're well into implementation.
 
 ## Where MongoDB and Cosmos DB Fit
 
-MongoDB and Cosmos DB sit closer to DynamoDB in spirit because they are both happy to move away from a classic relational model.
-Even so, they do not feel the same in practice.
+MongoDB and Cosmos DB sit closer to DynamoDB in spirit because they're both happy to move away from a classic relational model.
+Even so, they don't feel the same in practice.
 
 MongoDB usually feels more flexible than DynamoDB.
 You store JSON-like documents, the document model is easy to understand, and adding new query patterns often feels more natural than it does in DynamoDB.
-If your team wants a document database but does not want to think quite so aggressively in terms of partition keys and access-pattern-first modelling, MongoDB can feel more comfortable.
+If your team wants a document database but doesn't want to think quite so aggressively in terms of partition keys and access-pattern-first modelling, MongoDB can feel more comfortable.
 It also supports transactions, but the main design story is still about modelling documents well rather than assuming transactions remove all schema trade-offs.
 
-The trade-off is that MongoDB does not give you the same AWS-native experience as DynamoDB.
-It is also not the same thing operationally or architecturally.
+The trade-off is that MongoDB doesn't give you the same AWS-native experience as DynamoDB.
+It's also not the same thing operationally or architecturally.
 DynamoDB is more opinionated, but that opinionation is part of how AWS delivers its scaling and operational simplicity.
 
 Cosmos DB is probably the closest cloud-provider analogue to DynamoDB.
 If DynamoDB is the AWS-flavoured answer to globally distributed NoSQL, Cosmos DB is the Azure-flavoured one.
 Both care deeply about partitioning.
 Both reward good access-pattern design.
-Both are strongest when you embrace their distributed nature instead of pretending they are just drop-in replacements for a relational database.
+Both are strongest when you embrace their distributed nature instead of pretending they're just drop-in replacements for a relational database.
 
 The differences are still worth noting.
 Cosmos DB exposes multiple APIs, has explicit consistency-level choices, and scopes ACID transactions to a single logical partition in its transactional batch model.
 DynamoDB has its own shape of trade-offs around partition keys, GSIs, and consistency, but inside AWS it tends to feel more native and more obvious as the default managed NoSQL option.
 
-If you are building mainly on AWS, DynamoDB is usually the more natural choice.
-If you are building mainly on Azure, Cosmos DB often occupies the same part of the design conversation.
+If you're building mainly on AWS, DynamoDB is usually the more natural choice.
+If you're building mainly on Azure, Cosmos DB often occupies the same part of the design conversation.
 
 ## The Unique Selling Points of DynamoDB
 
-If I were making the positive case for DynamoDB, these are the points I would lead with.
+If I were making the positive case for DynamoDB, these are the points I'd lead with.
 
 - It removes a huge amount of operational effort.
 - It scales very well when the partitioning is sound.
 - It encourages you to design around real application access patterns instead of drifting into accidental database complexity.
 - It fits beautifully with event-driven AWS systems.
-- It can deliver extremely fast, predictable reads for the patterns it is built to support.
+- It can deliver extremely fast, predictable reads for the patterns it's built to support.
 
 Those are real advantages.
-They are not marketing fluff.
+They're not marketing fluff.
 Used well, DynamoDB genuinely can simplify a system while keeping it fast under load.
 
 Another place DynamoDB often feels especially natural is for system-managed data rather than user-driven data.
@@ -187,7 +187,7 @@ If the application controls the shape of the records and already knows the main 
 A cache of serialized application objects keyed by a hash is a good example.
 The access pattern is simple, the data shape is predictable, and features like TTL fit neatly.
 
-That does not mean DynamoDB is only for internal plumbing.
+That doesn't mean DynamoDB is only for internal plumbing.
 It just means it tends to feel easiest when the system owns the questions as well as the data.
 
 ## The Trade-Offs You Accept
@@ -196,21 +196,21 @@ To get those advantages, you accept some real constraints.
 
 - Data modelling becomes more specialised.
 - Partition key choice becomes a first-class architectural decision.
-- New queries can be painful if you did not think ahead.
-- Joins are not part of the story.
+- New queries can be painful if you didn't think ahead.
+- Joins aren't part of the story.
 - Secondary indexes help, but each one adds cost and design weight.
 - Some patterns that feel easy in SQL feel unnatural in DynamoDB.
 
 None of that makes DynamoDB bad.
-It just means it is not a golden unicorn after all.
-It is a powerful tool with a price of admission.
+It just means it's not a golden unicorn after all.
+It's a powerful tool with a price of admission.
 
 The teams that struggle with DynamoDB are often the ones trying to use it like a relational database with different syntax.
-The teams that do well with it are usually the ones who embrace its strengths and avoid asking it to be something it is not.
+The teams that do well with it are usually the ones who embrace its strengths and avoid asking it to be something it isn't.
 
 ## When I Would Choose DynamoDB
 
-I would seriously consider DynamoDB when all of the following are mostly true:
+I'd seriously consider DynamoDB when all of the following are mostly true:
 
 - the system is already strongly AWS-centric
 - the important queries are well understood
@@ -219,11 +219,11 @@ I would seriously consider DynamoDB when all of the following are mostly true:
 - low operational overhead matters
 - the team is willing to invest in modelling the data properly
 
-That is a very common shape for serverless back ends, event-driven systems, request-tracking platforms, session stores, metadata stores, and similar architectures.
+That's a very common shape for serverless back ends, event-driven systems, request-tracking platforms, session stores, metadata stores, and similar architectures.
 
 ## When I Would Reach for Something Else
 
-I would lean toward PostgreSQL, MySQL, or another more flexible option when:
+I'd lean toward PostgreSQL, MySQL, or another more flexible option when:
 
 - the query patterns are still changing often
 - the data relationships are rich and important
@@ -236,14 +236,14 @@ In those situations, DynamoDB can still work, but it may not be the database tha
 ## Wrapping Up
 
 DynamoDB feels magical at first because, in the right circumstances, it really is impressive.
-It is fast, scalable, and deeply at home inside AWS.
+It's fast, scalable, and deeply at home inside AWS.
 
-The important thing is to understand what you are buying.
-You are not buying universal query flexibility.
-You are buying excellent performance for the access patterns you planned for, plus a very low-operations experience around them.
+The important thing is to understand what you're buying.
+You're not buying universal query flexibility.
+You're buying excellent performance for the access patterns you planned for, plus a very low-operations experience around them.
 
-That is a trade many AWS systems should make.
-It is just not a trade every system should make.
+That's a trade many AWS systems should make.
+It's just not a trade every system should make.
 
 If you go in with that mindset, DynamoDB stops looking like a golden unicorn and starts looking like something better.
 It looks like a very good engineering choice for the right kind of problem.
