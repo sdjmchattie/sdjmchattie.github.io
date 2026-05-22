@@ -7,3 +7,6 @@
 # Built HTML
 public/
 resources/_gen/
+
+# Anti-gravity
+.antigravitycli/
