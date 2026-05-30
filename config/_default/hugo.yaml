@@ -1,5 +1,5 @@
 baseURL: https://stuart.mchattie.net/
-languageCode: en-gb
+locale: en-gb
 enableGitInfo: true
 markup:
   highlight:
