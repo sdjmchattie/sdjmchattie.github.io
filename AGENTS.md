@@ -22,6 +22,10 @@
 
 ## Blog Post Writing Guide
 
+### Workflow & Planning
+
+- When drafting and creating new blog posts, agents must load and execute the instructions in [write_blog_post.md](file:///Users/stuart/Source/personal-website/skills/write_blog_post.md) as a Skill File (`IsSkillFile: true`).
+
 ### Front Matter Requirements
 
 Every post must have a complete YAML front matter block:
