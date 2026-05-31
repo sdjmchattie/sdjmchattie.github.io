@@ -44,6 +44,11 @@ Every post must have a complete YAML front matter block:
 - **Quick context/intro** (1-2 paragraphs): For series posts, include a cross-link to the series tag (e.g., `{{< ref "/tags/go-series" >}}`).
 - **Content sections**: Structure with level 2 headings for major topics and level 3 headings for subtopics. Keep sections focused and logically ordered.
 - **Tone**: Conversational yet professional. Explain concepts clearly and assume readers may be new to the topic. Avoid jargon without definition.
+- **Pronoun Choice**:
+  - **No collective pronouns**: Never use "we" or "let's" in post text (this is a personal, single-author blog).
+  - **First-person for opinions**: Use first-person singular (`I`, `I'll`, `I'm`, `my`) exclusively for personal opinions, recommendations, and guide introductions (e.g., "I recommend using `uv`...", "In this guide, I explore...").
+  - **Second-person for instructions**: Use second-person (`you`, `you'll`, `you're`, `you can`) for all code walkthroughs, tutorial steps, and demonstrations (e.g., "You'll create a file named...", "With this single instance, you're ready to...").
+- **Contractions**: Prefer natural, conversational contractions (e.g., `I'll`, `you'll`, `you're`) over formal phrasing (`I will`, `you will`, `you are`) to keep the prose engaging and readable.
 - **Closing** (1-2 paragraphs): Summarize key takeaways and optionally suggest related posts via tag links (e.g., `[Python]({{< ref "/tags/python" >}})`). End on an encouraging or forward-looking note (e.g., "Happy coding!").
 
 ### Code Examples
@@ -71,9 +76,18 @@ Every post must have a complete YAML front matter block:
 
 ### Images
 
-- Featured images should be relevant, high-quality JPGs saved to `static/images/posts/YYYY/MM-DD-slug.jpg`.
-- Inline images (if used) should be saved in the post directory and referenced with relative paths (e.g., `![Alt text](image-name.png)`).
-- Always include descriptive alt text for accessibility.
+- **No Agent Image Generation**: Agents must never attempt to automatically generate or produce the final featured image.
+- **Provide a Prompt for External Tools**: Instead, write a descriptive, creative prompt that the user can copy and paste into an external image generation tool.
+  - State the prompt clearly in your response.
+  - Include preferences for a 16:10 landscape aspect ratio.
+  - Include preferences for a minimum width of 1200 pixels (1440 pixels preferred).
+- **Featured Image Placeholder**: Drop a placeholder image file at the correct path: `static/images/posts/YYYY/MM-DD-slug.jpg`. This ensures that the Hugo build succeeds without breaking reference validations.
+- **Final Featured Image Specs**:
+  - Saved as a high-quality JPG to `static/images/posts/YYYY/MM-DD-slug.jpg`.
+  - Aspect ratio: Exactly 16:10 landscape.
+  - Width: Minimum 1200 pixels, maximum 1440 pixels (do not upscale smaller images, which introduces blur).
+- **Inline Images**: If used, save in the post directory and reference with relative paths (e.g., `![Alt text](image-name.png)`).
+- **Accessibility**: Always include descriptive alt text for all images.
 
 ### Proofreading Checklist
 
@@ -81,6 +95,8 @@ Every post must have a complete YAML front matter block:
 - [ ] Featured image exists at the correct path.
 - [ ] All cross-references and tag links use correct syntax and resolve properly (test with `hugo server --renderToMemory`).
 - [ ] Heading formatting follows conventions (Title Case for ##, Sentence case for ###).
+- [ ] Pronoun rules followed (no collective "we", first-person "I" for opinion/intro, second-person "you" for tutorial steps).
+- [ ] Contractions used naturally (e.g., `I'll`, `you'll`, `you're` instead of `I will`, `you will`, `you are`).
 - [ ] Code examples are syntactically correct and relevant.
 - [ ] Tone is conversational and accessible to the target audience.
 - [ ] No orphaned markdown formatting or typos.
