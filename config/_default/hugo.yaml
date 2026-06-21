@@ -4,6 +4,9 @@ enableGitInfo: true
 markup:
   highlight:
     guessSyntax: true
+  goldmark:
+    renderer:
+      unsafe: true
   tableOfContents:
     startLevel: 2
     endLevel: 3

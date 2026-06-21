@@ -32,7 +32,7 @@ This skill guides the agent through the complete lifecycle of drafting, research
    - **Structure:**
      - **Opening hook:** A strong 1-3 sentence lead grabbing the reader's attention.
      - **Quick context/intro:** 1-2 paragraphs introducing the topic. Include a cross-link to the series tag using `{{< ref "/tags/go-series" >}}` if part of a series.
-     - **Content sections:** Organized logically with H2 (`##`) and H3 (`###`) headings.
+     - **Content sections:** Organised logically with H2 (`##`) and H3 (`###`) headings. Prefer a flatter hierarchy; Level 4 headings (`####`) are very rarely used and should be avoided in favour of a flatter structure.
      - **Closing:** 1-2 paragraphs summarizing key takeaways, suggesting related tags/posts, and ending on an encouraging note.
    - **Formatting & Style:**
      - **One sentence per line** in the markdown source.
@@ -44,7 +44,7 @@ This skill guides the agent through the complete lifecycle of drafting, research
      - **First-person singular** (`I`, `I'll`, `I'm`, `my`) exclusively for personal opinions, recommendations, and introductions.
      - **Second-person** (`you`, `you'll`, `you're`, `you can`) for all tutorial walkthrough steps and demonstrations.
      - Use natural contractions throughout to keep a conversational yet professional voice.
-     - Level 2 headings (`##`) must use **Title Case**; Level 3 headings (`###`) must use **Sentence case**.
+     - Level 2 headings (`##`) must use **Title Case**; Level 3 and 4 headings (`###` / `####`) must use **Sentence case**.
    - **Code Examples:**
      - Use triple-backtick fences with language specification.
      - Keep examples concise, focused, and followed by explanatory text.
@@ -67,10 +67,11 @@ This skill guides the agent through the complete lifecycle of drafting, research
    - [ ] Date, slug, and directory name match.
    - [ ] Featured image placeholder exists at `static/images/posts/YYYY/MM-DD-slug.png`.
    - [ ] Cross-references and tag links resolve properly.
-   - [ ] Heading cases match standards (Title Case for ##, Sentence case for ###).
+   - [ ] Heading cases match standards (Title Case for ##, Sentence case for ###/####) and heading nesting hierarchy is logical.
    - [ ] Pronoun and contraction rules are followed.
    - [ ] Tone is conversational and code examples are syntactically correct.
-   - [ ] Spelling is in British English (UK spelling).
+   - [ ] Spelling is in British English (UK spelling) in both the article text and python code block comments (e.g., "initialise", "modularise", "organise", "behaviour").
+   - [ ] Line-break constraints (one sentence per line in the source file) are strictly followed, even inside bulleted lists, numbered lists, or table cells.
    - [ ] No orphaned markdown formatting or typos.
    - [ ] Opening and closing lines are compelling.
 3. Test locally using `hugo server --renderToMemory` to visually inspect rendering and verify all links resolve.
