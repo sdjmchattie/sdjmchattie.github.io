@@ -17,7 +17,7 @@
 
 - Markdown files use YAML front matter with two-space indentation and keys like `title`, `description`, `date`, `tags`, `slug`, and `image`. Keep values concise and wrap multi-line content in `|-` blocks.
 - Post directories follow `YYYY/MM-DD-slug` inside `content/posts`; keep slugs lowercase, hyphenated, and free of spaces so Hugo resolves permalinks cleanly.
-- Use `static/images/posts/YYYY/MM-DD-slug.jpg` for featured art and reference it via `/images/posts/...` in front matter.
+- Use `static/images/posts/YYYY/MM-DD-slug.png` for featured art and reference it via `/images/posts/...` in front matter.
 - When targeting layout changes, prefer editing `layouts/partials` or overriding templates in `themes/hugo-profile` rather than forking the whole theme.
 
 ## Blog Post Writing Guide
@@ -34,7 +34,7 @@ Every post must have a complete YAML front matter block:
 - `title`: Concise, descriptive title. Use Title Case and keep to a reasonable length.
 - `description`: A brief 2-3 sentence summary of the post content, wrapped in `|-` for multi-line text. This appears in social shares and search results, so make it compelling and accurate.
 - `slug`: URL-friendly identifier matching the directory name (lowercase, hyphens only, no spaces)
-- `image`: Featured image path, format: `/images/posts/YYYY/MM-DD-slug.jpg`
+- `image`: Featured image path, format: `/images/posts/YYYY/MM-DD-slug.png`
 - `tags`: Array of relevant tags (e.g., `Python`, `Go`, `Software Architecture`). For series posts, include a dedicated series tag (e.g., `Go Series` or `Sudoku Series`).
 
 ### Heading Format & Styling
@@ -85,9 +85,9 @@ Every post must have a complete YAML front matter block:
   - State the prompt clearly in your response.
   - Include preferences for a 16:10 landscape aspect ratio.
   - Include preferences for a minimum width of 1200 pixels (1440 pixels preferred).
-- **Featured Image Placeholder**: Drop a placeholder image file at the correct path: `static/images/posts/YYYY/MM-DD-slug.jpg`. This ensures that the Hugo build succeeds without breaking reference validations.
+- **Featured Image Placeholder**: Drop a placeholder image file at the correct path: `static/images/posts/YYYY/MM-DD-slug.png`. This ensures that the Hugo build succeeds without breaking reference validations.
 - **Final Featured Image Specs**:
-  - Saved as a high-quality JPG to `static/images/posts/YYYY/MM-DD-slug.jpg`.
+  - Saved as a high-quality PNG to `static/images/posts/YYYY/MM-DD-slug.png`.
   - Aspect ratio: Exactly 16:10 landscape.
   - Width: Minimum 1200 pixels, maximum 1440 pixels (do not upscale smaller images, which introduces blur).
 - **Inline Images**: If used, save in the post directory and reference with relative paths (e.g., `![Alt text](image-name.png)`).
