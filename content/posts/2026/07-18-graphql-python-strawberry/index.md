@@ -1,12 +1,12 @@
 ---
-date: 2026-07-11
+date: 2026-07-18
 title: "Querying Precisely: Type-Safe GraphQL in Python with Strawberry"
 description: |-
   Building flexible APIs often requires balancing client data requirements with backend efficiency.
   In this guide, I explore the advantages of GraphQL over traditional REST APIs, specifically comparing it to FastAPI approaches.
   You'll learn how to implement a type-safe GraphQL endpoint in Python using the Strawberry library.
 slug: graphql-python-strawberry
-image: /images/posts/2026/07-11-graphql-python-strawberry.png
+image: /images/posts/2026/07-18-graphql-python-strawberry.png
 tags:
   - Python
   - FastAPI

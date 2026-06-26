@@ -1,12 +1,12 @@
 ---
-date: 2026-06-27
+date: 2026-07-04
 title: "Connecting LangGraph Agents to FastMCP Servers"
 description: |-
   Building custom tool bindings for AI agents can be incredibly tedious.
   In this guide, I show you how to connect a LangGraph agent to a FastMCP server to create a robust, multi-step filesystem analysis system.
   Learn how to standardize tool access and simplify orchestrator workflows with the Model Context Protocol.
 slug: langgraph-agents-with-fastmcp
-image: /images/posts/2026/06-27-langgraph-agents-with-fastmcp.jpg
+image: /images/posts/2026/07-04-langgraph-agents-with-fastmcp.jpg
 tags:
   - Python
   - MCP
