@@ -33,7 +33,7 @@ This skill guides the agent through the complete lifecycle of drafting, research
      - **Opening hook:** A strong 1-3 sentence lead grabbing the reader's attention.
      - **Quick context/intro:** 1-2 paragraphs introducing the topic. Include a cross-link to the series tag using `{{< ref "/tags/go-series" >}}` if part of a series.
      - **Content sections:** Organised logically with H2 (`##`) and H3 (`###`) headings. Prefer a flatter hierarchy; Level 4 headings (`####`) are very rarely used and should be avoided in favour of a flatter structure.
-     - **Closing:** 1-2 paragraphs summarizing key takeaways, suggesting related tags/posts, and ending on an encouraging note.
+     - **Closing:** Must be placed under an explicit `## Wrapping Up` heading. Include 1-2 paragraphs summarising key takeaways, suggesting related tags/posts, and ending on an encouraging note.
    - **Formatting & Style:**
      - **One sentence per line** in the markdown source.
      - Paragraphs should be short (typically 2-5 sentences), leading with the main idea.
