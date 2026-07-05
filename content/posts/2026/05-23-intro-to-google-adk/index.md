@@ -10,7 +10,6 @@ image: /images/posts/2026/05-23-intro-to-google-adk.jpg
 tags:
   - Python
   - Agentic AI
-  - Google ADK
   - LangGraph
   - Software Architecture
 ---
@@ -97,5 +96,5 @@ And if you're already in the Google Cloud ecosystem, its native Gemini and Verte
 Google's ADK represents a genuine shift in how we can think about agent orchestration.
 By encouraging modular agent code and providing both LLM-driven delegation and deterministic workflow primitives, it makes building complex multi-agent systems feel less like wiring and more like engineering.
 
-Browse the [Google ADK]({{< ref "/tags/google-adk" >}}) tag as more posts in this series are published.
+Browse the [Agentic AI]({{< ref "/tags/agentic-ai" >}}) tag as more posts in this series are published.
 Happy coding!

@@ -9,7 +9,7 @@ description: |-
 slug: making-my-humane-mouse-trap-smart
 image: /images/posts/2025/02-15-iot-mouse-trap.jpg
 tags:
-  - Electronics
+  - IoT
 ---
 
 Owning cats comes with its perks, but sometimes they bring home rodents and sometimes they let them go in your house!

@@ -6,9 +6,8 @@ description: |-
 slug: google-ai-pro-best-ai-subscription
 image: /images/posts/2026/07-11-google-ai-pro-best-ai-subscription.png
 tags:
-  - AI
+  - Generative AI
   - Productivity
-  - Review
 ---
 
 If you've been following the AI space over the last couple of years, you've probably noticed a distinct pattern.

@@ -11,7 +11,7 @@ tags:
   - Python
   - MCP
   - LangGraph
-  - Agentic Workflows
+  - Agentic AI
 ---
 
 Connecting large language models (LLMs) to local tools and system resources has historically required a lot of custom integration work.

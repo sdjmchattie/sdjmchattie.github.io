@@ -10,7 +10,7 @@ image: /images/posts/2026/06-20-mcp-servers-with-fastmcp.jpg
 tags:
   - Python
   - MCP
-  - Agentic Workflows
+  - Agentic AI
 ---
 
 If you have spent any time building agentic systems recently, you have likely encountered the integration bottleneck.

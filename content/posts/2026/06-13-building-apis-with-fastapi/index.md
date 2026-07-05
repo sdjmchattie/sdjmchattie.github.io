@@ -9,7 +9,7 @@ slug: building-apis-with-fastapi
 image: /images/posts/2026/06-13-building-apis-with-fastapi.jpg
 tags:
   - Python
-  - Backend Services
+  - APIs
 ---
 
 If you're starting a new Python backend project today, you're almost certainly going to use FastAPI.

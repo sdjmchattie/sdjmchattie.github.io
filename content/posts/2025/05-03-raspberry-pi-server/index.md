@@ -7,14 +7,14 @@ description: |-
 slug: setup-a-raspberry-pi-home-server
 image: /images/posts/2025/05-03-raspberry-pi-server.jpg
 tags:
-  - Home Assistant
+  - IoT
   - Self Hosting
 ---
 
 A Raspberry Pi home server offers a low-cost, high-flexibility solution for everything from ad-blocking to home automation.
 Here's how you can set one up with ease.
 
-If you like this post, check out more in the [Electronics]({{< ref "/tags/electronics" >}}) and [Self Hosting]({{< ref "/tags/self-hosting" >}}) tags.
+If you like this post, check out more in the [IoT]({{< ref "/tags/iot" >}}) and [Self Hosting]({{< ref "/tags/self-hosting" >}}) tags.
 
 Running a server at home may seem like unnecessary work to some, but it opens up a world of possibilities.
 From network-wide ad-blocking, to home automation, to self-hosting applications — a Raspberry Pi can handle it all.

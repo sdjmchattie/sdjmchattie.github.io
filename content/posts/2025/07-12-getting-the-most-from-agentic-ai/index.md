@@ -8,7 +8,6 @@ description: |-
 slug: getting-the-most-from-agentic-ai
 image: /images/posts/2025/07-12-getting-the-most-from-agentic-ai.jpg
 tags:
-  - Large Language Models
   - Generative AI
   - Agentic AI
 ---

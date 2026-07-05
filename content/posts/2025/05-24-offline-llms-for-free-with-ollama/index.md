@@ -7,7 +7,6 @@ description: |-
 slug: access-offline-llms-for-free-with-ollama
 image: /images/posts/2025/05-24-offline-llms-for-free-with-ollama.jpg
 tags:
-  - Large Language Models
   - Generative AI
   - Self Hosting
 ---

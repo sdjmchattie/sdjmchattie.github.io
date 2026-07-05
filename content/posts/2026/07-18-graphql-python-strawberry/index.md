@@ -9,8 +9,7 @@ slug: graphql-python-strawberry
 image: /images/posts/2026/07-18-graphql-python-strawberry.png
 tags:
   - Python
-  - FastAPI
-  - GraphQL
+  - APIs
 ---
 
 Connecting client applications to database records requires a clear, reliable communication contract.

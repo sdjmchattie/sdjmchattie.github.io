@@ -14,10 +14,7 @@ tags:
   - Advent of Code
   - Puzzles
   - Python
-  - C#
   - Ruby
-  - JavaScript
-  - Rust
 ---
 
 One of the hardest parts of learning a language's fundamentals is having enough meaningful problems to solve.

@@ -7,7 +7,7 @@ description: |-
 slug: choosing-dynamodb-in-aws
 image: /images/posts/2026/05-09-choosing-dynamodb-in-aws.jpg
 tags:
-  - AWS
+  - Cloud Computing
   - Databases
   - Software Architecture
 ---

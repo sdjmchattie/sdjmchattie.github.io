@@ -10,8 +10,7 @@ image: /images/posts/2026/05-30-mysql-postgresql-sql-server.jpg
 tags:
   - Databases
   - Software Architecture
-  - AWS
-  - Azure
+  - Cloud Computing
 ---
 
 If you've been building software for any length of time, you've almost certainly worked with at least one relational database.
