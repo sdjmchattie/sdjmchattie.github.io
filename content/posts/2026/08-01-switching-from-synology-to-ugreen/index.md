@@ -27,8 +27,9 @@ This single entry point for airflow means you don't end up with dust scattered t
 The fans themselves are also significantly quieter, making the unit much easier to live with in a main living space.
 
 From a performance standpoint, the hardware specifications are a major leap forward.
+Going from a four-bay unit to a two-bay unit might seem like a downgrade in capacity.
+However, with the two standard drive bays and two NVMe SSD slots, the UGREEN is essentially a four-bay NAS in disguise.
 The DXP2800 is powered by an Intel N100 processor and comes with 8 GB of DDR5 RAM on a single upgradable stick.
-In addition to the two standard drive bays, the motherboard includes two NVMe SSD slots.
 This level of upgradability is a stark contrast to my older Synology, which was locked to its original hardware.
 
 ## The UGOS Pro Software Experience
