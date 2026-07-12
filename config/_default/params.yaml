@@ -65,7 +65,7 @@ hero:
   title: Stuart McHattie.
   subtitle: I bring software to life!
   content: |-
-    I'm a senior software engineer and solution architect in Oxfordshire, UK.
+    I'm a senior software engineer and application architect in Oxfordshire, UK.
 
     I've been designing, implementing, deploying and supporting software professionally since 2011, but I've written code since the late 1980s.
     I'm also an experienced technical team lead, and have previously been [certified by AWS](https://cp.certmetrics.com/amazon/en/public/verify/credential/PECRMDKK52RQ1PWK) as a Solutions Architect: Associate.
@@ -131,7 +131,7 @@ experience:
   enable: true
   # title: Custom Name
   items:
-    - job: Senior Software Engineer
+    - job: Application Architect
       company: Capgemini Engineering
       companyUrl: https://www.capgemini.com
       date: September 2011 - Present
@@ -144,7 +144,7 @@ experience:
         content: The company I joined in 2011 was called Tessella, but it was acquired by Capgemini in 2022
       content: |-
         I've spent the past 14+ years building my reputation as a professional software engineer in Oxford, UK.
-        During my time with the company, I've developed into a technical team lead and a solution architect.
+        During my time with the company, I've developed into a technical team lead and an application architect.
         I've been involved in dozens of projects for dozens of clients, becoming sought after by stakeholders when they need a competent engineer to coordinate their complex requirements.
 
 # Education
