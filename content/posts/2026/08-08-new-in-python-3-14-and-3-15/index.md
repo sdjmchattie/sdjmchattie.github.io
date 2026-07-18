@@ -8,7 +8,6 @@ slug: "new-in-python-3-14-and-3-15"
 image: "/images/posts/2026/08-08-new-in-python-3-14-and-3-15.png"
 tags:
   - "Python"
-  - "Python Series"
 ---
 Python continues to evolve at a breakneck pace, and the recent releases are bringing some of the most fundamental shifts the language has seen in years.
 If you've been busy writing code, you might have missed the massive structural changes introduced in Python 3.14, and the exciting performance optimisations arriving shortly in Python 3.15.
@@ -104,5 +103,6 @@ This provides a clean, unified standard for creating sentinel values that type c
 Python's trajectory is incredibly exciting, with 3.14 and 3.15 removing long-standing bottlenecks and adding powerful developer ergonomics.
 Upgrading to these versions will allow you to build faster, safer, and more robust applications.
 I highly recommend spinning up a test environment to experiment with free-threaded Python and see how your CPU-bound tasks perform.
-Be sure to check out the next post in my [Python Series]({{< ref "/tags/python-series" >}}) where I'll be covering some lesser-known Python packages and patterns that are hidden gems.
+Be sure to check out the post next week where I'll be covering some lesser-known Python packages and patterns that are hidden gems.
+
 Happy coding!
