@@ -63,11 +63,15 @@ While this task isn't overly complicated, it represents another small friction p
 Fortunately, the inclusion of robust [Docker](https://www.docker.com/) support in UGOS Pro makes it easy to bypass these software shortcomings.
 Rather than relying on the native app package manager, you can install any containerised services you need.
 
-### Managing containers with Dockge
+### Native Docker management: Better than expected
 
-The native Docker management interface in UGOS Pro is clean but feels somewhat underwhelming for advanced configurations.
-To solve this, I installed [Dockge](https://github.com/louislam/dockge) as a simpler, file-system-first alternative to [Portainer](https://www.portainer.io/).
-It operates directly on standard `docker-compose.yml` files, making it incredibly simple to write and manage container stacks.
+While UGREEN's native Docker interface initially felt a bit underwhelming, I found it to be much more capable after some experimentation.
+For example, it automatically notifies you when a container isn't running the latest version of its image.
+Although the user interface lacks direct support for editing environment variables, it still respects them if you place a `.env` file directly in the project directory.
+Additionally, UGREEN has recognised that you want to access your containers remotely by providing a Quick Access feature.
+Through the UGOS interface, you can select Quick Access for configured container ports, and the system sets up a secure HTTPS endpoint to that port on-the-fly.
+This makes it incredibly simple to check in on local containerised services while you're away from the house.
+I had originally set up [Dockge](https://github.com/louislam/dockge) as a lightweight, file-system-first manager, but these native capabilities meant I could dismantle it and rely solely on the built-in tools.
 
 ### Securing files with Backrest
 
