@@ -41,9 +41,11 @@ Every post must have a complete YAML front matter block:
 
 - **Level 2 headings** (`##`): Use **Title Case** (capitalize major words). Example: `## What is Ruff and Why Should You Use It?`
 - **Level 3+ headings** (`###`): Use **Sentence case** (capitalize only the first word and proper nouns). Example: `### Key benefits of ruff`
+- **Flatter hierarchy**: Prefer a flatter hierarchy; Level 4 headings (`####`) are very rarely used and should be avoided in favour of a flatter structure.
 
 ### Post Structure & Tone
 
+- **Language Style**: Write in **British English** (UK spelling and grammar, e.g., "optimise", "colour", "behaviour", "organisation", even in code block comments).
 - **Opening hook** (1-3 sentences): Grab reader attention by explaining why the topic matters or what problem it solves.
 - **Quick context/intro** (1-2 paragraphs): For series posts, include a cross-link to the series tag (e.g., `{{< ref "/tags/go-series" >}}`).
 - **Content sections**: Structure with level 2 headings for major topics and level 3 headings for subtopics. Keep sections focused and logically ordered.
@@ -53,7 +55,7 @@ Every post must have a complete YAML front matter block:
   - **First-person for opinions**: Use first-person singular (`I`, `I'll`, `I'm`, `my`) exclusively for personal opinions, recommendations, and guide introductions (e.g., "I recommend using `uv`...", "In this guide, I explore...").
   - **Second-person for instructions**: Use second-person (`you`, `you'll`, `you're`, `you can`) for all code walkthroughs, tutorial steps, and demonstrations (e.g., "You'll create a file named...", "With this single instance, you're ready to...").
 - **Contractions**: Prefer natural, conversational contractions (e.g., `I'll`, `you'll`, `you're`) over formal phrasing (`I will`, `you will`, `you are`) to keep the prose engaging and readable.
-- **Closing** (1-2 paragraphs): Summarize key takeaways and optionally suggest related posts via tag links (e.g., `[Python]({{< ref "/tags/python" >}})`). End on an encouraging or forward-looking note (e.g., "Happy coding!").
+- **Closing**: Must be placed under an explicit `## Wrapping Up` heading. Include 1-2 paragraphs summarizing key takeaways, suggesting related tags/posts, and ending on an encouraging note.
 
 ### Code Examples
 
@@ -65,7 +67,7 @@ Every post must have a complete YAML front matter block:
 
 ### Cross-References & Links
 
-- Link to related posts using `{{< ref "YYYY-MM-DD-slug" >}}` syntax.
+- Link to related posts using relative path syntax: `{{< ref "MM-DD-slug" >}}` if in the same year, `{{< ref "../YYYY/MM-DD-slug" >}}` if in a different year, or standard `{{< ref "YYYY-MM-DD-slug" >}}`.
 - Link to tag pages using `{{< ref "/tags/tag-name" >}}` syntax.
 - External links use standard markdown: `[Link Text](https://example.com)`.
 - Series posts should reference the series tag to help readers discover other posts in the series.
@@ -73,7 +75,7 @@ Every post must have a complete YAML front matter block:
 ### Paragraph Style
 
 - Each sentence goes on its own line in the markdown source. This keeps line length manageable and makes diffs easier to read.
-- Paragraphs are typically 2-5 sentences; use shorter paragraphs to break up dense information.
+- **Short paragraphs (BBC News style)**: Keep paragraphs short and punchy, typically around 1–3 sentences each (maximum 3 sentences). Avoid long walls of text to make articles easy to read and skim.
 - Lead with the main idea, then support with details or examples.
 - Use lists (bulleted or numbered) to organize related points, keeping list items concise.
 - Avoid emdashes (—). Use colons, commas, or restructured sentences instead. Use emdashes only very sparingly when no other punctuation fits.
@@ -85,7 +87,7 @@ Every post must have a complete YAML front matter block:
   - State the prompt clearly in your response.
   - Include preferences for a 16:10 landscape aspect ratio.
   - Include preferences for a minimum width of 1200 pixels (1440 pixels preferred).
-- **Featured Image Placeholder**: Drop a placeholder image file at the correct path: `static/images/posts/YYYY/MM-DD-slug.png`. This ensures that the Hugo build succeeds without breaking reference validations.
+- **Featured Image Placeholder**: Copy the pre-existing repository placeholder image from `static/images/placeholder.png` to the post-specific path: `static/images/posts/YYYY/MM-DD-slug.png`. This ensures that the Hugo build succeeds without breaking reference validations.
 - **Final Featured Image Specs**:
   - Saved as a high-quality PNG to `static/images/posts/YYYY/MM-DD-slug.png`.
   - Aspect ratio: Exactly 16:10 landscape.
@@ -96,9 +98,13 @@ Every post must have a complete YAML front matter block:
 ### Proofreading Checklist
 
 - [ ] Date, slug, and directory name match (e.g., `2026-02-28` in both front matter and directory).
-- [ ] Featured image exists at the correct path.
+- [ ] Featured image placeholder exists at `static/images/posts/YYYY/MM-DD-slug.png` (copied from `static/images/placeholder.png`).
 - [ ] All cross-references and tag links use correct syntax and resolve properly (test with `hugo server --renderToMemory`).
-- [ ] Heading formatting follows conventions (Title Case for ##, Sentence case for ###).
+- [ ] Heading formatting follows conventions (Title Case for ##, Sentence case for ###/####) and hierarchy is flat.
+- [ ] Language is in British English (UK spelling) in both article text and code comments (e.g., "optimise", "colour", "behaviour").
+- [ ] Closing section uses an explicit `## Wrapping Up` heading.
+- [ ] Line-break constraints (one sentence per line in markdown source) are strictly followed.
+- [ ] Paragraphs are short and punchy (around 1–3 sentences each, BBC News style).
 - [ ] Pronoun rules followed (no collective "we", first-person "I" for opinion/intro, second-person "you" for tutorial steps).
 - [ ] Contractions used naturally (e.g., `I'll`, `you'll`, `you're` instead of `I will`, `you will`, `you are`).
 - [ ] Code examples are syntactically correct and relevant.
