@@ -3,7 +3,7 @@ title: "Backing Up Everything with Backrest and Restic"
 date: 2026-08-29
 description: |-
   Learn how to set up Backrest and Restic in Docker for automated, deduplicated backups.
-  Discover how to configure repos and plans, optimize pack sizes for SMR drives, and select the right filesystems.
+  Discover how to configure repos and plans, optimise pack sizes for SMR drives, and select the right filesystems.
 slug: "backrest-backup-guide"
 image: "/images/posts/2026/08-29-backrest-backup-guide.png"
 tags:
@@ -53,7 +53,7 @@ flowchart TD
 
 ## UGREEN NAS Setup
 
-Deploying Backrest via Docker Compose on a NAS gives you a centralized backup controller.
+Deploying Backrest via Docker Compose on a NAS gives you a centralised backup controller.
 Below is the exact `docker-compose.yml` configuration I run on my UGREEN DXP2800.
 
 ```yaml
@@ -92,7 +92,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
 ```
 
-Setting resource limits prevents CPU-heavy deduplication tasks from slowing down other containerized services on your NAS.
+Setting resource limits prevents CPU-heavy deduplication tasks from slowing down other containerised services on your NAS.
 Mounting your primary NAS volume `/volume1` as read-only (`:ro`) protects your source data against accidental overwrites during backup operations.
 If you need to perform a restore back to `/volume1`, you can temporarily edit the compose file to allow write access during the restore window.
 
@@ -113,7 +113,7 @@ flowchart LR
 
 Your first step should always be securing the web interface.
 When accessing Backrest for the first time, navigate to the settings page and configure an admin username and password.
-This prevents unauthorized users on your local network from altering your backup schedules or viewing repository keys.
+This prevents unauthorised users on your local network from altering your backup schedules or viewing repository keys.
 
 ### 2. Create your first repository
 
@@ -143,7 +143,7 @@ Disk latency spiked and write speeds collapsed to single-digit megabytes per sec
 
 This slowdown occurs because higher-capacity 2.5-inch external hard drives rely on Shingled Magnetic Recording (SMR) to fit high storage densities into a compact physical form factor.
 SMR drives overlap magnetic tracks like roof shingles to maximise capacity, using a small internal conventional cache buffer to handle incoming writes.
-Because Restic compresses and deduplicates data into many small 16 megabyte pack files by default, the stream of small non-sequential writes quickly overflows the drive's cache.
+Because Restic compresses and deduplicates data into many small 16 MB pack files by default, the stream of small non-sequential writes quickly overflows the drive's cache.
 The drive controller is then forced into constant read-modify-write cycles across overlapping tracks, choking disk throughput.
 
 You can significantly reduce this impact by increasing Restic's target pack size to 128 MB.
@@ -211,7 +211,7 @@ Furthermore, the native app offers limited snapshot retention history and does n
 If those keys are stored locally on the source NAS, a catastrophic hardware failure leaves you vulnerable and unable to decrypt your backups on another system.
 
 Running Backrest in Docker avoids these vendor constraints entirely.
-Your backups are stored in open, standardized Restic repositories with client-side AES-256 encryption, allowing you to recover your files on any system even if you switch away from UGREEN hardware in the future.
+Your backups are stored in open, standardised Restic repositories with client-side AES-256 encryption, allowing you to recover your files on any system even if you switch away from UGREEN hardware in the future.
 
 ## Wrapping Up
 
