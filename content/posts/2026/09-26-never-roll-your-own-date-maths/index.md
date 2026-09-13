@@ -7,7 +7,7 @@ description: |-
 slug: never-roll-your-own-date-maths
 image: /images/posts/2026/09-26-never-roll-your-own-date-maths.png
 tags:
-  - Code Quality
+  - Software Pitfalls
   - Python
   - Software Architecture
 ---
