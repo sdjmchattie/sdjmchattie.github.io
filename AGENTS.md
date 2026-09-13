@@ -46,6 +46,7 @@ Every post must have a complete YAML front matter block:
 ### Post Structure & Tone
 
 - **Language Style**: Write in **British English** (UK spelling and grammar, e.g., "optimise", "colour", "behaviour", "organisation", even in code block comments).
+- **TL;DR section**: Every new post must begin with the `{{< tldr >}}...{{< /tldr >}}` shortcode placed at the very start of the post body (immediately after front matter, before the opening hook). It must contain a concise 1–2 sentence summary paragraph followed by 3–5 bullet points highlighting core takeaways and actionable advice.
 - **Opening hook** (1-3 sentences): Grab reader attention by explaining why the topic matters or what problem it solves.
 - **Quick context/intro** (1-2 paragraphs): For series posts, include a cross-link to the series tag (e.g., `{{< ref "/tags/go-series" >}}`).
 - **Content sections**: Structure with level 2 headings for major topics and level 3 headings for subtopics. Keep sections focused and logically ordered.
@@ -98,6 +99,7 @@ Every post must have a complete YAML front matter block:
 ### Proofreading Checklist
 
 - [ ] Date, slug, and directory name match (e.g., `2026-02-28` in both front matter and directory).
+- [ ] TL;DR block (`{{< tldr >}}...{{< /tldr >}}`) is present at the start of the body before the opening paragraph with a summary and bulleted takeaways.
 - [ ] Featured image placeholder exists at `static/images/posts/YYYY/MM-DD-slug.png` (copied from `static/images/placeholder.png`).
 - [ ] All cross-references and tag links use correct syntax and resolve properly (test with `hugo server --renderToMemory`).
 - [ ] Heading formatting follows conventions (Title Case for ##, Sentence case for ###/####) and hierarchy is flat.

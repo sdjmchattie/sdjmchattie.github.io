@@ -28,6 +28,7 @@ This skill guides the agent through the complete lifecycle of drafting, research
 ## Phase 5: Drafting & Formatting
 1. Draft the post strictly following the structure, tone, British English spelling, heading casing, code block, paragraph, and link guidelines in the **Blog Post Writing Guide** section of [AGENTS.md](file:///Users/stuart/Source/personal-website/AGENTS.md).
 2. Key procedural requirements during drafting:
+   - Begin the body with the `{{< tldr >}}...{{< /tldr >}}` shortcode containing a 1–2 sentence summary and actionable bullet points.
    - Write in **British English** (UK spelling and grammar).
    - Format with **one sentence per line** in the markdown source file.
    - Use **Title Case** for Level 2 headings (`##`) and **Sentence case** for Level 3+ headings (`###`).
@@ -35,6 +36,7 @@ This skill guides the agent through the complete lifecycle of drafting, research
 
 ## Phase 6: Validation & Proofreading
 1. Verify front matter matches the **Front Matter Requirements** in [AGENTS.md](file:///Users/stuart/Source/personal-website/AGENTS.md).
-2. Run through all items in the **Proofreading Checklist** in [AGENTS.md](file:///Users/stuart/Source/personal-website/AGENTS.md).
-3. Test locally using `hugo server --renderToMemory` to visually inspect rendering and verify all links resolve.
-4. Run `hugo --gc --minify` to confirm the production build completes with zero errors.
+2. Confirm the `{{< tldr >}}` block is present at the start of the body with accurate takeaways.
+3. Run through all items in the **Proofreading Checklist** in [AGENTS.md](file:///Users/stuart/Source/personal-website/AGENTS.md).
+4. Test locally using `hugo server --renderToMemory` to visually inspect rendering and verify all links resolve.
+5. Run `hugo --gc --minify` to confirm the production build completes with zero errors.

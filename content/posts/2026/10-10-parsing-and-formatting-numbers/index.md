@@ -12,6 +12,17 @@ tags:
   - Software Architecture
 ---
 
+{{< tldr >}}
+Numbers are not culturally universal: punctuation marks, digit grouping, and numeral scripts vary dramatically across locales, causing silent data corruption when parsed naively.
+Protecting your applications requires treating input parsing as a localised boundary concern while keeping internal representations strictly invariant.
+
+- **Check locale conventions:** Never assume dots represent decimals or commas group thousands; regional formats like German dots or Swiss apostrophes will break naive parsers.
+- **Normalise non-Latin numerals:** Sanitise Unicode inputs and typography symbols (such as full-width digits and true minus signs) using `NFKC` normalisation.
+- **Expect semicolon CSVs:** Continental European spreadsheet tools export semicolons as delimiters to avoid clashing with decimal commas; use sniffing parsers like `csv.Sniffer`.
+- **Format on blur, unformat on focus:** Keep input fields unformatted and easy to edit while focused on touch devices, applying pretty localised formatting only on blur.
+- **Isolate your core:** Confine locale-aware parsing and formatting to the user-facing edge (using libraries like `Babel` or `Intl.NumberFormat`), keeping domain models and database records purely invariant.
+{{< /tldr >}}
+
 At first glance, numbers appear to be the simplest data type in computer science.
 Unlike natural languages with irregular grammar and complex idioms, numbers feel purely mathematical, universal, and unambiguous.
 You collect a string of digits from an input field, pass it to your language's standard casting function, and store the result in your database.
