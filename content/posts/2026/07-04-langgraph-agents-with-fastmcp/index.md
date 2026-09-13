@@ -14,6 +14,16 @@ tags:
   - Agentic AI
 ---
 
+{{< tldr >}}
+Combining LangGraph's cyclical graph workflows with FastMCP decouples agent control flow from tool execution boundaries.
+This architecture enables stateful, multi-step LLM reasoning with clean separation of operational concerns.
+
+- **Decoupled tool architecture:** Host tools inside independent FastMCP servers rather than bundling logic into the agent core.
+- **Stateful cycles:** Use LangGraph's state graph to handle multi-step tool calls, retries, and conditional branches.
+- **Dynamic schema loading:** Inspect and invoke MCP server capabilities dynamically at runtime.
+- **Production readiness:** Isolate external API failures within tool processes to keep the central graph resilient.
+{{< /tldr >}}
+
 Connecting large language models (LLMs) to local tools and system resources has historically required a lot of custom integration work.
 This friction makes agentic systems difficult to scale and maintain.
 Fortunately, the Model Context Protocol (MCP) provides a standard way to expose tools, resources, and prompts to your AI assistant.

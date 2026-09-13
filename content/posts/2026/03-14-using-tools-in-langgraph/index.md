@@ -12,6 +12,16 @@ tags:
   - Agentic AI
 ---
 
+{{< tldr >}}
+Connecting external functions to LangGraph gives LLMs the power to fetch live information, execute calculations, and interact with APIs.
+Wiring tools using `ToolNode` and `MessagesState` creates clean, cyclic agent architectures that reliably handle tool call loops.
+
+- **Tool binding:** Pass decorated `@tool` functions into your LLM using `.bind_tools()` so the model generates structured tool calls.
+- **Automated tool execution:** Use LangGraph's pre-built `ToolNode` to execute requested functions and append results as `ToolMessage`s.
+- **Conditional edges:** Route graph control back to the model after tool execution or terminate when the model produces a final answer.
+- **MessagesState foundation:** Keep conversation history and tool outputs organised using LangGraph's built-in message channels.
+{{< /tldr >}}
+
 LLMs are impressive, but they are limited to the knowledge baked in at training time and can't take actions in the world on their own.
 Tools are what change that.
 By giving an LLM access to tools, you turn it from a system that is frozen in time into an agent that can look up live data, run calculations, call APIs, and more.

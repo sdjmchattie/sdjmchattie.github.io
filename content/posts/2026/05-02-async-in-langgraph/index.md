@@ -14,6 +14,16 @@ tags:
   - Software Architecture
 ---
 
+{{< tldr >}}
+Scaling LangGraph workflows for real-time web applications requires transitioning from synchronous graph calls to fully asynchronous execution.
+Leveraging `ainvoke()`, `astream()`, and async tool definitions unlocks non-blocking throughput across multi-agent systems.
+
+- **Asynchronous entry points:** Use `app.ainvoke()` and `app.astream()` to run graph executions without tying up worker threads.
+- **Async node definitions:** Write nodes as `async def` functions and use `await` for database calls, API requests, and LLM completions.
+- **Non-blocking tool nodes:** Provide `coroutine` implementations for tools so `ToolNode` runs external I/O concurrently.
+- **Replay safety:** Ensure state updates and side effects remain deterministic when running graphs under asynchronous checkpoints.
+{{< /tldr >}}
+
 In [Seven Tips for Performant Async Python]({{< relref "04-11-async-python-done-right" >}}) I focused on plain `asyncio`.
 That's the right place to start, because LangGraph doesn't replace Python's event loop or make blocking code magically concurrent.
 If an async LangGraph node calls a blocking library, the graph still waits.

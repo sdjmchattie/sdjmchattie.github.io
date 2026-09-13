@@ -12,6 +12,16 @@ tags:
   - Software Architecture
 ---
 
+{{< tldr >}}
+Standard floating-point numbers cannot represent decimal fractions precisely, causing insidious financial drift and billing errors.
+Building reliable financial software requires exact decimal arithmetic, rigorous rounding modes, and robust database types.
+
+- **Never use floats:** Binary floats like `0.1 + 0.2` introduce precision drift that corrupts financial ledgers.
+- **Use Decimal types:** Perform monetary arithmetic using Python's `decimal.Decimal` with explicit rounding contexts.
+- **Select rounding modes:** Use Banker's Rounding (`ROUND_HALF_EVEN`) to eliminate cumulative statistical bias in large runs.
+- **Persist exact quantities:** Store financial balances using database `NUMERIC`/`DECIMAL` types or integer minor units.
+{{< /tldr >}}
+
 When building an application, you inevitably reach a screen where money enters the picture.
 You need to calculate a 20% VAT rate, split an invoice between team members, or apply a discount code at checkout.
 You see a price like `£19.99` with two neat decimal digits and assume a standard floating-point variable will do just fine.

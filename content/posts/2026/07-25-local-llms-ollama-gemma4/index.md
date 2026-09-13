@@ -10,6 +10,16 @@ tags:
   - Generative AI
 ---
 
+{{< tldr >}}
+Running local LLMs with Ollama offers complete data privacy and zero API subscription costs on consumer hardware.
+Pairing Ollama with efficient small models like Gemma enables fast, offline generation for everyday development tasks.
+
+- **Complete privacy:** Process sensitive logs, code, and documents entirely on local hardware without cloud leaks.
+- **Streamlined setup:** Install and pull optimised models in seconds using single-line CLI commands (`ollama run`).
+- **Hardware efficiency:** Run lightweight quantized models smoothly on modern laptops with Apple Silicon or modest GPUs.
+- **API compatibility:** Connect local models to tools and extensions via Ollama's OpenAI-compatible REST API.
+{{< /tldr >}}
+
 Running state of the art language models locally on your own hardware has never been more accessible.
 Tools like Ollama allow you to pull down massive models and interact with them completely offline, ensuring your data remains entirely private.
 However, pushing the limits of your hardware reveals the frustrating realities of running large models on consumer laptops.

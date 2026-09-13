@@ -13,6 +13,16 @@ tags:
   - Software Architecture
 ---
 
+{{< tldr >}}
+Forcing users to wait for a complex, multi-node agent graph to finish executing leads to poor perceived latency and unresponsive UIs.
+LangGraph's streaming modes allow applications to stream intermediate node outputs, state updates, and raw LLM tokens in real time.
+
+- **Streaming modes:** Select `stream_mode="updates"` for node-level state deltas, `"values"` for full state snapshots, or `"messages"` for LLM tokens.
+- **Token-level streaming:** Stream LLM text chunks token-by-token directly into user interfaces as they are generated.
+- **Visual feedback:** Broadcast node transitions and active tool invocations to keep users informed during long-running tasks.
+- **Event filtering:** Filter streaming events on the client side to separate internal reasoning tokens from final user responses.
+{{< /tldr >}}
+
 If you've been following the earlier posts in this series, you'll have built graphs that gather data, call tools, and produce structured output.
 Every one of those examples used `.invoke()`, which means the caller waits in silence until the entire graph finishes and then receives the final state.
 That's fine for batch jobs or background pipelines, but it's a terrible experience for anything interactive.

@@ -11,6 +11,16 @@ tags:
   - Developer Tools
 ---
 
+{{< tldr >}}
+Managing configuration solely through raw `os.environ` lookups is error-prone and delays missing-variable crashes until runtime.
+`pydantic-settings` provides typed, schema-validated configuration that fails fast at application startup.
+
+- **Fail-fast validation:** Validate types and presence of mandatory environment variables when the service initialises.
+- **Hierarchical layering:** Seamlessly merge local `.env` files, environment variables, and Docker secrets in a predictable order.
+- **Type conversion:** Automatically parse complex configuration data like comma-separated lists, booleans, and nested URLs.
+- **IDE autocomplete:** Benefit from full type safety and editor code completion across your application's settings objects.
+{{< /tldr >}}
+
 Environment variables are the default way many Python apps handle configuration.
 They are simple, portable, and work in every deployment environment.
 But as soon as you add more than a handful of settings, raw env vars become fragile and hard to reason about.

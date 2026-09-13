@@ -13,6 +13,16 @@ tags:
   - Agentic AI
 ---
 
+{{< tldr >}}
+The Model Context Protocol (MCP) standardises how AI assistants connect to external tools, databases, and local system resources.
+FastMCP makes building and deploying custom Python MCP servers straightforward with decorator-driven syntax and built-in SSE transports.
+
+- **Standardised tool exposure:** Expose custom Python functions to LLMs through standard MCP tool declarations.
+- **FastMCP simplicity:** Decorate standard Python functions with `@mcp.tool()` for effortless parameter validation.
+- **Transport options:** Run locally via `stdio` for desktop clients or deploy via Server-Sent Events (SSE) for remote services.
+- **Context augmentation:** Use resources and prompts to stream live domain data directly into agent context windows.
+{{< /tldr >}}
+
 If you have spent any time building agentic systems recently, you have likely encountered the integration bottleneck.
 Connecting large language models (LLMs) to local tools, internal databases, or system utilities has historically meant writing custom APIs for every single integration.
 This fragmentation makes agentic workflows fragile and difficult to scale.

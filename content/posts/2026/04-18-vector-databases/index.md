@@ -13,6 +13,16 @@ tags:
   - Software Architecture
 ---
 
+{{< tldr >}}
+When text embedding collections expand beyond simple in-memory arrays, brute-force linear search introduces severe latency bottlenecks.
+Vector databases solve this challenge using approximate nearest neighbour (ANN) indexing to query millions of high-dimensional vectors in milliseconds.
+
+- **ANN indexing:** Trade tiny margins of precision for order-of-magnitude search speedups using algorithms like HNSW and IVF.
+- **Database ecosystem:** Choose between dedicated vector engines (Qdrant, Chroma, Pinecone) or extensions to existing databases (pgvector).
+- **Metadata filtering:** Combine vector similarity search with structured SQL/boolean metadata filters for precise retrieval.
+- **Embedding alignment:** Ensure the exact same embedding model and dimensions are used for both document ingestion and query vectors.
+{{< /tldr >}}
+
 In an [earlier post]({{< ref "02-07-how-to-use-text-embeddings" >}}) we generated embeddings and searched them by computing cosine similarity across a small in-memory list.
 That approach is perfect for learning and prototyping, but it doesn't scale.
 When your corpus grows to hundreds of thousands or millions of documents, iterating over every vector for each query becomes too slow and too memory-hungry to be practical.

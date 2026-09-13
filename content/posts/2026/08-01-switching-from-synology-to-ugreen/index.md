@@ -10,6 +10,16 @@ tags:
   - Self Hosting
 ---
 
+{{< tldr >}}
+Upgrading from a Synology DS418 to a UGREEN NASync DXP2800 delivers massive hardware gains in CPU speed, RAM expandability, and networking throughput.
+While UGREEN's UGOS software is still maturing, containerised workarounds bridge the gap for self-hosting enthusiasts.
+
+- **Hardware leap:** Enjoy significant performance boosts with an Intel N100 processor, DDR5 RAM, and 2.5GbE networking.
+- **Storage versatility:** Combine high-capacity SATA hard drives with high-speed NVMe M.2 SSD cache pools.
+- **Software maturity trade-off:** UGOS lacks the polished app ecosystem of Synology's DSM but improves rapidly.
+- **Docker fills the gap:** Deploy missing ecosystem tools like backup daemons and media servers via Docker containers.
+{{< /tldr >}}
+
 Finding the perfect home Network Attached Storage (NAS) setup is a balancing act between hardware capabilities and software maturity.
 When Prime Day offered a discount on the [UGREEN NASync DXP2800](https://nas-uk.ugreen.com/products/ugreen-2-bay-nas-storage-76tb), I decided it was time to retire my trusty but ageing four-bay Synology DS418.
 The hardware upgrade promised to be massive, but moving to UGREEN's young operating system meant navigating several software trade-offs.

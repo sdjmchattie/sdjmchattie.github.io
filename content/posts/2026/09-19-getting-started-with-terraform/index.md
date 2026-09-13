@@ -12,6 +12,16 @@ tags:
   - Software Architecture
 ---
 
+{{< tldr >}}
+Terraform revolutionises cloud management by treating infrastructure as declarative, version-controlled code.
+It ensures reproducible deployments across cloud providers through state tracking, execution planning, and provider ecosystems.
+
+- **Declarative syntax:** Define desired cloud state in HCL without managing procedural deployment scripts.
+- **Plan before apply:** Preview proposed infrastructure creations, changes, and destructions using `terraform plan`.
+- **State management:** Store state files securely in remote backends with state locking to prevent deployment collisions.
+- **Multi-cloud flexibility:** Manage AWS, GCP, Azure, and third-party SaaS tools through a unified workflow.
+{{< /tldr >}}
+
 Just like top terraformers in Minecraft reshape entire landscapes to build incredible worlds, mastering Terraform in software engineering gives you complete control over your digital infrastructure.
 Instead of manually clicking through cloud management consoles, you define your entire infrastructure estate in declarative code.
 

@@ -12,6 +12,16 @@ tags:
   - Software Architecture
 ---
 
+{{< tldr >}}
+Calculating dates and intervals by hand is a classic software trap plagued by leap years, timezone shifts, and Daylight Saving Time anomalies.
+Relying on mature timezone databases and UTC storage protects your data from catastrophic temporal bugs.
+
+- **Time is not uniform:** Days do not always have 86,400 seconds, and hours can repeat or disappear during DST transitions.
+- **Store UTC canonically:** Persist timestamps in UTC or Unix epochs, reserving localised conversions strictly for display.
+- **Historic calendar quirks:** Gregorian shifts and legacy spreadsheet bugs (like Excel's 1900 leap year bug) break naive math.
+- **Use established libraries:** Delegate temporal arithmetic to battle-tested libraries like Python's `zoneinfo` and `dateutil`.
+{{< /tldr >}}
+
 At some point in every developer's career, a tempting thought arrives.
 You need to add seven days to an appointment, schedule a task for tomorrow morning, or calculate the duration between two events.
 You glance at your standard library, see a hefty date module, and think: "A day is just 86,400 seconds. I can write this helper function in ten lines of code."

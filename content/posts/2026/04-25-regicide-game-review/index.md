@@ -11,6 +11,16 @@ tags:
   - Board Games
 ---
 
+{{< tldr >}}
+Regicide is a tense, highly strategic cooperative card game where players work together to topple twelve castle royals using an ordinary 52-card deck.
+Its clever suit-power mechanics and punishing damage mitigation demand tight teamwork and tactical card management.
+
+- **Playable with any deck:** Enjoy a rich cooperative game using either the official illustrated edition or any standard pack of cards.
+- **Suit powers:** Hearts heal from the discard, Diamonds draw cards, Clubs double damage, and Spades shield against retaliation.
+- **Exact damage bonus:** Defeating a royal with exact lethal damage places them facedown on your draw deck instead of the discard pile.
+- **Zero alpha gaming:** Strict communication limits prevent a single dominant player from dictating teammate turns.
+{{< /tldr >}}
+
 Cooperative card games live and die on one question: does every player feel useful?
 Regicide answers with a confident yes, and it does so with rules you can teach in five minutes and depth that keeps you coming back long after you have won your first game.
 Whether you are playing solo or with a group, this little game punches well above its weight.

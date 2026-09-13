@@ -12,6 +12,16 @@ tags:
   - APIs
 ---
 
+{{< tldr >}}
+GraphQL replaces fixed REST payloads with client-driven queries, eliminating both over-fetching and under-fetching.
+Strawberry brings modern Python type hints and dataclasses to GraphQL schemas, delivering end-to-end type safety.
+
+- **Client-driven queries:** Allow frontends to request exactly the fields they need from a single endpoint.
+- **Pythonic schema definition:** Define types and resolvers with native `@strawberry.type` decorators without boilerplate SDL.
+- **Type safety:** Achieve schema-to-code alignment backed by Python's static type system and editor autocomplete.
+- **When to choose:** Adopt GraphQL for complex, interconnected data models; stick with REST for simple CRUD APIs.
+{{< /tldr >}}
+
 Connecting client applications to database records requires a clear, reliable communication contract.
 For years, Representative State Transfer (REST) has served as the default architecture for modern web applications.
 If you read my previous guide, [Building Modern APIs with FastAPI and Python]({{< ref "06-13-building-apis-with-fastapi" >}}), you saw how easy it is to define clear routes and return structured Pydantic models.

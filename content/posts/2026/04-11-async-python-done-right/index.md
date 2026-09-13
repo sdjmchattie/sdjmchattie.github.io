@@ -12,6 +12,16 @@ tags:
   - Software Architecture
 ---
 
+{{< tldr >}}
+Sprinkling `async` and `await` keywords across Python code does not automatically guarantee high performance or concurrency.
+Avoiding common asynchronous pitfalls ensures your services handle heavy I/O loads without stalling event loops or swallowing exceptions.
+
+- **Never block the event loop:** Offload synchronous file I/O or heavy computation to worker threads using `asyncio.to_thread()`.
+- **Handle gather exceptions:** Always pass `return_exceptions=True` to `asyncio.gather()` to prevent a single failure from unhandled crashes.
+- **Enforce task timeouts:** Wrap external network requests in `asyncio.timeout()` context managers to prevent hanging connections.
+- **Reuse connection pools:** Maintain shared `httpx.AsyncClient` or database connection pools rather than instantiating clients per request.
+{{< /tldr >}}
+
 Adding `async` and `await` to a Python function feels like an easy win.
 You've heard it makes code faster, so you sprinkle the keywords in, run your program, and it seems to work.
 But async Python has a habit of looking correct while quietly running no better or even worse than the synchronous version.

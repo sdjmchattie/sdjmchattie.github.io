@@ -10,6 +10,16 @@ tags:
   - Board Games
 ---
 
+{{< tldr >}}
+Mists Over Carcassonne transforms the classic competitive tile-laying game into a tense, cooperative race against ghostly fog.
+It delivers an accessible standalone experience with tiered difficulty levels that reward careful communication and spatial coordination.
+
+- **Standalone experience:** Everything you need is in the box; you do not need the original Carcassonne base set to play.
+- **Cooperative mechanics:** Players share the board to hit a collective point target before the ghost supply runs out.
+- **Tiered difficulty:** Level-based scenarios ramp up challenge gradually, making it suitable for both casual groups and puzzle lovers.
+- **Compatible with classic:** Tiles can be integrated into regular Carcassonne games as a standalone mini-expansion.
+{{< /tldr >}}
+
 Carcassonne is one of those games that's been on countless family shelves for over two decades, building cities and stealing roads from one another with cheerful ruthlessness.
 Mists Over Carcassonne takes that familiar tile-laying foundation and does something unexpected with it: it turns you all into allies, pitting the whole table against a haunted landscape crawling with ghosts.
 If you've ever wished that Carcassonne felt a little more cooperative, a little moodier, and a fair bit spookier, this one's for you.

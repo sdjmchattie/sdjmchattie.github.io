@@ -12,6 +12,16 @@ tags:
   - Agentic AI
 ---
 
+{{< tldr >}}
+Executing independent LLM tasks sequentially introduces unnecessary latency into complex agentic workflows.
+LangGraph enables parallel execution through fan-out and fan-in patterns, using state reducers to merge concurrent node outputs cleanly.
+
+- **Fan-out / Fan-in:** Trigger multiple downstream nodes simultaneously from a single parent node to perform work in parallel.
+- **State collision trap:** When concurrent nodes write to the same state key, LangGraph will fail unless a reducer is defined.
+- **Reducer functions:** Use `Annotated[list, operator.add]` or custom merger functions to combine parallel outputs safely.
+- **Latency reduction:** Substantially cut total agent execution time for multi-source research, search, and synthesis pipelines.
+{{< /tldr >}}
+
 Real-world agents rarely do one thing at a time.
 They fetch data from multiple sources, run independent checks in parallel, and combine the results before moving on.
 LangGraph supports this natively with concurrent nodes, but there is a subtle catch when those nodes all write to the same piece of state.

@@ -12,6 +12,16 @@ tags:
   - Software Architecture
 ---
 
+{{< tldr >}}
+Amazon DynamoDB delivers single-digit millisecond latency and hands-off serverless scaling, but demands a fundamental shift in data modelling.
+Understanding its rigid access-pattern trade-offs prevents expensive architectural rewrites down the line.
+
+- **Predictable performance:** Delivers consistent latency at virtually any traffic scale with zero server provisioning or maintenance.
+- **Know queries upfront:** Unlike flexible relational SQL databases, you must design DynamoDB tables around known, fixed query patterns.
+- **Primary key design:** Master partition keys (PK) and sort keys (SK) to distribute data evenly and enable fast range queries.
+- **When to avoid:** Choose relational options (Postgres/MySQL) when your application requires ad-hoc queries, joins, or flexible aggregations.
+{{< /tldr >}}
+
 The first time I looked at DynamoDB, it felt like a golden unicorn.
 It promised fast access, huge scale, and very little operational effort.
 If you're already building on AWS, it also feels like the natural choice because it fits so neatly into the rest of the platform.

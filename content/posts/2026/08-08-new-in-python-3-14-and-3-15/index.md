@@ -9,6 +9,17 @@ image: "/images/posts/2026/08-08-new-in-python-3-14-and-3-15.png"
 tags:
   - "Python"
 ---
+
+{{< tldr >}}
+Python 3.14 and 3.15 introduce architectural milestones that fundamentally improve multi-core performance and startup efficiency.
+From free-threaded execution without the GIL to explicit lazy imports, modern Python is evolving rapidly.
+
+- **Free-threaded Python:** Run CPU-bound threads across multiple cores concurrently as GIL removal matures.
+- **Explicit lazy imports:** Reduce application startup times and memory footprints by deferring module loads until execution.
+- **Template string literals:** Simplify structured string formatting and SQL/HTML injection protection with PEP 750.
+- **Interpreter optimisations:** Benefit from tiered JIT compilation improvements delivering faster runtime performance.
+{{< /tldr >}}
+
 Python continues to evolve at a breakneck pace, and the recent releases are bringing some of the most fundamental shifts the language has seen in years.
 If you've been busy writing code, you might have missed the massive structural changes introduced in Python 3.14, and the exciting performance optimisations arriving shortly in Python 3.15.
 In this post, I explore the most impactful new features that will change how you write and architect your Python applications.

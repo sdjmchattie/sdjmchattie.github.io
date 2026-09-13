@@ -14,6 +14,16 @@ tags:
   - Software Architecture
 ---
 
+{{< tldr >}}
+Google's Agent Development Kit (ADK) introduces a hierarchical, code-first approach to building multi-agent AI applications.
+By adopting an "agents all the way down" philosophy and providing a visual Dev UI, it offers a modular alternative to graph-based frameworks.
+
+- **Hierarchical modularity:** Structure complex workflows as trees of sub-agents rather than managing flat graph state dictionaries.
+- **Code-first architecture:** Define agent behaviour and tools cleanly in standard Python classes extending `BaseAgent`.
+- **Integrated Dev UI:** Inspect conversation histories, model prompts, and tool invocations visually using the built-in debugging interface.
+- **Gemini ecosystem fit:** Built from the ground up to capitalise on Gemini's massive context windows and function calling strengths.
+{{< /tldr >}}
+
 If you've spent any time building agentic systems lately, you're likely familiar with LangGraph.
 It's a powerful framework that treats agents as nodes in a graph, connected by edges that define the flow of execution and state.
 It's robust, explicit, and extremely capable once you get the hang of it.

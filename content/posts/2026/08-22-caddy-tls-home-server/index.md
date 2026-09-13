@@ -11,6 +11,16 @@ tags:
   - "IoT"
 ---
 
+{{< tldr >}}
+Caddy simplifies reverse proxying your homelab services by automating HTTPS certificate procurement and renewals.
+Using DNS-01 challenges and your own custom domain, you can serve local internal tools over valid TLS without opening router ports.
+
+- **Automated TLS:** Issue and renew trusted Let's Encrypt certificates automatically with zero certificate renewal scripts.
+- **DNS-01 challenge:** Secure internal homelab services over HTTPS without exposing public ports on your home router.
+- **Concise Caddyfile:** Route subdomains to internal container ports in just three lines of clean configuration.
+- **Internal access control:** Restrict sensitive administrative dashboards to private local IP ranges.
+{{< /tldr >}}
+
 Running self-hosted tools on your home network is immensely satisfying, but typing IP addresses and ignoring browser security warnings gets old fast.
 I love having a clean, custom domain name backed by valid TLS encryption for all my home services.
 Using a Raspberry Pi 3B as a lightweight reverse proxy with Caddy makes this setup remarkably straightforward.

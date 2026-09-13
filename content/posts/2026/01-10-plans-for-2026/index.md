@@ -8,6 +8,16 @@ image: /images/posts/2026/01-10-plans-for-2026.jpg
 tags:
 ---
 
+{{< tldr >}}
+Entering 2026 brings an opportunity to set deliberate personal milestones and outline technical directions for this blog.
+The focus this year balances professional development, consistent technical writing, and practical software engineering experiments.
+
+- **Consistent cadence:** Aiming to maintain a regular publishing schedule covering hands-on engineering tutorials and honest reviews.
+- **Deep-dive focus areas:** Exploring modern agentic AI architectures, Python language features, and homelab self-hosting.
+- **Project milestones:** Continuing practical code experiments like the Sudoku solver series and game recreation benchmarks.
+- **Personal growth:** Prioritising disciplined habits, continuous learning, and thoughtful investing strategies.
+{{< /tldr >}}
+
 First and foremost, let me wish you a Happy New Year for 2026.
 I hope everyone was able to take some well deserved time off and have recharged the batteries to make the most of 2026.
 

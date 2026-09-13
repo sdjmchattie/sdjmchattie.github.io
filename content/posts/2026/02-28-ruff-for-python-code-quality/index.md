@@ -11,6 +11,16 @@ tags:
   - Code Quality
 ---
 
+{{< tldr >}}
+Ruff replaces Flake8, Black, isort, and dozens of legacy plugins with a blazingly fast, Rust-powered Python linter and formatter.
+It delivers near-instantaneous feedback in developer editors and significantly cuts CI pipeline runtimes.
+
+- **Massive speedup:** Executes tens to hundreds of times faster than traditional Python-based linting suites.
+- **Tool consolidation:** Replaces multiple disparate tools (Flake8, Black, isort, pyupgrade) with a single binary.
+- **Centralised config:** Configure lint rules and formatting preferences cleanly inside `pyproject.toml`.
+- **Automated fixes:** Pass `--fix` to resolve hundreds of common style and import errors automatically without manual edits.
+{{< /tldr >}}
+
 Consistency and quality are the foundations of maintainable Python code.
 As projects grow and teams expand, maintaining these standards becomes increasingly challenging without the right tools.
 Ruff is an extremely fast linter and code formatter written in Rust that helps teams improve their code quality while ensuring consistency across the entire codebase.

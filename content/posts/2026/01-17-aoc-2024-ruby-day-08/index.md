@@ -12,6 +12,16 @@ tags:
   - Puzzles
 ---
 
+{{< tldr >}}
+Advent of Code 2024 Day 8 challenges you to detect resonant collinear antinodes across antenna coordinate pairs on a 2D grid.
+Solving both parts in Ruby demonstrates the power of combination generation, vector arithmetic, and bounded loop iterations.
+
+- **Frequency grouping:** Group antenna coordinates by their alphanumeric frequency character before checking pairings.
+- **Vector mathematics:** Calculate the row and column delta vector between each unique antenna pair.
+- **Part 1 antinodes:** Place single antinodes at `p1 - delta` and `p2 + delta`, filtering out any points lying outside grid bounds.
+- **Part 2 resonance:** Step along the slope vector repeatedly in both directions until leaving the grid, including the antennas themselves.
+{{< /tldr >}}
+
 Day 8 is about mapping antennas on a 2D grid and marking antinodes where signals resonate in straight lines, first at a single step beyond a pair and then across entire lines.
 We will walk through a vector-stepping approach in Ruby that keeps the implementation small, readable, and fast.
 If you want the full problem statement can be read on the [Advent of Code puzzle page](https://adventofcode.com/2024/day/8).

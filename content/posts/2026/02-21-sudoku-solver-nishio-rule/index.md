@@ -12,6 +12,16 @@ tags:
   - Puzzles
 ---
 
+{{< tldr >}}
+When deterministic logical deduction rules stall on fiendish Sudoku puzzles, the Nishio rule resolves gridlock through proof by contradiction.
+By making a trial candidate assumption and reverting state if a rule contradiction emerges, our solver cracks 100% of standard puzzles.
+
+- **Proof by contradiction:** Tentatively place a candidate into a bivalue cell and propagate deterministic rules.
+- **Detecting invalidity:** If any row, column, or block ends up with zero candidates for a remaining cell, the assumption is false.
+- **Candidate elimination:** Eliminate the tested candidate from the cell and return the grid to its verified pre-trial state.
+- **Complete coverage:** Combining Nishio backtracking with previous deductive rules guarantees a solution for every valid Sudoku.
+{{< /tldr >}}
+
 The next rule to implement for the Sudoku solver is Nishio.
 This will make all outstanding puzzles solvable because it effectively brute forces the removal of an invalid candidate until other rules can take over.
 

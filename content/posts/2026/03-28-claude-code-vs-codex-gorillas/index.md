@@ -13,6 +13,16 @@ tags:
   - Developer Tools
 ---
 
+{{< tldr >}}
+Challenging Claude Code (Opus 4.6) and OpenAI's Codex (GPT-5.3) to recreate the 1991 QBasic game Gorillas in Godot 4 reveals starkly different coding philosophies.
+Claude delivered a delightful, authentic retro game in a single monolithic script, whereas Codex over-engineered a modular build riddled with bugs.
+
+- **Claude's retro craftsmanship:** Produced animated pixel art gorillas, destructible skylines, and wind physics on the first attempt.
+- **Codex's enterprise over-engineering:** Split logic across multiple scenes and custom resources, but failed to produce a playable first run.
+- **Questioning styles:** Claude dumped all clarifying questions in one batch, while Codex split questions into three iterative rounds.
+- **The verdict:** Claude Code captured the spirit of the game and delivered working software, while Codex got trapped in premature modularity.
+{{< /tldr >}}
+
 If you grew up with a DOS machine in the early 1990s, there is a good chance you remember Gorillas.
 Two apes perched on rooftops, hurling explosive bananas across a city skyline — it shipped free with QBasic and it was many people's first taste of programming a game, or at least playing one they could peek inside.
 I thought it would make the perfect test for a question I have been wanting to answer: what happens when you hand two of the most capable agentic coding tools the exact same brief and step back?

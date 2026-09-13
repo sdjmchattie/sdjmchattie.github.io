@@ -12,6 +12,16 @@ tags:
   - Agentic AI
 ---
 
+{{< tldr >}}
+Unstructured free-form text from LLMs introduces brittle parsing errors into backend pipelines.
+Leveraging LangGraph with Pydantic models and structured output functions enforces strict typing and reliable schema adherence.
+
+- **Enforce schemas:** Bind Pydantic models using `.with_structured_output()` to force models to return valid JSON structures.
+- **Type-safe agent state:** Store typed Pydantic instances inside LangGraph state keys rather than raw string outputs.
+- **Handle schema failures:** Implement fallback validation nodes or `OutputFixingParser` to catch and correct malformed outputs automatically.
+- **Cleaner downstream logic:** Pass validated domain models directly into databases and APIs without manual string slicing.
+{{< /tldr >}}
+
 Large language models are incredibly versatile, but when your code depends on predictable data structures, free‑form text can be a headache. The same information can be expressed in countless ways, making downstream processing error-prone. Structured output bridges this gap: by defining a schema, injecting format instructions into your prompt, and validating (or even repairing) the model’s response, you can turn LLM text into reliable, typed data your code can safely consume. In this post, we’ll explore how to implement this workflow in LangGraph using Pydantic models, parsers, and automatic repair mechanisms.
 
 ## What We Are Building

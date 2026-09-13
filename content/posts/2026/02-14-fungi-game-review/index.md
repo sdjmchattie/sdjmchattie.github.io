@@ -10,6 +10,16 @@ tags:
   - Board Games
 ---
 
+{{< tldr >}}
+Fungi (also known as Morels) is a cosy, tactical two-player card game revolving around foraging wild mushrooms and cooking them for victory points.
+It combines a strict hand limit with a dynamic "forest" conveyor belt, delivering rich strategic choices in a compact box.
+
+- **The Forest conveyor:** Cards shift towards a decay pile each turn, requiring players to spend walking sticks to reach deeper mushrooms.
+- **Decay pile timing:** Scooping up the decay pile provides an influx of cards but can quickly clog your tight eight-card hand limit.
+- **Cooking mechanics:** Score points by cooking sets of three or more matching mushrooms in pans, boosted with butter and cider cards.
+- **Ideal couples game:** Plays in under 30 minutes with high thematic charm and minimal take-that confrontation.
+{{< /tldr >}}
+
 Here's a game my wife and I enjoy, imagining we're a real life Radagast the Brown, strolling through a dusky forest, foraging for supper and cooking it over a campfire.
 Fungi offers this in a cosy two‑player card game that mixes simple rules with hand management and careful strategy to keep things interesting.
 If you mostly play with two players, this one comes in a small box and deserves a spot on your games shelf.

@@ -10,6 +10,16 @@ tags:
   - Board Games
 ---
 
+{{< tldr >}}
+Yahtzee remains a timeless tabletop classic that blends probabilistic risk assessment with disciplined scorecard allocation.
+Mastering the game requires balancing high-variance 50-point bonuses against the critical 35-point upper section threshold.
+
+- **Accessible rules:** Playable with five dice, a cup, and a scorecard with zero barrier to entry for any age group.
+- **The Upper Section bonus:** Prioritise scoring 63+ in the upper section to unlock the game-deciding 35-point bonus.
+- **Risk management:** Use rerolls tactically and sacrifice low-value categories when dice rolls fail to materialise.
+- **Enduring appeal:** Offers quick 20-minute rounds that combine strategic calculation with the thrill of dice rolling.
+{{< /tldr >}}
+
 Few sounds in tabletop gaming are quite as satisfying as the clatter of five wooden or plastic dice tumbling out of a shaker cup onto a dining table.
 Invented in the 1950s by an anonymous Canadian couple on their yacht and later acquired by game entrepreneur Edwin S. Lowe, Yahtzee remains one of the world's most enduring and accessible dice games.
 Returning to this childhood favourite as an adult reveals just how much genuine tactical tension sits beneath its cheerful roll-and-write exterior.

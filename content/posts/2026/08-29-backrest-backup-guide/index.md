@@ -11,6 +11,16 @@ tags:
   - "Docker"
 ---
 
+{{< tldr >}}
+Backrest provides an intuitive web interface on top of Restic, turning command-line backup scripts into a dependable, automated backup platform.
+It combines content-addressable deduplication and encryption with schedule management and webhook alerting.
+
+- **Restic backend:** Benefit from fast snapshot deduplication, authenticated encryption, and diverse storage backends.
+- **Web UI management:** Configure backup plans, inspect snapshot file trees, and restore files from an intuitive browser dashboard.
+- **Optimised for drives:** Tune pack sizes and prune operations to minimise write amplification on SMR disks.
+- **Automated scheduling:** Set cron-based backup cadences and receive health alert pings via healthchecks or webhooks.
+{{< /tldr >}}
+
 Setting up automated backups is often the most overlooked task in home networking.
 It is rarely the most exciting project to tackle, but having a solid backup system gives you immense peace of mind when hardware fails.
 

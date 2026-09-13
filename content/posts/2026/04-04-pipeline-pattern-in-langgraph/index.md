@@ -13,6 +13,16 @@ tags:
   - Software Architecture
 ---
 
+{{< tldr >}}
+Monolithic agent graphs become difficult to reason about, debug, and test as workflow stages multiply.
+Composing separate, specialized LangGraph graphs into a multi-stage pipeline provides clear operational boundaries and maintainable state transitions.
+
+- **Stage separation:** Deconstruct monolithic workflows into dedicated sub-graphs (e.g. research, drafting, reviewing).
+- **Explicit interfaces:** Define typed input and output schemas for each pipeline stage to prevent untyped state pollution.
+- **Independent testability:** Unit-test individual pipeline graphs in isolation before connecting them into the top-level pipeline.
+- **Checkpointing boundaries:** Persist state checkpoints between stages to allow resuming or retrying failed pipeline steps cleanly.
+{{< /tldr >}}
+
 The earlier posts in this series built self-contained graphs: one graph, one task, one run.
 But real workflows often span multiple stages, where each stage produces output that the next stage needs.
 The pipeline pattern I describe here isn't an official LangGraph pattern — it's an architecture I've designed to solve that coordination problem, using LangGraph's building blocks to compose several smaller graphs into a larger system with a shared state model that carries results forward across all of them.

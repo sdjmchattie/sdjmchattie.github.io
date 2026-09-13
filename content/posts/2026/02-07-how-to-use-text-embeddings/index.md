@@ -11,6 +11,16 @@ tags:
   - Generative AI
 ---
 
+{{< tldr >}}
+Text embeddings convert unstructured prose into dense mathematical vectors that capture contextual semantics rather than exact keyword matches.
+Generating and comparing embeddings locally with open Python libraries unlocks powerful semantic search and retrieval workflows.
+
+- **Semantic understanding:** Embeddings map words with similar meanings to nearby coordinates in multi-dimensional space.
+- **Cosine similarity:** Measure semantic relevance by calculating the cosine angle between query and document vectors.
+- **Local execution:** Use lightweight models like `sentence-transformers` to generate vectors offline with zero API latency or cost.
+- **RAG foundation:** Use embedding search to retrieve relevant chunks of documentation before injecting them into an LLM prompt.
+{{< /tldr >}}
+
 Embeddings let software work with meaning rather than just matching words, so you can search by intent, find related content, and give LLMs the right context to answer questions.
 In this post we will start from first principles, show what these vectors actually are, explain their useful properties, and then generate and search them locally in Python using small open models, with a worked cosine similarity example you can turn into a graphic.
 

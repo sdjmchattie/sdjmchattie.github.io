@@ -13,6 +13,16 @@ tags:
   - Cloud Computing
 ---
 
+{{< tldr >}}
+Choosing between MySQL, PostgreSQL, and Microsoft SQL Server requires matching database architectural strengths to organizational constraints.
+Evaluating concurrency models, JSON capabilities, and cloud ecosystems ensures long-term database stability.
+
+- **PostgreSQL versatility:** The gold standard for modern development, featuring rock-solid JSONB querying, extensibility (`pgvector`), and ACID compliance.
+- **MySQL simplicity:** Exceptional read-heavy web performance, straightforward replication, and ubiquitous web hosting compatibility.
+- **SQL Server enterprise power:** Deep Microsoft ecosystem integration, enterprise tooling, and comprehensive commercial support contracts.
+- **Architectural trade-off:** Prefer PostgreSQL for general-purpose applications unless committed to an enterprise .NET stack or dedicated MySQL tooling.
+{{< /tldr >}}
+
 If you've been building software for any length of time, you've almost certainly worked with at least one relational database.
 There's a good chance it was MySQL, PostgreSQL, or SQL Server.
 All three can store rows, run queries, and handle transactions, so it's tempting to think the choice doesn't matter much.

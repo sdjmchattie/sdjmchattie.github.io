@@ -12,6 +12,16 @@ tags:
   - APIs
 ---
 
+{{< tldr >}}
+FastAPI leverages Python type hints and Pydantic to deliver high-performance, asynchronous REST APIs with automatic OpenAPI documentation.
+It eliminates boilerplate validation while ensuring robust error handling across your microservices.
+
+- **Type-driven validation:** Use Pydantic schemas to validate request payloads and serialise responses automatically.
+- **Asynchronous throughput:** Use `async def` endpoints for non-blocking I/O operations and database queries.
+- **Automatic documentation:** Benefit from interactive Swagger UI (`/docs`) and ReDoc endpoints generated without extra code.
+- **Dependency injection:** Modularise authentication, database sessions, and configuration using `Depends()`.
+{{< /tldr >}}
+
 If you're starting a new Python backend project today, you're almost certainly going to use FastAPI.
 It has rapidly displaced older frameworks to become the industry standard for API development.
 The reasons are simple: it's fast, it embraces modern Python type hints, and it does a lot of the heavy lifting for you.

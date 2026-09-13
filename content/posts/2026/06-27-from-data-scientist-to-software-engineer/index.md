@@ -12,6 +12,16 @@ tags:
   - Developer Tools
 ---
 
+{{< tldr >}}
+Transitioning from data science to software engineering requires shifting focus from exploratory notebooks to maintainable production architectures.
+Adopting software engineering rigour elevates your code from one-off analyses to robust, scalable services.
+
+- **Move beyond notebooks:** Refactor Jupyter scripts into testable, modular Python packages with strict type annotations.
+- **Embrace testing:** Write automated unit and integration tests using `pytest` to guarantee system reliability.
+- **Master CI/CD:** Automate linting, testing, and deployment pipelines to catch bugs before production.
+- **Architect for operations:** Prioritise logging, observability, and reproducible environments over ad-hoc script runs.
+{{< /tldr >}}
+
 If you come from a data science background, your core strength lies in translating complex, messy datasets into actionable business insights.
 You are likely a master of statistical modelling, feature engineering, and extracting patterns from noise.
 However, a common bottleneck arises when you need to transition your exploratory models into software that other developers, operational pipelines, or clients can reliably run.

@@ -10,6 +10,16 @@ tags:
   - "Python"
 ---
 
+{{< tldr >}}
+Beyond mainstream packages like Pandas and Requests, Python boasts a rich collection of high-leverage utility libraries and modern patterns.
+Adopting these lesser-known tools eliminates boilerplate code and boosts application robustness.
+
+- **Loguru for logging:** Replace verbose standard library logger setups with zero-configuration, coloured logging.
+- **DiskCache for persistence:** Cache heavy function results on local disk effortlessly without Redis overhead.
+- **Structural pattern matching:** Write clean, expressive branching logic using `match` and `case` constructs.
+- **Slots for memory savings:** Reduce memory consumption of lightweight dataclasses with `__slots__`.
+{{< /tldr >}}
+
 Following up on my previous post about [What's New in Python 3.14 and 3.15]({{< ref "08-08-new-in-python-3-14-and-3-15" >}}), I want to shift focus to the broader Python ecosystem.
 While everyone knows about Pandas and Requests, there is a treasure trove of lesser-known packages and modern patterns that can drastically improve your workflow.
 If you're tired of writing boilerplate code or struggling with complex configurations, you're in the right place.

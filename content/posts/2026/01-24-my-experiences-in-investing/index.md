@@ -9,6 +9,16 @@ image: /images/posts/2026/01-24-my-experiences-in-investing.jpg
 tags:
 ---
 
+{{< tldr >}}
+Transitioning from cash savings to stock market investing requires shifting from active stock-picking speculation to disciplined passive index tracking.
+Using UK tax wrappers alongside automated monthly contributions protects long-term compounding from behavioral missteps and tax drag.
+
+- **Avoid stock picking:** Speculating on individual hot stocks often underperforms low-cost, globally diversified index funds.
+- **Maximise tax wrappers:** Prioritise Stocks & Shares ISAs and workplace pensions to shield investment gains and dividends from UK taxes.
+- **Automate contributions:** Use pound-cost averaging by setting up recurring monthly direct debits regardless of market headlines.
+- **Maintain an emergency buffer:** Keep 3–6 months of living expenses in an accessible cash account before investing spare capital.
+{{< /tldr >}}
+
 Investing in the stock market has helped me aim for better long-term growth than I could get from a typical savings account, while keeping risk in check with some simple rules and tax-efficient wrappers.
 I will share the specific choices that worked for me, the mistakes I will not repeat, and the practical guardrails I now use to stay disciplined.
 
