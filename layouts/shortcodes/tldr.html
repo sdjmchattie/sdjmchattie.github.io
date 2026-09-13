@@ -1,0 +1,13 @@
+{{ $title := .Get "title" | default "TL;DR — Quick Summary & Key Takeaways" }}
+<details class="tldr-container">
+  <summary class="tldr-summary">
+    <span class="tldr-badge">TL;DR</span>
+    <span class="tldr-title">{{ $title }}</span>
+    <span class="tldr-toggle" aria-hidden="true">
+      <i class="fa-solid fa-chevron-down"></i>
+    </span>
+  </summary>
+  <div class="tldr-content">
+    {{ .Inner | markdownify }}
+  </div>
+</details>

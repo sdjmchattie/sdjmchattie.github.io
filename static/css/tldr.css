@@ -1,0 +1,136 @@
+/* TL;DR Collapsible Card */
+details.tldr-container {
+  margin: 1.75rem 0;
+  padding: 0.9rem 1.25rem;
+  border-radius: 8px;
+  background-color: var(--secondary-color, #f8f9fa);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--primary-color, #2b7f07);
+  transition: all 0.2s ease-in-out;
+}
+
+body.dark details.tldr-container,
+html.dark details.tldr-container,
+.dark details.tldr-container {
+  background-color: var(--secondary-background-color-dark, #212529);
+  border-color: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--primary-color, #ffffff);
+}
+
+/* Summary Header */
+details.tldr-container summary.tldr-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  outline: none;
+}
+
+/* Hide native disclosure markers across all browser engines */
+details.tldr-container summary::-webkit-details-marker {
+  display: none !important;
+}
+
+details.tldr-container summary::marker {
+  display: none !important;
+  content: "" !important;
+}
+
+/* TL;DR Badge / Lozenge */
+.tldr-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color, #2b7f07);
+  color: #ffffff !important;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+/* Dark mode lozenge: dark text against white background */
+body.dark .tldr-badge,
+html.dark .tldr-badge,
+.dark .tldr-badge {
+  background-color: var(--primary-color, #ffffff) !important;
+  color: var(--background-color-dark, #18191a) !important;
+}
+
+/* Title text */
+.tldr-title {
+  flex-grow: 1;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color, #343a40);
+  line-height: 1.3;
+}
+
+body.dark .tldr-title,
+html.dark .tldr-title,
+.dark .tldr-title {
+  color: var(--text-color-dark, #e4e6eb);
+}
+
+/* Chevron indicator */
+.tldr-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary-color, #6c757d);
+  font-size: 0.85rem;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+body.dark .tldr-toggle,
+html.dark .tldr-toggle,
+.dark .tldr-toggle {
+  color: var(--text-secondary-color-dark, #b0b3b8);
+}
+
+details.tldr-container[open] .tldr-toggle {
+  transform: rotate(180deg);
+}
+
+/* Expanded Content */
+.tldr-content {
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.975rem;
+  line-height: 1.65;
+  color: var(--text-color, #343a40);
+}
+
+body.dark .tldr-content,
+html.dark .tldr-content,
+.dark .tldr-content {
+  border-top-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-color-dark, #e4e6eb);
+}
+
+.tldr-content p {
+  margin-bottom: 0.75rem;
+}
+
+.tldr-content p:last-child,
+.tldr-content ul:last-child,
+.tldr-content ol:last-child {
+  margin-bottom: 0;
+}
+
+.tldr-content ul {
+  padding-left: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.tldr-content li {
+  margin-bottom: 0.35rem;
+}
