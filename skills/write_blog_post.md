@@ -32,11 +32,14 @@ This skill guides the agent through the complete lifecycle of drafting, research
    - Write in **British English** (UK spelling and grammar).
    - Format with **one sentence per line** in the markdown source file.
    - Use **Title Case** for Level 2 headings (`##`) and **Sentence case** for Level 3+ headings (`###`).
+   - Proactively hyperlink all named libraries, frameworks, tools, specifications, protocols, data structures, and official API references on first mention to canonical sources.
+   - Ensure any concepts hyperlinked inside the `{{< tldr >}}` block are also hyperlinked on their first occurrence in the main post body, as readers often skip directly to the content.
    - Place the closing section under an explicit `## Wrapping Up` heading.
 
 ## Phase 6: Validation & Proofreading
 1. Verify front matter matches the **Front Matter Requirements** in [AGENTS.md](file:///Users/stuart/Source/personal-website/AGENTS.md).
 2. Confirm the `{{< tldr >}}` block is present at the start of the body with accurate takeaways.
-3. Run through all items in the **Proofreading Checklist** in [AGENTS.md](file:///Users/stuart/Source/personal-website/AGENTS.md).
-4. Test locally using `hugo server --renderToMemory` to visually inspect rendering and verify all links resolve.
-5. Run `hugo --gc --minify` to confirm the production build completes with zero errors.
+3. Verify that technical concepts, tools, protocols, and APIs are comprehensively hyperlinked throughout the post.
+4. Run through all items in the **Proofreading Checklist** in [AGENTS.md](file:///Users/stuart/Source/personal-website/AGENTS.md).
+5. Test locally using `hugo server --renderToMemory` to visually inspect rendering and verify all links resolve.
+6. Run `hugo --gc --minify` to confirm the production build completes with zero errors.

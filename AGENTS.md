@@ -72,6 +72,8 @@ Every post must have a complete YAML front matter block:
 - Link to tag pages using `{{< ref "/tags/tag-name" >}}` syntax.
 - External links use standard markdown: `[Link Text](https://example.com)`.
 - Series posts should reference the series tag to help readers discover other posts in the series.
+- **Proactive Technical Hyperlinking**: Always proactively hyperlink the first mention of specific tools, libraries, frameworks (e.g. `React`, `FastAPI`, `Automerge`, `Yjs`), specifications/RFCs (e.g. `RFC 4180`, `IEEE 754`), protocols (e.g. `NTP`, `WebSockets`), official API symbols/classes (e.g. Apple Developer, MDN, Python docs), and foundational computer science concepts (e.g. `Lamport timestamps`, `CRDTs`, `tombstone`, `distributed consensus`) to canonical documentation or authoritative references without waiting to be asked. Ensure links point directly to high-quality, stable primary sources.
+- **TL;DR Links Must Repeat in Body**: Concepts and tools mentioned in the `{{< tldr >}}` section should be hyperlinked if relevant, but because the TL;DR is an optional summary that readers may skip, those same concepts must also be hyperlinked on their first mention within the main post body.
 
 ### Paragraph Style
 
@@ -102,6 +104,7 @@ Every post must have a complete YAML front matter block:
 - [ ] TL;DR block (`{{< tldr >}}...{{< /tldr >}}`) is present at the start of the body before the opening paragraph with a summary and bulleted takeaways.
 - [ ] Featured image placeholder exists at `static/images/posts/YYYY/MM-DD-slug.png` (copied from `static/images/placeholder.png`).
 - [ ] All cross-references and tag links use correct syntax and resolve properly (test with `hugo server --renderToMemory`).
+- [ ] Technical concepts, libraries, frameworks, protocols, and APIs are comprehensively hyperlinked on first mention to authoritative documentation or specifications.
 - [ ] Heading formatting follows conventions (Title Case for ##, Sentence case for ###/####) and hierarchy is flat.
 - [ ] Language is in British English (UK spelling) in both article text and code comments (e.g., "optimise", "colour", "behaviour").
 - [ ] Closing section uses an explicit `## Wrapping Up` heading.
