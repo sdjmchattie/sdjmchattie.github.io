@@ -17,10 +17,10 @@ Numbers are not culturally universal: punctuation marks, digit grouping, and num
 Protecting your applications requires treating input parsing as a localised boundary concern while keeping internal representations strictly invariant.
 
 - **Check locale conventions:** Never assume dots represent decimals or commas group thousands; regional formats like German dots or Swiss apostrophes will break naive parsers.
-- **Normalise non-Latin numerals:** Sanitise Unicode inputs and typography symbols (such as full-width digits and true minus signs) using `NFKC` normalisation.
+- **Normalise non-Latin numerals:** Sanitise Unicode inputs and typography symbols (such as full-width digits and true minus signs) using [NFKC normalisation](https://en.wikipedia.org/wiki/Unicode_equivalence#Normalization).
 - **Expect semicolon CSVs:** Continental European spreadsheet tools export semicolons as delimiters to avoid clashing with decimal commas; use sniffing parsers like `csv.Sniffer`.
 - **Format on blur, unformat on focus:** Keep input fields unformatted and easy to edit while focused on touch devices, applying pretty localised formatting only on blur.
-- **Isolate your core:** Confine locale-aware parsing and formatting to the user-facing edge (using libraries like `Babel` or `Intl.NumberFormat`), keeping domain models and database records purely invariant.
+- **Isolate your core:** Confine locale-aware parsing and formatting to the user-facing edge (using libraries like [Babel](https://babel.pocoo.org/) or [Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat)), keeping domain models and database records purely invariant.
 {{< /tldr >}}
 
 At first glance, numbers appear to be the simplest data type in computer science.
@@ -49,7 +49,7 @@ Arabic locales use distinct typographical marks altogether: the *momayyez* (`٫`
 
 In many other countries, the grouping separator is not punctuation at all.
 French, Russian, and Scandinavian locales use spaces to separate digit clusters (such as `1 234,56`).
-International scientific standards (including ISO 80000-1 and the BIPM) formally mandate spaces instead of commas or dots to eliminate international confusion.
+International scientific standards (including [ISO 80000-1](https://en.wikipedia.org/wiki/ISO_80000-1) and the [BIPM](https://www.bipm.org/)) formally mandate spaces instead of commas or dots to eliminate international confusion.
 
 In software, these numbers rarely use an ordinary ASCII space (`U+0020`), which could allow a line break to orphan trailing digits across two lines.
 Instead, modern typesetting engines insert a non-breaking space (`U+00A0`) or a narrow non-breaking space (`U+202F`) inside figures like `1 000,50`.
@@ -65,7 +65,7 @@ Most Western developers assume that digit grouping always follows a rigid rule o
 You place a separator every three digits to the left of the decimal point: thousands, millions, billions.
 
 This assumption fails in South Asian numbering systems, used across India, Pakistan, Bangladesh, and Nepal.
-The Indian numbering system groups the first three digits, but subsequent digits are clustered in pairs.
+The [Indian numbering system](https://en.wikipedia.org/wiki/Indian_numbering_system) groups the first three digits, but subsequent digits are clustered in pairs.
 This corresponds to traditional units called the *lakh* (one hundred thousand, or `1,00,000`) and the *crore* (ten million, or `1,00,00,000`).
 
 ```python
@@ -117,7 +117,7 @@ print(bool(re.match(r"^[0-9]+$", arabic_digits)))
 ```
 
 While Python's built-in `int()` and `float()` parse Unicode digits natively, downstream SQL drivers and foreign function interfaces often reject them.
-To prevent mysterious validation failures, always normalise incoming text using `unicodedata.normalize('NFKC', text)` before processing.
+To prevent mysterious validation failures, always normalise incoming text using [`unicodedata.normalize('NFKC', text)`](https://docs.python.org/3/library/unicodedata.html#unicodedata.normalize) before processing.
 
 ### Minus signs and negative representations
 
@@ -228,8 +228,8 @@ Resist this urge completely.
 Just as with date arithmetic and timezone calculations, rolling your own number parser is an invitation to production bugs.
 Custom regexes and string splitting routines inevitably break down when confronted with Swiss apostrophes, French narrow non-breaking spaces, or South Asian grouping.
 
-Instead, always delegate parsing to established internationalisation libraries backed by the Unicode Common Locale Data Repository (CLDR).
-In Python, the standard tool for locale-aware number parsing is `Babel`:
+Instead, always delegate parsing to established internationalisation libraries backed by the [Unicode Common Locale Data Repository (CLDR)](https://cldr.unicode.org/).
+In Python, the standard tool for locale-aware number parsing is [Babel](https://babel.pocoo.org/):
 
 ```python
 from babel.numbers import parse_decimal, NumberFormatError
@@ -293,8 +293,8 @@ Everything behind your presentation layer must be strictly invariant:
 
 Culture-aware parsing and formatting should occur solely at the boundary where your software interacts with humans:
 
-- In Python backends, use established libraries like `Babel` or `PyICU` to parse incoming user strings and format outbound displays.
-- In web frontends, rely on the native browser `Intl.NumberFormat` API, which respects the operating system and browser locale without requiring third-party JavaScript bundles.
+- In Python backends, use established libraries like [Babel](https://babel.pocoo.org/) or [PyICU](https://gitlab.pyicu.org/main/pyicu) to parse incoming user strings and format outbound displays.
+- In web frontends, rely on the native browser [`Intl.NumberFormat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat) API, which respects the operating system and browser locale without requiring third-party JavaScript bundles.
 
 By keeping your core logic invariant and pushing localisation to the edge, you ensure that internal calculations remain rock-solid while your users enjoy a tailored, native experience.
 

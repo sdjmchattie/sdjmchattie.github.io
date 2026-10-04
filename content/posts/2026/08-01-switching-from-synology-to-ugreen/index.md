@@ -11,17 +11,17 @@ tags:
 ---
 
 {{< tldr >}}
-Upgrading from a Synology DS418 to a UGREEN NASync DXP2800 delivers massive hardware gains in CPU speed, RAM expandability, and networking throughput.
+Upgrading from a [Synology DS418](https://www.synology.com/en-global/products/DS418) to a [UGREEN NASync DXP2800](https://nas-uk.ugreen.com/products/ugreen-2-bay-nas-storage-76tb) delivers massive hardware gains in CPU speed, RAM expandability, and networking throughput.
 While UGREEN's UGOS software is still maturing, containerised workarounds bridge the gap for self-hosting enthusiasts.
 
-- **Hardware leap:** Enjoy significant performance boosts with an Intel N100 processor, DDR5 RAM, and 2.5GbE networking.
-- **Storage versatility:** Combine high-capacity SATA hard drives with high-speed NVMe M.2 SSD cache pools.
-- **Software maturity trade-off:** UGOS lacks the polished app ecosystem of Synology's DSM but improves rapidly.
-- **Docker fills the gap:** Deploy missing ecosystem tools like backup daemons and media servers via Docker containers.
+- **Hardware leap:** Enjoy significant performance boosts with an [Intel N100](https://ark.intel.com/content/www/us/en/ark/products/231803/intel-processor-n100-6m-cache-up-to-3-40-ghz.html) processor, DDR5 RAM, and [2.5GbE networking](https://en.wikipedia.org/wiki/2.5GBASE-T_and_5GBASE-T).
+- **Storage versatility:** Combine high-capacity SATA hard drives with high-speed [NVMe](https://en.wikipedia.org/wiki/NVM_Express) M.2 SSD cache pools.
+- **Software maturity trade-off:** UGOS lacks the polished app ecosystem of Synology's [DSM](https://www.synology.com/en-global/dsm) but improves rapidly.
+- **Docker fills the gap:** Deploy missing ecosystem tools like backup daemons and media servers via [Docker](https://www.docker.com/) containers.
 {{< /tldr >}}
 
 Finding the perfect home Network Attached Storage (NAS) setup is a balancing act between hardware capabilities and software maturity.
-When Prime Day offered a discount on the [UGREEN NASync DXP2800](https://nas-uk.ugreen.com/products/ugreen-2-bay-nas-storage-76tb), I decided it was time to retire my trusty but ageing four-bay Synology DS418.
+When Prime Day offered a discount on the [UGREEN NASync DXP2800](https://nas-uk.ugreen.com/products/ugreen-2-bay-nas-storage-76tb), I decided it was time to retire my trusty but ageing four-bay [Synology DS418](https://www.synology.com/en-global/products/DS418).
 The hardware upgrade promised to be massive, but moving to UGREEN's young operating system meant navigating several software trade-offs.
 
 In this post, I detail my experience with the migration, comparing the hardware, evaluating the software, and sharing the workarounds I used to keep my services running smoothly.
@@ -38,8 +38,8 @@ The fans themselves are also significantly quieter, making the unit much easier 
 
 From a performance standpoint, the hardware specifications are a major leap forward.
 Going from a four-bay unit to a two-bay unit might seem like a downgrade in capacity.
-However, with the two standard drive bays and two NVMe SSD slots, the UGREEN is essentially a four-bay NAS in disguise.
-The DXP2800 is powered by an Intel N100 processor and comes with 8 GB of DDR5 RAM on a single upgradable stick.
+However, with the two standard drive bays and two [NVMe](https://en.wikipedia.org/wiki/NVM_Express) SSD slots, the UGREEN is essentially a four-bay NAS in disguise.
+The DXP2800 is powered by an [Intel N100](https://ark.intel.com/content/www/us/en/ark/products/231803/intel-processor-n100-6m-cache-up-to-3-40-ghz.html) processor and comes with 8 GB of DDR5 RAM on a single upgradable stick.
 This level of upgradability is a stark contrast to my older Synology, which was locked to its original hardware.
 
 ## The UGOS Pro Software Experience
@@ -47,7 +47,7 @@ This level of upgradability is a stark contrast to my older Synology, which was 
 While the hardware is excellent, UGREEN's operating system, UGOS Pro, reveals the challenges of a younger platform.
 The interface feels sleek and modern, with a dedicated app that provides unified access on both desktop and mobile.
 For users who aren't seasoned system administrators, the management concepts are simple, logical, and easy to understand.
-However, experienced users migrating from Synology's mature DiskStation Manager (DSM) will quickly notice several missing features.
+However, experienced users migrating from Synology's mature [DiskStation Manager (DSM)](https://www.synology.com/en-global/dsm) will quickly notice several missing features.
 
 ### Limited backup options
 
@@ -64,8 +64,8 @@ Because of these limitations, I'm considering returning to a self-hosted [Frigat
 
 ### Lacking built-in DDNS
 
-Unlike Synology, UGREEN doesn't offer a dedicated, out-of-the-box Dynamic DNS (DDNS) service.
-You'll need to configure your own DDNS solution if you require remote access without a VPN.
+Unlike Synology, UGREEN doesn't offer a dedicated, out-of-the-box [Dynamic DNS (DDNS)](https://en.wikipedia.org/wiki/Dynamic_DNS) service.
+You'll need to configure your own DDNS solution if you require remote access without a [VPN](https://en.wikipedia.org/wiki/Virtual_private_network).
 While this task isn't overly complicated, it represents another small friction point for users transitioning from DSM.
 
 ## Essential Workarounds for Power Users
@@ -101,6 +101,6 @@ This has been essential for my two primary integrations: tracking my energy usag
 Migrating from a Synology DS418 to the UGREEN DXP2800 has been a successful upgrade, though it requires a shift in how you manage the server.
 The hardware quality is exceptional and is a massive step up in speed, noise reduction, and build quality.
 There is also a GT version of the hardware available.
-However, I decided it wasn't the right fit for my needs as it moves away from Intel processors and offers DDR4 RAM to accommodate ECC memory, which I would never use.
+However, I decided it wasn't the right fit for my needs as it moves away from Intel processors and offers DDR4 RAM to accommodate [ECC memory](https://en.wikipedia.org/wiki/ECC_memory), which I would never use.
 While UGOS Pro isn't yet as mature as Synology's DSM, the ability to run containerised workarounds makes the platform highly capable.
 If you enjoy [Self Hosting]({{< ref "/tags/self-hosting" >}}) and don't mind configuring a few Docker containers to fill the software gaps, the UGREEN hardware is a fantastic value.

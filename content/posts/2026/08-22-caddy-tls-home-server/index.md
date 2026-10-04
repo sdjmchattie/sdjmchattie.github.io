@@ -12,10 +12,10 @@ tags:
 ---
 
 {{< tldr >}}
-Caddy simplifies reverse proxying your homelab services by automating HTTPS certificate procurement and renewals.
-Using DNS-01 challenges and your own custom domain, you can serve local internal tools over valid TLS without opening router ports.
+[Caddy](https://caddyserver.com/) simplifies reverse proxying your homelab services by automating HTTPS certificate procurement and renewals.
+Using [DNS-01 challenges](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge) and your own custom domain, you can serve local internal tools over valid TLS without opening router ports.
 
-- **Automated TLS:** Issue and renew trusted Let's Encrypt certificates automatically with zero certificate renewal scripts.
+- **Automated TLS:** Issue and renew trusted [Let's Encrypt](https://letsencrypt.org/) certificates automatically with zero certificate renewal scripts.
 - **DNS-01 challenge:** Secure internal homelab services over HTTPS without exposing public ports on your home router.
 - **Concise Caddyfile:** Route subdomains to internal container ports in just three lines of clean configuration.
 - **Internal access control:** Restrict sensitive administrative dashboards to private local IP ranges.
@@ -23,10 +23,10 @@ Using DNS-01 challenges and your own custom domain, you can serve local internal
 
 Running self-hosted tools on your home network is immensely satisfying, but typing IP addresses and ignoring browser security warnings gets old fast.
 I love having a clean, custom domain name backed by valid TLS encryption for all my home services.
-Using a Raspberry Pi 3B as a lightweight reverse proxy with Caddy makes this setup remarkably straightforward.
+Using a [Raspberry Pi](https://www.raspberrypi.com/) 3B as a lightweight reverse proxy with [Caddy](https://caddyserver.com/) makes this setup remarkably straightforward.
 
 Building on my previous guide to [Setting up a cheap home server using Raspberry Pi]({{< ref "../2025/05-03-raspberry-pi-server" >}}), I want to show you how to take your home lab security to the next level.
-Caddy is a modern web server that manages SSL and TLS certificates automatically via Let's Encrypt, meaning you never have to configure renewal scripts manually.
+Caddy is a modern web server that manages SSL and TLS certificates automatically via [Let's Encrypt](https://letsencrypt.org/), meaning you never have to configure renewal scripts manually.
 In this post, I'll walk you through the exact steps I took to route traffic smoothly and secure private internal dashboards.
 
 ## Step 1: Point Your DNS
@@ -73,7 +73,7 @@ Open your router's port forwarding menu and create two new rules targeting your 
 Forward WAN Port 80 to LAN Port 80 on your Raspberry Pi.
 Forward WAN Port 443 to LAN Port 443 on your Raspberry Pi.
 
-Port 80 is essential because Caddy uses it to complete Let's Encrypt HTTP-01 challenge checks, which automatically prove domain ownership.
+Port 80 is essential because Caddy uses it to complete [Let's Encrypt HTTP-01 challenge](https://letsencrypt.org/docs/challenge-types/#http-01-challenge) checks, which automatically prove domain ownership.
 Port 443 handles your encrypted HTTPS traffic and allows Caddy to redirect plain HTTP attempts to secure connections seamlessly.
 
 ## Step 4: Verify HTTPS Access
@@ -113,7 +113,7 @@ mysite.your-domain.com {
 
 ### Proxy network services
 
-If you run homelab applications like Home Assistant or Plex on another device in your house, pass traffic to it using `reverse_proxy`:
+If you run homelab applications like [Home Assistant](https://www.home-assistant.io/) or [Plex](https://www.plex.tv/) on another device in your house, pass traffic to it using `reverse_proxy`:
 
 ```caddyfile
 app.your-domain.com {

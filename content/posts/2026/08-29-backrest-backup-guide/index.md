@@ -12,7 +12,7 @@ tags:
 ---
 
 {{< tldr >}}
-Backrest provides an intuitive web interface on top of Restic, turning command-line backup scripts into a dependable, automated backup platform.
+[Backrest](https://github.com/garethgeorge/backrest) provides an intuitive web interface on top of [Restic](https://restic.net/), turning command-line backup scripts into a dependable, automated backup platform.
 It combines content-addressable deduplication and encryption with schedule management and webhook alerting.
 
 - **Restic backend:** Benefit from fast snapshot deduplication, authenticated encryption, and diverse storage backends.
@@ -25,12 +25,12 @@ Setting up automated backups is often the most overlooked task in home networkin
 It is rarely the most exciting project to tackle, but having a solid backup system gives you immense peace of mind when hardware fails.
 
 While Windows and macOS offer plenty of built-in and commercial backup tools, Linux homelabs require a different approach.
-Restic combined with a modern web interface like Backrest is widely considered one of the gold standards for Linux backups.
+[Restic](https://restic.net/) combined with a modern web interface like [Backrest](https://github.com/garethgeorge/backrest) is widely considered one of the gold standards for Linux backups.
 You can run Backrest and Restic on Windows and macOS as well, but this guide focuses specifically on Linux and containerised NAS environments.
 
 I recently moved my primary backup workflow to a UGREEN NASync DXP2800 running Docker, but the setup I use applies to any Linux server or workstation.
 In this guide, I'll walk you through setting up Backrest, configuring your first repositories and plans, and avoiding common traps like drive choking on SMR disks.
-Towards the end, I'll also compare this approach against alternatives like Borg and native NAS tools so you can see why Backrest and Restic are recommended.
+Towards the end, I'll also compare this approach against alternatives like [Borg](https://www.borgbackup.org/) and native NAS tools so you can see why Backrest and Restic are recommended.
 
 ## Core Concepts
 
@@ -151,7 +151,7 @@ If you use an external 2.5-inch USB hard drive as a backup target, you might enc
 When I started my first major backup run, performance was fast for the first 50 to 100 gigabytes before dropping to a crawl.
 Disk latency spiked and write speeds collapsed to single-digit megabytes per second.
 
-This slowdown occurs because higher-capacity 2.5-inch external hard drives rely on Shingled Magnetic Recording (SMR) to fit high storage densities into a compact physical form factor.
+This slowdown occurs because higher-capacity 2.5-inch external hard drives rely on [Shingled Magnetic Recording (SMR)](https://en.wikipedia.org/wiki/Shingled_magnetic_recording) to fit high storage densities into a compact physical form factor.
 SMR drives overlap magnetic tracks like roof shingles to maximise capacity, using a small internal conventional cache buffer to handle incoming writes.
 Because Restic compresses and deduplicates data into many small 16 MB pack files by default, the stream of small non-sequential writes quickly overflows the drive's cache.
 The drive controller is then forced into constant read-modify-write cycles across overlapping tracks, choking disk throughput.
@@ -175,8 +175,8 @@ A practical strategy for SMR drives is to only run `prune` when your backup driv
 
 Selecting the right filesystem for your backup drives requires balancing Linux NAS performance with disaster recovery access.
 
-For internal NAS storage pools, `Btrfs` is a strong option because it provides copy-on-write snapshotting and pool-level checksumming.
-For external USB drives attached to a Linux NAS, `ext4` is by far the best choice.
+For internal NAS storage pools, [`Btrfs`](https://en.wikipedia.org/wiki/Btrfs) is a strong option because it provides copy-on-write snapshotting and pool-level checksumming.
+For external USB drives attached to a Linux NAS, [`ext4`](https://en.wikipedia.org/wiki/Ext4) is by far the best choice.
 Using non-Linux filesystems like NTFS or exFAT on your NAS backup targets can introduce significant write overhead and risks stripping POSIX metadata that Restic uses to ensure robust backups.
 
 You should still consider how you would recover data if your primary NAS hardware suffers a catastrophic failure.
@@ -188,7 +188,7 @@ Sticking with `ext4` on Linux backup targets guarantees optimal performance and 
 While local NAS repositories protect against accidental file deletion or local drive failure, storing an offsite copy protects your data against fire or hardware theft.
 Restic natively supports cloud destinations using the exact same repository encryption and deduplication model.
 
-Backrest allows you to add cloud destinations alongside your local repositories, supporting Amazon S3, Backblaze B2, Google Cloud Storage, and Azure Blob Storage.
+Backrest allows you to add cloud destinations alongside your local repositories, supporting Amazon S3, [Backblaze B2](https://www.backblaze.com/cloud-storage), Google Cloud Storage, and Azure Blob Storage.
 Because Restic encrypts data client-side before uploading, your cloud provider cannot read your files or view directory structures.
 Adding a Backblaze B2 or S3 bucket as a secondary repository target provides inexpensive offsite protection for your most critical data.
 

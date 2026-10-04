@@ -19,7 +19,7 @@ Relying on mature timezone databases and UTC storage protects your data from cat
 - **Time is not uniform:** Days do not always have 86,400 seconds, and hours can repeat or disappear during DST transitions.
 - **Store UTC canonically:** Persist timestamps in UTC or Unix epochs, reserving localised conversions strictly for display.
 - **Historic calendar quirks:** Gregorian shifts and legacy spreadsheet bugs (like Excel's 1900 leap year bug) break naive math.
-- **Use established libraries:** Delegate temporal arithmetic to battle-tested libraries like Python's `zoneinfo` and `dateutil`.
+- **Use established libraries:** Delegate temporal arithmetic to battle-tested libraries like Python's [`zoneinfo`](https://docs.python.org/3/library/zoneinfo.html) and [`dateutil`](https://dateutil.readthedocs.io/).
 {{< /tldr >}}
 
 At some point in every developer's career, a tempting thought arrives.
@@ -87,11 +87,11 @@ This means the year 2000 was a leap year, but 1900 was not, and 2100 will not be
 If your homegrown date code relies solely on `year % 4 == 0`, your calendar will desynchronise every century.
 
 Even more entertaining is how this exact oversight became embedded in the world's most ubiquitous spreadsheet software.
-Back in 1983, the groundbreaking spreadsheet programme Lotus 1-2-3 stored dates as serial integers starting with day 1 on 1 January 1900.
+Back in 1983, the groundbreaking spreadsheet programme [Lotus 1-2-3](https://en.wikipedia.org/wiki/Lotus_1-2-3) stored dates as serial integers starting with day 1 on 1 January 1900.
 However, the developers of Lotus 1-2-3 made an error: they coded 1900 as a leap year, creating a fictitious date for 29 February 1900.
 
 When Microsoft created Excel, Lotus 1-2-3 dominated the PC spreadsheet market.
-To ensure full file compatibility with existing Lotus worksheets, Microsoft intentionally replicated the bug.
+To ensure full file compatibility with existing Lotus worksheets, Microsoft intentionally replicated the [Excel 1900 leap year bug](https://learn.microsoft.com/en-us/office/troubleshoot/excel/wrongly-assumes-1900-is-leap-year).
 
 ```text
 Excel Serial Date 59:  28 February 1900
@@ -174,7 +174,7 @@ Other political surprises occur regularly:
 - In March 2023, the Lebanese government announced a postponement of daylight saving time with only two days of notice, creating a temporary dual-timezone crisis where airlines, telecoms, and citizens operated on conflicting clocks.
 - Countries frequently abolish or reinstate DST on months or weeks of notice.
 
-This volatility is why the Internet Assigned Numbers Authority (IANA) maintains the Time Zone Database (commonly referred to as `tzdata` or the Olson database).
+This volatility is why the Internet Assigned Numbers Authority (IANA) maintains the [Time Zone Database](https://www.iana.org/time-zones) (commonly referred to as `tzdata` or the Olson database).
 Maintained by a global community of volunteers, this database releases multiple emergency updates each year to ensure your servers recognise shifting local laws.
 
 ### 1 minute != 60 seconds
@@ -187,7 +187,7 @@ Earth's rotation is not a precision timepiece; tidal friction from oceans and sh
 Meanwhile, the official scientific definition of a second is measured with atomic clocks using the vibrations of caesium-133 atoms.
 Because atomic clocks keep perfect time while the Earth wobbles, solar time and atomic time slowly drift apart.
 
-To prevent solar noon from drifting away from 12:00:00, the International Earth Rotation and Reference Systems Service (IERS) introduces occasional leap seconds.
+To prevent solar noon from drifting away from 12:00:00, the [International Earth Rotation and Reference Systems Service (IERS)](https://www.iers.org/) introduces occasional leap seconds.
 When a leap second is decreed on 30 June or 31 December, an extra second is inserted into the day: `23:59:60`.
 
 ```text
@@ -204,7 +204,7 @@ The real-world fallout from leap seconds has been catastrophic for software.
 In 2012 and 2015, leap seconds triggered widespread outages across major platforms including Reddit, Mozilla, Yelp, and Qantas airlines.
 Linux servers suffered a notorious kernel deadlock in the `futex` subsystem, spinning CPU cores to 100% utilisation simultaneously across global datacentres.
 
-To prevent these disasters, major cloud providers like Google, AWS, and Cloudflare developed "leap smearing".
+To prevent these disasters, major cloud providers like Google, AWS, and Cloudflare developed "[leap smearing](https://developers.google.com/time/smear)".
 Instead of inserting a sudden 61st second, their NTP servers slow down clock ticks by a fraction of a percent across a 24-hour window, gently absorbing the extra second without applications noticing.
 The operational headache proved so severe that in 2022, international metrology bodies voted to phase out leap seconds entirely by 2035.
 
@@ -223,7 +223,7 @@ elapsed = time.time() - start_time
 ```
 
 This code contains a critical flaw.
-System wall clocks synchronise with external time sources across the internet using the Network Time Protocol (NTP).
+System wall clocks synchronise with external time sources across the internet using the [Network Time Protocol (NTP)](https://en.wikipedia.org/wiki/Network_Time_Protocol).
 
 If your server's clock drifts ahead and NTP issues a correction, the system clock can jump backwards.
 When that occurs during your task, `elapsed` evaluates to a negative number.
@@ -259,7 +259,7 @@ Even standard strings without timezone offsets (such as `"2026-05-04 14:30:00"`)
 
 To guarantee reliability, follow these foundational storage rules:
 
-- **Store Unix epoch timestamps or strict UTC ISO 8601 strings**: Persist time on disk as integer or floating-point seconds since the Unix epoch (1 January 1970 UTC), or as an explicit ISO 8601 string with a trailing `Z` offset (`2026-05-04T14:30:00Z`).
+- **Store Unix epoch timestamps or strict UTC ISO 8601 strings**: Persist time on disk as integer or floating-point seconds since the Unix epoch (1 January 1970 UTC), or as an explicit [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) string with a trailing `Z` offset (`2026-05-04T14:30:00Z`).
 The `Z` stands for "Zulu time", borrowed from maritime and aviation communication where the zero-meridian UTC offset (`+00:00`) was designated with the letter Z.
 Omitting the `Z` creates a "naive" timestamp with no timezone metadata, forcing databases and client browsers to guess the local offset and inviting silent corruption.
 - **Convert only at the user boundary**: Treat timezones purely as a presentation-layer concern. Your database and backend pipelines should operate exclusively in UTC, transforming to local wall time only when rendering the interface for a human reader.
@@ -269,7 +269,7 @@ Omitting the `Z` creates a "naive" timestamp with no timezone metadata, forcing 
 
 Rather than re-inventing calendar arithmetic, rely on mature libraries that incorporate decades of edge-case handling:
 
-In Python, combine the standard library's `zoneinfo` module (introduced in Python 3.9) with `dateutil.relativedelta`:
+In Python, combine the standard library's [`zoneinfo`](https://docs.python.org/3/library/zoneinfo.html) module (introduced in Python 3.9) with [`dateutil.relativedelta`](https://dateutil.readthedocs.io/en/stable/relativedelta.html):
 
 ```python
 from datetime import datetime
@@ -298,11 +298,11 @@ However, notice that even specialised libraries cannot make calendar maths rever
 If you subtract one month from that resulting date (`datetime(2026, 2, 28) - relativedelta(months=1)`), you will land on 28 January, not 31 January.
 The library provides convenient month deltas, but because end-of-month clamping inherently discards information, reversible arithmetic over month deltas remains mathematically impossible.
 
-In modern JavaScript and TypeScript environments, the standard `Temporal` API replaces the legacy `Date` object with immutable, timezone-aware primitives (`Temporal.ZonedDateTime` and `Temporal.PlainDate`).
+In modern JavaScript and TypeScript environments, the standard [`Temporal`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal) API replaces the legacy `Date` object with immutable, timezone-aware primitives (`Temporal.ZonedDateTime` and `Temporal.PlainDate`).
 
 ## The Year 2038 Problem
 
-Even if you follow best practice and store Unix timestamps, there is a legendary elephant in the room: the Year 2038 problem, often dubbed the "Epochalypse".
+Even if you follow best practice and store Unix timestamps, there is a legendary elephant in the room: the [Year 2038 problem](https://en.wikipedia.org/wiki/Year_2038_problem), often dubbed the "Epochalypse".
 
 Historically, Unix systems represented timestamps as signed 32-bit integers counting seconds since 1 January 1970 UTC.
 A signed 32-bit integer maxes out at a value of 2,147,483,647.

@@ -13,17 +13,17 @@ tags:
 ---
 
 {{< tldr >}}
-Benchmarking Gemini 3.1 Pro against the 1991 QBasic Gorillas challenge yields a bug-free build on the first attempt, but Claude Opus remains the undisputed champion.
+Benchmarking Gemini 3.1 Pro against the 1991 [QBasic Gorillas](https://en.wikipedia.org/wiki/Gorillas_(video_game)) challenge yields a bug-free build on the first attempt, but Claude Opus remains the undisputed champion.
 Gemini achieves working gameplay only by quietly cutting corners: stripping pixel art, ignoring terrain destruction, and bypassing Godot's visual scene editor with imperative code.
 
 - **Claude Opus remains champion:** Anthropic's model retained the nostalgic soul of Gorillas with authentic pixel art and destructible scenery.
 - **Flawless first run:** Gemini executed cleanly with zero crashes, perfect turn alternation, and accurate projectile math out of the box.
 - **Silent compromises:** Gemini replaced pixel art with flat coloured boxes and omitted wind and crater destruction without consulting the user.
-- **Un-idiomatic Godot architecture:** Building the entire UI imperatively in GDScript rather than using `.tscn` scene files makes the project painful to maintain.
+- **Un-idiomatic Godot architecture:** Building the entire UI imperatively in [GDScript](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html) rather than using `.tscn` scene files makes the project painful to maintain.
 - **The verdict:** Gemini acts as a "corner-cutting pragmatist" that prioritises a functioning build over visual fidelity and collaborative transparency.
 {{< /tldr >}}
 
-A few months ago, I ran an experiment asking two leading AI coding tools to recreate the classic 1991 QBasic game Gorillas in Godot 4.
+A few months ago, I ran an experiment asking two leading AI coding tools to recreate the classic 1991 QBasic game [Gorillas](https://en.wikipedia.org/wiki/Gorillas_(video_game)) in [Godot 4](https://godotengine.org/).
 In my [previous Gorillas post]({{< ref "03-28-claude-code-vs-codex-gorillas" >}}), I pitted Anthropic's Claude Opus 4.6 against OpenAI's GPT 5.3 Codex.
 Both generated playable games from a single prompt, though their architectural philosophies and visual fidelities diverged significantly.
 
@@ -52,7 +52,7 @@ You can also play each version directly in your browser:
 
 ## Clarification and Planning
 
-Before generating any GDScript files, each tool had the chance to ask clarifying questions.
+Before generating any [GDScript](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html) files, each tool had the chance to ask clarifying questions.
 Observing how an agent clarifies scope reveals a lot about its problem-solving style.
 
 In the original benchmark, both Codex and Claude Code output plain text lists of questions and expected me to manually type out answers to everything in freeform text.

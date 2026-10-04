@@ -16,11 +16,11 @@ tags:
 Delimited text files look like trivial string-splitting problems, but real-world exports contain complex quote escaping, embedded newlines, byte order marks, and security vulnerabilities.
 Rolling your own CSV parser almost always introduces silent data corruption and severe security risks.
 
-- **Ditch naive line splitting:** Never use `line.split(",")` or `line.strip()`; embedded commas and RFC 4180 quote doubling require a proper parser state machine.
+- **Ditch naive line splitting:** Never use `line.split(",")` or `line.strip()`; embedded commas and [RFC 4180](https://datatracker.ietf.org/doc/html/rfc4180) quote doubling require a proper parser state machine.
 - **Pass file streams directly:** Avoid reading line-by-line before parsing; quoted fields often span multiple physical lines, and pre-splitting shatters row boundaries.
-- **Strip invisible byte order marks:** Use Python's `utf-8-sig` encoding to prevent hidden BOM characters (`\ufeff`) from corrupting your first column header.
+- **Strip invisible byte order marks:** Use Python's `utf-8-sig` encoding to prevent hidden [byte order marks](https://en.wikipedia.org/wiki/Byte_order_mark) (`\ufeff`) from corrupting your first column header.
 - **Sniff external dialects:** Do not assume commas; continental European tools export semicolon delimiters to avoid clashing with decimal commas.
-- **Sanitise against formula injection:** Prefix cells beginning with `=`, `+`, `-`, `@`, or `|` with a single quote before exporting to spreadsheet users.
+- **Sanitise against formula injection:** Prefix cells beginning with `=`, `+`, `-`, `@`, or `|` with a single quote before exporting to spreadsheet users to protect against [formula injection](https://owasp.org/www-community/attacks/CSV_Injection).
 {{< /tldr >}}
 
 Every software engineer has, at some point, written a CSV parser in a single line of code.
@@ -63,7 +63,7 @@ Worse still, this failure often occurs without throwing an exception, quietly po
 ## Quoting and Escaping: The RFC 4180 Standard
 
 To prevent embedded commas from destroying column boundaries, data producers enclose complex fields in double quotation marks.
-The formal specification for this behaviour is defined in RFC 4180.
+The formal specification for this behaviour is defined in [RFC 4180](https://datatracker.ietf.org/doc/html/rfc4180).
 While RFC 4180 is widely recognised, developers unfamiliar with its exact mechanics frequently make wrong assumptions about how escaping works.
 
 In most programming languages, you escape a quotation mark using a backslash (`\"`).
@@ -90,7 +90,7 @@ print(naive_tokens)
 ```
 
 While regular expressions can theoretically tokenise simple cases, they quickly degrade into unreadable, fragile patterns when dealing with escaped quotes at field boundaries.
-Rather than crafting complex regular expressions, rely on Python's built-in `csv` module, which implements an RFC 4180-compliant state machine:
+Rather than crafting complex regular expressions, rely on Python's built-in [`csv` module](https://docs.python.org/3/library/csv.html), which implements an RFC 4180-compliant state machine:
 
 ```python
 import csv
@@ -151,7 +151,7 @@ By allowing the parser to control stream reading, multiline fields remain intact
 ## The Ghost in the Header: Byte Order Marks
 
 Even when your quoting and line handling are flawless, character encoding can still cause silent system failures.
-One of the most frustrating bugs involves the Byte Order Mark (BOM).
+One of the most frustrating bugs involves the [Byte Order Mark (BOM)](https://en.wikipedia.org/wiki/Byte_order_mark).
 
 The BOM is a specific sequence of bytes placed at the very start of a file to signal its Unicode endianness.
 In UTF-8, a BOM is represented by the three-byte hexadecimal sequence `EF BB BF`.
@@ -273,7 +273,7 @@ This pattern ensures that single-line corruptions do not halt business-critical 
 
 ## Security: Neutralising Formula Injection
 
-While parsing bugs cause operational headaches, exporting CSV files introduces a severe security vulnerability known as CSV Injection (or Formula Injection).
+While parsing bugs cause operational headaches, exporting CSV files introduces a severe security vulnerability known as [CSV Injection (or Formula Injection)](https://owasp.org/www-community/attacks/CSV_Injection).
 
 Many business applications allow users to export data to CSV so that managers can analyse results in Microsoft Excel, LibreOffice Calc, or Google Sheets.
 Spreadsheet software does not merely display text; it actively evaluates formulas.
@@ -285,7 +285,7 @@ Consider an application where a malicious user registers an account with the fol
 =cmd|' /C calc'!A0
 ```
 
-When a system administrator exports a user list to CSV and opens the file in Excel, the spreadsheet can trigger Dynamic Data Exchange (DDE) and execute arbitrary commands on the administrator's workstation.
+When a system administrator exports a user list to CSV and opens the file in Excel, the spreadsheet can trigger [Dynamic Data Exchange (DDE)](https://en.wikipedia.org/wiki/Dynamic_Data_Exchange) and execute arbitrary commands on the administrator's workstation.
 Even without DDE execution, an attacker can steal confidential data using built-in spreadsheet functions:
 
 ```text

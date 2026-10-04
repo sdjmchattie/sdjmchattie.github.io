@@ -12,12 +12,12 @@ tags:
 
 {{< tldr >}}
 Python 3.14 and 3.15 introduce architectural milestones that fundamentally improve multi-core performance and startup efficiency.
-From free-threaded execution without the GIL to explicit lazy imports, modern Python is evolving rapidly.
+From [free-threaded execution](https://docs.python.org/3.14/howto/free-threading-python.html) without the [Global Interpreter Lock (GIL)](https://wiki.python.org/moin/GlobalInterpreterLock) to [explicit lazy imports](https://peps.python.org/pep-0810/), modern Python is evolving rapidly.
 
 - **Free-threaded Python:** Run CPU-bound threads across multiple cores concurrently as GIL removal matures.
-- **Explicit lazy imports:** Reduce application startup times and memory footprints by deferring module loads until execution.
-- **Template string literals:** Simplify structured string formatting and SQL/HTML injection protection with PEP 750.
-- **Interpreter optimisations:** Benefit from tiered JIT compilation improvements delivering faster runtime performance.
+- **Explicit lazy imports:** Reduce application startup times and memory footprints by deferring module loads until execution with [PEP 810](https://peps.python.org/pep-0810/).
+- **Template string literals:** Simplify structured string formatting and SQL/HTML injection protection with [PEP 750](https://peps.python.org/pep-0750/).
+- **Interpreter optimisations:** Benefit from tiered [JIT compilation](https://docs.python.org/3.13/whatsnew/3.13.html#whatsnew313-jit) improvements delivering faster runtime performance.
 {{< /tldr >}}
 
 Python continues to evolve at a breakneck pace, and the recent releases are bringing some of the most fundamental shifts the language has seen in years.
@@ -37,31 +37,31 @@ It brings several massive architectural changes that you can start leveraging to
 
 ### The end of the GIL
 
-The headline feature of Python 3.14 is undoubtedly the official support for running Python without the Global Interpreter Lock (GIL).
+The headline feature of Python 3.14 is undoubtedly the official support for running Python without the [Global Interpreter Lock (GIL)](https://wiki.python.org/moin/GlobalInterpreterLock).
 For over two decades, the GIL has prevented multiple native threads from executing Python bytecodes simultaneously.
 This meant that CPU-bound Python programs couldn't natively take full advantage of multi-core processors without resorting to complex multiprocessing workarounds.
-With free-threaded CPython now a reality, you can write multi-threaded applications that truly scale across your CPU cores.
+With [free-threaded CPython](https://docs.python.org/3.14/howto/free-threading-python.html) now a reality, you can write multi-threaded applications that truly scale across your CPU cores.
 If you're building data processing pipelines or computationally heavy backends, this alone is a massive upgrade.
 
 ### Template string literals
 
-Another fantastic addition in Python 3.14 is the introduction of template string literals, or t-strings.
-While f-strings are incredibly convenient, they execute immediately and can be dangerous if used to construct SQL queries or HTML, as they are vulnerable to injection attacks.
+Another fantastic addition in Python 3.14 is the introduction of [template string literals](https://peps.python.org/pep-0750/), or t-strings.
+While f-strings are incredibly convenient, they execute immediately and can be dangerous if used to construct SQL queries or HTML, as they are vulnerable to [injection attacks](https://owasp.org/www-community/attacks/Code_Injection).
 T-strings solve this by introducing a new `t"..."` prefix.
 Instead of evaluating the string immediately, t-strings allow library authors to intercept the interpolation process.
 This means your database ORM or templating engine can safely sanitise the inputs before the final string is constructed.
 
 ### Deferred evaluation of annotations
 
-Another major change under the hood is how Python handles type annotations, officially implemented via PEP 649.
+Another major change under the hood is how Python handles type annotations, officially implemented via [PEP 649](https://peps.python.org/pep-0649/).
 Previously, type hints were evaluated when the module was loaded, which caused performance hits and cyclical import issues.
 Now, annotations are evaluated lazily only when they are explicitly requested.
-This results in faster application startup times and completely eliminates the need for the `from __future__ import annotations` workaround that has plagued Python codebases for years.
+This results in faster application startup times and completely eliminates the need for the [`from __future__ import annotations`](https://peps.python.org/pep-0563/) workaround that has plagued Python codebases for years.
 
 ### A vastly improved REPL
 
 If you spend a lot of time in the terminal, Python 3.14 brings a massive quality-of-life upgrade to the default interactive shell.
-The built-in REPL now supports native syntax highlighting, making your code much easier to read without installing third-party tools like IPython.
+The built-in REPL now supports native syntax highlighting, making your code much easier to read without installing third-party tools like [IPython](https://ipython.org/).
 It also features greatly improved multi-line editing and history management.
 When you paste large blocks of code, the REPL handles the indentation intelligently instead of throwing unexpected syntax errors.
 
@@ -74,7 +74,7 @@ This upcoming version focuses heavily on developer ergonomics and startup perfor
 
 ### Explicit lazy imports
 
-One of the most anticipated features for improving startup times is explicit lazy imports, introduced via PEP 810.
+One of the most anticipated features for improving startup times is explicit lazy imports, introduced via [PEP 810](https://peps.python.org/pep-0810/).
 You'll be able to use the `lazy` keyword to defer the execution of imported modules until they are actually accessed in your code.
 This is particularly beneficial for large CLI tools or applications with heavy dependencies that aren't needed in every execution path.
 
@@ -92,13 +92,13 @@ By adopting lazy imports, you can drastically reduce the memory footprint and in
 ### The built-in frozendict
 
 For years, developers have relied on third-party libraries or workarounds to create immutable dictionaries.
-Python 3.15 finally brings `frozendict` into the built-in namespace.
+Python 3.15 finally brings `frozendict` into the built-in namespace via [PEP 814](https://peps.python.org/pep-0814/).
 This provides a standard, highly optimised way to create read-only mapping objects.
 You can use `frozendict` to ensure configuration dictionaries cannot be accidentally mutated by downstream functions, improving the predictability and safety of your code.
 
 ### Unpacking in comprehensions
 
-Python 3.15 continues to refine the language's syntax, and PEP 798 introduces unpacking inside comprehensions.
+Python 3.15 continues to refine the language's syntax, and [PEP 798](https://peps.python.org/pep-0798/) introduces unpacking inside comprehensions.
 This means you can now elegantly unpack iterables directly within list or dictionary comprehensions, avoiding nested loops or clunky helper functions.
 It makes data transformation pipelines much more concise and Pythonic, allowing you to flatten complex structures with minimal boilerplate.
 
@@ -106,7 +106,7 @@ It makes data transformation pipelines much more concise and Pythonic, allowing 
 
 When writing libraries or complex APIs, developers frequently need a unique sentinel object to distinguish between a missing value and an explicitly provided `None`.
 For years, the standard workaround has been creating an empty class or using the `object()` instance.
-Python 3.15 solves this by introducing a built-in sentinel type via PEP 661.
+Python 3.15 solves this by introducing a built-in sentinel type via [PEP 661](https://peps.python.org/pep-0661/).
 This provides a clean, unified standard for creating sentinel values that type checkers can understand and validate natively.
 
 ## Wrapping Up

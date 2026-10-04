@@ -17,8 +17,8 @@ Standard floating-point numbers cannot represent decimal fractions precisely, ca
 Building reliable financial software requires exact decimal arithmetic, rigorous rounding modes, and robust database types.
 
 - **Never use floats:** Binary floats like `0.1 + 0.2` introduce precision drift that corrupts financial ledgers.
-- **Use Decimal types:** Perform monetary arithmetic using Python's `decimal.Decimal` with explicit rounding contexts.
-- **Select rounding modes:** Use Banker's Rounding (`ROUND_HALF_EVEN`) to eliminate cumulative statistical bias in large runs.
+- **Use Decimal types:** Perform monetary arithmetic using Python's [`decimal.Decimal`](https://docs.python.org/3/library/decimal.html) with explicit rounding contexts.
+- **Select rounding modes:** Use [Banker's Rounding](https://en.wikipedia.org/wiki/Rounding#Round_half_to_even) (`ROUND_HALF_EVEN`) to eliminate cumulative statistical bias in large runs.
 - **Persist exact quantities:** Store financial balances using database `NUMERIC`/`DECIMAL` types or integer minor units.
 {{< /tldr >}}
 
@@ -46,7 +46,7 @@ To understand why standard floats fail for money, look at how modern computers r
 
 ### The base-2 representation trap
 
-Most programming languages implement floating-point numbers using the IEEE 754 double-precision standard.
+Most programming languages implement floating-point numbers using the [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) double-precision standard.
 In binary, numbers are stored as sums of powers of two (such as 1/2, 1/4, 1/8, and 1/16).
 
 In base 10, fractions like 1/10 (0.1) are clean and finite.
@@ -164,7 +164,7 @@ Payment processors like Stripe expose API amounts as integers in minor units (su
 However, treating integers as a universal cure-all ignores currency standards and modern pricing models.
 
 First, not all currencies divide into 100 subunits.
-Under ISO 4217, zero-decimal currencies like the Japanese Yen (`JPY`) have no minor units, while three-decimal currencies like the Kuwaiti Dinar (`KWD`) divide into 1,000 fils.
+Under [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217), zero-decimal currencies like the Japanese Yen (`JPY`) have no minor units, while three-decimal currencies like the Kuwaiti Dinar (`KWD`) divide into 1,000 fils.
 Multiplying unconditionally by 100 overcharges Japanese customers a hundredfold and corrupts Kuwaiti accounts.
 
 Second, modern billing frequently operates below a single penny.
@@ -202,7 +202,7 @@ No money is created or destroyed, and the ledger balances to the exact penny.
 To protect your codebase from these pitfalls, you should represent currency as a formal Value Object rather than a raw numeric primitive.
 The Money pattern encapsulates an exact numerical amount alongside its ISO 4217 currency code.
 
-In Python, the standard library provides the `decimal` module, which offers exact decimal arithmetic and configurable rounding modes.
+In Python, the standard library provides the [`decimal` module](https://docs.python.org/3/library/decimal.html), which offers exact decimal arithmetic and configurable rounding modes.
 Here is a lightweight, immutable implementation of the Money pattern using a dataclass with built-in allocation:
 
 ```python

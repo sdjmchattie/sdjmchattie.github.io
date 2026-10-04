@@ -13,16 +13,16 @@ tags:
 ---
 
 {{< tldr >}}
-Terraform revolutionises cloud management by treating infrastructure as declarative, version-controlled code.
+[Terraform](https://www.terraform.io/) revolutionises cloud management by treating infrastructure as declarative, version-controlled code.
 It ensures reproducible deployments across cloud providers through state tracking, execution planning, and provider ecosystems.
 
-- **Declarative syntax:** Define desired cloud state in HCL without managing procedural deployment scripts.
+- **Declarative syntax:** Define desired cloud state in [HCL](https://github.com/hashicorp/hcl) without managing procedural deployment scripts.
 - **Plan before apply:** Preview proposed infrastructure creations, changes, and destructions using `terraform plan`.
 - **State management:** Store state files securely in remote backends with state locking to prevent deployment collisions.
 - **Multi-cloud flexibility:** Manage AWS, GCP, Azure, and third-party SaaS tools through a unified workflow.
 {{< /tldr >}}
 
-Just like top terraformers in Minecraft reshape entire landscapes to build incredible worlds, mastering Terraform in software engineering gives you complete control over your digital infrastructure.
+Just like top terraformers in Minecraft reshape entire landscapes to build incredible worlds, mastering [Terraform](https://www.terraform.io/) in software engineering gives you complete control over your digital infrastructure.
 Instead of manually clicking through cloud management consoles, you define your entire infrastructure estate in declarative code.
 
 In this guide, I explore the virtues of Infrastructure as Code (IaC), examine how Terraform compares to other tools, and walk through the core syntax you need to get started.
@@ -44,7 +44,7 @@ Infrastructure as Code solves every single one of these problems by treating you
 
 ## The Virtues of Infrastructure as Code
 
-Infrastructure as Code is the practice of managing and provisioning computing resources through machine-readable definition files rather than physical hardware configuration or interactive web consoles.
+[Infrastructure as Code (IaC)](https://en.wikipedia.org/wiki/Infrastructure_as_code) is the practice of managing and provisioning computing resources through machine-readable definition files rather than physical hardware configuration or interactive web consoles.
 
 ### Reproducibility and consistency
 
@@ -69,7 +69,7 @@ The Infrastructure as Code ecosystem contains a variety of tools, and newcomers 
 
 ### Provisioning versus configuration management
 
-The most common point of confusion is the distinction between tools like **Terraform** and tools like **Ansible**, Chef, or Puppet.
+The most common point of confusion is the distinction between tools like **Terraform** and tools like [Ansible](https://www.ansible.com/), [Chef](https://www.chef.io/), or [Puppet](https://www.puppet.com/).
 
 - **Infrastructure provisioning (Terraform)**: Specialised in creating foundational cloud resources from scratch.
   It creates virtual private clouds (VPCs), subnets, compute instances, object storage buckets, managed databases, and DNS records.
@@ -82,8 +82,8 @@ While Ansible can technically create cloud resources and Terraform can run shell
 
 Major cloud vendors provide their own proprietary IaC solutions:
 
-- **AWS CloudFormation & AWS CDK**: Purpose-built for Amazon Web Services.
-- **Azure Resource Manager (ARM) & Azure Bicep**: Tailored exclusively for Microsoft Azure.
+- **[AWS CloudFormation](https://aws.amazon.com/cloudformation/) & AWS CDK**: Purpose-built for Amazon Web Services.
+- **Azure Resource Manager (ARM) & [Azure Bicep](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/)**: Tailored exclusively for Microsoft Azure.
 - **Google Cloud Deployment Manager**: Designed solely for Google Cloud Platform.
 
 These vendor-specific tools work well within their respective walled gardens, but they tie your workflows to a single cloud provider.
@@ -107,7 +107,7 @@ Terraform is built around a small set of straightforward concepts that work toge
 
 ### Declarative syntax with HCL
 
-Terraform uses **HashiCorp Configuration Language (HCL)**.
+Terraform uses [**HashiCorp Configuration Language (HCL)**](https://github.com/hashicorp/hcl).
 HCL is a declarative language, which means you describe *what* you want your infrastructure to look like, not *how* to build it step by step.
 
 Terraform inspects your desired state, queries your current infrastructure, calculates the differences, and builds an execution graph to apply the necessary changes in the correct order.
@@ -236,7 +236,7 @@ As you adopt Terraform across your team, keeping a few critical principles in mi
   Always add `*.tfstate`, `*.tfstate.backup`, and `*.tfvars` to your `.gitignore` file.
 - **Pin provider versions**: Always specify version constraints in your `required_providers` block.
   This prevents unexpected breaking changes when provider maintainers release new major versions.
-- **Consider OpenTofu for open-source workflows**: Following HashiCorp's transition to the Business Source License (BSL) in 2023, the open-source community created **OpenTofu** under the Linux Foundation.
+- **Consider OpenTofu for open-source workflows**: Following HashiCorp's transition to the Business Source License (BSL) in 2023, the open-source community created [**OpenTofu**](https://opentofu.org/) under the Linux Foundation.
   OpenTofu serves as a drop-in, fully open-source alternative that supports the same HCL syntax and provider ecosystem.
 
 ## Wrapping Up

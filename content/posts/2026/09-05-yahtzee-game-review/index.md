@@ -21,7 +21,7 @@ Mastering the game requires balancing high-variance 50-point bonuses against the
 {{< /tldr >}}
 
 Few sounds in tabletop gaming are quite as satisfying as the clatter of five wooden or plastic dice tumbling out of a shaker cup onto a dining table.
-Invented in the 1950s by an anonymous Canadian couple on their yacht and later acquired by game entrepreneur Edwin S. Lowe, Yahtzee remains one of the world's most enduring and accessible dice games.
+Invented in the 1950s by an anonymous Canadian couple on their yacht and later acquired by game entrepreneur [Edwin S. Lowe](https://en.wikipedia.org/wiki/Edwin_S._Lowe), [Yahtzee](https://en.wikipedia.org/wiki/Yahtzee) remains one of the world's most enduring and accessible dice games.
 Returning to this childhood favourite as an adult reveals just how much genuine tactical tension sits beneath its cheerful roll-and-write exterior.
 
 While it is easy to dismiss Yahtzee as pure luck, experienced players know that the game is really an exercise in probability management and risk mitigation.

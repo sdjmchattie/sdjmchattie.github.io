@@ -11,11 +11,11 @@ tags:
 ---
 
 {{< tldr >}}
-Beyond mainstream packages like Pandas and Requests, Python boasts a rich collection of high-leverage utility libraries and modern patterns.
+Beyond mainstream packages like [Pandas](https://pandas.pydata.org/) and [Requests](https://requests.readthedocs.io/), Python boasts a rich collection of high-leverage utility libraries and modern patterns.
 Adopting these lesser-known tools eliminates boilerplate code and boosts application robustness.
 
-- **Loguru for logging:** Replace verbose standard library logger setups with zero-configuration, coloured logging.
-- **DiskCache for persistence:** Cache heavy function results on local disk effortlessly without Redis overhead.
+- **Loguru for logging:** Replace verbose standard library logger setups with zero-configuration, coloured logging using [Loguru](https://github.com/Delgan/loguru).
+- **DiskCache for persistence:** Cache heavy function results on local disk effortlessly without Redis overhead using [DiskCache](https://grantjenks.com/docs/diskcache/).
 - **Structural pattern matching:** Write clean, expressive branching logic using `match` and `case` constructs.
 - **Slots for memory savings:** Reduce memory consumption of lightweight dataclasses with `__slots__`.
 {{< /tldr >}}
@@ -26,7 +26,7 @@ If you're tired of writing boilerplate code or struggling with complex configura
 In this guide, I explore some of my favourite hidden gems that you can start using today to write cleaner, more efficient Python code.
 
 Specifically, I'll be covering:
-*   **Powerful Packages**: `Loguru` for logging, `diskcache` for persistence, `dirty-equals` for API testing, and `glom` for nested data manipulation.
+*   **Powerful Packages**: [`Loguru`](https://github.com/Delgan/loguru) for logging, [`diskcache`](https://grantjenks.com/docs/diskcache/) for persistence, [`dirty-equals`](https://dirty-equals.helpmanual.io/) for API testing, and [`glom`](https://glom.readthedocs.io/) for nested data manipulation.
 *   **Modern Patterns**: Structural pattern matching, memory optimisation with `__slots__`, native memoisation with `functools.cache`, and the walrus operator.
 
 ## Powerful Packages
@@ -106,7 +106,7 @@ These four modern idioms will help you reduce nesting, optimise memory, cache co
 
 ### Structural pattern matching
 
-Introduced back in Python 3.10, structural pattern matching (`match` / `case`) is a modern pattern that is still vastly underutilised.
+Introduced back in Python 3.10, [structural pattern matching](https://docs.python.org/3/whatsnew/3.10.html#pep-634-structural-pattern-matching) (`match` / `case`) is a modern pattern that is still vastly underutilised.
 It allows you to move beyond simple, chained `if/elif` statements and route logic based on the actual shape of your data structures.
 This is particularly useful when parsing heterogeneous JSON payloads from external APIs.
 
@@ -127,7 +127,7 @@ By matching on dictionaries or object attributes, you can make your data routing
 
 If you're building data-heavy applications that instantiate millions of objects, you might notice your RAM usage spiking unexpectedly.
 This is because Python creates a dynamic `__dict__` for every class instance to store its attributes.
-A lesser-known pattern to solve this is explicitly defining `__slots__` within your class.
+A lesser-known pattern to solve this is explicitly defining [`__slots__`](https://docs.python.org/3/reference/datamodel.html#slots) within your class.
 
 ```python
 class Point:
@@ -144,7 +144,7 @@ By defining `__slots__`, you prevent Python from creating that underlying dictio
 
 Memoisation is a classic pattern for caching the results of expensive function calls based on their inputs.
 Historically, developers would write custom dictionary wrappers or rely on third-party caching decorators.
-However, Python's built-in `functools` module now provides a dead-simple `@cache` decorator that does this natively.
+However, Python's built-in [`functools`](https://docs.python.org/3/library/functools.html) module now provides a dead-simple [`@cache`](https://docs.python.org/3/library/functools.html#functools.cache) decorator that does this natively.
 
 ```python
 from functools import cache
@@ -163,7 +163,7 @@ It is a completely frictionless way to add performance optimisations to recursiv
 
 ### The walrus operator for data pipelines
 
-Introduced a few versions ago, the assignment expression operator (`:=`), affectionately known as the walrus operator, is a fantastic pattern for cleaning up data pipelines.
+Introduced a few versions ago, the assignment expression operator (`:=`), affectionately known as the [walrus operator](https://docs.python.org/3/whatsnew/3.8.html#assignment-expressions), is a fantastic pattern for cleaning up data pipelines.
 It allows you to assign a variable and evaluate it within the same expression.
 This is incredibly useful in `while` loops or list comprehensions where you need to calculate a value, check if it's valid, and then use it.
 
