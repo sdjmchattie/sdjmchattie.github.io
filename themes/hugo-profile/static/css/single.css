@@ -129,6 +129,33 @@
   color: var(--text-secondary-color-dark) !important;
   max-height: 450px;
   overflow: auto;
+  color-scheme: dark;
+  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+  scrollbar-width: thin;
+}
+
+#single .page-content pre::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+#single .page-content pre::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+#single .page-content pre::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  outline: none;
+}
+
+#single .page-content pre::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.55);
+}
+
+#single .page-content pre::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 #single .page-content pre > code {
