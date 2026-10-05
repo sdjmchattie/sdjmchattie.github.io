@@ -12,6 +12,7 @@
 ## Build, Test, and Development Commands
 
 - `hugo server --renderToMemory` spins up a local server; keep an eye on the command output for warnings and confirm the site renders before pushing.
+- `pngquant --quality 65-80 --speed 1 --strip --force --ext .png <path-to-image.png>` compresses PNG assets in place to around 512KB or smaller with imperceptible visual loss (fallback to `--quality 60-80` if min quality check fails).
 
 ## Coding Style & Naming Conventions
 
@@ -95,6 +96,13 @@ Every post must have a complete YAML front matter block:
   - Saved as a high-quality PNG to `static/images/posts/YYYY/MM-DD-slug.png`.
   - Aspect ratio: Exactly 16:10 landscape.
   - Width: Minimum 1200 pixels, maximum 1440 pixels (do not upscale smaller images, which introduces blur).
+  - Target file size: Around 512KB or smaller.
+- **Image Compression with `pngquant`**:
+  - If a PNG exceeds ~512KB (or is over 1MB), compress it in place using `pngquant` with an imperceptible quality setting:
+    ```bash
+    pngquant --quality 65-80 --speed 1 --strip --force --ext .png <path-to-image.png>
+    ```
+  - If quantization fails due to quality falling below 65 (exit code 99), fallback to `--quality 60-80`.
 - **Inline Images**: If used, save in the post directory and reference with relative paths (e.g., `![Alt text](image-name.png)`).
 - **Accessibility**: Always include descriptive alt text for all images.
 
@@ -103,6 +111,7 @@ Every post must have a complete YAML front matter block:
 - [ ] Date, slug, and directory name match (e.g., `2026-02-28` in both front matter and directory).
 - [ ] TL;DR block (`{{< tldr >}}...{{< /tldr >}}`) is present at the start of the body before the opening paragraph with a summary and bulleted takeaways.
 - [ ] Featured image placeholder exists at `static/images/posts/YYYY/MM-DD-slug.png` (copied from `static/images/placeholder.png`).
+- [ ] Featured image is compressed to around 512KB or smaller (using `pngquant` if needed).
 - [ ] All cross-references and tag links use correct syntax and resolve properly (test with `hugo server --renderToMemory`).
 - [ ] Technical concepts, libraries, frameworks, protocols, and APIs are comprehensively hyperlinked on first mention to authoritative documentation or specifications.
 - [ ] Heading formatting follows conventions (Title Case for ##, Sentence case for ###/####) and hierarchy is flat.
