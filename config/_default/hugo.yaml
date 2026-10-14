@@ -7,6 +7,20 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - - \[
+              - \]
+            - - $$
+              - $$
+          inline:
+            - - \(
+              - \)
+            - - $
+              - $
   tableOfContents:
     startLevel: 2
     endLevel: 3

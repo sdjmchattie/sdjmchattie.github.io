@@ -10,6 +10,7 @@ tags:
   - Software Pitfalls
   - Python
   - Software Architecture
+math: true
 ---
 
 {{< tldr >}}

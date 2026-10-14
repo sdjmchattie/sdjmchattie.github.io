@@ -2,8 +2,9 @@ title: Stuart McHattie | IsCoding
 description: "Stuart McHattie: Software Engineer & Solution Architect"
 favicon: "/fav.png"
 
-# Whether to add mathjax support on all pages. Alternatively, you can opt-in per page by adding `mathjax: true` in the frontmatter.
+# Whether to add math support on all pages. Alternatively, you can opt-in per page by adding `math: true` or `mathjax: true` in the frontmatter.
 mathjax: false
+math: false
 
 # Whether the fade animations on the home page will be enabled
 animate: true
