@@ -206,7 +206,19 @@ Linux servers suffered a notorious kernel deadlock in the `futex` subsystem, spi
 
 To prevent these disasters, major cloud providers like Google, AWS, and Cloudflare developed "[leap smearing](https://developers.google.com/time/smear)".
 Instead of inserting a sudden 61st second, their NTP servers slow down clock ticks by a fraction of a percent across a 24-hour window, gently absorbing the extra second without applications noticing.
-The operational headache proved so severe that in 2022, international metrology bodies voted to phase out leap seconds entirely by 2035.
+
+The operational headache proved so severe that in 2022, international metrology bodies initially voted to phase out leap seconds by 2035.
+That timeline has now been brought forward: leap seconds are being abandoned entirely in May 2027.
+In practical terms, because Earth's rotation has remained slightly accelerated, this means there will not be any more leap seconds from today onwards.
+
+Under this updated agreement, international timekeepers will allow [Coordinated Universal Time (UTC)](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) to drift freely from solar time.
+Metrologists will only consider realigning the clock with the position of the sun once that cumulative drift reaches a full hour, an astronomical divergence that will take centuries to accumulate.
+
+This shift only reinforces why you should never write your own date parsing or time arithmetic.
+Timekeeping is not just physics and astronomy; it is subject to the unpredictable whims of political committees.
+
+This political change alters how software needs to work with immediate effect.
+If you built custom date libraries with hardcoded leap-second schedules or bespoke synchronisation routines, a single committee decision just broke your assumptions and made your code obsolete overnight.
 
 ### System time jumps around
 
