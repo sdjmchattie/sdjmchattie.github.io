@@ -6,7 +6,7 @@ function getScrollPercent() {
 const scrollProgressBar = document.getElementById("scroll-progress-bar");
 
 document.onscroll = function () {
-  var scrollPercent = Math.round(getScrollPercent());
+  var scrollPercent = Math.min(100, Math.max(0, Math.round(getScrollPercent())));
   scrollProgressBar.style.width = scrollPercent + "%";
   scrollProgressBar.ariaValueNow = scrollPercent;
 };
