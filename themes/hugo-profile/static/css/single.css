@@ -428,31 +428,20 @@
   height: 2px;
   background-color: var(--background-color);
   border-radius: 0;
-  overflow: visible;
   z-index: 999;
 }
 
 @supports (-webkit-touch-callout: none) {
   .progress {
-    height: calc(6px + env(safe-area-inset-top, 0px));
+    height: 6px;
   }
-}
-
-.progress::before {
-  content: "";
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background-color: var(--background-color);
 }
 
 .progress-bar {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
-  height: calc(100% + 80px);
+  height: 2px;
   background-color: var(--primary-color);
   transition: width 0.2s;
 }
