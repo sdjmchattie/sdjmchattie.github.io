@@ -425,11 +425,17 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(2px + env(safe-area-inset-top, 0px));
+  height: 2px;
   background-color: var(--background-color);
   border-radius: 0;
   overflow: visible;
   z-index: 999;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .progress {
+    height: calc(6px + env(safe-area-inset-top, 0px));
+  }
 }
 
 .progress::before {
