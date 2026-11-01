@@ -8,7 +8,6 @@ slug: revisiting-gorillas-with-gemini-3-1-pro
 image: /images/posts/2026/09-12-revisiting-gorillas-with-gemini-3-1-pro.png
 tags:
   - Agentic AI
-  - Generative AI
   - Developer Tools
 ---
 

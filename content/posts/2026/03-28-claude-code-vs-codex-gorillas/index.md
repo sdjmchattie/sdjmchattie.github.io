@@ -9,7 +9,6 @@ slug: claude-code-vs-codex-gorillas
 image: /images/posts/2026/03-28-claude-code-vs-codex-gorillas.jpg
 tags:
   - Agentic AI
-  - Generative AI
   - Developer Tools
 ---
 
