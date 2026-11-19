@@ -1,11 +1,11 @@
 ---
-date: 2026-11-21
+date: 2027-01-09
 title: "Understanding Big-O Notation: Why Algorithm Complexity Matters"
 description: |-
   Learn what O(1), O(log N), O(N), O(N log N), and O(N²) actually mean in everyday code.
   Explore practical Python examples and run a benchmark script to see how scaling data size impacts performance.
 slug: understanding-big-o-notation
-image: /images/posts/2026/11-21-understanding-big-o-notation.png
+image: /images/posts/2027/01-09-understanding-big-o-notation.png
 tags:
   - Python
   - Software Architecture
@@ -29,7 +29,7 @@ The hardware didn't get slower; the algorithm hit a scaling curve.
 [Big-O notation](https://en.wikipedia.org/wiki/Big_O_notation) gives you the vocabulary to predict that curve before your code ever reaches production.
 Rather than measuring execution in milliseconds (which varies by CPU, language, and background load), Big-O measures how the number of operations grows relative to the input size, $N$.
 
-In recent posts on [Implementing a Cache from Scratch]({{< ref "11-07-implementing-a-cache-from-scratch-to-lru-cache" >}}) and [Rate Limiting and Throttling]({{< ref "11-14-rate-limiting-and-throttling-beyond-simple-counters" >}}), I emphasised keeping hot-path operations at $O(1)$.
+In recent posts on [Implementing a Cache from Scratch]({{< ref "../2026/11-07-implementing-a-cache-from-scratch-to-lru-cache" >}}) and [Rate Limiting and Throttling]({{< ref "../2026/11-14-rate-limiting-and-throttling-beyond-simple-counters" >}}), I emphasised keeping hot-path operations at $O(1)$.
 In this shorter guide, I break down the five core complexity classes you'll encounter in everyday software engineering, show what each looks like in [Python](https://www.python.org/), and provide a benchmark script so you can watch the scaling curves diverge firsthand.
 
 ## Why Should You Care About Big-O?

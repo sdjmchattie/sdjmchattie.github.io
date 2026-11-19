@@ -62,7 +62,7 @@ To keep the comparison fair and enjoyable, I'm sticking to a strict order of ope
 ### What I'll be comparing
 
 Getting the right answer is only half the story in Advent of Code, especially when Part 2 scales the input size up by several orders of magnitude.
-As I covered recently in [Understanding Big-O Notation]({{< ref "11-21-understanding-big-o-notation" >}}), an $O(N^2)$ brute-force loop that finishes Part 1 in milliseconds will often grind to a halt on Part 2.
+In terms of [Big-O notation](https://en.wikipedia.org/wiki/Big_O_notation), an $O(N^2)$ brute-force loop that finishes Part 1 in milliseconds will often grind to a halt on Part 2.
 In each daily post, I'll compare my code against the AI's across three main dimensions:
 
 - **Algorithmic approach:** Did the model spot the underlying mathematical shortcut, [graph traversal](https://en.wikipedia.org/wiki/Graph_traversal), or [dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming) state, or did it try to brute-force the problem?
